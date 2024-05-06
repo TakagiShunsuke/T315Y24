@@ -29,12 +29,6 @@ public class CMine : MonoBehaviour
     private LayerMask EnemyLayer;        // 地雷の影響を受けるオブジェクトを指定
     private bool CanExplode = true;     //地雷利用 true:可能 false:不可
 
-    //＞インターフェース定義
-    public interface IDestroy
-    { 
-        void TakeDestroy();     //オブジェクトの破壊
-    }
-
     /*＞地雷当たり判定関数
     引数１：当たり判定があったオブジェクトの情報
     ｘ
@@ -95,7 +89,7 @@ public class CMine : MonoBehaviour
         foreach (Collider hit in colliders) //collidersの中に入ってる全部for文で繰り返す
         {
             // IDestroyを実装していたら
-            if (hit.gameObject.TryGetComponent<IDestroy>(out var destroy))
+            if (hit.gameObject.TryGetComponent<IFeatureMine>(out var destroy))
                 if (destroy != null)            //取得成功しているか
                 {
                     destroy.TakeDestroy();      //破壊の処理をする
