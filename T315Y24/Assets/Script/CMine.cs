@@ -13,6 +13,7 @@ __Y24   //'24年
 _M05    //05月
 D       //日
 03:プログラム作成:yamamoto
+06:インターフェース追加:yamamoto
 
 =====*/
 using System.Collections;
@@ -27,6 +28,12 @@ public class CMine : MonoBehaviour
     public LayerMask EnemyLayer;        // 地雷の影響を受けるオブジェクトを指定
 
     private bool CanExplode = true;
+
+    public interface IDestroy
+    { 
+        void TakeDestroy();
+    }
+
     /*＞地雷当たり判定関数
     引数１：当たり判定があったオブジェクトの情報
     ｘ
@@ -38,10 +45,11 @@ public class CMine : MonoBehaviour
     {
         if (other.CompareTag("Enemy")&&CanExplode)  //Enemyタグがついている＆地雷使用可能
         {
-            ExplodeAfterDelay();
-            StartCoroutine(RechargeMine());
+            ExplodeAfterDelay();            //爆発ディレイ計測
+            StartCoroutine(RechargeMine()); //再利用時間計測
         }
     }
+
     /*＞地雷再利用の判定の関数
     引数１：なし
     ｘ
@@ -55,6 +63,7 @@ public class CMine : MonoBehaviour
         yield return new WaitForSeconds(RechargeDelay);
         CanExplode = true;
     }
+
     /*＞爆発時差関数
    引数１：なし
    ｘ
@@ -69,6 +78,7 @@ public class CMine : MonoBehaviour
         // 爆発処理をここに記述
         Explode();
     }
+
     /*＞爆発処理関数
     引数１：なし
     ｘ
@@ -83,11 +93,12 @@ public class CMine : MonoBehaviour
 
         foreach (Collider hit in colliders) //collidersの中に入ってる全部for文で繰り返す
         {
-            CEnemy enemy = hit.GetComponent<CEnemy>();
-            if (enemy != null)
-            {
-                enemy.Die();
-            } 
+            // IDestroyを実装していたら
+            if (hit.gameObject.TryGetComponent<IDestroy>(out var destroy))
+                if (destroy != null)
+                {
+                    destroy.TakeDestroy();
+                } 
         }
     }
 }
