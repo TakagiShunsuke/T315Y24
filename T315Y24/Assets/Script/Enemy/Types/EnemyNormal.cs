@@ -32,7 +32,7 @@ using System.Collections.Generic;
 using UnityEngine;  //Unity
 
 //＞クラス定義
-public class CEnemyBase : MonoBehaviour
+public class CEnemyNormal : CEnemy
 {
     //＞変数宣言
     [SerializeField] private double m_dAtkInterval = 3.0d;  //攻撃間隔[s]
@@ -49,8 +49,11 @@ public class CEnemyBase : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    void Start()
+    public void Start()
     {
+        //＞親関数呼び出し
+        transform.GetComponentInParent<CEnemy>().Start(); //親の初期化関数呼び出し
+
         //＞初期化
         m_Feature = GetComponent<IFeature>();   //自身の特徴取得
         if (m_Feature != null)   //取得に失敗した時
