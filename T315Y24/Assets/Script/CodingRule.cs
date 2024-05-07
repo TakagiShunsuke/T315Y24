@@ -18,13 +18,27 @@ D       //日
 _M05
 D
 03:いろはにほへと:takagi
-05:ちりぬるを:takagi
+04:いくつかの記法追加・誤った表記を修正:takagi
 =====*/
 
-//＞名前空間定義
+//＞名前空間宣言
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+
+//＞名前空間定義
+namespace Space
+{
+    public static class CSpace
+    {
+        //＞定数定義
+        private const uint CONST = 0;    //仮置きのfps値
+
+        //＞変数宣言
+        public static readonly double ms_Temp = 0.0d;   //readonlyな変数も書き方は同じ
+    }
+}
 
 //＞クラス定義
 public class CCodingRule : MonoBehaviour    //クラス型の頭文字にCをつける
@@ -32,7 +46,8 @@ public class CCodingRule : MonoBehaviour    //クラス型の頭文字にCをつける
     //＞列挙定義
     public enum E_ENUM
     {
-
+        E_ENUM_A,
+        E_ENUM_B,
     }
 
     //＞構造体定義
@@ -46,13 +61,18 @@ public class CCodingRule : MonoBehaviour    //クラス型の頭文字にCをつける
     //＞変数宣言
     private int m_nInt; //通常の型はハンガリアン記法に従う
     private static string m_szStr;  //メンバ変数∧静的変数なら融合してms_と記述する
+    [SerializeField] private uint m_uInner;   //属性は記法に影響しない
+
+    //＞プロパティ定義
+    public double Prop { get; set; }    //自動実装プロパティはハンガリアン記法を無視してよい
+    public double PriProp { get; private set; } //readonlyな形式でも記法は無し
 
     /*＞初期化関数
     引数１：なし
     ｘ
     戻値：なし
     ｘ
-    概要：生成時に行う処理
+    概要：インスタンス生成時に行う処理
     */
     // Start is called before the first frame update
     void Start()
@@ -60,12 +80,12 @@ public class CCodingRule : MonoBehaviour    //クラス型の頭文字にCをつける
         
     }
 
-    /*＞更新関数
+    /*＞物理更新関数
     引数：なし   //引数がない場合は１を省略してもよい
     ｘ
     戻値：なし
     ｘ
-    概要：フレーム更新時に行う処理処理
+    概要：一定時間ごとに行う更新処理
     */
     private void FixedUpdate()
     {

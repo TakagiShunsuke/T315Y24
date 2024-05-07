@@ -142,16 +142,4 @@ public class CEnemyBase : MonoBehaviour
 #endif
         }
     }
-
-    /*＞移動関数
-    引数：なし
-    ｘ
-    戻値：なし
-    ｘ
-    概要：プレイヤーを目指し移動する処理
-    */
-    private void Move()
-    {
-
-    }
 }
