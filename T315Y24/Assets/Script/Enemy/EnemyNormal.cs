@@ -42,6 +42,7 @@ public class CEnemyBase : MonoBehaviour
     private GameObject m_Player = null; //プレイヤー
     [SerializeField] private string m_sPlayerName = "Player";   //プレイヤーのオブジェクト名
 
+    public static int A() { return 0; }
     /*＞初期化関数
     引数１：なし
     ｘ
