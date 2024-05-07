@@ -26,7 +26,7 @@ public class CGate : MonoBehaviour
     [SerializeField] private double m_dSpawnInterval = 3.0d;  //生成間隔[s]
     [SerializeField] private uint m_unSpawnMax = 100;  //生成上限[s]
     private double m_dSpawnCoolTime = 0.0d;   //生成クールタイム[s]
-    CSpawnRandom m_SpawnRandom = null;    //生成機構
+    CSpawnRandomRect m_SpawnRandom = null;    //生成機構
     
     /*＞初期化関数
     引数１：なし
@@ -38,7 +38,7 @@ public class CGate : MonoBehaviour
     void Start()
     {
         //＞初期化
-        m_SpawnRandom = GetComponent<CSpawnRandom>();   //自身の特徴取得
+        m_SpawnRandom = GetComponent<CSpawnRandomRect>();   //自身の特徴取得
 #if UNITY_EDITOR    //エディタ使用中
         if (m_SpawnRandom == null)   //取得に失敗した時
         {
