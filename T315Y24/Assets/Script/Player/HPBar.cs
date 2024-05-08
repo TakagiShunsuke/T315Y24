@@ -21,12 +21,12 @@ using UnityEngine.UI;
 public class HPBar : MonoBehaviour
 {
     //＞変数宣言
-    [SerializeField] private Image _hpBarcurrent;   //
-    [SerializeField] private float _maxHealth;  //最大HP
-    private float currentHealth;                //
-    void Awake()        //
+    [SerializeField] private Image f_hpBarcurrent;   //HPバー
+    [SerializeField] private float f_maxHealth;  //プレイヤーの最大HP
+    private float f_currentHealth;                //HPバーから減らすHP
+    void Awake()        
     {
-        currentHealth = _maxHealth;     //最大HP
+        f_currentHealth = f_maxHealth;     //最大HP
     }
     /*＞ダメージ処理関数
     引数：受けたダメージ   //引数がない場合は１を省略してもよい
@@ -38,7 +38,7 @@ public class HPBar : MonoBehaviour
 
     public void UpdateHP(float damage)  //HPの更新
     {
-        currentHealth = Mathf.Clamp(currentHealth - damage, 0, _maxHealth); //最大HPからダメージ分を引く
-        _hpBarcurrent.fillAmount = currentHealth / _maxHealth;      //
+        f_currentHealth = Mathf.Clamp(f_currentHealth - damage, 0, f_maxHealth); //最大HPからダメージ分を引く
+        f_hpBarcurrent.fillAmount = f_currentHealth / f_maxHealth;      //HPバーが受けたダメージの分動くように変更
     }
 }

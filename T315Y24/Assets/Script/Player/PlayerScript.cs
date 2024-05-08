@@ -23,30 +23,30 @@ public class PlayerScript : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody rb;
-    float speed = 3.0f;
+    float fspeed = 3.0f;    //プレイヤーの移動速度
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); //Rigidbodyを追加
+        rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))  //Arrowキーでプレイヤーを移動させる
+        if (Input.GetKey(KeyCode.UpArrow))  //上Arrowキーでプレイヤーを上に移動させる
         {
-            rb.velocity = transform.forward * speed;
+            rb.velocity = transform.forward * fspeed;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow)) //下Arrowキーでプレイヤーを下に移動させる
         {
-            rb.velocity = -transform.forward * speed;
+            rb.velocity = -transform.forward * fspeed;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow)) //右Arrowキーでプレイヤーを右に移動させる
         {
-            rb.velocity = transform.right * speed;
+            rb.velocity = transform.right * fspeed;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow)) //左Arrowキーでプレイヤーを左に移動させる
         {
-            rb.velocity = -transform.right * speed;
+            rb.velocity = -transform.right * fspeed;
         }
     }
 }
