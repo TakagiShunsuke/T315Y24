@@ -24,7 +24,7 @@ public class HPBar : MonoBehaviour
     [SerializeField] private Image f_hpBarcurrent;   //HPバー
     [SerializeField] private float f_maxHealth;  //プレイヤーの最大HP
     private float f_currentHealth;                //HPバーから減らすHP
-    void Awake()        
+    void Awake()        //最大HPからダメージを減らすための関数
     {
         f_currentHealth = f_maxHealth;     //最大HP
     }
@@ -36,7 +36,7 @@ public class HPBar : MonoBehaviour
     概要：ダメージ計算を行う
     */
 
-    public void UpdateHP(float damage)  //HPの更新
+    public void UpdateHP(float damage)  //HPの更新処理を行う
     {
         f_currentHealth = Mathf.Clamp(f_currentHealth - damage, 0, f_maxHealth); //最大HPからダメージ分を引く
         f_hpBarcurrent.fillAmount = f_currentHealth / f_maxHealth;      //HPバーが受けたダメージの分動くように変更
