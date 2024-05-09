@@ -37,6 +37,7 @@ public class HPBar : MonoBehaviour
     {
         f_currentHealth = f_maxHealth;     //最大HP
     }
+
     /*＞ダメージ処理関数
     引数：受けたダメージ   //引数がない場合は１を省略してもよい
     ｘ

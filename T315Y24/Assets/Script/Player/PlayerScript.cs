@@ -27,12 +27,12 @@ public class PlayerScript : MonoBehaviour
 
 
     /*＞初期処理関数
-引数：なし
-ｘ
-戻値：なし
-ｘ
-概要：Rigidbodyコンポーネントを追加
-*/
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：Rigidbodyコンポーネントを追加
+    */
     void Start()    //自動で追加される
     {
         rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
@@ -40,12 +40,12 @@ public class PlayerScript : MonoBehaviour
 
 
     /*＞移動処理関数
-引数：なし
-ｘ
-戻値：なし
-ｘ
-概要：キーが押されたら移動をを行う
-*/
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：キーが押されたら移動をを行う
+    */
     void Update()   //キーが押されたときに更新を行う
     {
         if (Input.GetKey(KeyCode.UpArrow))  //上Arrowキーでプレイヤーを上に移動させる
