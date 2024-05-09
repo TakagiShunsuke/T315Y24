@@ -25,11 +25,27 @@ public class PlayerScript : MonoBehaviour
     Rigidbody rb;
     float fspeed = 3.0f;    //プレイヤーの移動速度
 
+
+    /*＞初期処理関数
+引数：なし
+ｘ
+戻値：なし
+ｘ
+概要：Rigidbodyコンポーネントを追加
+*/
     void Start()    //自動で追加される
     {
         rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
     }
 
+
+    /*＞移動処理関数
+引数：なし
+ｘ
+戻値：なし
+ｘ
+概要：キーが押されたら移動をを行う
+*/
     void Update()   //キーが押されたときに更新を行う
     {
         if (Input.GetKey(KeyCode.UpArrow))  //上Arrowキーでプレイヤーを上に移動させる

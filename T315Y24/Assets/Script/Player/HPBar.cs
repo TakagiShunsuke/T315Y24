@@ -24,6 +24,15 @@ public class HPBar : MonoBehaviour
     [SerializeField] private Image f_hpBarcurrent;   //HPバー
     [SerializeField] private float f_maxHealth;  //プレイヤーの最大HP
     private float f_currentHealth;                //HPバーから減らすHP
+
+    /*＞HPを保存する関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：HPバーを最大HPにする
+    */
+
     void Awake()        //最大HPからダメージを減らすための関数
     {
         f_currentHealth = f_maxHealth;     //最大HP
