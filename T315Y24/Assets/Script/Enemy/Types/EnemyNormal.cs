@@ -32,7 +32,7 @@ using System.Collections.Generic;
 using UnityEngine;  //Unity
 
 //＞クラス定義
-public class CEnemyNormal : CEnemy
+public class CEnemyNormal : CEnemy, IFeatureMine
 {
     //＞変数宣言
     [SerializeField] private double m_dAtkInterval = 3.0d;  //攻撃間隔[s]
@@ -143,5 +143,10 @@ public class CEnemyNormal : CEnemy
             UnityEngine.Debug.Log("こうげきHIT!");   //攻撃判定の代わり
 #endif
         }
+    }
+    public void TakeDestroy()
+    {
+        Debug.LogWarning("デストロイ");
+        Destroy(gameObject);
     }
 }
