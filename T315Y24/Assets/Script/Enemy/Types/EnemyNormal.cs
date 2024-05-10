@@ -144,9 +144,16 @@ public class CEnemyNormal : CEnemy, IFeatureMine
 #endif
         }
     }
+
+    /*＞敵死亡関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：爆発と当たったとき呼び出される処理
+    */
     public void TakeDestroy()
     {
-        Debug.LogWarning("デストロイ");
-        Destroy(gameObject);
+        Destroy(gameObject);    //敵オブジェクト削除
     }
 }
