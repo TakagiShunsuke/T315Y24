@@ -14,6 +14,7 @@ __Y24
 _M05
 D
 07:プログラム作成:takagi
+10:プロパティ宣言変更
 =====*/
 
 //＞名前空間宣言
@@ -25,7 +26,7 @@ using UnityEngine;  //Unity
 public abstract class CEnemy : MonoBehaviour
 {
     //＞プロパティ定義
-    public uint m_unValInstance { get; private set; } = 0;   //インスタンス数
+    static public uint ValInstance { get; private set; } = 0;   //インスタンス数
 
     /*＞初期化関数
     引数１：なし
@@ -37,7 +38,7 @@ public abstract class CEnemy : MonoBehaviour
     virtual public void Start()
     {
         //＞カウント
-        m_unValInstance++;  //生成数増加
+        ValInstance++;  //生成数増加
     }
 
     /*＞終了関数
@@ -50,6 +51,6 @@ public abstract class CEnemy : MonoBehaviour
     virtual protected void OnDestroy()
     {
         //＞カウント
-        m_unValInstance--;  //生成数減少
+        ValInstance--;  //生成数減少
     }
 }
