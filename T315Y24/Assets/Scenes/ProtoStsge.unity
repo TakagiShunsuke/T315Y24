@@ -430,6 +430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnAssetRef.Array.data[0].m_AssetGUID
+      value: 00b3f5e9285e79f41bed33682e0fa2c2
+      objectReference: {fileID: 0}
     - target: {fileID: 3569943469347507758, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
       propertyPath: m_Name
       value: Gate
