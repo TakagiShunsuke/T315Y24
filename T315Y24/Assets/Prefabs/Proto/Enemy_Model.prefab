@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dAtkInterval: 3
-  m_sPlayerName: Player_Model
 --- !u!54 &8432228620360991324
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -184,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ab5bd0ecc50d246a66f7395e26c82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 0
+  m_Speed: 100
   m_sTargetName: Player_Model
 --- !u!114 &4168548450133705010
 MonoBehaviour:
@@ -201,4 +200,5 @@ MonoBehaviour:
   m_dRadius: 2
   m_dSectorAngle: 90
   m_dFrontAngle: 90
-  m_sPlayerName: Player_Model
+  m_sTargetNames:
+  - Player_Model
