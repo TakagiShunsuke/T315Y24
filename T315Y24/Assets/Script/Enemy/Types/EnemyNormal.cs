@@ -11,10 +11,7 @@
 ２.攻撃範囲を表す扇形の領域判定AreaSector
 ３.物理演算を行うRigidbody
 
-また、以下のオブジェクトが存在する必要があります。
-１.m_sPlayerNameで定義された名前と一致するオブジェクト
-
-さらに、以下のコンポーネントがある場合はその初期値をシリアライズされて実装される値をも無視して初期化します。
+また、以下のコンポーネントがある場合はその初期値をシリアライズされて実装される値をも無視して初期化します。
 １.IMoveを継承した、移動を行うコンポーネントの変数Speed
 
 
@@ -24,11 +21,13 @@ _M05
 D
 03:プログラム作成:takagi
 04:続き:takagi
+11:プレイヤー削除、AreaSector変更への対応:takagi
 =====*/
 
 //＞名前空間宣言
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;  //Unity
 
 //＞クラス定義
@@ -39,8 +38,6 @@ public class CEnemyNormal : CEnemy
     private double m_dAtkCoolTime = 0.0d;   //攻撃クールタイム[s]
     private IFeature m_Feature = null;  //ステータス特徴
     private CAreaSector m_CAreaSector = null;   //扇形の攻撃範囲
-    private GameObject m_Player = null; //プレイヤー
-    [SerializeField] private string m_sPlayerName = "Player";   //プレイヤーのオブジェクト名
 
     /*＞初期化関数
     引数１：なし
@@ -79,14 +76,6 @@ public class CEnemyNormal : CEnemy
             UnityEngine.Debug.LogWarning("攻撃範囲が設定されていません");    //警告ログ出力
         }
 #endif
-        m_Player = GameObject.Find(m_sPlayerName);   //プレイヤーのインスタンス格納
-#if UNITY_EDITOR    //エディタ使用中
-        if (m_Player == null)    //取得に失敗した時
-        {
-            //＞エラー出力
-            UnityEngine.Debug.LogWarning("プレイヤーが見つかりません");  //警告ログ出力
-        }
-#endif
     }
 
     /*＞物理更新関数
@@ -101,7 +90,7 @@ public class CEnemyNormal : CEnemy
         //＞カウントダウン
         if(m_dAtkCoolTime > 0.0d)   //クールダウン中
         {
-            m_dAtkCoolTime -= Time.fixedDeltaTime;
+            m_dAtkCoolTime -= Time.fixedDeltaTime;  //クールダウン減少
         }
 
         //＞攻撃
@@ -118,7 +107,7 @@ public class CEnemyNormal : CEnemy
     private void Attack()
     {
         //＞検査
-        if (m_Feature == null || m_CAreaSector == null || m_Player == null)   //必要要件の不足時
+        if (m_Feature == null || m_CAreaSector == null)   //必要要件の不足時
         {
 #if UNITY_EDITOR    //エディタ使用中
             //＞エラー出力
@@ -129,19 +118,28 @@ public class CEnemyNormal : CEnemy
             return; //更新処理中断
         }
 
-        //＞当たり判定
-        if (m_dAtkCoolTime <= 0.0d && m_CAreaSector.SignalCollision)  //攻撃クールタイム終了、プレイヤーへの攻撃判定
+        //＞変数宣言
+        List<GameObject> Hits = m_CAreaSector.SignalCollision;
+
+        //＞攻撃判定
+        if (Hits != null && Hits.Count > 0 && m_dAtkCoolTime <= 0.0d)   //検知対象が存在する、攻撃クールタイム終了
         {
-            //＞初期化
+            //＞クールダウン
             m_dAtkCoolTime = m_dAtkInterval;    //攻撃間隔初期化
 
-            //プレイヤーにダメージを与える
-            //m_Player.Attackable.Damage(m_Feature.Atk);
+            //＞ダメージ
+            for (int nIdx = 0; nIdx < Hits.Count; nIdx++)   //攻撃範囲全てにダメージ
+            {
+                //＞変数宣言
+                IDamageable Damageable = Hits[nIdx].GetComponent<IDamageable>();    //ダメージを与えて良いか
 
-#if UNITY_EDITOR    //エディタ使用中
-            //＞ログ出力
-            UnityEngine.Debug.Log("こうげきHIT!");   //攻撃判定の代わり
-#endif
+                //＞当たり判定
+                if (Damageable != null)  //ダメージを与えられる相手
+                {
+                    //＞ダメージ付与
+                    Damageable.Damage(m_Feature.Atk);   //対象にダメージを与える
+                }
+            }
         }
     }
 }
