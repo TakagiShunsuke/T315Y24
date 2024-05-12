@@ -10,10 +10,11 @@ __Y24
 _M05
 D
 04:プログラム作成:iwamuro
-
+13:プレイヤーの移動と角度の修正、unity上でスピードを変更できるように変更
 =====*/
 
 //＞名前空間宣言
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,9 +23,10 @@ using UnityEngine.EventSystems;
 //＞クラス定義
 public class PlayerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    Rigidbody rb;
-    
+    //＞変数宣言
+ 
+    Rigidbody rb;      // Rigidbodyを追加
+
     [SerializeField] private float fspeed; //プレイヤーの移動速度を設定
 
     /*＞初期処理関数
@@ -34,7 +36,7 @@ public class PlayerScript : MonoBehaviour
 ｘ
 概要：Rigidbodyコンポーネントを追加
 */
-    void Start()    //自動で追加される
+    void Start()    
     {
       
         rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
@@ -51,31 +53,16 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         Vector3 moveDirection = Vector3.zero; // 移動方向の初期化
+        Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));    //プレイヤーの向きを変えるベクトル
 
-        if (Input.GetKey(KeyCode.UpArrow))  // 上Arrowキーでプレイヤーを上に移動させる
+        if (target_dir.magnitude > 0.1) //ベクトルの長さが0.01fより大きい場合にプレイヤーの向きを変える
         {
-            moveDirection += transform.forward * fspeed;
-      //      transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-
+            //体の向きを変更
+            transform.rotation = Quaternion.LookRotation(target_dir);
+            //前方へ移動
+            transform.Translate(Vector3.forward * Time.deltaTime * fspeed);
         }
     
-        if (Input.GetKey(KeyCode.DownArrow)) // 下Arrowキーでプレイヤーを下に移動させる
-        {
-            moveDirection -= transform.forward * fspeed;
-         //   transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-        }
-        if (Input.GetKey(KeyCode.RightArrow)) // 右Arrowキーでプレイヤーを右に移動させる
-        {
-            moveDirection += transform.right * fspeed;
-       //    transform.rotation = Quaternion.Euler(0f, 270f, 0f);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow)) // 左Arrowキーでプレイヤーを左に移動させる
-        {
-            moveDirection -= transform.right * fspeed;
-     //       transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-          
-        }
-
         // 斜め移動
         if (moveDirection != Vector3.zero)
         {
@@ -91,6 +78,7 @@ public class PlayerScript : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
 
+       
     }
 
 }
