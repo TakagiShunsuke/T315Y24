@@ -17,14 +17,15 @@ D
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 //＞クラス定義
 public class PlayerScript : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody rb;
-    float fspeed = 3.0f;    //プレイヤーの移動速度
-
+    
+    [SerializeField] private float fspeed; //プレイヤーの移動速度を設定
 
     /*＞初期処理関数
 引数：なし
@@ -35,6 +36,7 @@ public class PlayerScript : MonoBehaviour
 */
     void Start()    //自動で追加される
     {
+      
         rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
     }
 
@@ -46,23 +48,50 @@ public class PlayerScript : MonoBehaviour
 ｘ
 概要：キーが押されたら移動をを行う
 */
-    void Update()   //キーが押されたときに更新を行う
+    void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))  //上Arrowキーでプレイヤーを上に移動させる
+        Vector3 moveDirection = Vector3.zero; // 移動方向の初期化
+
+        if (Input.GetKey(KeyCode.UpArrow))  // 上Arrowキーでプレイヤーを上に移動させる
         {
-            rb.velocity = transform.forward * fspeed;
+            moveDirection += transform.forward * fspeed;
+      //      transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
         }
-        if (Input.GetKey(KeyCode.DownArrow)) //下Arrowキーでプレイヤーを下に移動させる
+    
+        if (Input.GetKey(KeyCode.DownArrow)) // 下Arrowキーでプレイヤーを下に移動させる
         {
-            rb.velocity = -transform.forward * fspeed;
+            moveDirection -= transform.forward * fspeed;
+         //   transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
-        if (Input.GetKey(KeyCode.RightArrow)) //右Arrowキーでプレイヤーを右に移動させる
+        if (Input.GetKey(KeyCode.RightArrow)) // 右Arrowキーでプレイヤーを右に移動させる
         {
-            rb.velocity = transform.right * fspeed;
+            moveDirection += transform.right * fspeed;
+       //    transform.rotation = Quaternion.Euler(0f, 270f, 0f);
         }
-        if (Input.GetKey(KeyCode.LeftArrow)) //左Arrowキーでプレイヤーを左に移動させる
+        if (Input.GetKey(KeyCode.LeftArrow)) // 左Arrowキーでプレイヤーを左に移動させる
         {
-            rb.velocity = -transform.right * fspeed;
+            moveDirection -= transform.right * fspeed;
+     //       transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+          
         }
+
+        // 斜め移動
+        if (moveDirection != Vector3.zero)
+        {
+    
+            // 正規化して移動速度を一定に保つ
+            moveDirection.Normalize();
+            rb.velocity = moveDirection * fspeed;
+
+        }
+        else
+        {
+            // 何もキーが押されていない場合は停止する
+            rb.velocity = Vector3.zero;
+        }
+
     }
+
 }
+
