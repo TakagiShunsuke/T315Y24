@@ -11,7 +11,8 @@ _M05
 D
 04:プログラム作成:iwamuro
 11:体力・攻撃を受ける処理追加:takagi
-13:プレイヤーの移動と角度の修正、unity上でスピードを変更できるように変更
+13:プレイヤーの移動と角度の修正、unity上でスピードを変更できるように変更:iwamuro
+13:変数名変更:takagi
 =====*/
 
 //＞名前空間宣言
@@ -25,11 +26,9 @@ using UnityEngine.EventSystems;
 public class PlayerScript : MonoBehaviour, IDamageable
 {
     //＞変数宣言
-    Rigidbody rb;      // Rigidbodyを追加
-    Rigidbody rb;
-    float fspeed = 3.0f;    //プレイヤーの移動速度
+    Rigidbody m_Rb;      // Rigidbodyを追加
     [SerializeField] private double m_dHP = 10.0d;   //体力
-    [SerializeField] private float fspeed; //プレイヤーの移動速度を設定
+    [SerializeField] private float m_fSpeed; //プレイヤーの移動速度を設定
 
     /*＞初期処理関数
     引数：なし
@@ -40,7 +39,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     */
     void Start()    //自動で追加される
     {
-        rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
+        m_Rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
     }
 
 
@@ -61,7 +60,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
             //体の向きを変更
             transform.rotation = Quaternion.LookRotation(target_dir);
             //前方へ移動
-            transform.Translate(Vector3.forward * Time.deltaTime * fspeed);
+            transform.Translate(Vector3.forward * Time.deltaTime * m_fSpeed);
         }
     
         // 斜め移動
@@ -70,13 +69,13 @@ public class PlayerScript : MonoBehaviour, IDamageable
     
             // 正規化して移動速度を一定に保つ
             moveDirection.Normalize();
-            rb.velocity = moveDirection * fspeed;
+            m_Rb.velocity = moveDirection * m_fSpeed;
 
         }
         else
         {
             // 何もキーが押されていない場合は停止する
-            rb.velocity = Vector3.zero;
+            m_Rb.velocity = Vector3.zero;
         }
 
        
