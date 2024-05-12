@@ -14,6 +14,7 @@ __Y24
 _M05
 D
 04:プログラム作成:takagi
+06:不要なログ削除:takagi
 =====*/
 
 //＞名前空間宣言
@@ -95,11 +96,7 @@ public class CChaseTargetWithRigid : MonoBehaviour, IMove
         //m_Rigidbody.AddForce(new Vector3(m_vToPlayer.x, 0.0f, m_vToPlayer.y).normalized 
         //    * (float)(Math.Clamp((Speed - m_Rigidbody.velocity.magnitude), -4.0d, 4.0d)), ForceMode.Acceleration); //プレイヤー方向へ移動
         m_Rigidbody.velocity = new Vector3(m_vToPlayer.x, 0.0f, m_vToPlayer.y); //移動方向変更
-        m_Rigidbody.rotation = Quaternion.Euler(0.0f, Vector2.Angle(Vector2.left, m_vToPlayer) > 90.0f ? ToPlAngle : -ToPlAngle, 0.0f) ;//プレイヤーを向く                            //左方向のベクトルとのなす角が90度未満なら左に向く。そうでなければ右に向く。Angleが0to180なために0to360をこう表現した。
-
-#if UNITY_EDITOR    //エディタ使用中
-        //＞ログ出力
-        UnityEngine.Debug.Log(m_Rigidbody.velocity.magnitude);   //攻撃判定の代わり
-#endif
+        m_Rigidbody.rotation = Quaternion.Euler(0.0f, Vector2.Angle(Vector2.left, m_vToPlayer) > 90.0f ? ToPlAngle : -ToPlAngle, 0.0f) ;//プレイヤーを向く
+                                        //左方向のベクトルとのなす角が90度未満なら左に向く。そうでなければ右に向く。Angleが0to180なために0to360をこう表現した。
     }
 }

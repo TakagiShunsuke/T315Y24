@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6204877214885538765}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000059604645, y: 0.5, z: -0.00000011920929}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dAtkInterval: 3
-  m_sPlayerName: Player
 --- !u!114 &4961807164948180808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +154,8 @@ MonoBehaviour:
   m_dRadius: 2
   m_dSectorAngle: 90
   m_dFrontAngle: 90
-  m_sPlayerName: Player
+  m_sTargetNames:
+  - Player_Model
 --- !u!54 &5366570098884658682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -196,4 +196,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 0
-  m_sTargetName: Player
+  m_sTargetName: Player_Model
