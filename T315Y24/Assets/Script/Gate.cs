@@ -11,7 +11,6 @@ _M05
 D
 06:プログラム作成:takagi
 07:続き:takagi
-10:生成数上限機能実装:takagi
 =====*/
 
 //＞名前空間宣言
@@ -61,14 +60,11 @@ public class CGate : MonoBehaviour
         //＞カウントダウン
         if (m_dSpawnCoolTime > 0.0d)   //クールダウン中
         {
-            m_dSpawnCoolTime -= Time.fixedDeltaTime;    //カウントダウン進行
+            m_dSpawnCoolTime -= Time.fixedDeltaTime;
         }
         else
         {   //＞生成
-            if(m_unSpawnMax > CEnemy.ValInstance)
-            {
-                m_SpawnRandom.Create(); //インスタンス生成
-            }
+            m_SpawnRandom.Create(); //インスタンス生成
 
             //＞初期化
             m_dSpawnCoolTime = m_dSpawnInterval;    //クールダウン開始
