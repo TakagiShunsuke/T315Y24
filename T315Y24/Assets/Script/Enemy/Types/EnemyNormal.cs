@@ -24,6 +24,7 @@ _M05
 D
 03:プログラム作成:takagi
 04:続き:takagi
+11:消去関数追加:yamamoto
 =====*/
 
 //＞名前空間宣言
@@ -144,9 +145,15 @@ public class CEnemyNormal : CEnemy, IFeatureMine
 #endif
         }
     }
+    /*＞敵消去関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：敵を消去する処理
+    */
     public void TakeDestroy()
     {
-        Debug.LogWarning("デストロイ");
-        Destroy(gameObject);
+        Destroy(gameObject);    //このオブジェクトを消去する
     }
 }
