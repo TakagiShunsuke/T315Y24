@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 00b3f5e9285e79f41bed33682e0fa2c2
-    m_Address: Assets/Prefabs/Proto/Enemy_Model.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f856a6527e5a8204390092f8f50eaa90, type: 2}
   m_SchemaSet:
