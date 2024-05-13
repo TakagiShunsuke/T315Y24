@@ -17,6 +17,7 @@ D
 8 :プログラム作成:yamamoto 
 9 :仕様変更の為処理を変更:yamamoto
 10:コメント追加:yamamoto
+12:リキャスト時間追加:yamamoto
 =====*/
 
 //＞名前空間宣言
@@ -47,6 +48,7 @@ public class Mine : MonoBehaviour
         CoolDownText = GetComponentInChildren<Text>();
         CoolDownText.text = dMineCoolTime.ToString();   //textの初期化
         CoolDownText.fontSize = nFontSize;              // フォントサイズを変更
+        CoolDownText.alignment = TextAnchor.MiddleCenter;
         CoolDownText.gameObject.SetActive(false);       //使用前なので非表示
 
     }
