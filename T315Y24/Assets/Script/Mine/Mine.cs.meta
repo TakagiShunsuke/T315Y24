@@ -4,9 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: 3002f7ddbe17f254bb66149853ef3395, type: 3}
-  - canvasPrefab: {fileID: 1062704577433473003, guid: ca014d314b337ec4d8a02239777bdf4d, type: 3}
-  - CoolDownUI: {instanceID: 0}
+  - m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: 3002f7ddbe17f254bb66149853ef3395, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

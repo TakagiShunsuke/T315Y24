@@ -254,15 +254,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 59501899953590542, guid: 4fc87c0e4f3daf04c8d759b0df21d976, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.685054
+      value: -3.53
       objectReference: {fileID: 0}
     - target: {fileID: 59501899953590542, guid: 4fc87c0e4f3daf04c8d759b0df21d976, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.41
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 59501899953590542, guid: 4fc87c0e4f3daf04c8d759b0df21d976, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.8373575
+      value: 17.41
       objectReference: {fileID: 0}
     - target: {fileID: 59501899953590542, guid: 4fc87c0e4f3daf04c8d759b0df21d976, type: 3}
       propertyPath: m_LocalRotation.w
@@ -296,6 +296,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mine
       objectReference: {fileID: 0}
+    - target: {fileID: 7023115921762516209, guid: 4fc87c0e4f3daf04c8d759b0df21d976, type: 3}
+      propertyPath: m_dExplosionDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023115921762516209, guid: 4fc87c0e4f3daf04c8d759b0df21d976, type: 3}
+      propertyPath: m_ExplosionEffectPrefab
+      value: 
+      objectReference: {fileID: 3744496726241248683, guid: 3002f7ddbe17f254bb66149853ef3395, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -353,6 +361,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mine (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7023115921762516209, guid: 4fc87c0e4f3daf04c8d759b0df21d976, type: 3}
+      propertyPath: m_dExplosionDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023115921762516209, guid: 4fc87c0e4f3daf04c8d759b0df21d976, type: 3}
+      propertyPath: m_ExplosionEffectPrefab
+      value: 
+      objectReference: {fileID: 3744496726241248683, guid: 3002f7ddbe17f254bb66149853ef3395, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -556,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a0d0457e4e96c40a683bd3d572e605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos: {x: 0, y: 8, z: -5}
+  m_Pos: {x: 0, y: 8, z: -6}
 --- !u!1 &2041303059
 GameObject:
   m_ObjectHideFlags: 0

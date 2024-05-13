@@ -32,25 +32,33 @@ using static System.Net.WebRequestMethods;
 public class Mine : MonoBehaviour
 {
     //＞変数宣言
-    private double dTimeToExplosion = 0.0d;                    // 爆発までの時間[s]
-    [SerializeField] private double dExplosionDelay = 2.0d;    // 爆発までの待機時間[s]
-    public double dMineCoolTime = 0.0d;                        // 地雷クールタイム[s]
-    [SerializeField] public double dMineInterval = 5.0d;       // 地雷再利用までの時間[s]
-    private bool bCanExplode = true;                           // 地雷利用 true:可能 false:不可
-    public GameObject ExplosionEffectPrefab;                   // 爆発時生成されるプレハブ
-    private Text CoolDownText;                                 // クールダウン表示テキスト
-    [SerializeField] private int nFontSize=24;                 // クールダウンのフォントサイズ変更用
+    private double m_dTimeToExplosion = 0.0d;                    // 爆発までの時間[s]
+    [SerializeField] private double m_dExplosionDelay = 2.0d;    // 爆発までの待機時間[s]
+    private double m_dMineCoolTime = 0.0d;                       // 地雷クールタイム[s]
+    [SerializeField] private double m_dMineInterval = 5.0d;      // 地雷再利用までの時間[s]
+    private bool m_bCanExplode = true;                           // 地雷利用 true:可能 false:不可
+    [SerializeField] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    private Text m_CoolDownText;                                 // クールダウン表示テキスト
+    [SerializeField] private int m_nFontSize=24;                 // クールダウンのフォントサイズ変更用
+
     /*フォントを変えるときは外してください
-    [SerializeField] private Font customFont;                  // フォント変更用
+    [SerializeField] private Font m_CustomFont;                  // フォント変更用
     */
+
+    /*＞初期化関数
+  引数１：なし
+  ｘ
+  戻値：なし
+  ｘ
+  概要：インスタンス生成時に行う処理
+  */
     void Start()
     {
-        CoolDownText = GetComponentInChildren<Text>();
-        CoolDownText.text = dMineCoolTime.ToString();   //textの初期化
-        CoolDownText.fontSize = nFontSize;              // フォントサイズを変更
-        CoolDownText.alignment = TextAnchor.MiddleCenter;
-        CoolDownText.gameObject.SetActive(false);       //使用前なので非表示
-
+        m_CoolDownText = GetComponentInChildren<Text>();
+        m_CoolDownText.text = m_dMineCoolTime.ToString();   // textの初期化
+        m_CoolDownText.fontSize = m_nFontSize;              // フォントサイズを変更
+        m_CoolDownText.alignment = TextAnchor.MiddleCenter; // textの表示位置を真ん中に
+        m_CoolDownText.gameObject.SetActive(false);         // 使用前なので非表示
     }
 
     /*＞地雷当たり判定関数
@@ -62,10 +70,10 @@ public class Mine : MonoBehaviour
     */
     private void OnCollisionStay(Collision collision)     //地雷に何かが当たってきたとき
     {
-        if (collision.gameObject.CompareTag("Enemy") && bCanExplode)  //Enemyタグがついている＆地雷使用可能
+        if (collision.gameObject.CompareTag("Enemy") && m_bCanExplode)  // Enemyタグがついている＆地雷使用可能
         {
-            bCanExplode = false;                    //同時に複数個同じ場所に生成されるのを防止
-            dTimeToExplosion = dExplosionDelay;     //爆発までの時間計測
+            m_bCanExplode = false;                      // 同時に複数個同じ場所に生成されるのを防止
+            m_dTimeToExplosion = m_dExplosionDelay;     // 爆発までの時間計測
         }
     }
 
@@ -79,26 +87,26 @@ public class Mine : MonoBehaviour
     private void FixedUpdate()
     {
         //＞爆発カウントダウン
-        if (dTimeToExplosion > 0.0d)   //待機中
+        if (m_dTimeToExplosion > 0.0d)   //待機中
         {
-            dTimeToExplosion -= Time.fixedDeltaTime;
-            if (dTimeToExplosion <= 0.0d)   //爆発までの待機時間が終わったら
+            m_dTimeToExplosion -= Time.fixedDeltaTime;
+            if (m_dTimeToExplosion <= 0.0d)   //爆発までの待機時間が終わったら
             {   //爆発エフェクト生成
-                Instantiate(ExplosionEffectPrefab, transform.position, Quaternion.identity);
-                dMineCoolTime = dMineInterval;  //地雷の再利用時間計測
-                CoolDownText.gameObject.SetActive(true);
+                Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
+                m_dMineCoolTime = m_dMineInterval;  //地雷の再利用時間計測
+                m_CoolDownText.gameObject.SetActive(true);
             }
         }
-        //＞地雷の再利用カウントダウン
-        if (dMineCoolTime > 0.0d)   //クールダウン中
-        {
 
-            dMineCoolTime -= Time.fixedDeltaTime;
-            CoolDownText.text = dMineCoolTime.ToString("F1");   //小数点以下一桁までクールダウン表示
-            if (dMineCoolTime < 0.0d) 
+        //＞地雷の再利用カウントダウン
+        if (m_dMineCoolTime > 0.0d)   //クールダウン中
+        {
+            m_dMineCoolTime -= Time.fixedDeltaTime;
+            m_CoolDownText.text = m_dMineCoolTime.ToString("F1");   //小数点以下一桁までクールダウン表示
+            if (m_dMineCoolTime < 0.0d) 
             { 
-                bCanExplode = true;
-                CoolDownText.gameObject.SetActive(false);
+                m_bCanExplode = true;
+                m_CoolDownText.gameObject.SetActive(false);
             }  //地雷利用可能に
         }
     }

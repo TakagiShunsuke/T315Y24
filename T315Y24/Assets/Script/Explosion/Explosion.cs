@@ -27,9 +27,9 @@ using UnityEngine.UIElements;
 public class Explosion : MonoBehaviour
 {
     //＞変数宣言
-    private float ObjectRadius;      //オブジェクトの半径
-    private Vector3 InitialObjectPos; // オブジェクトの初期位置
-    [SerializeField] private double LowerSpeed = 0.1d;   //オブジェクトが下に消えていく速度
+    private float m_ObjectRadius;      //オブジェクトの半径
+    private Vector3 m_InitialObjectPos; // オブジェクトの初期位置
+    [SerializeField] private double m_LowerSpeed = 0.1d;   //オブジェクトが下に消えていく速度
 
     /*＞初期化関数
   引数１：なし
@@ -40,18 +40,18 @@ public class Explosion : MonoBehaviour
   */
     void Start()
     {
-        ObjectRadius = transform.localScale.x / 2.0f;   // オブジェクトの半径を取得
-        InitialObjectPos = transform.position;          // 初期位置を設定
+        m_ObjectRadius = transform.localScale.x / 2.0f;   // オブジェクトの半径を取得
+        m_InitialObjectPos = transform.position;          // 初期位置を設定
 
         // 範囲内の敵を検出
-        Collider[] colliders = Physics.OverlapSphere(transform.position, ObjectRadius);
-        foreach (Collider collider in colliders)    //Collider[]の中に入っているだけループする
+        Collider[] Colliders = Physics.OverlapSphere(transform.position, m_ObjectRadius);
+        foreach (Collider Collider in Colliders)    //Collider[]の中に入っているだけループする
         {
-            if (collider.CompareTag("Enemy"))   //当たり判定の中にあるものに敵タグがついてるか確認
+            if (Collider.CompareTag("Enemy"))   //当たり判定の中にあるものに敵タグがついてるか確認
             {
                 //IFeatureMineがついるか確認
-                if (collider.gameObject.TryGetComponent<IFeatureMine>(out var destroy))
-                    destroy.TakeDestroy();  //敵削除
+                if (Collider.gameObject.TryGetComponent<IFeatureMine>(out var Destroy))
+                    Destroy.TakeDestroy();  //敵削除
             }
         }
     }
@@ -87,14 +87,13 @@ public class Explosion : MonoBehaviour
     ｘ
     概要：更新処理
     */
-    // Update is called once per frame
     void Update()
     {
         // オブジェクトを下に移動させる
-        transform.position -= new Vector3(0f, (float)LowerSpeed * Time.deltaTime, 0f);
+        transform.position -= new Vector3(0.0f, (float)m_LowerSpeed * Time.deltaTime, 0.0f);
 
         // 半径分だけ下に移動したかどうかを判断し、破壊する
-        if (transform.position.y <= InitialObjectPos.y - ObjectRadius)
+        if (transform.position.y <= m_InitialObjectPos.y - m_ObjectRadius)
         {
             Destroy(gameObject);
         }

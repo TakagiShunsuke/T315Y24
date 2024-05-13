@@ -14,7 +14,6 @@ D
 12:変数名変更:yamamoto
 =====*/
 
-
 //＞名前空間宣言
 using System.Collections;
 using System.Collections.Generic;
@@ -24,8 +23,8 @@ using UnityEngine;
 public class camera : MonoBehaviour
 {
     //＞変数宣言
-    [SerializeField] private Vector3 pos;   //カメラの位置
-    GameObject Player;                      //プレイヤーオブジェクト用
+    [SerializeField] private Vector3 m_Pos;   //カメラの位置
+    private GameObject m_Player;                      //プレイヤーオブジェクト用
 
     /*＞初期化関数
    引数１：なし
@@ -36,7 +35,7 @@ public class camera : MonoBehaviour
    */
     void Start()
     {
-        Player = GameObject.Find("Player");
+        m_Player = GameObject.Find("Player");
     }
 
     /*＞更新関数
@@ -48,8 +47,8 @@ public class camera : MonoBehaviour
    */
     void Update()
     {
-        var playerPosition = Player.gameObject.transform.position;  //プレイヤーの座標取得
+        var PlayerPosition = m_Player.gameObject.transform.position;  //プレイヤーの座標取得
 
-        transform.position = playerPosition + pos;                  //カメラの座標を計算
+        transform.position = PlayerPosition + m_Pos;                  //カメラの座標を計算
     }
 }
