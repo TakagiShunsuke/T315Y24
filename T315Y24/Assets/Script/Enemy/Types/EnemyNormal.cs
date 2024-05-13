@@ -31,7 +31,7 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;  //Unity
 
 //＞クラス定義
-public class CEnemyNormal : CEnemy
+public class CEnemyNormal : CEnemy, IFeatureMine
 {
     //＞変数宣言
     [SerializeField] private double m_dAtkInterval = 3.0d;  //攻撃間隔[s]
@@ -141,5 +141,16 @@ public class CEnemyNormal : CEnemy
                 }
             }
         }
+    }
+    /*＞敵消去関数
+   引数：なし
+   ｘ
+   戻値：なし
+   ｘ
+   概要：敵を消去する処理
+   */
+    public void TakeDestroy()
+    {
+        Destroy(gameObject);    //このオブジェクトを消去する
     }
 }
