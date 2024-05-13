@@ -1,159 +1,157 @@
 /*=====
-<EnemyNormal.cs> //ƒXƒNƒŠƒvƒg–¼
-„¤ì¬ÒFtakagi
+<EnemyNormal.cs> //ã‚¹ã‚¯ãƒªãƒ—ãƒˆå
+â””ä½œæˆè€…ï¼štakagi
 
-„“à—e
-“G(•’Ê)‚Ì‹““®‚ğ“Š‡EŠÇ—
+ï¼å†…å®¹
+æ•µ(æ™®é€š)ã®æŒ™å‹•ã‚’çµ±æ‹¬ãƒ»ç®¡ç†
 
-„’ˆÓ–€
-“¯ˆê‚ÌƒIƒuƒWƒFƒNƒg‚ÉˆÈ‰º‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ª‚È‚¢‚Æ“G‚Æ‚µ‚Ä\•ª‚È‹@”\‚ğ‚µ‚Ü‚¹‚ñB
-‚P.IFeatureBase‚ğŒp³‚µ‚½A“Á’¥‚ğ•\‚·ƒRƒ“ƒ|[ƒlƒ“ƒg
-‚Q.UŒ‚”ÍˆÍ‚ğ•\‚·îŒ`‚Ì—Ìˆæ”»’èAreaSector
-‚R.•¨—‰‰Z‚ğs‚¤Rigidbody
+ï¼æ³¨æ„äº‹é …
+åŒä¸€ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ä»¥ä¸‹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒãªã„ã¨æ•µã¨ã—ã¦ååˆ†ãªæ©Ÿèƒ½ã‚’ã—ã¾ã›ã‚“ã€‚
+ï¼‘.IFeatureBaseã‚’ç¶™æ‰¿ã—ãŸã€ç‰¹å¾´ã‚’è¡¨ã™ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+ï¼’.æ”»æ’ƒç¯„å›²ã‚’è¡¨ã™æ‰‡å½¢ã®é ˜åŸŸåˆ¤å®šAreaSector
+ï¼“.ç‰©ç†æ¼”ç®—ã‚’è¡Œã†Rigidbody
 
-‚Ü‚½AˆÈ‰º‚ÌƒIƒuƒWƒFƒNƒg‚ª‘¶İ‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
-‚P.m_sPlayerName‚Å’è‹`‚³‚ê‚½–¼‘O‚Æˆê’v‚·‚éƒIƒuƒWƒFƒNƒg
-
-‚³‚ç‚ÉAˆÈ‰º‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ª‚ ‚éê‡‚Í‚»‚Ì‰Šú’l‚ğƒVƒŠƒAƒ‰ƒCƒY‚³‚ê‚ÄÀ‘•‚³‚ê‚é’l‚ğ‚à–³‹‚µ‚Ä‰Šú‰»‚µ‚Ü‚·B
-‚P.IMove‚ğŒp³‚µ‚½AˆÚ“®‚ğs‚¤ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì•Ï”Speed
+ã¾ãŸã€ä»¥ä¸‹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒã‚ã‚‹å ´åˆã¯ãã®åˆæœŸå€¤ã‚’ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã•ã‚Œã¦å®Ÿè£…ã•ã‚Œã‚‹å€¤ã‚’ã‚‚ç„¡è¦–ã—ã¦åˆæœŸåŒ–ã—ã¾ã™ã€‚
+ï¼‘.IMoveã‚’ç¶™æ‰¿ã—ãŸã€ç§»å‹•ã‚’è¡Œã†ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å¤‰æ•°Speed
 
 
-„XV—š—ğ
+ï¼æ›´æ–°å±¥æ­´
 __Y24
 _M05
 D
-03:ƒvƒƒOƒ‰ƒ€ì¬:takagi
-04:‘±‚«:takagi
-11:Á‹ŠÖ”’Ç‰Á:yamamoto
+03:ãƒ—ãƒ­ã‚°ãƒ©ãƒ ä½œæˆ:takagi
+04:ç¶šã:takagi
+11:æ¶ˆå»é–¢æ•°è¿½åŠ :yamamoto
+11:ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å‰Šé™¤ã€AreaSectorå¤‰æ›´ã¸ã®å¯¾å¿œ:takagi
 =====*/
 
-//„–¼‘O‹óŠÔéŒ¾
+//ï¼åå‰ç©ºé–“å®£è¨€
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;  //Unity
 
-//„ƒNƒ‰ƒX’è‹`
+//ï¼ã‚¯ãƒ©ã‚¹å®šç¾©
 public class CEnemyNormal : CEnemy, IFeatureMine
 {
-    //„•Ï”éŒ¾
-    [SerializeField] private double m_dAtkInterval = 3.0d;  //UŒ‚ŠÔŠu[s]
-    private double m_dAtkCoolTime = 0.0d;   //UŒ‚ƒN[ƒ‹ƒ^ƒCƒ€[s]
-    private IFeature m_Feature = null;  //ƒXƒe[ƒ^ƒX“Á’¥
-    private CAreaSector m_CAreaSector = null;   //îŒ`‚ÌUŒ‚”ÍˆÍ
-    private GameObject m_Player = null; //ƒvƒŒƒCƒ„[
-    [SerializeField] private string m_sPlayerName = "Player";   //ƒvƒŒƒCƒ„[‚ÌƒIƒuƒWƒFƒNƒg–¼
+    //ï¼å¤‰æ•°å®£è¨€
+    [SerializeField] private double m_dAtkInterval = 3.0d;  //æ”»æ’ƒé–“éš”[s]
+    private double m_dAtkCoolTime = 0.0d;   //æ”»æ’ƒã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ [s]
+    private IFeature m_Feature = null;  //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ç‰¹å¾´
+    private CAreaSector m_CAreaSector = null;   //æ‰‡å½¢ã®æ”»æ’ƒç¯„å›²
 
-    /*„‰Šú‰»ŠÖ”
-    ˆø”‚PF‚È‚µ
-    ‚˜
-    –ß’lF‚È‚µ
-    ‚˜
-    ŠT—vFƒCƒ“ƒXƒ^ƒ“ƒX¶¬‚És‚¤ˆ—
+    /*ï¼åˆæœŸåŒ–é–¢æ•°
+    å¼•æ•°ï¼‘ï¼šãªã—
+    ï½˜
+    æˆ»å€¤ï¼šãªã—
+    ï½˜
+    æ¦‚è¦ï¼šã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç”Ÿæˆæ™‚ã«è¡Œã†å‡¦ç†
     */
     public void Start()
     {
-        //„eŠÖ”ŒÄ‚Ño‚µ
-        transform.GetComponentInParent<CEnemy>().Start(); //e‚Ì‰Šú‰»ŠÖ”ŒÄ‚Ño‚µ
+        //ï¼è¦ªé–¢æ•°å‘¼ã³å‡ºã—
+        transform.GetComponentInParent<CEnemy>().Start(); //è¦ªã®åˆæœŸåŒ–é–¢æ•°å‘¼ã³å‡ºã—
 
-        //„‰Šú‰»
-        m_Feature = GetComponent<IFeature>();   //©g‚Ì“Á’¥æ“¾
-        if (m_Feature != null)   //æ“¾‚É¸”s‚µ‚½
+        //ï¼åˆæœŸåŒ–
+        m_Feature = GetComponent<IFeature>();   //è‡ªèº«ã®ç‰¹å¾´å–å¾—
+        if (m_Feature != null)   //å–å¾—ã«å¤±æ•—ã—ãŸæ™‚
         {
-            var Move = GetComponent<IMove>();   //ˆÚ“®ƒRƒ“ƒ|[ƒlƒ“ƒgæ“¾
-            if (Move != null)   //æ“¾¬Œ÷
+            var Move = GetComponent<IMove>();   //ç§»å‹•ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå–å¾—
+            if (Move != null)   //å–å¾—æˆåŠŸæ™‚
             {
-                Move.Speed = m_Feature.Move;    //‘¬“x‚ğ‰Šú‰»
+                Move.Speed = m_Feature.Move;    //é€Ÿåº¦ã‚’åˆæœŸåŒ–
             }
         }
-#if UNITY_EDITOR    //ƒGƒfƒBƒ^g—p’†
+#if UNITY_EDITOR    //ã‚¨ãƒ‡ã‚£ã‚¿ä½¿ç”¨ä¸­
         else
         {
-            //„ƒGƒ‰[o—Í
-            UnityEngine.Debug.LogWarning("“Á’¥‚ªİ’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");   //ŒxƒƒOo—Í
+            //ï¼ã‚¨ãƒ©ãƒ¼å‡ºåŠ›
+            UnityEngine.Debug.LogWarning("ç‰¹å¾´ãŒè¨­å®šã•ã‚Œã¦ã„ã¾ã›ã‚“");   //è­¦å‘Šãƒ­ã‚°å‡ºåŠ›
         }
 #endif
-        m_CAreaSector = GetComponent<CAreaSector>();  //“–‚½‚è”»’èæ“¾
-#if UNITY_EDITOR    //ƒGƒfƒBƒ^g—p’†
-        if (m_CAreaSector == null)   //æ“¾‚É¸”s‚µ‚½
+        m_CAreaSector = GetComponent<CAreaSector>();  //å½“ãŸã‚Šåˆ¤å®šå–å¾—
+#if UNITY_EDITOR    //ã‚¨ãƒ‡ã‚£ã‚¿ä½¿ç”¨ä¸­
+        if (m_CAreaSector == null)   //å–å¾—ã«å¤±æ•—ã—ãŸæ™‚
         {
-            //„ƒGƒ‰[o—Í
-            UnityEngine.Debug.LogWarning("UŒ‚”ÍˆÍ‚ªİ’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");    //ŒxƒƒOo—Í
-        }
-#endif
-        m_Player = GameObject.Find(m_sPlayerName);   //ƒvƒŒƒCƒ„[‚ÌƒCƒ“ƒXƒ^ƒ“ƒXŠi”[
-#if UNITY_EDITOR    //ƒGƒfƒBƒ^g—p’†
-        if (m_Player == null)    //æ“¾‚É¸”s‚µ‚½
-        {
-            //„ƒGƒ‰[o—Í
-            UnityEngine.Debug.LogWarning("ƒvƒŒƒCƒ„[‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");  //ŒxƒƒOo—Í
+            //ï¼ã‚¨ãƒ©ãƒ¼å‡ºåŠ›
+            UnityEngine.Debug.LogWarning("æ”»æ’ƒç¯„å›²ãŒè¨­å®šã•ã‚Œã¦ã„ã¾ã›ã‚“");    //è­¦å‘Šãƒ­ã‚°å‡ºåŠ›
         }
 #endif
     }
 
-    /*„•¨—XVŠÖ”
-    ˆø”F‚È‚µ
-    ‚˜
-    –ß’lF‚È‚µ
-    ‚˜
-    ŠT—vFˆê’èŠÔ‚²‚Æ‚És‚¤XVˆ—
+    /*ï¼ç‰©ç†æ›´æ–°é–¢æ•°
+    å¼•æ•°ï¼šãªã—
+    ï½˜
+    æˆ»å€¤ï¼šãªã—
+    ï½˜
+    æ¦‚è¦ï¼šä¸€å®šæ™‚é–“ã”ã¨ã«è¡Œã†æ›´æ–°å‡¦ç†
     */
     private void FixedUpdate()
     {
-        //„ƒJƒEƒ“ƒgƒ_ƒEƒ“
-        if(m_dAtkCoolTime > 0.0d)   //ƒN[ƒ‹ƒ_ƒEƒ“’†
+        //ï¼ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+        if(m_dAtkCoolTime > 0.0d)   //ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ä¸­
         {
-            m_dAtkCoolTime -= Time.fixedDeltaTime;
+            m_dAtkCoolTime -= Time.fixedDeltaTime;  //ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³æ¸›å°‘
         }
 
-        //„UŒ‚
-        Attack();   //UŒ‚‚ğs‚¤
+        //ï¼æ”»æ’ƒ
+        Attack();   //æ”»æ’ƒã‚’è¡Œã†
     }
 
-    /*„UŒ‚ŠÖ”
-    ˆø”F‚È‚µ
-    ‚˜
-    –ß’lF‚È‚µ
-    ‚˜
-    ŠT—vFUŒ‚”ÍˆÍ‚É‚¢‚éƒvƒŒƒCƒ„[‚ğUŒ‚‚·‚éˆ—
+    /*ï¼æ”»æ’ƒé–¢æ•°
+    å¼•æ•°ï¼šãªã—
+    ï½˜
+    æˆ»å€¤ï¼šãªã—
+    ï½˜
+    æ¦‚è¦ï¼šæ”»æ’ƒç¯„å›²ã«ã„ã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’æ”»æ’ƒã™ã‚‹å‡¦ç†
     */
     private void Attack()
     {
-        //„ŒŸ¸
-        if (m_Feature == null || m_CAreaSector == null || m_Player == null)   //•K—v—vŒ‚Ì•s‘«
+        //ï¼æ¤œæŸ»
+        if (m_Feature == null || m_CAreaSector == null)   //å¿…è¦è¦ä»¶ã®ä¸è¶³æ™‚
         {
-#if UNITY_EDITOR    //ƒGƒfƒBƒ^g—p’†
-            //„ƒGƒ‰[o—Í
-            UnityEngine.Debug.LogWarning("•K—v‚È—v‘f‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·");  //ŒxƒƒOo—Í
+#if UNITY_EDITOR    //ã‚¨ãƒ‡ã‚£ã‚¿ä½¿ç”¨ä¸­
+            //ï¼ã‚¨ãƒ©ãƒ¼å‡ºåŠ›
+            UnityEngine.Debug.LogWarning("å¿…è¦ãªè¦ç´ ãŒä¸è¶³ã—ã¦ã„ã¾ã™");  //è­¦å‘Šãƒ­ã‚°å‡ºåŠ›
 #endif
 
-            //„’†’f
-            return; //XVˆ—’†’f
+            //ï¼ä¸­æ–­
+            return; //æ›´æ–°å‡¦ç†ä¸­æ–­
         }
 
-        //„“–‚½‚è”»’è
-        if (m_dAtkCoolTime <= 0.0d && m_CAreaSector.SignalCollision)  //UŒ‚ƒN[ƒ‹ƒ^ƒCƒ€I—¹AƒvƒŒƒCƒ„[‚Ö‚ÌUŒ‚”»’è
+        //ï¼å¤‰æ•°å®£è¨€
+        List<GameObject> Hits = m_CAreaSector.SignalCollision;
+
+        //ï¼æ”»æ’ƒåˆ¤å®š
+        if (Hits != null && Hits.Count > 0 && m_dAtkCoolTime <= 0.0d)   //æ¤œçŸ¥å¯¾è±¡ãŒå­˜åœ¨ã™ã‚‹ã€æ”»æ’ƒã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ çµ‚äº†
         {
-            //„‰Šú‰»
-            m_dAtkCoolTime = m_dAtkInterval;    //UŒ‚ŠÔŠu‰Šú‰»
+            //ï¼ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³
+            m_dAtkCoolTime = m_dAtkInterval;    //æ”»æ’ƒé–“éš”åˆæœŸåŒ–
 
-            //ƒvƒŒƒCƒ„[‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
-            //m_Player.Attackable.Damage(m_Feature.Atk);
+            //ï¼ãƒ€ãƒ¡ãƒ¼ã‚¸
+            for (int nIdx = 0; nIdx < Hits.Count; nIdx++)   //æ”»æ’ƒç¯„å›²å…¨ã¦ã«ãƒ€ãƒ¡ãƒ¼ã‚¸
+            {
+                //ï¼å¤‰æ•°å®£è¨€
+                IDamageable Damageable = Hits[nIdx].GetComponent<IDamageable>();    //ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã¦è‰¯ã„ã‹
 
-#if UNITY_EDITOR    //ƒGƒfƒBƒ^g—p’†
-            //„ƒƒOo—Í
-            UnityEngine.Debug.Log("‚±‚¤‚°‚«HIT!");   //UŒ‚”»’è‚Ì‘ã‚í‚è
-#endif
+                //ï¼å½“ãŸã‚Šåˆ¤å®š
+                if (Damageable != null)  //ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‰ã‚Œã‚‹ç›¸æ‰‹
+                {
+                    //ï¼ãƒ€ãƒ¡ãƒ¼ã‚¸ä»˜ä¸
+                    Damageable.Damage(m_Feature.Atk);   //å¯¾è±¡ã«ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹
+                }
+            }
         }
     }
-    /*„“GÁ‹ŠÖ”
-    ˆø”F‚È‚µ
-    ‚˜
-    –ß’lF‚È‚µ
-    ‚˜
-    ŠT—vF“G‚ğÁ‹‚·‚éˆ—
+    /*ï¼æ•µæ¶ˆå»é–¢æ•°
+    å¼•æ•°ï¼šãªã—
+    ï½˜
+    æˆ»å€¤ï¼šãªã—
+    ï½˜
+    æ¦‚è¦ï¼šæ•µã‚’æ¶ˆå»ã™ã‚‹å‡¦ç†
     */
     public void TakeDestroy()
     {
-        Destroy(gameObject);    //‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğÁ‹‚·‚é
+        Destroy(gameObject);    //ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¶ˆå»ã™ã‚‹
     }
 }
