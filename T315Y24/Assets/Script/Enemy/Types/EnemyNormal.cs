@@ -39,6 +39,10 @@ public class CEnemyNormal : CEnemy, IFeatureMine
     private IFeature m_Feature = null;  //ステータス特徴
     private CAreaSector m_CAreaSector = null;   //扇形の攻撃範囲
 
+    [SerializeField] GameObject m_EffectCube;       //エフェクトキューブプレハブ
+    [SerializeField] int m_nEffectNum;              //エフェクトキューブ生成数
+    [SerializeField]float m_fPosRandRange = 0.01f;  //エフェクトキューブを生成するポジションをランダムに生成するための範囲
+
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -151,6 +155,18 @@ public class CEnemyNormal : CEnemy, IFeatureMine
    */
     public void TakeDestroy()
     {
+        float x, y, z = 0.0f;
+
+        // エフェクトキューブ生成
+        for (int i = 0; i < m_nEffectNum; i++)
+        {
+            x = Random.Range(-m_fPosRandRange, m_fPosRandRange);
+            y = Random.Range(-m_fPosRandRange, m_fPosRandRange);
+            z = Random.Range(-m_fPosRandRange, m_fPosRandRange);
+
+            Instantiate(m_EffectCube,new Vector3(transform.position.x + x, transform.position.y + y, transform.position.z + z), Quaternion.identity);
+        }
+
         Destroy(gameObject);    //このオブジェクトを消去する
     }
 }
