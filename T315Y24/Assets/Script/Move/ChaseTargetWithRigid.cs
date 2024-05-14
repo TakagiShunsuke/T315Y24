@@ -21,7 +21,6 @@ D
 using System;
 using System.Collections;   //list
 using System.Collections.Generic;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;  //Unity
 
 //„ƒNƒ‰ƒX’è‹`

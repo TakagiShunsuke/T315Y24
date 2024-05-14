@@ -13,6 +13,7 @@ __Y24   //'24年
 _M05    //05月
 D       //日
 10:プログラム作成:nieda
+14:ビルドバグの元を除去:takagi
 =====*/
 
 //＞名前空間宣言
@@ -80,7 +81,8 @@ public class CChangeScene : MonoBehaviour
 
 #else               //実行ファイルからの実行時
 
-        Application.Quit();
+        //TODO:代替処理
+        //Application.Quit();
 
 #endif
     }
