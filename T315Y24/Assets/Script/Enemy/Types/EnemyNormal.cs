@@ -43,6 +43,8 @@ public class CEnemyNormal : CEnemy, IFeatureMine
     [SerializeField] int m_nEffectNum;              //エフェクトキューブ生成数
     [SerializeField]float m_fPosRandRange = 0.01f;  //エフェクトキューブを生成するポジションをランダムに生成するための範囲
 
+   
+
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -80,6 +82,7 @@ public class CEnemyNormal : CEnemy, IFeatureMine
             UnityEngine.Debug.LogWarning("攻撃範囲が設定されていません");    //警告ログ出力
         }
 #endif
+       
     }
 
     /*＞物理更新関数
@@ -166,7 +169,13 @@ public class CEnemyNormal : CEnemy, IFeatureMine
 
             Instantiate(m_EffectCube,new Vector3(transform.position.x + x, transform.position.y + y, transform.position.z + z), Quaternion.identity);
         }
-
+        counter();
         Destroy(gameObject);    //このオブジェクトを消去する
+        GameObject Text;
+        EnemyDeathCounter EnemyDeathCounter;
+        Text = GameObject.Find("test");
+        EnemyDeathCounter = Text.GetComponent<EnemyDeathCounter>();
+
+        EnemyDeathCounter.DisplayEnemyDeathCounter();
     }
 }
