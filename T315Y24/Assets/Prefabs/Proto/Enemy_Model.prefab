@@ -69,6 +69,10 @@ PrefabInstance:
       value: Enemy_Model
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8a9fca580a7cc5b43814e48d4b6e6a92, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8a9fca580a7cc5b43814e48d4b6e6a92, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -125,6 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dAtkInterval: 3
+  m_EffectCube: {fileID: 5494002748605305887, guid: fd71ecc1c943cc04483bcb596c553a9c, type: 3}
+  m_nEffectNum: 10
+  m_fPosRandRange: 0.01
 --- !u!54 &8432228620360991324
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -27,8 +27,15 @@ public class PlayerScript : MonoBehaviour, IDamageable
 {
     //＞変数宣言
     Rigidbody m_Rb;      // Rigidbodyを追加
-    [SerializeField] private double m_dHP = 10.0d;   //体力
     [SerializeField] private float m_fSpeed; //プレイヤーの移動速度を設定
+    [SerializeField] private double m_dHp;   // HP
+
+    //＞プロパティ定義
+    public double HP
+    {
+        get { return m_dHp; }
+        private set { m_dHp = value; }
+    }
 
     /*＞初期処理関数
     引数：なし
@@ -91,7 +98,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public void Damage(double dDamageVal)
     {
         //＞ダメージ計算
-        m_dHP -= dDamageVal;    //HP減少
+        HP -= dDamageVal;    //HP減少
     }
 }
 
