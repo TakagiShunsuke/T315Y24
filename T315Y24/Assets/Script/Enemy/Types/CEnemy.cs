@@ -20,14 +20,20 @@ D
 //＞名前空間宣言
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;  //Unity
+using Unity.Loading;
+using UnityEditor.Build.Content;
+using UnityEditor.SearchService;
+using UnityEngine;
+using UnityEngine.SceneManagement;  //Unity
 
 //＞クラス定義
 public abstract class CEnemy : MonoBehaviour
 {
     //＞プロパティ定義
     static public uint ValInstance { get; private set; } = 0;   //インスタンス数
-
+    static public int m_nDeadEnemyCount=0;
+   
+    
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -39,8 +45,19 @@ public abstract class CEnemy : MonoBehaviour
     {
         //＞カウント
         ValInstance++;  //生成数増加
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    //関数の定義
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    {
+        m_nDeadEnemyCount = 0;
     }
 
+    public void counter()
+    {
+        m_nDeadEnemyCount++;
+
+    }
     /*＞終了関数
     引数：なし
     ｘ
