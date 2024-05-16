@@ -23,12 +23,38 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 //＞クラス定義
-public class PlayerScript : MonoBehaviour, IDamageable
+public class CPlayerScript : MonoBehaviour, IDamageable
 {
     //＞変数宣言
     Rigidbody m_Rb;      // Rigidbodyを追加
     [SerializeField] private float m_fSpeed; //プレイヤーの移動速度を設定
     [SerializeField] private double m_dHp;   // HP
+
+    //＞変数宣言
+    [SerializeField] private double m_dInvicibleTime = 2.0d;  //無敵時間[s] :初期値可変のために非定数化
+    [SerializeField] private uint m_unFlNu = 5;
+    //private bool m_bInvicibleFlag;   //無敵状態フラグ(trueで無敵)
+    private double m_dCntDwnInvicibleTime = 0.0d;  //無敵時間カウント用
+
+    //＞プロパティ定義
+    //public bool IsInvincible { get; private set; } = false; //無敵状態管理
+    public bool InvincibleState
+    {
+        get { return m_dCntDwnInvicibleTime > 0.0f; }   //フラグの代わりに時間で判断する
+        set
+        {
+            //＞状態分岐
+            if (value == true)  //無敵状態にする
+            {
+                m_dCntDwnInvicibleTime = m_dInvicibleTime;  //無敵時間のカウントをリセットする
+            }
+            else
+            {
+                m_dCntDwnInvicibleTime = 0.0f;  //無敵時間を無くす
+            }
+        }   //セッタで特殊な処理
+    } //無敵状態管理
+
 
     //＞プロパティ定義
     public double HP
@@ -84,8 +110,32 @@ public class PlayerScript : MonoBehaviour, IDamageable
             // 何もキーが押されていない場合は停止する
             m_Rb.velocity = Vector3.zero;
         }
+        
+        //＞検査
+        if (m_dCntDwnInvicibleTime > 0.0d)   //無敵状態の時
+        {
+            //＞カウントダウン
+            m_dCntDwnInvicibleTime -= Time.deltaTime;   //時間をカウント
+        }
+    }
 
-       
+    /*＞物理更新関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：一定時間ごとに行う更新処理
+    */
+    private void FixedUpdate()
+    {
+        if (InvincibleState)   //クールダウン中
+        {
+            var RadSp = 2.0d * Math.PI * (double)m_unFlNu * m_dCntDwnInvicibleTime / m_dInvicibleTime;
+            //＞
+            //var mr = GetComponent<MeshRenderer>();
+            //mr.material.color = new Color(mr.material.color.r, mr.material.color.g, mr.material.color.b, (float)(Math.Sin(RadSp) * 255.0d));
+        }
+
     }
 
     /*＞被ダメージ関数
@@ -99,6 +149,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     {
         //＞ダメージ計算
         HP -= dDamageVal;    //HP減少
+
+        InvincibleState = true;
     }
 }
-

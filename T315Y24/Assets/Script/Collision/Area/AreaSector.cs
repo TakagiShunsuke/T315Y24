@@ -25,17 +25,23 @@ D
 using System;
 using System.Collections;   //list
 using System.Collections.Generic;
-using UnityEngine;  //Unity
+using Unity.Mathematics;
+using UnityEngine;
+using UnityEngine.UIElements;  //Unity
 
 //＞クラス定義
 public class CAreaSector : MonoBehaviour
 {
+    [SerializeField] private Material mat;
+    private GameObject m_RangeView;
+
     //＞変数宣言
     [SerializeField] private double m_dRadius = 2.0d;   //半径
     [SerializeField] private double m_dSectorAngle = 90.0d; //扇形の角
     [SerializeField] private double m_dFrontAngle = 90.0d;  //xz平面上で正面方向の角度
     private List<GameObject> m_Targets = new List<GameObject>();    //検知対象
     [SerializeField] private List<string> m_sTargetNames;  //検知対象のオブジェクト名
+    [SerializeField] private double Resol = 1.0d;   //解像度
 
     //＞プロパティ定義
     //public bool SignalCollision { get; private set; } = false;  //当たり判定のシグナル
@@ -52,6 +58,37 @@ public class CAreaSector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //可視化物
+        m_RangeView = new GameObject();
+        m_RangeView.transform.position = transform.position;
+        m_RangeView.transform.parent = transform;
+        m_RangeView.AddComponent<MeshRenderer>();
+        m_RangeView.GetComponent<MeshRenderer>().material = mat;
+        var fil = m_RangeView.AddComponent<MeshFilter>();
+        List<Vector3> vtx = new List<Vector3>();
+        vtx.Add(Vector3.zero);  //頂点0番目は原点
+        Vector3 m_vDirction = new((float)Math.Cos(Mathf.Deg2Rad * (-transform.eulerAngles.y + m_dFrontAngle)), 0.0f,
+             (float)Math.Sin(Mathf.Deg2Rad * (-transform.eulerAngles.y + m_dFrontAngle)));   //正面のベクトル  ※y軸回転の方向は座標系と逆方向
+        m_vDirction = m_vDirction.normalized * (float)m_dRadius;   //大きさ初期化
+        List<int> tri = new List<int>();
+        int i = 1;  //1番目から
+        if(Resol > 0)
+        for (var ag = -m_dSectorAngle / 2.0d; ag < m_dSectorAngle / 2.0d; ag += Resol)
+        {
+            vtx.Add(Quaternion.Euler(0.0f, (float)(ag), 0.0f) * m_vDirction + Vector3.zero);   //頂点位置
+            tri.AddRange(new int[] { 0, i-1, i});
+            i++;
+        }
+        else
+        {
+            Debug.LogError("Endress loop");
+        }
+        Mesh mesh = new Mesh();
+        mesh.vertices = vtx.ToArray();
+        mesh.SetTriangles(tri, 0);
+        mesh.RecalculateNormals();
+        fil.sharedMesh = mesh;
+
         //＞初期化
         if (m_sTargetNames != null)  //ヌルチェック
         {
