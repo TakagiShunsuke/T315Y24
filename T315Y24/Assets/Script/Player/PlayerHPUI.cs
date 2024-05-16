@@ -115,7 +115,7 @@ public class CPlayerHPUI : MonoBehaviour
             k(i);
         }
 
-
+        if(Player.HP >= 0.0d)
         for (int i = (int)Player.HP; i < CanvasObj.transform.childCount; i++)
         {
             Destroy(CanvasObj.transform.GetChild(i).gameObject);
