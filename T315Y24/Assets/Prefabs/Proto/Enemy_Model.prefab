@@ -208,8 +208,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb8e539f31884b468631e9f97f46ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dRadius: 2
+  mat: {fileID: 2100000, guid: 45ed38e45fef5594597c7c727d74b09d, type: 2}
+  m_dRadius: 1
   m_dSectorAngle: 90
   m_dFrontAngle: 90
   m_sTargetNames:
   - Player_Model
+  Resol: 1
