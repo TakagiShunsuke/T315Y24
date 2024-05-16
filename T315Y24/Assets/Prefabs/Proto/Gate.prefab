@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f670c6c50d60cf4f84f605f6ab55bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dSpawnInterval: 3
+  m_dSpawnInterval: 0.2
   m_unSpawnMax: 100
 --- !u!114 &2239682667789438983
 MonoBehaviour:

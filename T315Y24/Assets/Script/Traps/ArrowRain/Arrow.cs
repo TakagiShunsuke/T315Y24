@@ -6,6 +6,7 @@ public class CArrow : MonoBehaviour
 {
     private Rigidbody rb;
     [SerializeField] private float lifetime = 5f; // –î‚Ìõ–½i•bj
+    [SerializeField] bool m_bPenetration;   //“G‚ğŠÑ’Ê‚·‚é‚©‚Ç‚¤‚©
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class CArrow : MonoBehaviour
             
         }
 
-        Destroy(gameObject);
+        if(m_bPenetration == false)
+             Destroy(gameObject);
     }
 }
