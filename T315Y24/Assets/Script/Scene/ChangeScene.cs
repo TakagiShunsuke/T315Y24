@@ -14,6 +14,7 @@ _M05    //05月
 D       //日
 10:プログラム作成:nieda
 14:ビルドバグの元を除去:takagi
+17:キー入力でシーン遷移実装:nieda
 =====*/
 
 //＞名前空間宣言
@@ -51,36 +52,20 @@ public class CChangeScene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //シーンを読み込む
+            // タイトル→ステージセレクト
             SceneManager.LoadScene("SelectScene");
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            //シーンを読み込む
+            // ステージセレクト→プロトステージ
             SceneManager.LoadScene("ProtoStage");
         }
         else if (Input.GetKeyDown(KeyCode.T))
         {
-            //シーンを読み込む
+            // リザルト、ゲームオーバー→タイトル
             SceneManager.LoadScene("TitleScene");
         }
     }
-
-    /*＞ロードシーン関数
-    引数１：string str：シーン名
-    ｘ
-    戻値：なし
-    ｘ
-    概要：シーンをロードする
-    */
-    //public void LoadScene(string str)
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        //シーンを読み込む
-    //        SceneManager.LoadScene(str);
-    //    }
-    //}
 
     /*＞ゲーム終了関数
     引数１：なし
