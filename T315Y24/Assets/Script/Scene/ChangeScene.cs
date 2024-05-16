@@ -49,7 +49,21 @@ public class CChangeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //シーンを読み込む
+            SceneManager.LoadScene("SelectScene");
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            //シーンを読み込む
+            SceneManager.LoadScene("ProtoStage");
+        }
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
+            //シーンを読み込む
+            SceneManager.LoadScene("TitleScene");
+        }
     }
 
     /*＞ロードシーン関数
@@ -59,11 +73,14 @@ public class CChangeScene : MonoBehaviour
     ｘ
     概要：シーンをロードする
     */
-    public void LoadScene(string str)
-    {
-        //シーンを読み込む
-        SceneManager.LoadScene(str);
-    }
+    //public void LoadScene(string str)
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        //シーンを読み込む
+    //        SceneManager.LoadScene(str);
+    //    }
+    //}
 
     /*＞ゲーム終了関数
     引数１：なし
