@@ -7,12 +7,12 @@ public class GameOver : MonoBehaviour
 {
     //＞変数宣言
     [SerializeField]GameObject Player;          // プレイヤーオブジェクト
-    PlayerScript PlayerCom;                     //プレイヤーのスクリプト取得用
+    CPlayerScript PlayerCom;                     //プレイヤーのスクリプト取得用
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerCom = Player.GetComponent<PlayerScript>();   // プレイヤースクリプトを取得
+        PlayerCom = Player.GetComponent<CPlayerScript>();   // プレイヤースクリプトを取得
     }
 
     // Update is called once per frame
