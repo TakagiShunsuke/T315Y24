@@ -171,6 +171,7 @@ public class CEnemyNormal : CEnemy, IFeatureMine
         }
         counter();
         Destroy(gameObject);    //このオブジェクトを消去する
+        gameObject.SetActive(false);
         GameObject Text;
         EnemyDeathCounter EnemyDeathCounter;
         Text = GameObject.Find("test");
