@@ -19,6 +19,7 @@ _M05
 D
 03:いろはにほへと:takagi
 04:いくつかの記法追加・誤った表記を修正:takagi
+14:インターフェースについて記述:takagi
 =====*/
 
 //＞名前空間宣言
@@ -30,6 +31,7 @@ using UnityEngine.UIElements;
 //＞名前空間定義
 namespace Space
 {
+    //＞クラス定義
     public static class CSpace
     {
         //＞定数定義
@@ -40,11 +42,21 @@ namespace Space
     }
 }
 
+//＞インターフェース定義
+public interface IInterface //インターフェースの頭文字にIをつける
+{
+    //＞プロパティ定義
+    public double Prop { get; set; }    //自動実装プロパティはハンガリアン記法を無視してよい
+
+    //＞プロトタイプ宣言
+    public void Signaled();
+}
+
 //＞クラス定義
 public class CCodingRule : MonoBehaviour    //クラス型の頭文字にCをつける
 {
     //＞列挙定義
-    public enum E_ENUM
+    public enum E_ENUM  //列挙は接頭字をE_とする
     {
         E_ENUM_A,
         E_ENUM_B,
@@ -59,12 +71,11 @@ public class CCodingRule : MonoBehaviour    //クラス型の頭文字にCをつける
     }
 
     //＞変数宣言
-    private int m_nInt; //通常の型はハンガリアン記法に従う
+    private int m_nInt; //通常の型はハンガリアン記法に従う[メンバ変数はm_と付ける]
     private static string m_szStr;  //メンバ変数∧静的変数なら融合してms_と記述する
     [SerializeField] private uint m_uInner;   //属性は記法に影響しない
 
     //＞プロパティ定義
-    public double Prop { get; set; }    //自動実装プロパティはハンガリアン記法を無視してよい
     public double PriProp { get; private set; } //readonlyな形式でも記法は無し
 
     /*＞初期化関数
@@ -74,7 +85,6 @@ public class CCodingRule : MonoBehaviour    //クラス型の頭文字にCをつける
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -100,6 +110,7 @@ public class CCodingRule : MonoBehaviour    //クラス型の頭文字にCをつける
     */
     public void Function()
     {
+        GameObject Object;  //接頭字が無い場合、頭文字を大文字にする 
     }
 
     /*＞例関数
