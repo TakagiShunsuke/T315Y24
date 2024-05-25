@@ -72,6 +72,9 @@ public class CPlayerHPUI : MonoBehaviour
         m_Canvas.AddComponent<CanvasScaler>();
         m_Canvas.AddComponent<GraphicRaycaster>();
         m_Canvas.name = "PlCanvas";
+        m_Canvas.additionalShaderChannels |= AdditionalCanvasShaderChannels.TexCoord1;
+        m_Canvas.additionalShaderChannels |= AdditionalCanvasShaderChannels.Normal;
+        m_Canvas.additionalShaderChannels |= AdditionalCanvasShaderChannels.Tangent;
 
         //ÉCÉÅÅ[ÉWçÏÇË
         //if (m_AssetRef != null)
