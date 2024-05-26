@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpawnAssetRef:
-  - m_AssetGUID: ace9faa8c09b43f4f9c1c77dbffdf004
+  - m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
