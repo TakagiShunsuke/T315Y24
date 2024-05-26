@@ -43,6 +43,7 @@ public class CEnemyNormal : CEnemy, IFeatureMine
     [SerializeField] int m_nEffectNum;              //エフェクトキューブ生成数
     [SerializeField]float m_fPosRandRange = 0.01f;  //エフェクトキューブを生成するポジションをランダムに生成するための範囲
 
+    Rigidbody m_Rigidbody;
    
 
     /*＞初期化関数
@@ -82,6 +83,8 @@ public class CEnemyNormal : CEnemy, IFeatureMine
             UnityEngine.Debug.LogWarning("攻撃範囲が設定されていません");    //警告ログ出力
         }
 #endif
+
+        m_Rigidbody = GetComponent<Rigidbody>();
        
     }
 
@@ -102,6 +105,8 @@ public class CEnemyNormal : CEnemy, IFeatureMine
 
         //＞攻撃
         Attack();   //攻撃を行う
+
+        m_Rigidbody.velocity = Vector3.zero;
     }
 
     /*＞攻撃関数
