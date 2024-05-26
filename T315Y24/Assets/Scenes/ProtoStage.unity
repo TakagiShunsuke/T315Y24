@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Pos: {x: 0, y: 15, z: -5}
-  m_PlayerName: Player_with_Mask
+  m_PlayerName: Player
 --- !u!81 &1371083806
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3116,7 +3116,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6340430661994576177, guid: 0c541e73995a0ae48aad06194433f401, type: 3}
       propertyPath: m_Name
-      value: Player_with_Mask
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6680646619909464971, guid: 0c541e73995a0ae48aad06194433f401, type: 3}
       propertyPath: m_LocalPosition.x
