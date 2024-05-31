@@ -180,7 +180,7 @@ public class CEnemyNormal : CEnemy, IFeatureMine
         gameObject.SetActive(false);
         GameObject Text;
         EnemyDeathCounter EnemyDeathCounter;
-        Text = GameObject.Find("test");
+        Text = GameObject.Find("DeathCounter");
         EnemyDeathCounter = Text.GetComponent<EnemyDeathCounter>();
 
         EnemyDeathCounter.DisplayEnemyDeathCounter();
