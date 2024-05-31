@@ -22,6 +22,8 @@ D
 03:プログラム作成:takagi
 04:続き:takagi
 11:プレイヤー削除、AreaSector変更への対応:takagi
+15:敵死亡処理を変更:suzumura＆yamamoto
+30:コメント追加:yamamoto
 =====*/
 
 //＞名前空間宣言
@@ -163,25 +165,29 @@ public class CEnemyNormal : CEnemy, IFeatureMine
    */
     public void TakeDestroy()
     {
-        float x, y, z = 0.0f;
+        float x, y, z = 0.0f;   //エフェクトキューブ用
 
         // エフェクトキューブ生成
         for (int i = 0; i < m_nEffectNum; i++)
         {
+            //ランダムな値を入れ生成場所を少しだけずらす
             x = Random.Range(-m_fPosRandRange, m_fPosRandRange);
             y = Random.Range(-m_fPosRandRange, m_fPosRandRange);
             z = Random.Range(-m_fPosRandRange, m_fPosRandRange);
 
+           //生成
             Instantiate(m_EffectCube,new Vector3(transform.position.x + x, transform.position.y + y, transform.position.z + z), Quaternion.identity);
         }
-        counter();
+        counter();  //カウント関数呼び出し
         Destroy(gameObject);    //このオブジェクトを消去する
         gameObject.SetActive(false);
+
         GameObject Text;
         EnemyDeathCounter EnemyDeathCounter;
-        Text = GameObject.Find("test");
-        EnemyDeathCounter = Text.GetComponent<EnemyDeathCounter>();
 
-        EnemyDeathCounter.DisplayEnemyDeathCounter();
+        Text = GameObject.Find("DeathCounter");     //探す
+        EnemyDeathCounter = Text.GetComponent<EnemyDeathCounter>();//コンポーネント取得
+
+        EnemyDeathCounter.DisplayEnemyDeathCounter();   //表示するカウンターUIを更新
     }
 }
