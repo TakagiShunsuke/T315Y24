@@ -24,9 +24,8 @@ using TMPro;
 public class EnemyDeathCounter : MonoBehaviour
 {
     //＞変数宣言
-    [SerializeField] private TMPro.TMP_Text DeathCount_txt; //表示させるテキスト(TMP)
+    [SerializeField] private TMP_Text DeathCount_txt; //表示させるテキスト(TMP)
    
-
     /*＞初期化関数
     引数１：なし
     ｘ

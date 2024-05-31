@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 361426180}
   - component: {fileID: 361426179}
   m_Layer: 5
-  m_Name: Test
+  m_Name: EnenyDeathCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1692,7 +1692,7 @@ GameObject:
   - component: {fileID: 909954115}
   - component: {fileID: 909954114}
   m_Layer: 0
-  m_Name: test
+  m_Name: DeathCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2072,7 +2072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 59501899953590542, guid: d87373259ba24914d9d6aeeb282dbf0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.001
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 59501899953590542, guid: d87373259ba24914d9d6aeeb282dbf0a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2951,7 +2951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7620493131818108208, guid: 0c384daa55e6c8246b99e3f410f6f819, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.43
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7620493131818108208, guid: 0c384daa55e6c8246b99e3f410f6f819, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3452,7 +3452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 59501899953590542, guid: d87373259ba24914d9d6aeeb282dbf0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.001
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 59501899953590542, guid: d87373259ba24914d9d6aeeb282dbf0a, type: 3}
       propertyPath: m_LocalPosition.z

@@ -56,30 +56,6 @@ public class Explosion : MonoBehaviour
         }
     }
 
-    //仕様変更があるかもだから一応残す
-
-    /*＞敵to爆破当たり判定関数
-  引数１：当たり判定があったオブジェクトの情報
-  ｘ
-  戻値：なし
-  ｘ
-  概要：当たったとき敵を削除する関数
-  */
-    /*private void OnTriggerStay(Collider other)
-    {
-        // 範囲内の敵を検出
-        Collider[] colliders = Physics.OverlapSphere(transform.position, ObjectRadius);
-        foreach (Collider collider in colliders)    //Collider[]の中に入っているだけループする
-        {
-            if (collider.CompareTag("Enemy"))   //当たり判定の中にあるものに敵タグがついてるか確認
-            {
-                //IFeatureMineがついるか確認
-                if (collider.gameObject.TryGetComponent<IFeatureMine>(out var destroy))
-                    destroy.TakeDestroy();  //敵削除
-            }
-        }
-    }*/
-
     /*＞更新関数
     引数１：なし
     ｘ

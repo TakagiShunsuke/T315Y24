@@ -201,7 +201,7 @@ MonoBehaviour:
   m_dSectorAngle: 90
   m_dFrontAngle: 90
   m_sTargetNames:
-  - Player_with_Mask
+  - Player
   Resol: 1
 --- !u!114 &3253347609108513022
 MonoBehaviour:
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 100
-  m_sTargetName: Player_with_Mask
+  m_sTargetName: Player
 --- !u!195 &-1071829561510448362
 NavMeshAgent:
   m_ObjectHideFlags: 0
