@@ -12,7 +12,9 @@ D
 04:プログラム作成:iwamuro
 11:体力・攻撃を受ける処理追加:takagi
 13:プレイヤーの移動と角度の修正、unity上でスピードを変更できるように変更:iwamuro
-13:変数名変更:takagi
+23:ダッシュ追加:takagi
+30:ダッシュ改修・無敵時間分割:takagi
+31:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -27,57 +29,41 @@ public class CPlayerScript : MonoBehaviour, IDamageable
 {
     //＞変数宣言
     Rigidbody m_Rb;      // Rigidbodyを追加
+    [SerializeField] private double m_dFrontAngle = 90.0d;  //xz平面上で正面方向の角度
     [SerializeField] private float m_fSpeed = 6; //プレイヤーの移動速度を設定
     [SerializeField] private double m_dHp = 10;   // HP
-    [SerializeField] private double m_unDashInterval =5;   //ダッシュリキャスト時間
-
-    //＞変数宣言
-    [SerializeField] private double m_dInvicibleTime = 2.0d;  //無敵時間[s] :初期値可変のために非定数化
-    //[SerializeField] private uint m_unFlNu = 5;
-    //private bool m_bInvicibleFlag;   //無敵状態フラグ(trueで無敵)
+    [SerializeField] private double m_dDamagedInvicibleTime = 2.0d;  //無敵時間[s] :自分が攻撃を受けたときに発動
+    [SerializeField] private double m_unDashInterval = 5;   //ダッシュリキャスト時間
+    [SerializeField] private double m_dDushInvicibleTime = 2.0d;  //無敵時間[s] :ダッシュ時に発動
     private double m_dCntDwnInvicibleTime = 0.0d;  //無敵時間カウント用
-    private double m_dCntDwnDshInterval = 0.0d;  //cdカウント用
-    [SerializeField] private KeyCode m_KeyCode = KeyCode.E;
-    [SerializeField] private double m_DashDist = 2.0d;
-    //private double m_dashtemp = 0.0d;
+    private double m_dCntDwnDshInterval = 0.0d;  //ダッシュカウントダウン用
+    [SerializeField] private KeyCode m_DushKey = KeyCode.E; //ダッシュのキー
+    [SerializeField] private double m_DashDist = 2.0d;  //ダッシュ時に移動する距離
 
     //＞プロパティ定義
-    //public bool IsInvincible { get; private set; } = false; //無敵状態管理
-    public bool InvincibleState
+    private double CntDwnInvicibleTime
     {
-        get { return m_dCntDwnInvicibleTime > 0.0f; }   //フラグの代わりに時間で判断する
+        get
+        {
+            return m_dCntDwnInvicibleTime;  //無敵時間提供
+        }
         set
         {
-            //＞状態分岐
-            if (value == true)  //無敵状態にする
+            if (m_dCntDwnInvicibleTime < value) //無敵時間に更新の必要がある
             {
-                m_dCntDwnInvicibleTime = m_dInvicibleTime;  //無敵時間のカウントをリセットする
+                m_dCntDwnInvicibleTime = value; //無敵時間更新
             }
-            else
-            {
-                m_dCntDwnInvicibleTime = 0.0f;  //無敵時間を無くす
-            }
-        }   //セッタで特殊な処理
-    } //無敵状態管理
-
-
-    //＞プロパティ定義
-    public double HP
+        }
+    }   //無敵時間管理
+    public bool InvincibleState
     {
-        get { return m_dHp; }
-        private set { m_dHp = value; }
-    }
-    //[SerializeField] public uint DashInterval {
-    //    //get; private set;
-    //    get => m_unDashInterval;  
-    //    private set => m_unDashInterval = value;
-    //}
-    [SerializeField] public double DashCntDwn => m_dCntDwnDshInterval;  //読み取り専用プロパティ
-    //{
-    //    //get; private set;
-    //    get => m_unDashInterval;
-    //    private set => m_unDashInterval = value;
-    //}
+        get
+        {
+            return CntDwnInvicibleTime > 0.0d;   //無敵時間によって判定する
+        }
+    }   //無敵状態管理
+    [SerializeField] public double HP => m_dHp;  //HP提供
+    [SerializeField] public double DashCntDwn => m_dCntDwnDshInterval;  //ダッシュのカウントダウン時間提供
 
     /*＞初期処理関数
     引数：なし
@@ -88,9 +74,9 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     */
     void Start()    //自動で追加される
     {
+        //＞初期化
         m_Rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
     }
-
 
     /*＞移動処理関数
     引数：なし
@@ -111,11 +97,11 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             //前方へ移動
             transform.Translate(Vector3.forward * Time.deltaTime * m_fSpeed);
         }
-    
+
         // 斜め移動
         if (moveDirection != Vector3.zero)
         {
-    
+
             // 正規化して移動速度を一定に保つ
             moveDirection.Normalize();
             m_Rb.velocity = moveDirection * m_fSpeed;
@@ -126,12 +112,12 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             // 何もキーが押されていない場合は停止する
             m_Rb.velocity = Vector3.zero;
         }
-        
+
         //＞検査
-        if (m_dCntDwnInvicibleTime > 0.0d)   //無敵状態の時
+        if (CntDwnInvicibleTime > 0.0d)   //無敵状態の時
         {
             //＞カウントダウン
-            m_dCntDwnInvicibleTime -= Time.deltaTime;   //時間をカウント
+            CntDwnInvicibleTime -= Time.deltaTime;   //時間をカウント
         }
         if (m_dCntDwnDshInterval > 0.0d)
         {
@@ -148,18 +134,20 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     */
     private void FixedUpdate()
     {
-        if (InvincibleState)   //クールダウン中
+        //＞無敵表現
+        if (InvincibleState)   //無敵中
         {
-            //var RadSp = 2.0d * Math.PI * (double)m_unFlNu * m_dCntDwnInvicibleTime / m_dInvicibleTime;
-            //＞
+            //TODO:明滅処理
+            //var RadSp = 2.0d * Math.PI * (double)m_unFlNu * CntDwnInvicibleTime / m_dInvicibleTime;
+            
             //var mr = GetComponent<MeshRenderer>();
             //mr.material.color = new Color(mr.material.color.r, mr.material.color.g, mr.material.color.b, (float)(Math.Sin(RadSp) * 255.0d));
         }
 
-        if (Input.GetKey(m_KeyCode))
+        //＞ダッシュ操作
+        if (Input.GetKey(m_DushKey))    //ダッシュ入力
         {
-            //Debug.Log("ばつ");
-            Dash();
+            Dash(); //ダッシュする
         }
     }
 
@@ -172,41 +160,63 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     */
     public void Damage(double dDamageVal)
     {
-        if (InvincibleState)
+        //＞処理無効化
+        if (InvincibleState)    //無敵中
         {
-            return; 
+            return; //ダメージを受けない
         }
 
         //＞ダメージ計算
-        HP -= dDamageVal;    //HP減少
-
-        InvincibleState = true;
+        m_dHp -= dDamageVal;    //HP減少
+        CntDwnInvicibleTime = m_dDamagedInvicibleTime;  //無敵時間のカウントをリセットする
     }
 
+    /*＞ダッシュ関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：ダッシュして移動する
+    */
     public void Dash()
     {
         //＞検査
-        if (m_dCntDwnDshInterval > 0.0d)   //dshcd状態の時
+        if (m_dCntDwnDshInterval > 0.0d)   //クールダウン中の時
         {
-            return;
+            //＞ダッシュ不可能
+            return;     //処理中断
         }
 
-        //dash
-        
-        Vector2 m_vDirction = new((float)Math.Cos(Mathf.Deg2Rad * (-transform.eulerAngles.y + 90.0d/* + m_dFrontAngle*/)),
-        (float)Math.Sin(Mathf.Deg2Rad * (-transform.eulerAngles.y + 90.0d/* + m_dFrontAngle*/)));   //正面のベクトル  ※y軸回転の方向は座標系と逆方向
+        //＞変数宣言・初期化
+        Vector3 _vFront = new((float)Math.Cos(Mathf.Deg2Rad * (-transform.eulerAngles.y+ m_dFrontAngle)), 0.0f,
+            (float)Math.Sin(Mathf.Deg2Rad * (-transform.eulerAngles.y + m_dFrontAngle)));  //正面方向のベクトル  ※y軸回転の方向は座標系と逆方向
+        _vFront = _vFront.normalized * (float)m_DashDist; //ベクトルサイズ初期化
+        Vector3 _vGo = transform.position + _vFront;    //行き先予定地の座標
+        Ray _Ray = new Ray(transform.position + Vector3.up, _vFront);   //前方レイキャスト
+        RaycastHit _Hit; //レイキャストで得られる当たり判定
 
-        Vector3 m_vDirctCent = new(m_vDirction.x, 0.0f, m_vDirction.y);  //扇形の中央方向
+        //＞衝突回避  //これはこれで敵の前で止まることに...；：    //TODO:タグ
+        if (Physics.Raycast(_Ray, out _Hit))
+        {
+            var cp = GetComponent<CapsuleCollider>();   //当たり判定取得
 
-        m_Rb.transform.position += m_vDirctCent.normalized * (float)m_DashDist;
-        //m_Rb.velocity += m_vDirctCent.normalized * (float)m_DashDist; //移動方向変更
-        //m_Rb.AddForce(m_vDirctCent.normalized * (float)m_DashDist, ForceMode.Impulse);
-
-
+            var vBeforeCollide = _Hit.point - transform.localScale * cp.radius; //当たり判定に盲目的に補正した変数
+            if (Math.Abs(vBeforeCollide.x - transform.position.x) < Math.Abs(_vFront.x))   //自分からのベクトルとしてx値について比較
+            {
+                _vGo.x = vBeforeCollide.x;  //x値を補正値に置き換える
+            }
+            if (Math.Abs(vBeforeCollide.z - transform.position.z) < Math.Abs(_vFront.z))   //自分からのベクトルとしてz値について比較
+            {
+                _vGo.z = vBeforeCollide.z;  //z値を補正値に置き換える
+            }
+        }
+        if (_vGo != transform.position)  //移動先に対して変移があるとき
+        {
+            m_Rb.transform.position = _vGo;  //即座に移動を行う
+        }
 
         //＞カウントダウン
         m_dCntDwnDshInterval = m_unDashInterval;   //時間をカウント
-        InvincibleState = true;
-
+        CntDwnInvicibleTime = m_dDushInvicibleTime;  //無敵時間のカウントをリセットする
     }
 }

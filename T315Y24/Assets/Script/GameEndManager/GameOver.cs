@@ -1,3 +1,21 @@
+/*=====
+<GameOver.cs>
+└作成者：suzumura
+
+＞内容
+
+
+＞注意事項
+
+
+＞更新履歴
+__Y24
+_M05
+D
+16:プレイヤーのクラスリネームに対応:takagi
+31:リファクタリング:takagi
+=====*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -3,17 +3,11 @@
 └作成者：takagi
 
 ＞内容
-
+ダッシュのインターバルを表示する
 
 ＞注意事項
-同一のオブジェクトに以下のコンポーネントがないと敵として十分な機能をしません。
-１.IFeatureBaseを継承した、特徴を表すコンポーネント
-２.攻撃範囲を表す扇形の領域判定AreaSector
-３.物理演算を行うRigidbody
-
-
-以下のコンポーネントがある場合はその初期値をシリアライズされて実装される値をも無視して初期化します。
-１.IMoveを継承した、移動を行うコンポーネントの変数Speed
+同一のオブジェクトに以下のコンポーネントがないと十分な機能をしません。
+１.プレイヤーの情報が管理されているCPlayerScript
 
 
 ＞更新履歴
@@ -21,6 +15,8 @@ __Y24
 _M05
 D
 21:プログラム作成:takagi
+25:セマンティクス修正:takagi
+31:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -39,22 +35,14 @@ using UnityEngine.UI;  //Unity
 //＞クラス定義
 public class CPlayerDashInterval : MonoBehaviour
 {
-    //private Canvas m_Canvas = null;    //検知対象
-    //[SerializeField] protected AssetReferenceTexture2D m_AssetRef; //生成対象アセット管理
-    //[SerializeField] private Sprite m_Sp;   //画像
-    //[SerializeField] private Vector2 m_First = new Vector2(500.0f, 500.0f);   //1つ目
-    //[SerializeField] private double m_dInterval;    //生成間隔
-    //[SerializeField] private float a = 1.6f;
-    private GameObject CanvasObj;
-    private CPlayerScript Player = null;
-    private Sprite sprite;
-    private List<AssetReferenceTexture2D> Assets;
-    List<AsyncOperationHandle<Texture2D>> op = new List<AsyncOperationHandle<Texture2D>>();
-    Sprite sp;
-    private double m_inner;
-    private GameObject m_Text;
+    //＞定数定義
+    private const string TEXT_DASH_ABLE = "ダッシュ可能"; //ダッシュ可能時の表示テキスト
+    private const string TEXT_DASH_UNABLE = "ダッシュ可能";   //ダッシュ不可能時の表示テキスト
 
-    [SerializeField] private TextMeshProUGUI m_TextMeshProUGUI;
+    //＞変数宣言
+    private CPlayerScript m_Player = null;  //プレイヤーの情報
+    private double m_dCurData;  //現在管理している情報
+    [SerializeField] private TextMeshProUGUI m_TextMeshProUGUI; //インターバル表示場所
 
     /*＞初期化関数
     引数１：なし
@@ -65,51 +53,27 @@ public class CPlayerDashInterval : MonoBehaviour
     */
     public void Start()
     {
-        //HP取得
-        Player = GetComponent<CPlayerScript>();
-        //CanvasObj = new GameObject();
-        //キャンバス作り
-        //CanvasObj.AddComponent<Canvas>();
-        //m_Canvas = CanvasObj.GetComponent<Canvas>();
-        //m_Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        //m_Canvas.AddComponent<CanvasScaler>();
-        ////m_Canvas.AddComponent<GraphicRaycaster>();
-        //m_Canvas.name = "EneCanvas";
-        ////テキスト作り
-        //m_Text = new GameObject();
-        //m_Text.GetComponent<CanvasRenderer>();
-        //var textMesh = m_Text.GetComponent<TextMeshPro>();
-
-        if(m_TextMeshProUGUI == null)
+        //＞初期化
+        m_Player = GetComponent<CPlayerScript>(); //プレイヤーとしての振る舞い方取得
+        if (m_Player != null)   //取得に成功した時
         {
+            m_dCurData = m_Player.DashCntDwn;   //データ初期化
+            UpdateText();   //テキスト初期化
         }
-
-        //イメージ作り
-        //if (m_AssetRef != null)
-        //    m_AssetRef.LoadAssetAsync().Completed += (option) =>
-        //    {
-        //        var tex = option.Result;
-        //        sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
-        //    };
-        if (Player != null)
+#if UNITY_EDITOR    //エディタ使用中
+        else   //取得に失敗した時
         {
-            m_inner = Player.DashCntDwn;
-            n();
+            //＞エラー出力
+            UnityEngine.Debug.LogError("プレイヤーに設定されていません");    //警告ログ出力
         }
-
-
-        //var Tex2 = await hand.Task;
-        //sp = Sprite.Create(Tex2, new Rect(0, 0, Tex2.width, Tex2.height), Vector2.zero);
-        //Debug.Log(sp);
-        //GameObject ImageObj = new GameObject();
-        //ImageObj.AddComponent<Image>();
-        //ImageObj.name = "Pl_Heart";
-        //ImageObj.GetComponent<Image>().sprite = sp;
-        //ImageObj.GetComponent<RectTransform>().position = new Vector2(0.0f + m_First.x,
-        //Screen.currentResolution.height - m_First.y);
-        //ImageObj.GetComponent<RectTransform>().localScale = new Vector2(a, a);
-        ////親子付け
-        //ImageObj.transform.parent = CanvasObj.transform;
+#endif
+#if UNITY_EDITOR    //エディタ使用中
+        if (m_TextMeshProUGUI == null)   //取得に失敗した時
+        {
+            //＞エラー出力
+            UnityEngine.Debug.LogWarning("入力先テキストが設定されていません");    //警告ログ出力
+        }
+#endif
     }
 
     /*＞物理更新関数
@@ -121,69 +85,55 @@ public class CPlayerDashInterval : MonoBehaviour
     */
     private void FixedUpdate()
     {
-        if(m_inner != Player.DashCntDwn)
+        //＞検査
+        if (m_Player == null)   //必要要件の不足時
         {
-            n();
-        }
-        //for (int i = CanvasObj.transform.childCount; i < Player.HP; i++)
-        //{
-        //    k(i);
-        //}
+#if UNITY_EDITOR    //エディタ使用中
+            //＞エラー出力
+            UnityEngine.Debug.LogWarning("必要な要素が不足しています");  //警告ログ出力
+#endif
 
-        //if (Player.HP >= 0.0d)
-        //    for (int i = (int)Player.HP; i < CanvasObj.transform.childCount; i++)
-        //    {
-        //        Destroy(CanvasObj.transform.GetChild(i).gameObject);
-        //    }
+            //＞中断
+            return; //更新処理中断
+        }
+
+        //＞更新
+        if (m_dCurData != m_Player.DashCntDwn)  //所持データに更新が必要な時
+        {
+            m_dCurData = m_Player.DashCntDwn;   //データ更新
+            UpdateText();    //テキスト更新
+        }
     }
 
-    //private async void k(int g = 0)
-    //{
-    //    GameObject ImageObj = new GameObject();
-    //    ImageObj.AddComponent<Image>();
-    //    ImageObj.name = "Pl_Heart";
-    //    var qop = Addressables.LoadAssetAsync<Texture2D>(m_AssetRef);
-    //    //var ass = new AssetReferenceTexture2D(m_AssetRef.ToString());
-    //    //if (m_AssetRef != null)
-    //    //    ass.LoadAssetAsync().Completed += (option) =>
-    //    //    {
-    //    //        var tex = option.Result;
-    //    //        ImageObj.GetComponent<Image>().sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
-    //    //    };
-    //    //op = m_AssetRef.LoadAssetAsync();
-    //    var Tex2 = await qop.Task;
-    //    sp = Sprite.Create(Tex2, new Rect(0, 0, Tex2.width, Tex2.height), Vector2.zero);
-    //    ImageObj.GetComponent<Image>().sprite = sp;
-    //    ImageObj.GetComponent<RectTransform>().position = new Vector2(0.0f + m_First.x + (float)m_dInterval * (g % 5),
-    //    Screen.currentResolution.height - m_First.y - (float)m_dInterval * (g / 5));
-    //    ImageObj.GetComponent<RectTransform>().localScale = new Vector2(a, a);
-    //    //親子付け
-    //    ImageObj.transform.parent = CanvasObj.transform;
-    //    //Assets.Add(ass);
-    //    op.Add(qop);
-    //    Debug.Log(sp);
-    //}
-
-    private void n()
+    /*＞テキスト更新関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：テキストの内容更新
+    */
+    private void UpdateText()
     {
-        m_TextMeshProUGUI.text = "b";
-        if (Player.DashCntDwn> 0)
+        //＞検査
+        if (m_TextMeshProUGUI == null)   //必要要件の不足時
         {
-            //m_TextMeshProUGUI.text = "ダッシュ不可能\n残り：" + Player.DashCntDwn.ToString("##") + "s"; //0.xxx[s]のとき表示されない
-            m_TextMeshProUGUI.text = "ダッシュ不可能\n残り：" + ((uint)Player.DashCntDwn).ToString().PadRight(2) + "s"; //spaceパディング
-            //m_TextMeshProUGUI.text = "a";
+#if UNITY_EDITOR    //エディタ使用中
+            //＞エラー出力
+            UnityEngine.Debug.LogWarning("必要な要素が不足しています");  //警告ログ出力
+#endif
+
+            //＞中断
+            return; //更新処理中断
+        }
+
+        //＞状態分岐
+        if (m_dCurData > 0)   //カウントダウン中
+        {
+            m_TextMeshProUGUI.text = TEXT_DASH_UNABLE + "\n残り：" + ((uint)m_dCurData).ToString().PadRight(2) + "s"; //ダッシュ不可能
         }
         else
-        {
-            m_TextMeshProUGUI.text = "ダッシュ可能";
+        {   //カウントダウンされていない
+            m_TextMeshProUGUI.text = TEXT_DASH_ABLE;    //ダッシュ可能
         }
-    }
-    private void OnDestroy()
-    {
-        //for (var i = 0; i < op.Count; i++)
-        //{
-        //    //if
-        //    Addressables.Release(op[i]);
-        //}
     }
 }
