@@ -117,7 +117,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         if (CntDwnInvicibleTime > 0.0d)   //無敵状態の時
         {
             //＞カウントダウン
-            CntDwnInvicibleTime -= Time.deltaTime;   //時間をカウント
+            m_dCntDwnInvicibleTime -= Time.deltaTime;   //時間をカウント
         }
         if (m_dCntDwnDshInterval > 0.0d)
         {
@@ -145,7 +145,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         }
 
         //＞ダッシュ操作
-        if (Input.GetKey(m_DushKey))    //ダッシュ入力
+        if (Input.GetKeyDown(m_DushKey))    //ダッシュ入力
         {
             Dash(); //ダッシュする
         }
@@ -213,10 +213,10 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         if (_vGo != transform.position)  //移動先に対して変移があるとき
         {
             m_Rb.transform.position = _vGo;  //即座に移動を行う
-        }
 
-        //＞カウントダウン
-        m_dCntDwnDshInterval = m_unDashInterval;   //時間をカウント
-        CntDwnInvicibleTime = m_dDushInvicibleTime;  //無敵時間のカウントをリセットする
+            //＞カウントダウン
+            m_dCntDwnDshInterval = m_unDashInterval;   //時間をカウント
+            CntDwnInvicibleTime = m_dDushInvicibleTime;  //無敵時間のカウントをリセットする
+        }
     }
 }
