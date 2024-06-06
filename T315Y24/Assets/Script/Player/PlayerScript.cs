@@ -55,13 +55,13 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             }
         }
     }   //無敵時間管理
-    public bool InvincibleState
-    {
-        get
-        {
-            return CntDwnInvicibleTime > 0.0d;   //無敵時間によって判定する
-        }
-    }   //無敵状態管理
+    public bool InvincibleState => CntDwnInvicibleTime > 0.0d;   //無敵状態管理
+    //{
+    //    get
+    //    {
+    //        return CntDwnInvicibleTime > 0.0d;   //無敵時間によって判定する
+    //    }
+    //}   //無敵状態管理
     [SerializeField] public double HP => m_dHp;  //HP提供
     [SerializeField] public double DashCntDwn => m_dCntDwnDshInterval;  //ダッシュのカウントダウン時間提供
 

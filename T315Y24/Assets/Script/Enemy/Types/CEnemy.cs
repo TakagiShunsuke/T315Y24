@@ -27,7 +27,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;  //Unity
 
 //＞クラス定義
-public abstract class CEnemy : MonoBehaviour
+public abstract class CEnemy : CVirtualizeMono
 {
     //＞プロパティ定義
     static public uint ValInstance { get; private set; } = 0;   //インスタンス数
@@ -41,13 +41,15 @@ public abstract class CEnemy : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    virtual public void Start()
+    override sealed protected void Start()
     {
         //＞カウント
         ValInstance++;  //生成数増加
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        CustomStart();
     }
-  
+
     /*＞カウント初期化関数
   引数１：なし
   ｘ
@@ -79,9 +81,9 @@ public abstract class CEnemy : MonoBehaviour
     ｘ
     概要：破棄時に行う処理
     */
-    virtual protected void OnDestroy()
-    {
-        //＞カウント
-        ValInstance--;  //生成数減少
-    }
+   override sealed protected void OnDestroy()
+   {
+       //＞カウント
+       ValInstance--;  //生成数減少
+   }
 }
