@@ -3,54 +3,46 @@
 └作成者：takagi
 
 ＞内容
-
+プレイヤーのHPをUI表示する
 
 ＞注意事項
-同一のオブジェクトに以下のコンポーネントがないと敵として十分な機能をしません。
-１.IFeatureBaseを継承した、特徴を表すコンポーネント
-２.攻撃範囲を表す扇形の領域判定AreaSector
-３.物理演算を行うRigidbody
-
-
-以下のコンポーネントがある場合はその初期値をシリアライズされて実装される値をも無視して初期化します。
-１.IMoveを継承した、移動を行うコンポーネントの変数Speed
+同一のオブジェクトに以下のコンポーネントがないと十分な機能をしません。
+１.プレイヤーの情報が管理されているCPlayerScript
 
 
 ＞更新履歴
 __Y24
 _M05
 D
-03:プログラム作成:takagi
-04:続き:takagi
-11:プレイヤー削除、AreaSector変更への対応:takagi
-15
+15:プログラム作成:takagi
+16:続き:takagi
+31:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
-using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
-using UnityEngine;
+using UnityEngine;  //Unity
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.UI;  //Unity
+using UnityEngine.UI;
 
 //＞クラス定義
 public class CPlayerHPUI : MonoBehaviour
 {
-    private Canvas m_Canvas = null;    //検知対象
-    [SerializeField] protected AssetReferenceTexture2D m_AssetRef; //生成対象アセット管理
-    //[SerializeField] private Sprite m_Sp;   //画像
-    [SerializeField] private Vector2 m_First = new Vector2(500.0f, 500.0f);   //1つ目
-    [SerializeField] private double m_dInterval;    //生成間隔
-    [SerializeField] private float a = 1.6f;
-    private GameObject CanvasObj;
-    private CPlayerScript Player = null;
-    private Sprite sprite;
-    private List<AssetReferenceTexture2D> Assets;
-    List<AsyncOperationHandle<Texture2D>> op= new List<AsyncOperationHandle<Texture2D>>();
-    Sprite sp;
+    //＞定数定義
+    private const string CANVAS_NAME = "PlCanvas";  //キャンバス名
+    private const string IMAGE_NAME = "Pl_Heart";   //画像オブジェクト名
+
+    //＞変数宣言    
+    [SerializeField] protected AssetReferenceTexture2D m_AssetRef; //生成対象アセット
+    [SerializeField] private Vector2 m_FirstDrawPos = new Vector2(120.0f, 80.0f);   //UI一つ目の表示位置
+    [SerializeField] private double m_dInterval;    //生成距離間隔
+    [SerializeField] private double m_dImageScale = 1.6f;   //画像のスケーリング
+    private GameObject m_CanvasObj; //UI表示のためのキャンバス用オブジェクト
+    private CPlayerScript m_Player = null;    //プレイヤーの情報
+    List<AsyncOperationHandle<Texture2D>> m_AssetLoadHandle= new List<AsyncOperationHandle<Texture2D>>();   //アセットをロード・管理する関数
 
 
     /*＞初期化関数
@@ -62,43 +54,26 @@ public class CPlayerHPUI : MonoBehaviour
     */
     public void Start()
     {
-        //HP取得
-        Player = GetComponent<CPlayerScript>();
-        CanvasObj = new GameObject();
-        //キャンバス作り
-        CanvasObj.AddComponent<Canvas>();
-        m_Canvas = CanvasObj.GetComponent<Canvas>();
-        m_Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        m_Canvas.AddComponent<CanvasScaler>();
-        m_Canvas.AddComponent<GraphicRaycaster>();
-        m_Canvas.name = "PlCanvas";
+        //＞初期化
+        m_CanvasObj = new GameObject(); //キャンバスオブジェクト作成
+        m_Player = GetComponent<CPlayerScript>(); //プレイヤーとしての振る舞い方取得
+#if UNITY_EDITOR    //エディタ使用中
+        if (m_Player == null)   //取得に失敗した時
+        {
+            //＞エラー出力
+            UnityEngine.Debug.LogError("プレイヤーに設定されていません");    //警告ログ出力
+        }
+#endif   
 
-        //イメージ作り
-        //if (m_AssetRef != null)
-        //    m_AssetRef.LoadAssetAsync().Completed += (option) =>
-        //    {
-        //        var tex = option.Result;
-        //        sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
-        //    };
-        if (Player != null)
-            if (Player.HP > 1.0d)
-            {
-                k();
-            }
-
-
-        //var Tex2 = await hand.Task;
-        //sp = Sprite.Create(Tex2, new Rect(0, 0, Tex2.width, Tex2.height), Vector2.zero);
-        //Debug.Log(sp);
-        //GameObject ImageObj = new GameObject();
-        //ImageObj.AddComponent<Image>();
-        //ImageObj.name = "Pl_Heart";
-        //ImageObj.GetComponent<Image>().sprite = sp;
-        //ImageObj.GetComponent<RectTransform>().position = new Vector2(0.0f + m_First.x,
-        //Screen.currentResolution.height - m_First.y);
-        //ImageObj.GetComponent<RectTransform>().localScale = new Vector2(a, a);
-        ////親子付け
-        //ImageObj.transform.parent = CanvasObj.transform;
+        //＞キャンバス作成・設定
+        Canvas _Canvas = m_CanvasObj.AddComponent<Canvas>(); //機能をキャンバス化
+        _Canvas.renderMode = RenderMode.ScreenSpaceOverlay; //UIを最前面に出す
+        _Canvas.AddComponent<CanvasScaler>();   //UIのスケール制御
+        _Canvas.AddComponent<GraphicRaycaster>();   //キャンバスへのレイ判定
+        _Canvas.name = CANVAS_NAME;  //名前付け
+        _Canvas.additionalShaderChannels |= AdditionalCanvasShaderChannels.TexCoord1;   //シェーダーセマンティクス：テクスチャ座標
+        _Canvas.additionalShaderChannels |= AdditionalCanvasShaderChannels.Normal;  //シェーダーセマンティクス：法線
+        _Canvas.additionalShaderChannels |= AdditionalCanvasShaderChannels.Tangent; //シェーダーセマンティクス：接線
     }
 
     /*＞物理更新関数
@@ -110,51 +85,92 @@ public class CPlayerHPUI : MonoBehaviour
     */
     private void FixedUpdate()
     {
-        for (int i = CanvasObj.transform.childCount; i < Player.HP; i++)
+        //＞検査
+        if (m_Player == null)   //必要要件の不足時
         {
-            k(i);
+#if UNITY_EDITOR    //エディタ使用中
+            //＞エラー出力
+            UnityEngine.Debug.LogWarning("必要な要素が不足しています");  //警告ログ出力
+#endif
+
+            //＞中断
+            return; //更新処理中断
         }
 
-        if(Player.HP >= 0.0d)
-        for (int i = (int)Player.HP; i < CanvasObj.transform.childCount; i++)
+        //＞HP増加対応
+        for (int _nIdx = m_CanvasObj.transform.childCount; _nIdx < m_Player.HP; _nIdx++)    //子オブジェクトの数をHPに合わせて増やす(小数点以下切り捨て)
         {
-            Destroy(CanvasObj.transform.GetChild(i).gameObject);
+            //＞イメージ作成
+            MakeHPUI(_nIdx);    //HPを作成する
+        }
+
+        //＞HP減少対応
+        for (int _nIdx = m_Player.HP >= 0.0d ? (int)m_Player.HP : 0;     //イメージはマイナス個にできない
+            _nIdx < m_CanvasObj.transform.childCount; _nIdx++)   //子オブジェクトの数をHPに合わせて減らす(小数点以下切り捨て)
+        {
+            //＞オブジェクト除去
+            Destroy(m_CanvasObj.transform.GetChild(_nIdx).gameObject);  //一番最後に作られた子オブジェクトを削除
         }
     }
 
-    private async void k(int g = 0)
+    /*＞HPUI作成関数
+    引数：int HPIdx：作成するUIが何番目のものか
+    ｘ
+    戻値：なし
+    ｘ
+    概要：HPのUI画像を作成・配置
+    */
+    private async void MakeHPUI(int HPIdx)
     {
-        GameObject ImageObj = new GameObject();
-        ImageObj.AddComponent<Image>();
-        ImageObj.name = "Pl_Heart";
-        var qop = Addressables.LoadAssetAsync<Texture2D>(m_AssetRef);
-        //var ass = new AssetReferenceTexture2D(m_AssetRef.ToString());
-        //if (m_AssetRef != null)
-        //    ass.LoadAssetAsync().Completed += (option) =>
-        //    {
-        //        var tex = option.Result;
-        //        ImageObj.GetComponent<Image>().sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
-        //    };
-        //op = m_AssetRef.LoadAssetAsync();
-        var Tex2 = await qop.Task;
-        sp = Sprite.Create(Tex2, new Rect(0, 0, Tex2.width, Tex2.height), Vector2.zero);
-        ImageObj.GetComponent<Image>().sprite = sp;
-            ImageObj.GetComponent<RectTransform>().position = new Vector2(0.0f + m_First.x + (float)m_dInterval * (g % 5),
-            Screen.currentResolution.height - m_First.y - (float)m_dInterval * (g / 5));
-        ImageObj.GetComponent<RectTransform>().localScale = new Vector2(a, a);
-        //親子付け
-        ImageObj.transform.parent = CanvasObj.transform;
-        //Assets.Add(ass);
-        op.Add(qop);
-        Debug.Log(sp);
+        //＞変数宣言
+        GameObject _ImageObj = new GameObject(); //画像表示用オブジェクト
+
+        //＞初期化
+        _ImageObj.name = IMAGE_NAME; //名前付け
+        _ImageObj.transform.parent = m_CanvasObj.transform;   //子オブジェクトに追加
+
+        //＞画像読み込み
+        var _AssetLoadHandle = Addressables.LoadAssetAsync<Texture2D>(m_AssetRef);  //テクスチャデータを読み込む関数取得
+        var _Texture = await _AssetLoadHandle.Task; //テクスチャ読み込みを非同期で実行
+        var _Sprite = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
+        _ImageObj.AddComponent<Image>().sprite = _Sprite; //画像表示を機能的に実装し、画像登録
+
+        //＞平面ポリゴン
+        var _RectTransform = _ImageObj.GetComponent<RectTransform>();   //取得
+        if (_RectTransform != null)   //取得に成功した時
+        {
+            _RectTransform.position = new Vector2(m_FirstDrawPos.x + (float)m_dInterval * (HPIdx % 5),
+                Screen.currentResolution.height - m_FirstDrawPos.y - (float)m_dInterval * (HPIdx / 5)); //ポリゴンの位置
+            _RectTransform.localScale = new Vector2((float)m_dImageScale, (float)m_dImageScale);    //ポリゴンのスケーリング
+        }
+#if UNITY_EDITOR    //エディタ使用中
+        else
+        {
+            //＞エラー出力
+            UnityEngine.Debug.LogWarning("画像が登録できません");   //警告ログ出力
+        }
+#endif
+        
+        //＞更新
+        m_AssetLoadHandle.Add(_AssetLoadHandle);    //使用している関数を管理
     }
 
+    /*＞破棄関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：インスタンス破棄時に行う処理
+    */
     private void OnDestroy()
     {
-        for(var i = 0; i < op.Count; i++)
+        //＞解放
+        for (int nIdx = 0; nIdx < m_AssetLoadHandle.Count; nIdx++)  //生成物すべて破棄する
         {
-            //if
-            Addressables.Release(op[i]);
+            if (m_AssetLoadHandle[nIdx].IsValid()) //ヌルでない
+            {
+                Addressables.Release(m_AssetLoadHandle[nIdx]); //参照をやめる
+            }
         }
     }
 }

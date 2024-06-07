@@ -22,6 +22,7 @@ D
 03:プログラム作成:takagi
 04:続き:takagi
 11:プレイヤー削除、AreaSector変更への対応:takagi
+31:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -31,7 +32,7 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;  //Unity
 
 //＞クラス定義
-public class CEnemyNormal : CEnemy, IFeatureMine
+public sealed class CEnemyNormal : CEnemy, IFeatureMine
 {
     //＞変数宣言
     [SerializeField] private double m_dAtkInterval = 3.0d;  //攻撃間隔[s]
@@ -43,6 +44,7 @@ public class CEnemyNormal : CEnemy, IFeatureMine
     [SerializeField] int m_nEffectNum;              //エフェクトキューブ生成数
     [SerializeField]float m_fPosRandRange = 0.01f;  //エフェクトキューブを生成するポジションをランダムに生成するための範囲
 
+    Rigidbody m_Rigidbody;
    
 
     /*＞初期化関数
@@ -52,14 +54,11 @@ public class CEnemyNormal : CEnemy, IFeatureMine
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    public void Start()
+    override protected void CustomStart()
     {
-        //＞親関数呼び出し
-        transform.GetComponentInParent<CEnemy>().Start(); //親の初期化関数呼び出し
-
         //＞初期化
         m_Feature = GetComponent<IFeature>();   //自身の特徴取得
-        if (m_Feature != null)   //取得に失敗した時
+        if (m_Feature != null)   //取得に成功した時
         {
             var Move = GetComponent<IMove>();   //移動コンポーネント取得
             if (Move != null)   //取得成功時
@@ -82,6 +81,8 @@ public class CEnemyNormal : CEnemy, IFeatureMine
             UnityEngine.Debug.LogWarning("攻撃範囲が設定されていません");    //警告ログ出力
         }
 #endif
+
+        m_Rigidbody = GetComponent<Rigidbody>();
        
     }
 
@@ -92,7 +93,7 @@ public class CEnemyNormal : CEnemy, IFeatureMine
     ｘ
     概要：一定時間ごとに行う更新処理
     */
-    private void FixedUpdate()
+    override protected void FixedUpdate()
     {
         //＞カウントダウン
         if(m_dAtkCoolTime > 0.0d)   //クールダウン中
@@ -102,6 +103,8 @@ public class CEnemyNormal : CEnemy, IFeatureMine
 
         //＞攻撃
         Attack();   //攻撃を行う
+
+        m_Rigidbody.velocity = Vector3.zero;
     }
 
     /*＞攻撃関数
@@ -174,7 +177,7 @@ public class CEnemyNormal : CEnemy, IFeatureMine
         gameObject.SetActive(false);
         GameObject Text;
         EnemyDeathCounter EnemyDeathCounter;
-        Text = GameObject.Find("test");
+        Text = GameObject.Find("DeathCounter");
         EnemyDeathCounter = Text.GetComponent<EnemyDeathCounter>();
 
         EnemyDeathCounter.DisplayEnemyDeathCounter();
