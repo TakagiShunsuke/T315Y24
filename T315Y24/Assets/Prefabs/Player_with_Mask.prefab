@@ -64,6 +64,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8351788f9f687d643869bd41e6ee2390, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9f2e367cb5c7d564baac1b634fa5361e, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 44c07d0b580d128428a454fed5c58398, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9f2e367cb5c7d564baac1b634fa5361e, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cdc166a64549bab4bbc0e723b35d555a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9f2e367cb5c7d564baac1b634fa5361e, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 175bc62f3c494bc4fa2565f2a8e376f1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9f2e367cb5c7d564baac1b634fa5361e, type: 3}
+      propertyPath: 'm_Materials.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ec9b3fed85c20db48ae34b9e8ceb5a2a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9f2e367cb5c7d564baac1b634fa5361e, type: 3}
+      propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0565e5dcaf88dd44b90b3077cfb03de0, type: 2}
     - target: {fileID: 919132149155446097, guid: 9f2e367cb5c7d564baac1b634fa5361e, type: 3}
       propertyPath: m_Name
       value: Player_with_Mask
@@ -159,11 +179,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c25385f5d37d044b15ebace5abfc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dFrontAngle: 90
   m_fSpeed: 6
   m_dHp: 10
+  m_dDamagedInvicibleTime: 2
   m_unDashInterval: 5
-  m_dInvicibleTime: 2
-  m_KeyCode: 101
+  m_dDushInvicibleTime: 2
+  m_DushKey: 101
   m_DashDist: 2
 --- !u!114 &7573670005997254192
 MonoBehaviour:
@@ -182,9 +204,9 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  m_First: {x: 80, y: 50}
+  m_FirstDrawPos: {x: 120, y: 80}
   m_dInterval: 100
-  a: 1.6
+  m_dImageScale: 1.600000023841858
 --- !u!114 &8358858646886390241
 MonoBehaviour:
   m_ObjectHideFlags: 0
