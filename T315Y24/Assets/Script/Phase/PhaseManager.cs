@@ -86,6 +86,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     }//ウェーブ用カウントダウン
     public E_PHASE Phase => m_Phases[(int)m_unPhase].m_Phase; //現在のフェーズ
 
+
     /*＞初期化関数
      引数１：なし
      ｘ

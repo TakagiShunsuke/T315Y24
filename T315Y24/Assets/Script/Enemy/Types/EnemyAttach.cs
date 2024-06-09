@@ -11,8 +11,8 @@
 ２.攻撃範囲を表す扇形の領域判定AreaSector
 ３.物理演算を行うRigidbody
 
-また、以下のコンポーネントがある場合はその初期値をシリアライズされて実装される値をも無視して初期化します。
-１.IMoveを継承した、移動を行うコンポーネントの変数Speed
+また、以下のコンポーネントがある場合は、特徴に応じてその初期値をシリアライズされて実装される値をも無視して初期化します。
+１.移動に使用されるコンポーネントNavMeshAgentの変数speed
 
 
 ＞更新履歴
@@ -23,13 +23,19 @@ D
 04:続き:takagi
 11:プレイヤー削除、AreaSector変更への対応:takagi
 31:リファクタリング:takagi
+
+_M06
+D
+09:特徴改造に対応・リネーム:takagi
 =====*/
 
 //＞名前空間宣言
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Burst.CompilerServices;
 using UnityEngine;  //Unity
+using UnityEngine.AI;
 
 //＞クラス定義
 public sealed class CEnemyNormal : CEnemy, IFeatureMine
@@ -37,7 +43,9 @@ public sealed class CEnemyNormal : CEnemy, IFeatureMine
     //＞変数宣言
     [SerializeField] private double m_dAtkInterval = 3.0d;  //攻撃間隔[s]
     private double m_dAtkCoolTime = 0.0d;   //攻撃クールタイム[s]
-    private IFeature m_Feature = null;  //ステータス特徴
+    [SerializeField] private CFeatures.E_ENEMY_TYPE m_eFeatureType;   //特徴の種類
+    private CFeatures.FeatureInfo m_FeatureInfo;    //特徴により決定する情報
+    //private IFeature m_Feature = null;  //ステータス特徴
     private CAreaSector m_CAreaSector = null;   //扇形の攻撃範囲
 
     [SerializeField] GameObject m_EffectCube;       //エフェクトキューブプレハブ
@@ -57,20 +65,23 @@ public sealed class CEnemyNormal : CEnemy, IFeatureMine
     override protected void CustomStart()
     {
         //＞初期化
-        m_Feature = GetComponent<IFeature>();   //自身の特徴取得
-        if (m_Feature != null)   //取得に成功した時
+        if (CFeatures.Instance.Feature.Length > (int)m_eFeatureType)    //自身の列挙数値に対して返答が期待できる時
         {
-            var Move = GetComponent<IMove>();   //移動コンポーネント取得
+            //＞数値更新
+            m_FeatureInfo = CFeatures.Instance.Feature[(int)m_eFeatureType];    //列挙に対応した情報を取得する
+
+            //＞移動情報書き換え
+            var Move = GetComponent<NavMeshAgent>();   //移動コンポーネント取得
             if (Move != null)   //取得成功時
             {
-                Move.Speed = m_Feature.Move;    //速度を初期化
+                Move.speed = (float)m_FeatureInfo.Move;    //速度を初期化
             }
         }
 #if UNITY_EDITOR    //エディタ使用中
         else
         {
             //＞エラー出力
-            UnityEngine.Debug.LogWarning("特徴が設定されていません");   //警告ログ出力
+            UnityEngine.Debug.LogWarning(m_eFeatureType + "の特徴が設定されていません");   //警告ログ出力
         }
 #endif
         m_CAreaSector = GetComponent<CAreaSector>();  //当たり判定取得
@@ -117,7 +128,7 @@ public sealed class CEnemyNormal : CEnemy, IFeatureMine
     private void Attack()
     {
         //＞検査
-        if (m_Feature == null || m_CAreaSector == null)   //必要要件の不足時
+        if (m_CAreaSector == null)   //必要要件の不足時
         {
 #if UNITY_EDITOR    //エディタ使用中
             //＞エラー出力
@@ -147,7 +158,7 @@ public sealed class CEnemyNormal : CEnemy, IFeatureMine
                 if (Damageable != null)  //ダメージを与えられる相手
                 {
                     //＞ダメージ付与
-                    Damageable.Damage(m_Feature.Atk);   //対象にダメージを与える
+                    Damageable.Damage(m_FeatureInfo.Atk);   //対象にダメージを与える
                 }
             }
         }

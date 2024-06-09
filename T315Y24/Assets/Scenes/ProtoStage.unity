@@ -2849,11 +2849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3994996520813562789, guid: b84621e2509d930409c6c9ebb97b277a, type: 3}
       propertyPath: m_Feature.Array.data[0].m_Move
-      value: 1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3994996520813562789, guid: b84621e2509d930409c6c9ebb97b277a, type: 3}
       propertyPath: m_Feature.Array.data[1].m_Move
-      value: 1
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

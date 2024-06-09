@@ -14,7 +14,9 @@ D
 =====*/
 
 //＞名前空間宣言
+using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 //＞クラス定義
@@ -28,7 +30,7 @@ public class CFeatures : CMonoSingleton<CFeatures>
     }   //敵の種類
 
     //＞構造体定義
-    [Serializable] public struct Feature
+    [Serializable] public struct FeatureInfo
     {
         //＞変数宣言
         [SerializeField] private double m_Atk;   //攻撃力
@@ -40,5 +42,8 @@ public class CFeatures : CMonoSingleton<CFeatures>
     };
 
     //＞変数宣言
-    [SerializeField, SerializeNamingWithEnum(typeof(E_ENEMY_TYPE))] private Feature[] m_Feature;    //E_ENEMY_TYPEに関連づいた特徴の情報群
+    [SerializeField, SerializeNamingWithEnum(typeof(E_ENEMY_TYPE))] private FeatureInfo[] m_Feature;    //E_ENEMY_TYPEに関連づいた特徴の情報群
+
+    //＞プロパティ定義
+    public FeatureInfo[] Feature => m_Feature; //特徴取得
 }

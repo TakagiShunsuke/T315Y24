@@ -31,11 +31,15 @@ using UnityEngine.UI;
 //＞クラス定義
 public class CEnemyList : CMonoSingleton<CEnemyList>
 {
+    //＞構造体定義
     [Serializable] public struct SpawnEnemyInfo
     {
         public AssetReferenceGameObject m_SpawnAssetRef;   //生成対象アセット
         public int m_SpawnAmount;    //生成量
     }   //敵生成用情報
+
+    //＞定数定義
+    const string OBJECT_NAME = "EnemyList"; //このオブジェクトが生成されたときの名前
 
     //＞プロパティ定義
     public List<SpawnEnemyInfo> SpawnInfo { get; set; } = null; //生成対象管理
@@ -80,6 +84,20 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
             return null;    //_Total == 0またはリストが空であり、失敗扱い。
         }
     }   //ランダムに制定される生成対象のゲッタ
+
+
+    /*＞初期化関数
+     引数１：なし
+     ｘ
+     戻値：なし
+     ｘ
+     概要：インスタンス生成時に行う処理
+     */
+    override protected void CustomAwake()
+    {
+        //＞リネーム
+        gameObject.name = OBJECT_NAME;  //自身のオブジェクト名変更
+    }
 
     /*＞終了関数
     引数１：なし
