@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8817699632881841236}
   - component: {fileID: 5915216579943736046}
   - component: {fileID: 5532911740806827282}
-  - component: {fileID: 2239682667789438983}
+  - component: {fileID: -5616234756208909181}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dSpawnInterval: 3
   m_unSpawnMax: 100
---- !u!114 &2239682667789438983
+--- !u!114 &-5616234756208909181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +132,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3569943469347507758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dcb56533aad1a747a6be62fe8272c58, type: 3}
+  m_Script: {fileID: 11500000, guid: 68c53eef570e31c40a8fae633fdcff2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpawnAssetRef:
-  - m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+    m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -145,6 +145,6 @@ MonoBehaviour:
     x: -50
     y: 50
     width: 30
-    height: 50
+    height: 30
   m_dAltitude: 0
   m_SpawnRotate: {x: 0, y: 0, z: 0, w: 0}
