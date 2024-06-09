@@ -11,6 +11,7 @@ _M05
 D
 06:プログラム作成:takagi
 07:続き:takagi
+09:変数名修正:takagi
 =====*/
 
 //＞名前空間宣言
@@ -38,13 +39,13 @@ public class CSpawnRandomRect : CGetObjects
     public void Create()
     {
         //＞生成位置選定
-        Vector3 vSpaenPos = new Vector3(Random.Range(m_SpawnRect.x, m_SpawnRect.x + m_SpawnRect.width), (float)m_dAltitude, Random.Range(m_SpawnRect.y, m_SpawnRect.y + m_SpawnRect.height));  //生成座標(x)
+        Vector3 _vSpawnPos = new Vector3(Random.Range(m_SpawnRect.x, m_SpawnRect.x + m_SpawnRect.width), (float)m_dAltitude, Random.Range(m_SpawnRect.y, m_SpawnRect.y + m_SpawnRect.height));  //生成座標(x)
         //TODO:四角形が変則な形でも対応できるように(ベクトル?)
 
         //＞生成
         if (m_SpawnAssetRef != null && m_SpawnAssetRef.Count > 0)    //リストが存在・空でない
         {
-            m_SpawnAssetRef[Random.Range(0, m_SpawnAssetRef.Count)].InstantiateAsync(vSpaenPos, m_SpawnRotate); //ランダム対象生成
+            m_SpawnAssetRef[Random.Range(0, m_SpawnAssetRef.Count)].InstantiateAsync(_vSpawnPos, m_SpawnRotate); //ランダム対象生成
         }
     }
 }
