@@ -14,6 +14,7 @@ _M05
 D
 06:プログラム作成:takagi
 07:続き:takagi
+09:続き:takagi
 =====*/
 
 //＞名前空間宣言
@@ -27,9 +28,6 @@ using UseRandom;    //ランダム初期化
 //＞クラス定義
 public class CSpawnEnemy : MonoBehaviour
 {
-    //＞変数宣言
-    [SerializeField] protected AssetReferenceGameObject m_SpawnAssetRef; //生成対象アセット管理
-
     //＞変数宣言
     [SerializeField] private Rect m_SpawnRect;  //生成範囲  //TODO:ここに値を入れなかったら自分の位置・サイズを基準にするように
     [SerializeField] private double m_dAltitude;    //高さ

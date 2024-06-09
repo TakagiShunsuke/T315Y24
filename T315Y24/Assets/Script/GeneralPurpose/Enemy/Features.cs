@@ -10,6 +10,7 @@ __Y24
 _M06
 D
 07:プログラム作成:takagi
+09:コード改善:takagi
 =====*/
 
 //＞名前空間宣言
@@ -39,5 +40,5 @@ public class CFeatures : CMonoSingleton<CFeatures>
     };
 
     //＞変数宣言
-    [SerializeField, SerializeNamingWithEnum(typeof(E_ENEMY_TYPE))] private Feature[] m_Feature;
+    [SerializeField, SerializeNamingWithEnum(typeof(E_ENEMY_TYPE))] private Feature[] m_Feature;    //E_ENEMY_TYPEに関連づいた特徴の情報群
 }

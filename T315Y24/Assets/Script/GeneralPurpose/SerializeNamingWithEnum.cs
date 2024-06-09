@@ -1,3 +1,18 @@
+/*=====
+<SerializeNamingWithEnum.cs>
+└作成者：takagi
+
+＞内容
+Enumをシリアライズフィールド上の要素名として表示するもの
+※ネットのもののコピペ。後で修正・コメント付け
+
+＞更新履歴
+__Y24
+_M06
+D
+07:プログラム作成:takagi
+=====*/
+
 using System;
 using System.Linq;
 using UnityEngine;
