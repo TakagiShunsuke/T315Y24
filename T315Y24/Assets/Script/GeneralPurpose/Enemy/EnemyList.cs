@@ -88,7 +88,7 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
         {
             for (int nIdx = 0; nIdx < SpawnInfo.Count; nIdx++)  //生成物すべて破棄する
             {
-                if (SpawnInfo[nIdx].m_SpawnAssetRef != null)    //LoadAssetAsync()関数を使用した
+                if (SpawnInfo[nIdx].m_SpawnAssetRef != null && SpawnInfo[nIdx].m_SpawnAssetRef.Asset != null)    //LoadAssetAsync()関数を使用した
                 {
                     SpawnInfo[nIdx].m_SpawnAssetRef.ReleaseAsset(); //参照をやめる
                 }

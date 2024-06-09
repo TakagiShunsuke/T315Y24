@@ -552,35 +552,17 @@ MonoBehaviour:
   - m_Phase: 0
     m_Enemies:
     - m_SpawnAssetRef:
-        m_AssetGUID: 00b3f5e9285e79f41bed33682e0fa2c2
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
       m_SpawnAmount: 1
-    m_dTime: 10
+    m_dTime: 60
   - m_Phase: 1
-    m_Enemies:
-    - m_SpawnAssetRef:
-        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 0
-    m_dTime: 20
+    m_Enemies: []
+    m_dTime: 60
   - m_Phase: 0
-    m_Enemies:
-    - m_SpawnAssetRef:
-        m_AssetGUID: 00b3f5e9285e79f41bed33682e0fa2c2
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 1
-    - m_SpawnAssetRef:
-        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 1
-      m_SpawnAmount: 2
+    m_Enemies: []
     m_dTime: 10
   - m_Phase: 1
     m_Enemies: []
