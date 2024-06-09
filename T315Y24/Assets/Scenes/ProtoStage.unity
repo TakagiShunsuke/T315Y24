@@ -3423,22 +3423,6 @@ PrefabInstance:
       propertyPath: m_SpawnRect.height
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
-      propertyPath: m_SpawnRect.x
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
-      propertyPath: m_SpawnRect.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
-      propertyPath: m_SpawnRect.width
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
-      propertyPath: m_SpawnRect.height
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3569943469347507758, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
       propertyPath: m_Name
       value: Gate
@@ -3495,7 +3479,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3805,22 +3790,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
-      propertyPath: m_SpawnRect.height
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
-      propertyPath: m_SpawnRect.x
-      value: -16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
-      propertyPath: m_SpawnRect.y
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
-      propertyPath: m_SpawnRect.width
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
       propertyPath: m_SpawnRect.height
       value: 3
       objectReference: {fileID: 0}
