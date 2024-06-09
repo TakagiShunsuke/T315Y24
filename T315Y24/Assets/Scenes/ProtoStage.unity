@@ -566,15 +566,21 @@ MonoBehaviour:
         m_SubObjectType: 
         m_EditorAssetChanged: 0
       m_SpawnAmount: 0
-    m_dTime: 60
+    m_dTime: 20
   - m_Phase: 0
     m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 00b3f5e9285e79f41bed33682e0fa2c2
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
     - m_SpawnAssetRef:
         m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
-      m_SpawnAmount: 1
+      m_SpawnAmount: 2
     m_dTime: 10
   - m_Phase: 1
     m_Enemies: []
@@ -1091,6 +1097,11 @@ Transform:
   - {fileID: 696408935}
   m_Father: {fileID: 174544036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &387720725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3569943469347507758, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+  m_PrefabInstance: {fileID: 1989737729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &409798059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1806,6 +1817,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8262981891034645979, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
   m_PrefabInstance: {fileID: 1989737729}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &948245422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387720725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c53eef570e31c40a8fae633fdcff2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpawnAssetRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  m_SpawnRect:
+    serializedVersion: 2
+    x: 11
+    y: 6
+    width: 3
+    height: 3
+  m_dAltitude: 0
+  m_SpawnRotate: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1023008983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,6 +3425,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1839945205}
     m_Modifications:
+    - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.height
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.height
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3569943469347507758, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
       propertyPath: m_Name
       value: Gate
@@ -3448,7 +3516,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3569943469347507758, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 948245422}
   m_SourcePrefab: {fileID: 100100000, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
 --- !u!1 &2038384179
 GameObject:
@@ -3739,6 +3810,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 678491337}
     m_Modifications:
+    - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.x
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.y
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5616234756208909181, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.height
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.x
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.y
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239682667789438983, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
+      propertyPath: m_SpawnRect.height
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3569943469347507758, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
       propertyPath: m_Name
       value: Gate

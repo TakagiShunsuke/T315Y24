@@ -51,12 +51,12 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
             {
                 _nTotal += SpawnInfo[nIdx].m_SpawnAmount;
             }
-            var _nRand = UnityEngine.Random.Range(0, _nTotal);
-
+            var _nRand = UnityEngine.Random.Range(1, _nTotal);
+            //‚±‚ÌŽž“_‚ÅnRand > 0‚Å‚ ‚é
 
             for (int nIdx = 0; nIdx < SpawnInfo.Count; nIdx++)  //¶¬Œó•â‚·‚×‚Ä
             {
-                if(_nRand > _nTotal)
+                if(_nRand <= SpawnInfo[nIdx].m_SpawnAmount)
                 {
                     return SpawnInfo[nIdx].m_SpawnAssetRef;
                 }
@@ -66,7 +66,7 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
                 }
             }
             
-            return SpawnInfo[SpawnInfo.Count - 1].m_SpawnAssetRef;
+            return null;    //_Total == 0
 
 
 

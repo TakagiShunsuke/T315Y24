@@ -51,7 +51,7 @@ public class CSpawnEnemy : MonoBehaviour
         //＞生成
         if (CEnemyList.Instance != null && CEnemyList.Instance.GetRandomSpawnAssetRef != null)    //生成対象が存在・空でない
         {
-            m_SpawnAssetRef.InstantiateAsync(_vSpawnPos, m_SpawnRotate); //ランダム敵生成
+            CEnemyList.Instance.GetRandomSpawnAssetRef.InstantiateAsync(_vSpawnPos, m_SpawnRotate); //ランダム敵生成
         }
     }
 }
