@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7023115921762516209}
   m_Layer: 0
   m_Name: Mine
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,10 +122,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d098a86d1d074704785b3932b6e7bc3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dExplosionDelay: 0.1
-  m_dMineInterval: 5
-  m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
+  m_dInterval: 5
+  m_bUse: 1
+  m_CoolDownText: {fileID: 0}
   m_nFontSize: 24
+  m_bMove: 1
+  m_fPosY: -0.3
+  m_bSetting: 1
+  m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
 --- !u!1 &2701447250296533007
 GameObject:
   m_ObjectHideFlags: 0
