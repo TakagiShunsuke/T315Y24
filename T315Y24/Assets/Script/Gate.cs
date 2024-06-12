@@ -5,6 +5,10 @@
 ＞内容
 門
 
+＞注意事項
+同一のオブジェクトに以下のコンポーネントがないと十分な機能をしません。
+１.敵を生成する機構であるSpawnEnemy
+
 ＞更新履歴
 __Y24
 _M05
@@ -12,6 +16,10 @@ D
 06:プログラム作成:takagi
 07:続き:takagi
 10:生成数上限機能実装:takagi
+
+_M06
+D
+09:生成機構のクラス変更
 =====*/
 
 //＞名前空間宣言
@@ -27,7 +35,7 @@ public class CGate : MonoBehaviour
     [SerializeField] private double m_dSpawnInterval = 3.0d;  //生成間隔[s]
     [SerializeField] private uint m_unSpawnMax = 100;  //生成上限[s]
     private double m_dSpawnCoolTime = 0.0d;   //生成クールタイム[s]
-    CSpawnRandomRect m_SpawnRandom = null;    //生成機構
+    CSpawnEnemy m_SpawnRandom = null;    //生成機構
     
     /*＞初期化関数
     引数１：なし
@@ -39,7 +47,7 @@ public class CGate : MonoBehaviour
     void Start()
     {
         //＞初期化
-        m_SpawnRandom = GetComponent<CSpawnRandomRect>();   //自身の特徴取得
+        m_SpawnRandom = GetComponent<CSpawnEnemy>();   //自身の特徴取得
 #if UNITY_EDITOR    //エディタ使用中
         if (m_SpawnRandom == null)   //取得に失敗した時
         {

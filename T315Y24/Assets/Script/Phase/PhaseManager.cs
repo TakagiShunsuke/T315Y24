@@ -15,6 +15,7 @@ __Y24
 _M06
 D
 05:プログラム作成:takagi
+07:ウェーブ排除・生成パターン追加:takagi
 =====*/
 
 //＞名前空間宣言
@@ -41,7 +42,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     [Serializable]public struct PhasePatturn
     {
         public E_PHASE m_Phase;    //フェーズ
-        public uint m_unPhaseRepeat; //フェーズの繰り返し数
+        public List<CEnemyList.SpawnEnemyInfo> m_Enemies;
         public double m_dTime; //そのフェーズの持続時間
     }   //フェーズ定義用の構造体
 
@@ -50,31 +51,24 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
 
     //＞変数宣言
     [SerializeField] private List<PhasePatturn> m_Phases;   //フェーズ一覧
-    private uint m_unWave = 0;  //ウェーブ数カウンタ
     private uint m_unPhase = 0;
-    private double m_dCntDwnWave = 0.0d;
+    private double m_dCntDwnPhase = 0.0d;
 
     //＞プロパティ定義
     private double CntDwnWave
     {
-        get => m_dCntDwnWave;   //自身のゲッタ
+        get => m_dCntDwnPhase;   //自身のゲッタ
         set
         {
-            m_dCntDwnWave = value;    //カウントダウン
-            if (m_dCntDwnWave < 0.0d)   //カウントダウン時間超過
+            m_dCntDwnPhase = value;    //カウントダウン
+            if (m_dCntDwnPhase < 0.0d)   //カウントダウン時間超過
             {
-                //＞ウェーブ・フェーズ管理
-                m_unWave++; //ウェーブ進行
-#if UNITY_EDITOR    //エディタ使用中
-                Debug.Log("ウェーブ" + m_unWave);   //ウェーブ数出力
-#endif
-                if (m_unWave >= m_Phases[(int)m_unPhase].m_unPhaseRepeat)   //ウェーブ数超過時
-                {
                     if (m_Phases.Count > m_unPhase + 1) //フェーズ進行補正
                     {
                         m_unPhase++;    //フェーズ進行
+                    CEnemyList.Instance.SpawnInfo = m_Phases[(int)m_unPhase].m_Enemies;
 #if UNITY_EDITOR    //エディタ使用中
-                        Debug.Log("フェーズ" + m_unWave);   //フェーズ数出力
+                    Debug.Log("フェーズ" + m_unPhase);   //フェーズ数出力
 #endif
                     }
 #if UNITY_EDITOR    //エディタ使用中
@@ -84,23 +78,14 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
                         UnityEngine.Debug.LogError("フェーズ数が想定を超過しています");  //警告ログ出力
                     }
 #endif
-                }
 
                 //＞カウントダウン量更新
-                m_dCntDwnWave = m_Phases[(int)m_unPhase].m_dTime + -m_dCntDwnWave;  //カウント更新(超過分考慮)
+                m_dCntDwnPhase = m_Phases[(int)m_unPhase].m_dTime + -m_dCntDwnPhase;  //カウント更新(超過分考慮)
             }
         }
     }//ウェーブ用カウントダウン
-    private uint unPhase
-    {
-        get => m_unPhase;   //自身のゲッタ
-        set 
-        {
-            m_unPhase = value;  //セッタとしての機能
-            m_unWave = INIT_WAVE;   //フェーズが変わったら絶対にウェーブは数え直しになる
-        }
-    } //フェーズ数カウンタ
     public E_PHASE Phase => m_Phases[(int)m_unPhase].m_Phase; //現在のフェーズ
+
 
     /*＞初期化関数
      引数１：なし
@@ -111,8 +96,11 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
      */
     override protected void CustomAwake()
     {
+        CEnemyList.Instance.SpawnInfo = m_Phases[(int)m_unPhase].m_Enemies;
+#if UNITY_EDITOR    //エディタ使用中
+        Debug.Log("フェーズ" + m_unPhase);   //フェーズ数出力
+#endif
         CntDwnWave = m_Phases[(int)m_unPhase].m_dTime;    //カウントダウン初期化
-
     }
 
     /*＞物理更新関数
