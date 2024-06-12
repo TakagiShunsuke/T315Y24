@@ -55,6 +55,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     private double m_dCntDwnPhase = 0.0d;
 
     //＞プロパティ定義
+    public bool IsFinPhases { get; private set; } = false;    //フェーズ全終了フラグ
     private double CntDwnWave
     {
         get => m_dCntDwnPhase;   //自身のゲッタ
@@ -71,13 +72,14 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
                     Debug.Log("フェーズ" + m_unPhase);   //フェーズ数出力
 #endif
                     }
-#if UNITY_EDITOR    //エディタ使用中
                     else
-                    {
-                        //＞エラー出力
-                        UnityEngine.Debug.LogError("フェーズ数が想定を超過しています");  //警告ログ出力
-                    }
-#endif
+                {
+                    IsFinPhases = true; //全フェーズ完了
+//#if UNITY_EDITOR    //エディタ使用中
+//                    //＞エラー出力
+//                    UnityEngine.Debug.LogError("フェーズ数が想定を超過しています");  //警告ログ出力
+//#endif
+                }
 
                 //＞カウントダウン量更新
                 m_dCntDwnPhase = m_Phases[(int)m_unPhase].m_dTime + -m_dCntDwnPhase;  //カウント更新(超過分考慮)
