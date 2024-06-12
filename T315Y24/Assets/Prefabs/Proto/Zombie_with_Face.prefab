@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dAtkInterval: 3
-  m_eFeatureType: 0
+  m_eFeatureType: 1
   m_EffectCube: {fileID: 5494002748605305887, guid: fd71ecc1c943cc04483bcb596c553a9c, type: 3}
   m_nEffectNum: 10
   m_fPosRandRange: 0.01

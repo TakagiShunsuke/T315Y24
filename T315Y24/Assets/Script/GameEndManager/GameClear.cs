@@ -19,7 +19,8 @@ public class GameClear : MonoBehaviour
     void Update()
     {
         // §ŒÀŠÔ‚ª‚O•b‚È‚ç
-        if (timeMngCom.currentTime <= 0)
+        //if (timeMngCom.currentTime <= 0)
+        if (CPhaseManager.Instance.IsFinPhases)
         {
             SceneManager.LoadScene("ResultScene");    // ResultScene‚Ö‘JˆÚ
         }
