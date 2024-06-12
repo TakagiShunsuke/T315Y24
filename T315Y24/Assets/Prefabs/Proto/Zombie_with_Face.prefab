@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dAtkInterval: 3
+  m_eFeatureType: 0
   m_EffectCube: {fileID: 5494002748605305887, guid: fd71ecc1c943cc04483bcb596c553a9c, type: 3}
   m_nEffectNum: 10
   m_fPosRandRange: 0.01
@@ -251,4 +252,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e590b79533b03e045935e7e3da3f9745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 9130855982869980821, guid: 4f617f61ec882584bb1065dcc5568909, type: 3}
