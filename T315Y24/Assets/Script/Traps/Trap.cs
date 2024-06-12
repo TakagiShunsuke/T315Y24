@@ -56,7 +56,7 @@ public class CTrap : MonoBehaviour
     }
     public virtual void SetCheck(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
+        if (/*collision.gameObject.CompareTag("Map") || */collision.gameObject.CompareTag("Trap"))
         {
             Debug.Log("off");
            m_bSetting=false;
