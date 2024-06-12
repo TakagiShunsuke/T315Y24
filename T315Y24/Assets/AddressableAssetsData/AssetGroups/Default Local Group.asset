@@ -33,12 +33,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c6f9d21c51bb8048b33a785a61cd005
-    m_Address: Assets/Prefabs/Proto/Zombie_with_Face.prefab
+    m_Address: PowerZombie
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d8d54b184bf9a14c8390620b1bbef62
-    m_Address: Assets/Prefabs/Proto/Zombie_Model.prefab
+    m_Address: NormalZombie
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
