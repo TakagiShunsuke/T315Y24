@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 //＞クラス定義
 public class CPlayerScript : MonoBehaviour, IDamageable
 {
@@ -88,7 +89,20 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     void Update()   //キーが押されたときに更新を行う
     {
         Vector3 moveDirection = Vector3.zero; // 移動方向の初期化
-        Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));    //プレイヤーの向きを変えるベクトル
+                                              //     Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));    //プレイヤーの向きを変えるベクトル
+                                              //  Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal") + Input.GetAxis("JoystickHorizontal"), 0, Input.GetAxis("Vertical") + Input.GetAxis("JoystickVertical"));    //プレイヤーの向きを変えるベクトル
+
+        // キーボードの入力を取得
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        // コントローラーの入力を取得
+        float joystickHorizontal = Input.GetAxis("JoystickHorizontal");
+        float joystickVertical = Input.GetAxis("JoystickVertical");
+
+        // 入力を合成
+        Vector3 target_dir = new Vector3(horizontalInput + joystickHorizontal, 0, verticalInput + joystickVertical);
+
 
         if (target_dir.magnitude > 0.1) //ベクトルの長さが0.01fより大きい場合にプレイヤーの向きを変える
         {
@@ -139,7 +153,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         {
             //TODO:明滅処理
             //var RadSp = 2.0d * Math.PI * (double)m_unFlNu * CntDwnInvicibleTime / m_dInvicibleTime;
-            
+
             //var mr = GetComponent<MeshRenderer>();
             //mr.material.color = new Color(mr.material.color.r, mr.material.color.g, mr.material.color.b, (float)(Math.Sin(RadSp) * 255.0d));
         }
@@ -188,7 +202,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         }
 
         //＞変数宣言・初期化
-        Vector3 _vFront = new((float)Math.Cos(Mathf.Deg2Rad * (-transform.eulerAngles.y+ m_dFrontAngle)), 0.0f,
+        Vector3 _vFront = new((float)Math.Cos(Mathf.Deg2Rad * (-transform.eulerAngles.y + m_dFrontAngle)), 0.0f,
             (float)Math.Sin(Mathf.Deg2Rad * (-transform.eulerAngles.y + m_dFrontAngle)));  //正面方向のベクトル  ※y軸回転の方向は座標系と逆方向
         _vFront = _vFront.normalized * (float)m_DashDist; //ベクトルサイズ初期化
         Vector3 _vGo = transform.position + _vFront;    //行き先予定地の座標
