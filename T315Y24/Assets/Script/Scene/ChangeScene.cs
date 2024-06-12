@@ -15,9 +15,14 @@ D       //日
 10:プログラム作成:nieda
 14:ビルドバグの元を除去:takagi
 17:キー入力でシーン遷移実装:nieda
+
+_M06
+D
+13:キー入力の受付を制限+汎化:takagi
 =====*/
 
 //＞名前空間宣言
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +32,17 @@ using static System.Net.Mime.MediaTypeNames;
 //＞クラス定義
 public class CChangeScene : MonoBehaviour
 {
+    //＞構造体定義
+    [Serializable] public struct KeyChangeScene
+    {
+        public KeyCode[] TransitionKey; //シーン遷移の着火キー
+        public String Nextscene;    //シーンの切換先
+    }
+
+    //＞変数宣言
+    [SerializeField] private KeyChangeScene[] m_KeyChangeScenes;    //シーン遷移一覧
+
+
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -50,20 +66,23 @@ public class CChangeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //＞保全
+        if(m_KeyChangeScenes == null)   //ヌルチェック
         {
-            // タイトル→ステージセレクト
-            SceneManager.LoadScene("SelectScene");
+            //＞終了
+            return; //処理キャンセル
         }
-        else if (Input.GetKeyDown(KeyCode.P))
+
+        //＞シーン遷移
+        for(int nIdx = 0; nIdx < m_KeyChangeScenes.Length; ++nIdx)   //遷移先候補分判定
         {
-            // ステージセレクト→プロトステージ
-            SceneManager.LoadScene("ProtoStage");
-        }
-        else if (Input.GetKeyDown(KeyCode.T))
-        {
-            // リザルト、ゲームオーバー→タイトル
-            SceneManager.LoadScene("TitleScene");
+            for(int nIdx2 = 0; nIdx2 < m_KeyChangeScenes[nIdx].TransitionKey.Length; ++nIdx2)    //受付キー分判定する
+            {
+                if (Input.GetKeyDown(m_KeyChangeScenes[nIdx].TransitionKey[nIdx2])) //キー入力判定
+                {
+                    SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
+                }
+            }
         }
     }
 

@@ -227,6 +227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba370e7370476449b0dc1502773d8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_KeyChangeScenes:
+  - TransitionKey: 20000000
+    Nextscene: SelectScene
 --- !u!1 &318375908
 GameObject:
   m_ObjectHideFlags: 0
