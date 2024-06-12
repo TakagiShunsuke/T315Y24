@@ -17,6 +17,10 @@ D
 21:プログラム作成:takagi
 25:セマンティクス修正:takagi
 31:リファクタリング:takagi
+
+_M06
+D
+13:脱字修正:takagi
 =====*/
 
 //＞名前空間宣言
@@ -37,7 +41,7 @@ public class CPlayerDashInterval : MonoBehaviour
 {
     //＞定数定義
     private const string TEXT_DASH_ABLE = "ダッシュ可能"; //ダッシュ可能時の表示テキスト
-    private const string TEXT_DASH_UNABLE = "ダッシュ可能";   //ダッシュ不可能時の表示テキスト
+    private const string TEXT_DASH_UNABLE = "ダッシュ不可能";   //ダッシュ不可能時の表示テキスト
 
     //＞変数宣言
     private CPlayerScript m_Player = null;  //プレイヤーの情報
@@ -71,7 +75,7 @@ public class CPlayerDashInterval : MonoBehaviour
         if (m_TextMeshProUGUI == null)   //取得に失敗した時
         {
             //＞エラー出力
-            UnityEngine.Debug.LogWarning("入力先テキストが設定されていません");    //警告ログ出力
+            UnityEngine.Debug.LogWarning("入力先テキストが設定されていません");    //警告ログ出力s
         }
 #endif
     }
