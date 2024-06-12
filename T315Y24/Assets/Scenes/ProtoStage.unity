@@ -574,7 +574,7 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
-      m_SpawnAmount: 10
+      m_SpawnAmount: 1
     m_dTime: 10
   - m_Phase: 1
     m_Enemies: []
