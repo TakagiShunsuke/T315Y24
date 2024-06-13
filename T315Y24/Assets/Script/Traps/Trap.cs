@@ -78,16 +78,17 @@ public class CTrap : MonoBehaviour
             Vector3 p = player.transform.forward * 2;
             transform.position = player.transform.position + p;
             Settings();
-            if (Input.GetKeyDown(KeyCode.R)&& m_bSetting)
-            {
-                m_bMove = false;
-                GameObject A;
-                CTrapSelect T;
-               A = GameObject.Find("TrapManager");
-                T = A.GetComponent<CTrapSelect>();
-                T.SetSelect();
-            }
-            m_bSetting = true;
+           // if (Input.GetKeyDown(KeyCode.R)&& m_bSetting)
+           // {
+           //     Debug.Log("dddd");
+           //     m_bMove = false;
+           //     GameObject A;
+           //     CTrapSelect T;
+           //    A = GameObject.Find("TrapManager");
+           //     T = A.GetComponent<CTrapSelect>();
+           //     T.SetSelect();
+           // }
+           // m_bSetting = true;
         }
         CooltimeCount();
         
@@ -118,5 +119,21 @@ public class CTrap : MonoBehaviour
     {
         m_dCoolTime = m_dInterval;          // çƒóòópéûä‘åvë™
         m_CoolDownText.gameObject.SetActive(true);
+        m_bUse=false;
+    }
+
+    public void aaa()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && m_bSetting)
+        {
+            Debug.Log("dddd");
+            m_bMove = false;
+            GameObject A;
+            CTrapSelect T;
+            A = GameObject.Find("TrapManager");
+            T = A.GetComponent<CTrapSelect>();
+            T.SetSelect();
+        }
+        m_bSetting = true;
     }
 }

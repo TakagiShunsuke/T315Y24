@@ -953,7 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_KeyChangeScenes:
-  - TransitionKey: 74000000
+  - TransitionKey: 20000000
     Nextscene: TitleScene
 --- !u!114 &2124885312
 MonoBehaviour:
