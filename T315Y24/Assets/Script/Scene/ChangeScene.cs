@@ -15,6 +15,9 @@ D       //日
 10:プログラム作成:nieda
 14:ビルドバグの元を除去:takagi
 17:キー入力でシーン遷移実装:nieda
+_M06    //06月
+D       //日
+13:シーン遷移ボタン統一、Pでプロトステージ、Oでステージ1に遷移:nieda
 =====*/
 
 //＞名前空間宣言
@@ -34,7 +37,6 @@ public class CChangeScene : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -47,23 +49,37 @@ public class CChangeScene : MonoBehaviour
     ｘ
     概要：一定時間ごとに行う更新処理
     */
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // タイトル→ステージセレクト
-            SceneManager.LoadScene("SelectScene");
+            if (SceneManager.GetActiveScene().name == "TitleScene")
+            {
+                // タイトル→ステージセレクト
+                SceneManager.LoadScene("SelectScene");
+            }
+            else if (SceneManager.GetActiveScene().name == "SelectScene")
+            {
+                // ステージセレクト→ステージ1
+                SceneManager.LoadScene("Stage01");
+            }
+            else if (SceneManager.GetActiveScene().name == "ResultScene")
+            {
+                // リザルト、ゲームオーバー→タイトル
+                SceneManager.LoadScene("TitleScene");
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.P))
+
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            // ステージセレクト→プロトステージ
+            // プロトステージへ遷移
             SceneManager.LoadScene("ProtoStage");
         }
-        else if (Input.GetKeyDown(KeyCode.T))
+
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            // リザルト、ゲームオーバー→タイトル
-            SceneManager.LoadScene("TitleScene");
+            // ステージ1へ遷移
+            SceneManager.LoadScene("Stage01");
         }
     }
 
