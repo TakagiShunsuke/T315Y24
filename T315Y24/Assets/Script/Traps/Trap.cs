@@ -45,7 +45,7 @@ public class CTrap : MonoBehaviour
 */
     public bool Check(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && m_bUse)  // Enemyタグがついている＆地雷使用可能
+        if (collision.gameObject.CompareTag("Enemy") && m_bUse && !m_bMove)  // Enemyタグがついている＆地雷使用可能
         {
             m_bUse = false;                     // 使用不可
             SetCoolTime();
@@ -58,7 +58,6 @@ public class CTrap : MonoBehaviour
     {
         if (/*collision.gameObject.CompareTag("Map") || */collision.gameObject.CompareTag("Trap"))
         {
-            Debug.Log("off");
            m_bSetting=false;
         }
         
@@ -74,7 +73,6 @@ public class CTrap : MonoBehaviour
 */
     private void FixedUpdate()
     {
-        Debug.Log("FUP");
         if(m_bMove)
         {
             Vector3 p = player.transform.forward * 2;

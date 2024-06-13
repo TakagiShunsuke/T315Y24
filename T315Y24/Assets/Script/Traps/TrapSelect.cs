@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static CCodingRule;
 
 public class CTrapSelect : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class CTrapSelect : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");//åüçı
+        m_nNum = 0;
+        RectTransform rectTransform = ImageList[m_nNum].GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(200, 200);
+
     }
 
     // Update is called once per frame

@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProtoStage.unity
     guid: d281ddc940a9855439e79e124df2ec42
+  - enabled: 1
+    path: Assets/Scenes/Stage01.unity
+    guid: f83702ee09b3d8e4788732fcf3065959
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b5c3e5cd887e2ba449db866771df61c5, type: 2}
   m_UseUCBPForAssetBundles: 0
