@@ -22,7 +22,6 @@ public class RemoteBomb : CTrap
     }
     private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("hit");
         SetCheck(collision);
     }
 }
