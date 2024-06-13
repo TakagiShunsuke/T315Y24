@@ -54,5 +54,8 @@ public class Mine : CTrap
 
         SetCheck(collision);
     }
-
+    void Update()
+    {
+        aaa();
+    }
 }

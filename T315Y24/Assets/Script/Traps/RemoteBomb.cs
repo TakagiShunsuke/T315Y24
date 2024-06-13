@@ -18,7 +18,9 @@ public class RemoteBomb : CTrap
                 SetCoolTime();
                 Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
             }
-        }
+         }
+
+        aaa();
     }
     private void OnCollisionStay(Collision collision)
     {
