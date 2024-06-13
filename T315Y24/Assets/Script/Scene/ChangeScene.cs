@@ -9,15 +9,16 @@
 1年時に作ったものを完全流用した
 
 ＞更新履歴
-__Y24   //'24年
-_M05    //05月
-D       //日
+__Y24
+_M05
+D
 10:プログラム作成:nieda
 14:ビルドバグの元を除去:takagi
 17:キー入力でシーン遷移実装:nieda
 
 _M06
 D
+13:シーン遷移ボタン統一、Pでプロトステージ、Oでステージ1に遷移:nieda
 13:キー入力の受付を制限+汎化:takagi
 =====*/
 
@@ -50,7 +51,6 @@ public class CChangeScene : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -63,7 +63,6 @@ public class CChangeScene : MonoBehaviour
     ｘ
     概要：一定時間ごとに行う更新処理
     */
-    // Update is called once per frame
     void Update()
     {
         //＞保全
@@ -96,15 +95,11 @@ public class CChangeScene : MonoBehaviour
     public void GameEnd()
     {
 #if UNITY_EDITOR    //Editor上からの実行時
-
         //再生モードを解除する
         UnityEditor.EditorApplication.isPlaying = false;
-
 #else               //実行ファイルからの実行時
-
         //TODO:代替処理
         //Application.Quit();
-
 #endif
     }
 }
