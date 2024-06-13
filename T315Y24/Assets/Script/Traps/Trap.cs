@@ -83,7 +83,7 @@ public class CTrap : MonoBehaviour
                 m_bMove = false;
                 GameObject A;
                 CTrapSelect T;
-               A = GameObject.Find("Trapmnager");
+               A = GameObject.Find("TrapManager");
                 T = A.GetComponent<CTrapSelect>();
                 T.SetSelect();
             }

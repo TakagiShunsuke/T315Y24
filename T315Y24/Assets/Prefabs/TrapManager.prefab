@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5122594436467321917}
   - component: {fileID: 7202056030175660570}
   m_Layer: 0
-  m_Name: Trapmnager
+  m_Name: TrapManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrapList:
   - {fileID: 583634829224621628, guid: d87373259ba24914d9d6aeeb282dbf0a, type: 3}
-  - {fileID: 8550349829426440858, guid: 0c384daa55e6c8246b99e3f410f6f819, type: 3}
+  - {fileID: 5535155901697448678, guid: 107aab7980b8de845972db3080b7fe4c, type: 3}
   ImageList:
   - {fileID: 5892564834789293960}
   - {fileID: 2637021579483680685}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 1428582169620307330}
   - component: {fileID: 2637021579483680685}
   m_Layer: 0
-  m_Name: Image
+  m_Name: DrumImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -336, y: -400}
+  m_AnchoredPosition: {x: -500, y: -400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1428582169620307330
@@ -117,8 +117,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 528888bb29631e5498adcd590d892202, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -158,8 +158,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 637148274600271551}
   - {fileID: 6637823594242967926}
+  - {fileID: 637148274600271551}
   m_Father: {fileID: 5122594436467321917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 6779940224894866346}
   - component: {fileID: 5892564834789293960}
   m_Layer: 0
-  m_Name: Image
+  m_Name: MineImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -550, y: -400}
+  m_AnchoredPosition: {x: -750, y: -400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6779940224894866346
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f9388c06a2ec67c44b2ed08fd15446b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
