@@ -15,6 +15,8 @@ public class CTrap : MonoBehaviour
     public float m_fPosY;
     public bool m_bSetting = true;
     private GameObject player;
+    AudioSource m_audioSource;    // AudioSourceを追加
+    [SerializeField] public AudioClip SE_SetTrap;   // 罠設置時のSE
 
  /*＞初期化関数
  引数１：なし
@@ -34,6 +36,8 @@ public class CTrap : MonoBehaviour
 
         player = GameObject.Find("Player");//検索
         Settings();
+
+        m_audioSource = GetComponent<AudioSource>();
     }
 
 /*＞罠発動チェック関数
@@ -80,6 +84,7 @@ public class CTrap : MonoBehaviour
             Settings();
             if (Input.GetKeyDown(KeyCode.R)&& m_bSetting)
             {
+                m_audioSource.PlayOneShot(SE_SetTrap);
                 m_bMove = false;
                 GameObject A;
                 CTrapSelect T;

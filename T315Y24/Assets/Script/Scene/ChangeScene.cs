@@ -18,6 +18,7 @@ D       //日
 _M06    //06月
 D       //日
 13:シーン遷移ボタン統一、Pでプロトステージ、Oでステージ1に遷移:nieda
+13:決定時SE追加:nieda
 =====*/
 
 //＞名前空間宣言
@@ -30,6 +31,9 @@ using static System.Net.Mime.MediaTypeNames;
 //＞クラス定義
 public class CChangeScene : MonoBehaviour
 {
+    AudioSource m_audioSource;  // AudioSourceを追加
+    [SerializeField] public AudioClip SE_Decide;  // ダッシュ時のSE
+
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -39,7 +43,7 @@ public class CChangeScene : MonoBehaviour
     */
     void Start()
     {
-
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     /*＞更新関数
@@ -56,16 +60,19 @@ public class CChangeScene : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "TitleScene")
             {
                 // タイトル→ステージセレクト
+                m_audioSource.Play();
                 SceneManager.LoadScene("SelectScene");
             }
             else if (SceneManager.GetActiveScene().name == "SelectScene")
             {
                 // ステージセレクト→ステージ1
+                m_audioSource.Play();
                 SceneManager.LoadScene("Stage01");
             }
             else if (SceneManager.GetActiveScene().name == "ResultScene")
             {
                 // リザルト、ゲームオーバー→タイトル
+                m_audioSource.Play();
                 SceneManager.LoadScene("TitleScene");
             }
         }
