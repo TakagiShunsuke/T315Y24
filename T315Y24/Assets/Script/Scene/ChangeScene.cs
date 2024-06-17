@@ -9,19 +9,23 @@
 1年時に作ったものを完全流用した
 
 ＞更新履歴
-__Y24   //'24年
-_M05    //05月
-D       //日
+__Y24
+_M05
+D
 10:プログラム作成:nieda
 14:ビルドバグの元を除去:takagi
 17:キー入力でシーン遷移実装:nieda
-_M06    //06月
-D       //日
+
+_M06
+D
 13:シーン遷移ボタン統一、Pでプロトステージ、Oでステージ1に遷移:nieda
+13:キー入力の受付を制限+汎化:takagi
 13:決定時SE追加:nieda
+18:SEを鳴らすように修正:takagi
 =====*/
 
 //＞名前空間宣言
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,8 +35,17 @@ using static System.Net.Mime.MediaTypeNames;
 //＞クラス定義
 public class CChangeScene : MonoBehaviour
 {
+    //＞構造体定義
+    [Serializable] public struct KeyChangeScene
+    {
+        public KeyCode[] TransitionKey; //シーン遷移の着火キー
+        public String Nextscene;    //シーンの切換先
+    }
+
+    //＞変数宣言
+    [SerializeField] private KeyChangeScene[] m_KeyChangeScenes;    //シーン遷移一覧
+    [SerializeField] public AudioClip SE_Decide;  // 決定時のSE
     AudioSource m_audioSource;  // AudioSourceを追加
-    [SerializeField] public AudioClip SE_Decide;  // ダッシュ時のSE
 
     /*＞初期化関数
     引数１：なし
@@ -55,39 +68,35 @@ public class CChangeScene : MonoBehaviour
     */
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //＞保全
+        if(m_KeyChangeScenes == null)   //ヌルチェック
         {
-            if (SceneManager.GetActiveScene().name == "TitleScene")
-            {
-                // タイトル→ステージセレクト
-                m_audioSource.Play();
-                SceneManager.LoadScene("SelectScene");
-            }
-            else if (SceneManager.GetActiveScene().name == "SelectScene")
-            {
-                // ステージセレクト→ステージ1
-                m_audioSource.Play();
-                SceneManager.LoadScene("Stage01");
-            }
-            else if (SceneManager.GetActiveScene().name == "ResultScene")
-            {
-                // リザルト、ゲームオーバー→タイトル
-                m_audioSource.Play();
-                SceneManager.LoadScene("TitleScene");
-            }
+            //＞終了
+            return; //処理キャンセル
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        //＞シーン遷移
+        for(int nIdx = 0; nIdx < m_KeyChangeScenes.Length; ++nIdx)   //遷移先候補分判定
         {
-            // プロトステージへ遷移
-            SceneManager.LoadScene("ProtoStage");
+            for(int nIdx2 = 0; nIdx2 < m_KeyChangeScenes[nIdx].TransitionKey.Length; ++nIdx2)    //受付キー分判定する
+            {
+                if (Input.GetKeyDown(m_KeyChangeScenes[nIdx].TransitionKey[nIdx2])) //キー入力判定
+                {
+                    StartCoroutine( Change(nIdx));
+                //    m_audioSource.PlayOneShot(SE_Decide);
+                //    while(m_audioSource.isPlaying) {}   //非同期処理：SEを鳴らし切るまで待機
+                //    SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
+                }
+            }
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            // ステージ1へ遷移
-            SceneManager.LoadScene("Stage01");
-        }
+    //非同期でSE再生終了を待つ関数
+    IEnumerator Change(int nIdx)
+    {
+        m_audioSource.PlayOneShot(SE_Decide);
+        while (m_audioSource.isPlaying) { yield return null; }   //非同期処理：SEを鳴らし切るまで待機
+        SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
     }
 
     /*＞ゲーム終了関数
@@ -100,15 +109,11 @@ public class CChangeScene : MonoBehaviour
     public void GameEnd()
     {
 #if UNITY_EDITOR    //Editor上からの実行時
-
         //再生モードを解除する
         UnityEditor.EditorApplication.isPlaying = false;
-
 #else               //実行ファイルからの実行時
-
         //TODO:代替処理
         //Application.Quit();
-
 #endif
     }
 }

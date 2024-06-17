@@ -16,6 +16,7 @@ _M06
 D
 05:プログラム作成:takagi
 09:コード改善:takagi
+13:確率修正:takagi
 =====*/
 
 //＞名前空間宣言
@@ -64,7 +65,7 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
             }
 
             //＞ランダムに生成敵を決定
-            var _nRand = UnityEngine.Random.Range(1, _nTotal);  //重みを含めて算出。この時点でnRand > 0である
+            var _nRand = UnityEngine.Random.Range(1, _nTotal + 1);  //重みを含めて算出。この時点でnRand > 0である。またRangeにMax値は含まれないため+1。
 
             //＞重みの定義域層から対象を捜査
             for (int nIdx = 0; nIdx < SpawnInfo.Count; nIdx++)  //生成候補すべて
