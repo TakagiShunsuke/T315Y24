@@ -130,6 +130,7 @@ MonoBehaviour:
   m_bMove: 1
   m_fPosY: -0.3
   m_bSetting: 1
+  SE_SetTrap: {fileID: 8300000, guid: ea48c053540e57445b113bbdc7c54d04, type: 3}
   m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
   SE_explosion: {fileID: 8300000, guid: 5bf8eea4c1898424eb06ab5a585bf60c, type: 3}
 --- !u!82 &-9145870453972372373

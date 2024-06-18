@@ -1,0 +1,1 @@
+//TODO:double ‚ÌRange‘®«ì¬

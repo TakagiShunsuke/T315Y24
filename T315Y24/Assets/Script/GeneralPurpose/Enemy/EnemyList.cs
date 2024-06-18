@@ -17,6 +17,7 @@ D
 05:プログラム作成:takagi
 09:コード改善:takagi
 13:確率修正:takagi
+18:生成比重の最小値設定:takagi
 =====*/
 
 //＞名前空間宣言
@@ -36,7 +37,7 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
     [Serializable] public struct SpawnEnemyInfo
     {
         public AssetReferenceGameObject m_SpawnAssetRef;   //生成対象アセット
-        public int m_SpawnAmount;    //生成量
+        [Min(0)] public int m_SpawnAmount;    //生成比重
     }   //敵生成用情報
 
     //＞定数定義
