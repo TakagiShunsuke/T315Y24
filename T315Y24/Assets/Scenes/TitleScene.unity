@@ -230,6 +230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_KeyChangeScenes:
   - TransitionKey: 20000000
+    TransitionButton:
+    - Decision
     Nextscene: SelectScene
   SE_Decide: {fileID: 8300000, guid: 535561b892ccff94a8f4abf9bb4a406d, type: 3}
 --- !u!82 &171975109

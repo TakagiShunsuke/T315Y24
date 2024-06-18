@@ -36,7 +36,7 @@ public class CTrap : MonoBehaviour
 
         player = GameObject.Find("Player");//åüçı
         Settings();
-
+        m_bSetting = true;
         m_audioSource = GetComponent<AudioSource>();
     }
 
@@ -60,13 +60,21 @@ public class CTrap : MonoBehaviour
     }
     public virtual void SetCheck(Collision collision)
     {
-        if (/*collision.gameObject.CompareTag("Map") || */collision.gameObject.CompareTag("Trap"))
+        if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
         {
-           m_bSetting=false;
+            Debug.Log("ìñÇΩÇ¡ÇƒÇÈ");
+            m_bSetting =false;
         }
         
     }
-
+    public virtual void OutCheck(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
+        {
+            Debug.Log("ìñÇΩÇ¡ÇƒÇ»Ç¢");
+            m_bSetting = true;
+        }
+    }
 
     /*ÅÑï®óùçXêVä÷êî
 à¯êîÅFÇ»Çµ
@@ -117,7 +125,7 @@ public class CTrap : MonoBehaviour
 
     public void aaa()
     {
-        if (Input.GetKeyDown(KeyCode.R) && m_bSetting)
+        if ((Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Decision")) && m_bSetting && m_bMove)
         {
             m_audioSource.PlayOneShot(SE_SetTrap);
             Debug.Log("dddd");
@@ -127,7 +135,7 @@ public class CTrap : MonoBehaviour
             A = GameObject.Find("TrapManager");
             T = A.GetComponent<CTrapSelect>();
             T.SetSelect();
+            Destroy(GetComponent<Rigidbody>());
         }
-        m_bSetting = true;
     }
 }
