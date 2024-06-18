@@ -59,6 +59,10 @@ public class Mine : CTrap
 
         SetCheck(collision);
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        OutCheck(collision);
+    }
     void Update()
     {
         aaa();

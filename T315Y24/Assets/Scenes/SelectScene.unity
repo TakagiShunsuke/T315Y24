@@ -391,8 +391,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_KeyChangeScenes:
   - TransitionKey: 70000000
+    TransitionButton:
+    - Left
     Nextscene: ProtoStage
   - TransitionKey: 20000000
+    TransitionButton:
+    - Decision
     Nextscene: Stage01
   SE_Decide: {fileID: 8300000, guid: 535561b892ccff94a8f4abf9bb4a406d, type: 3}
 --- !u!114 &740916179

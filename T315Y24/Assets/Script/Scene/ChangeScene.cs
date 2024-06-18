@@ -39,6 +39,7 @@ public class CChangeScene : MonoBehaviour
     [Serializable] public struct KeyChangeScene
     {
         public KeyCode[] TransitionKey; //シーン遷移の着火キー
+        public string[] TransitionButton;   //シーン遷移の着火ボタン
         public String Nextscene;    //シーンの切換先
     }
 
@@ -86,6 +87,17 @@ public class CChangeScene : MonoBehaviour
                 //    m_audioSource.PlayOneShot(SE_Decide);
                 //    while(m_audioSource.isPlaying) {}   //非同期処理：SEを鳴らし切るまで待機
                 //    SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
+                }
+            }
+            //コントローラー用
+            for (int nIdx2 = 0; nIdx2 < m_KeyChangeScenes[nIdx].TransitionButton.Length; ++nIdx2)    //受付キー分判定する
+            {
+                if (Input.GetButtonDown(m_KeyChangeScenes[nIdx].TransitionButton[nIdx2])) //キー入力判定
+                {
+                    StartCoroutine(Change(nIdx));
+                    //    m_audioSource.PlayOneShot(SE_Decide);
+                    //    while(m_audioSource.isPlaying) {}   //非同期処理：SEを鳴らし切るまで待機
+                    //    SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
                 }
             }
         }
