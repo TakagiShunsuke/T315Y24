@@ -15,6 +15,9 @@ D
 23:ダッシュ追加:takagi
 30:ダッシュ改修・無敵時間分割:takagi
 31:リファクタリング:takagi
+_M06
+D
+17:SE追加:nieda
 =====*/
 
 //＞名前空間宣言
@@ -40,6 +43,9 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     private double m_dCntDwnDshInterval = 0.0d;  //ダッシュカウントダウン用
     [SerializeField] private KeyCode m_DushKey = KeyCode.E; //ダッシュのキー
     [SerializeField] private double m_DashDist = 2.0d;  //ダッシュ時に移動する距離
+    [SerializeField] public AudioClip SE_Dash;  // ダッシュ時のSE
+    [SerializeField] public AudioClip SE_Damage;  // 被ダメ時のSE
+    AudioSource m_As; // AudioSourceを追加
 
     //＞プロパティ定義
     private double CntDwnInvicibleTime
@@ -77,6 +83,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     {
         //＞初期化
         m_Rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
+        m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
     }
 
     /*＞移動処理関数
@@ -180,6 +187,8 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             return; //ダメージを受けない
         }
 
+        m_As.PlayOneShot(SE_Damage);   // SE再生
+
         //＞ダメージ計算
         m_dHp -= dDamageVal;    //HP減少
         CntDwnInvicibleTime = m_dDamagedInvicibleTime;  //無敵時間のカウントをリセットする
@@ -227,6 +236,8 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         if (_vGo != transform.position)  //移動先に対して変移があるとき
         {
             m_Rb.transform.position = _vGo;  //即座に移動を行う
+
+            m_As.PlayOneShot(SE_Dash);   // SE再生
 
             //＞カウントダウン
             m_dCntDwnDshInterval = m_unDashInterval;   //時間をカウント

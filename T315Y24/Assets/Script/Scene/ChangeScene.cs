@@ -20,6 +20,7 @@ _M06
 D
 13:シーン遷移ボタン統一、Pでプロトステージ、Oでステージ1に遷移:nieda
 13:キー入力の受付を制限+汎化:takagi
+17:SE追加:nieda
 =====*/
 
 //＞名前空間宣言
@@ -42,7 +43,8 @@ public class CChangeScene : MonoBehaviour
 
     //＞変数宣言
     [SerializeField] private KeyChangeScene[] m_KeyChangeScenes;    //シーン遷移一覧
-
+    [SerializeField] public AudioClip SE_Decide;  // 決定時のSE
+    AudioSource m_As; // AudioSourceを追加
 
     /*＞初期化関数
     引数１：なし
@@ -53,7 +55,7 @@ public class CChangeScene : MonoBehaviour
     */
     void Start()
     {
-
+        m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
     }
 
     /*＞更新関数
@@ -79,6 +81,7 @@ public class CChangeScene : MonoBehaviour
             {
                 if (Input.GetKeyDown(m_KeyChangeScenes[nIdx].TransitionKey[nIdx2])) //キー入力判定
                 {
+                    m_As.PlayOneShot(SE_Decide);   // SE再生
                     SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
                 }
             }

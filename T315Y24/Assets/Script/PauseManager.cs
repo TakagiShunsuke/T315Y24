@@ -9,11 +9,13 @@ public class PauseManager : MonoBehaviour
 {
     [SerializeField] GameObject panel;
     [SerializeField] bool m_bPause;
+    [SerializeField] public AudioClip SE_Pause;  // ポーズ表示時のSE
+    AudioSource m_As; // AudioSourceを追加
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
     }
 
     // Update is called once per frame
@@ -21,9 +23,10 @@ public class PauseManager : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.P))
         {
-            if(!m_bPause) m_bPause = true;
-            else m_bPause = false;
+            m_As.PlayOneShot(SE_Pause);   // SE再生
 
+            if (!m_bPause) m_bPause = true;
+            else m_bPause = false;
         }
 
         if (m_bPause == true)

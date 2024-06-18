@@ -15,14 +15,16 @@ public class CTrap : MonoBehaviour
     public float m_fPosY;
     public bool m_bSetting = true;
     private GameObject player;
+    [SerializeField] public AudioClip SE_Set;  // 罠設置時のSE
+    protected AudioSource m_As; // AudioSourceを追加
 
- /*＞初期化関数
- 引数１：なし
- ｘ
- 戻値：なし
- ｘ
- 概要：インスタンス生成時に行う処理
- */
+    /*＞初期化関数
+    引数１：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：インスタンス生成時に行う処理
+    */
     void Start()
     {
         // テキストの初期化
@@ -34,6 +36,8 @@ public class CTrap : MonoBehaviour
 
         player = GameObject.Find("Player");//検索
         Settings();
+
+        m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
     }
 
 /*＞罠発動チェック関数
@@ -133,6 +137,7 @@ public class CTrap : MonoBehaviour
             A = GameObject.Find("TrapManager");
             T = A.GetComponent<CTrapSelect>();
             T.SetSelect();
+            m_As.PlayOneShot(SE_Set);   // SE再生
         }
         m_bSetting = true;
     }

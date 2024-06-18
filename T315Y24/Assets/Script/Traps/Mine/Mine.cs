@@ -22,6 +22,7 @@ D
 _M06
 D
 08：親クラス追加それに伴いプログラム書き換え:yamamoto
+18：SE追加:nieda
 =====*/
 
 //＞名前空間宣言
@@ -37,6 +38,7 @@ public class Mine : CTrap
 {
     //＞変数宣言
     [SerializeField] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    [SerializeField] public AudioClip SE_ExpMine;  // 罠設置時のSE
 
     /*＞地雷当たり判定関数
     引数１：当たり判定があったオブジェクトの情報
@@ -50,6 +52,7 @@ public class Mine : CTrap
         if (Check(collision))  // 起爆できるか
         {
             Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
+            m_As.PlayOneShot(SE_ExpMine);
         }
 
         SetCheck(collision);
