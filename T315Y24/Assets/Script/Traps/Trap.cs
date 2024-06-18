@@ -62,7 +62,6 @@ public class CTrap : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
         {
-            Debug.Log("“–‚½‚Á‚Ä‚é");
             m_bSetting =false;
         }
         
@@ -71,7 +70,6 @@ public class CTrap : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
         {
-            Debug.Log("“–‚½‚Á‚Ä‚È‚¢");
             m_bSetting = true;
         }
     }
