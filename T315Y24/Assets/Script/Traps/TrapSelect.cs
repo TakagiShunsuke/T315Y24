@@ -12,6 +12,7 @@ public class CTrapSelect : MonoBehaviour
     public List<GameObject> TrapList;   //罠の格納List
     public List<Image> ImageList;   //罠の格納List
     public List<int> CostList;   //罠のコスト格納List
+    public List<TMP_Text> CostText;   //罠のコストテキスト格納List
     //
     public bool m_bSelect=true;
     private int m_nNum;
@@ -32,6 +33,8 @@ public class CTrapSelect : MonoBehaviour
         // コルーチンを開始
         StartCoroutine(IncreaseCostOverTime());
         Cost_txt.SetText("使用可能コスト:" + m_Cost);     //初期化
+        CostText[0].SetText(""+CostList[0]);     //初期化
+        CostText[1].SetText("" + CostList[1]);     //初期化
     }
 
     // Update is called once per frame

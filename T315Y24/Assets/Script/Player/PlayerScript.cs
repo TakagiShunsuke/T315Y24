@@ -144,6 +144,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         {
             m_dCntDwnDshInterval -= Time.deltaTime;   //時間をカウント
         }
+        
     }
 
     /*＞物理更新関数
@@ -166,7 +167,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         }
 
         //＞ダッシュ操作
-        if (Input.GetKeyDown(m_DushKey))    //ダッシュ入力
+        if (Input.GetKeyDown(m_DushKey)||Input.GetButtonDown("Dash"))   //ダッシュ入力
         {
             Dash(); //ダッシュする
         }
