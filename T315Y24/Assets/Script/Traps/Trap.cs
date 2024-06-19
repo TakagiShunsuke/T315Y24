@@ -15,8 +15,8 @@ public class CTrap : MonoBehaviour
     public float m_fPosY;
     public bool m_bSetting = true;
     private GameObject player;
-    [SerializeField] public AudioClip SE_Set;  // 罠設置時のSE
-    protected AudioSource m_As; // AudioSourceを追加
+    AudioSource m_audioSource;    // AudioSourceを追加
+    [SerializeField] public AudioClip SE_SetTrap;   // 罠設置時のSE
 
     /*＞初期化関数
     引数１：なし
@@ -36,8 +36,8 @@ public class CTrap : MonoBehaviour
 
         player = GameObject.Find("Player");//検索
         Settings();
-
-        m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
+        m_bSetting = true;
+        m_audioSource = GetComponent<AudioSource>();
     }
 
 /*＞罠発動チェック関数
@@ -60,13 +60,19 @@ public class CTrap : MonoBehaviour
     }
     public virtual void SetCheck(Collision collision)
     {
-        if (/*collision.gameObject.CompareTag("Map") || */collision.gameObject.CompareTag("Trap"))
+        if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
         {
-           m_bSetting=false;
+            m_bSetting =false;
         }
         
     }
-
+    public virtual void OutCheck(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
+        {
+            m_bSetting = true;
+        }
+    }
 
     /*＞物理更新関数
 引数：なし
@@ -82,17 +88,6 @@ public class CTrap : MonoBehaviour
             Vector3 p = player.transform.forward * 2;
             transform.position = player.transform.position + p;
             Settings();
-           // if (Input.GetKeyDown(KeyCode.R)&& m_bSetting)
-           // {
-           //     Debug.Log("dddd");
-           //     m_bMove = false;
-           //     GameObject A;
-           //     CTrapSelect T;
-           //    A = GameObject.Find("TrapManager");
-           //     T = A.GetComponent<CTrapSelect>();
-           //     T.SetSelect();
-           // }
-           // m_bSetting = true;
         }
         CooltimeCount();
         
@@ -128,8 +123,9 @@ public class CTrap : MonoBehaviour
 
     public void aaa()
     {
-        if (Input.GetKeyDown(KeyCode.R) && m_bSetting)
+        if ((Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Decision")) && m_bSetting && m_bMove)
         {
+            m_audioSource.PlayOneShot(SE_SetTrap);
             Debug.Log("dddd");
             m_bMove = false;
             GameObject A;
@@ -137,8 +133,7 @@ public class CTrap : MonoBehaviour
             A = GameObject.Find("TrapManager");
             T = A.GetComponent<CTrapSelect>();
             T.SetSelect();
-            m_As.PlayOneShot(SE_Set);   // SE再生
+            Destroy(GetComponent<Rigidbody>());
         }
-        m_bSetting = true;
     }
 }

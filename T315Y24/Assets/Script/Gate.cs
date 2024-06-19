@@ -20,6 +20,8 @@ D
 _M06
 D
 09:生成機構のクラス変更
+13:敵出現時SE追加:nieda
+18:フェーズ形式変更に対応:takagi
 =====*/
 
 //＞名前空間宣言
@@ -32,11 +34,16 @@ using UnityEngine;  //Unity
 public class CGate : MonoBehaviour
 {
     //＞変数宣言
-    [SerializeField] private double m_dSpawnInterval = 3.0d;  //生成間隔[s]
+    //[SerializeField] private double m_dSpawnInterval = 3.0d;  //生成間隔[s]
+    private static double m_dSpawnInterval;  //生成間隔[s]
     [SerializeField] private uint m_unSpawnMax = 100;  //生成上限[s]
     private double m_dSpawnCoolTime = 0.0d;   //生成クールタイム[s]
     CSpawnEnemy m_SpawnRandom = null;    //生成機構
-    
+
+    //＞プロパティ定義
+    public static double SpawnInterval { private get; set; }    //フェーズ全終了フラグ
+
+
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -72,8 +79,9 @@ public class CGate : MonoBehaviour
             m_dSpawnCoolTime -= Time.fixedDeltaTime;    //カウントダウン進行
         }
         else
-        {   //＞生成
-            if(m_unSpawnMax > CEnemy.ValInstance)
+        {
+            //＞生成
+            for (uint unIdx = 0; unIdx < CPhaseManager.Instance.EnemyVal && m_unSpawnMax > CEnemy.ValInstance; unIdx++) //生成可能なら必要数生成
             {
                 m_SpawnRandom.Create(); //インスタンス生成
             }
@@ -81,5 +89,6 @@ public class CGate : MonoBehaviour
             //＞初期化
             m_dSpawnCoolTime = m_dSpawnInterval;    //クールダウン開始
         }
+
     }
 }

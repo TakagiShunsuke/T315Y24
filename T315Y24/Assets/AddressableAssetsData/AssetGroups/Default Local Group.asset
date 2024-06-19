@@ -33,12 +33,17 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c6f9d21c51bb8048b33a785a61cd005
-    m_Address: PowerZombie
+    m_Address: SpeedZombie
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d8d54b184bf9a14c8390620b1bbef62
     m_Address: NormalZombie
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2752af9322ea171469c7be33d0cd4fd9
+    m_Address: Assets/Texture/Stage01/floor.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

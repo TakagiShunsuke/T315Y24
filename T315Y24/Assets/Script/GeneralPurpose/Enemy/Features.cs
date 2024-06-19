@@ -11,6 +11,7 @@ _M06
 D
 07:プログラム作成:takagi
 09:コード改善:takagi
+18:速度型追加:takagi
 =====*/
 
 //＞名前空間宣言
@@ -26,7 +27,8 @@ public class CFeatures : CMonoSingleton<CFeatures>
     public enum E_ENEMY_TYPE
     {
         E_ENEMY_TYPE_NORMAL,    //通常の敵
-        E_ENEMY_TYPE_POWER,    //通常の敵
+        E_ENEMY_TYPE_SPEED,    //速度型
+        E_ENEMY_TYPE_POWER,    //パワー型
     }   //敵の種類
 
     //＞構造体定義

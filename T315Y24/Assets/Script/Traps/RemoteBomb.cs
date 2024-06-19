@@ -14,11 +14,11 @@ public class RemoteBomb : CTrap
     {
         if (!m_bMove)
         {
-            if (Input.GetKeyDown(m_ExplodingKey) & m_bUse)
+           
+            if ((Input.GetKeyDown(m_ExplodingKey)|| Input.GetButtonDown("Explosion")) & m_bUse)
             {
                 SetCoolTime();
                 Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
-                m_As.PlayOneShot(SE_ExpBomb);   // SEçƒê∂
             }
          }
 
@@ -27,5 +27,9 @@ public class RemoteBomb : CTrap
     private void OnCollisionStay(Collision collision)
     {
         SetCheck(collision);
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        OutCheck(collision);
     }
 }

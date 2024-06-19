@@ -46,12 +46,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrapList:
-  - {fileID: 583634829224621628, guid: d87373259ba24914d9d6aeeb282dbf0a, type: 3}
-  - {fileID: 5535155901697448678, guid: 107aab7980b8de845972db3080b7fe4c, type: 3}
+  - {fileID: 583634829224621628, guid: c0c472028ad95fb44b105a50244e9822, type: 3}
+  - {fileID: 5535155901697448678, guid: 92b88bb8032589e4e9ab353dc75f2f88, type: 3}
   ImageList:
   - {fileID: 5892564834789293960}
   - {fileID: 2637021579483680685}
+  CostList: 
+  CostText: []
   m_bSelect: 1
+  SE_Select: {fileID: 8300000, guid: 417b8bc23e5159944989daa419547efc, type: 3}
+  SE_Set: {fileID: 8300000, guid: dfe7c03246677924590771c2cc81eb76, type: 3}
+  increaseInterval: 5
+  Cost_txt: {fileID: 0}
 --- !u!1 &3542178640758031590
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ D
 07:ウェーブ排除・生成パターン追加:takagi
 13:テキスト表示機構追加:takagi
 17:SE追加:nieda
+18:フェーズ形式変更、式修正:takagi
 =====*/
 
 //＞名前空間宣言
@@ -48,9 +49,12 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     //＞構造体定義
     [Serializable]public struct PhasePatturn
     {
-        public E_PHASE m_Phase;    //フェーズ
+        public E_PHASE m_ePhase;    //フェーズ
         public List<CEnemyList.SpawnEnemyInfo> m_Enemies;   //出現する敵
+        public uint m_unEnemyVal;   //ゲート一つの敵生成量
+        [Min(0.0f)] public double m_dSpawnInterval;  //生成間隔[s]  //TODO:double型
         public double m_dTime; //そのフェーズの持続時間
+        public uint m_unKillValToNext;  //フェーズ切り替えに必要な討伐数
     }   //フェーズ定義用の構造体
 
     //＞定数定義
@@ -59,7 +63,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     //＞変数宣言
     [SerializeField] private TextMeshProUGUI m_TMP_PhaseVal;    //フェーズ数表示場所
     [SerializeField] private TextMeshProUGUI m_TMP_PhaseName;   //フェーズ名表示場所
-    [SerializeField, SerializeNamingWithEnum(typeof(E_PHASE))] private string[] m_PhaseName;    //E_PHASEごとのフェーズ名
+    [SerializeField, SerializeNamingWithEnum(typeof(E_PHASE))] private string[] m_sPhaseName;    //E_PHASEごとのフェーズ名
     [SerializeField] private List<PhasePatturn> m_Phases;   //フェーズ一覧
     private uint m_unPhase = 0;
     private double m_dCntDwnPhase = 0.0d;
@@ -75,12 +79,13 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
         {
             m_dCntDwnPhase = value;    //カウントダウン
             //＞更新
-            if (m_dCntDwnPhase < 0.0d)   //カウントダウン時間超過
+            if (m_dCntDwnPhase <= 0.0d)   //カウントダウン時間超過
             {
                 if (m_Phases.Count > m_unPhase + 1) //フェーズ進行補正
                 {
                     m_unPhase++;    //フェーズ進行
                     CEnemyList.Instance.SpawnInfo = m_Phases[(int)m_unPhase].m_Enemies; //敵のリスト更新
+                    CGate.SpawnInterval = m_Phases[(int)m_unPhase].m_dSpawnInterval;    //生成間隔更新
 #if UNITY_EDITOR    //エディタ使用中
                     Debug.Log("フェーズ" + m_unPhase);   //フェーズ数出力
 #endif
@@ -101,7 +106,8 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
             }
         }
     }//ウェーブ用カウントダウン
-    public E_PHASE Phase => m_Phases[(int)m_unPhase].m_Phase; //現在のフェーズ
+    public E_PHASE Phase => m_Phases[(int)m_unPhase].m_ePhase; //現在のフェーズ
+    public uint EnemyVal => m_Phases[(int)m_unPhase].m_unEnemyVal;   //生成する敵数
 
 
     /*＞初期化関数
@@ -129,7 +135,8 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
 #endif
 
         //＞外部初期化
-        CEnemyList.Instance.SpawnInfo = m_Phases[(int)m_unPhase].m_Enemies;
+        CEnemyList.Instance.SpawnInfo = m_Phases[(int)m_unPhase].m_Enemies; //敵のリスト初期化
+        CGate.SpawnInterval = m_Phases[(int)m_unPhase].m_dSpawnInterval;    //生成間隔初期化
 #if UNITY_EDITOR    //エディタ使用中
         Debug.Log("フェーズ" + m_unPhase);   //フェーズ数出力
 #endif
@@ -140,7 +147,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
         m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
     }
 
-    /*＞物理更新関数
+    /*＞更新関数
     引数：なし
     ｘ
     戻値：なし
@@ -151,6 +158,12 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     {
         //＞フェーズ時間更新
         CntDwnWave -= Time.deltaTime;    //カウントダウン
+
+        //＞敵数調査
+        if(CEnemy.m_nDeadEnemyCount > m_Phases[(int)m_unPhase].m_unKillValToNext)    //討伐数が目標値以上
+        {
+            CntDwnWave -= CntDwnWave;   //カウントを0にする
+        }
     }
 
     /*＞フェーズ用テキスト更新関数
@@ -174,26 +187,26 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
             UnityEngine.Debug.LogWarning("テキストが不足しています");  //警告ログ出力
         }
 #endif
-        if (m_TMP_PhaseName != null)   //フェーズ名表示
-        {
-            if ((int)m_Phases[(int)m_unPhase].m_Phase < m_PhaseName.Length && m_PhaseName[(int)m_Phases[(int)m_unPhase].m_Phase] != null)
-            {
-                m_TMP_PhaseName.text = m_PhaseName[(int)m_Phases[(int)m_unPhase].m_Phase];    //フェーズ名表示
-            }
-#if UNITY_EDITOR    //エディタ使用中
-            else
-            {
-                //＞エラー出力
-                UnityEngine.Debug.LogWarning("表示するフェーズ名が設定されていません");  //警告ログ出力
-            }
-#endif
-        }
-#if UNITY_EDITOR    //エディタ使用中
-        else
-        {
-            //＞エラー出力
-            UnityEngine.Debug.LogWarning("テキストが不足しています");  //警告ログ出力
-        }
-#endif
+//        if (m_TMP_PhaseName != null)   //フェーズ名表示
+//        {
+//            if ((int)m_Phases[(int)m_unPhase].m_ePhase < m_sPhaseName.Length && m_sPhaseName[(int)m_Phases[(int)m_unPhase].m_ePhase] != null)
+//            {
+//                m_TMP_PhaseName.text = m_sPhaseName[(int)m_Phases[(int)m_unPhase].m_ePhase];    //フェーズ名表示
+//            }
+//#if UNITY_EDITOR    //エディタ使用中
+//            else
+//            {
+//                //＞エラー出力
+//                UnityEngine.Debug.LogWarning("表示するフェーズ名が設定されていません");  //警告ログ出力
+//            }
+//#endif
+//        }
+//#if UNITY_EDITOR    //エディタ使用中
+//        else
+//        {
+//            //＞エラー出力
+//            UnityEngine.Debug.LogWarning("テキストが不足しています");  //警告ログ出力
+//        }
+//#endif
     }
 }

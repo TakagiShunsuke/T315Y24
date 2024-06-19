@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 6128348708964751008}
   - component: {fileID: 8115503885327331461}
   - component: {fileID: 7023115921762516209}
-  - component: {fileID: 1492081759828799016}
+  - component: {fileID: -9145870453972372373}
+  - component: {fileID: -3169611230742926371}
+  - component: {fileID: 3713221050923823742}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Trap
@@ -106,7 +108,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -130,10 +132,11 @@ MonoBehaviour:
   m_bMove: 1
   m_fPosY: -0.3
   m_bSetting: 1
-  SE_Set: {fileID: 8300000, guid: c13fbcceac39313428898cf0fe9d53f9, type: 3}
+  SE_SetTrap: {fileID: 8300000, guid: c13fbcceac39313428898cf0fe9d53f9, type: 3}
   m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
   SE_ExpMine: {fileID: 8300000, guid: 214a20a77fdebf1418758df4c1ac449f, type: 3}
---- !u!82 &1492081759828799016
+  SE_explosion: {fileID: 8300000, guid: 5bf8eea4c1898424eb06ab5a585bf60c, type: 3}
+--- !u!82 &-9145870453972372373
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,8 +146,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5bf8eea4c1898424eb06ab5a585bf60c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5bf8eea4c1898424eb06ab5a585bf60c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -230,6 +233,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &-3169611230742926371
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583634829224621628}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &3713221050923823742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583634829224621628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 0.2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2701447250296533007
 GameObject:
   m_ObjectHideFlags: 0
