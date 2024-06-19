@@ -17,7 +17,8 @@ D
 31:リファクタリング:takagi
 _M06
 D
-13:ダッシュ時、被ダメ時のSE追加:nieda
+13:ダッシュ時、被ダメ時のSE追加:
+17:SE追加:nieda
 =====*/
 
 //＞名前空間宣言
@@ -44,7 +45,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     [SerializeField] private KeyCode m_DushKey = KeyCode.E; //ダッシュのキー
     [SerializeField] private double m_DashDist = 2.0d;  //ダッシュ時に移動する距離
     // //TODO:SE関係後ほどまとめます
-    AudioSource m_audioSource;  // AudioSourceを追加
+    AudioSource m_AudioSource;  // AudioSourceを追加
     [SerializeField] public AudioClip SE_Dash;  // ダッシュ時のSE
     [SerializeField] public AudioClip SE_Damage;    // 被ダメ時のSE
 
@@ -84,7 +85,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     {
         //＞初期化
         m_Rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
-        m_audioSource = GetComponent<AudioSource>();    //AudioSourceコンポーネントを追加
+        m_AudioSource = GetComponent<AudioSource>();    //AudioSourceコンポーネントを追加
     }
 
     /*＞移動処理関数
@@ -143,8 +144,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         if (m_dCntDwnDshInterval > 0.0d)
         {
             m_dCntDwnDshInterval -= Time.deltaTime;   //時間をカウント
-        }
-        
+        }        
     }
 
     /*＞物理更新関数
@@ -189,7 +189,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         }
 
         //＞ダメージ計算
-        m_audioSource.PlayOneShot(SE_Damage);   // 被ダメ時SE追加
+        m_AudioSource.PlayOneShot(SE_Damage);   // 被ダメ時SE追加
         m_dHp -= dDamageVal;    //HP減少
         CntDwnInvicibleTime = m_dDamagedInvicibleTime;  //無敵時間のカウントをリセットする
     }
@@ -236,12 +236,11 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         if (_vGo != transform.position)  //移動先に対して変移があるとき
         {
             m_Rb.transform.position = _vGo;  //即座に移動を行う
+            m_AudioSource.PlayOneShot(SE_Dash); // ダッシュ時SE再生
 
             //＞カウントダウン
             m_dCntDwnDshInterval = m_unDashInterval;   //時間をカウント
             CntDwnInvicibleTime = m_dDushInvicibleTime;  //無敵時間のカウントをリセットする
         }
-
-        m_audioSource.PlayOneShot(SE_Dash); // ダッシュ時SE再生
     }
 }

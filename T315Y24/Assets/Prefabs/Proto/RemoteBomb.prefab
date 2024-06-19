@@ -245,9 +245,10 @@ MonoBehaviour:
   m_bMove: 1
   m_fPosY: 0
   m_bSetting: 1
-  SE_SetTrap: {fileID: 8300000, guid: ea48c053540e57445b113bbdc7c54d04, type: 3}
+  SE_SetTrap: {fileID: 8300000, guid: 2ec964f731422d946930ec5fcc1e833f, type: 3}
   m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
   m_ExplodingKey: 98
+  SE_ExpBomb: {fileID: 8300000, guid: 19526e60b95f5554c9885a2395e968e5, type: 3}
 --- !u!82 &-649258695036302141
 AudioSource:
   m_ObjectHideFlags: 0

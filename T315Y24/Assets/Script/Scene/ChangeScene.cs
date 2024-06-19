@@ -21,6 +21,7 @@ D
 13:シーン遷移ボタン統一、Pでプロトステージ、Oでステージ1に遷移:nieda
 13:キー入力の受付を制限+汎化:takagi
 13:決定時SE追加:nieda
+17:SE追加:nieda
 18:SEを鳴らすように修正:takagi
 =====*/
 
@@ -46,7 +47,7 @@ public class CChangeScene : MonoBehaviour
     //＞変数宣言
     [SerializeField] private KeyChangeScene[] m_KeyChangeScenes;    //シーン遷移一覧
     [SerializeField] public AudioClip SE_Decide;  // 決定時のSE
-    AudioSource m_audioSource;  // AudioSourceを追加
+    AudioSource m_AudioSource;  // AudioSourceを追加
 
     /*＞初期化関数
     引数１：なし
@@ -57,7 +58,7 @@ public class CChangeScene : MonoBehaviour
     */
     void Start()
     {
-        m_audioSource = GetComponent<AudioSource>();
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
     /*＞更新関数
@@ -83,7 +84,7 @@ public class CChangeScene : MonoBehaviour
             {
                 if (Input.GetKeyDown(m_KeyChangeScenes[nIdx].TransitionKey[nIdx2])) //キー入力判定
                 {
-                    StartCoroutine( Change(nIdx));
+                    StartCoroutine(Change(nIdx));
                 //    m_audioSource.PlayOneShot(SE_Decide);
                 //    while(m_audioSource.isPlaying) {}   //非同期処理：SEを鳴らし切るまで待機
                 //    SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
@@ -106,8 +107,8 @@ public class CChangeScene : MonoBehaviour
     //非同期でSE再生終了を待つ関数
     IEnumerator Change(int nIdx)
     {
-        m_audioSource.PlayOneShot(SE_Decide);
-        while (m_audioSource.isPlaying) { yield return null; }   //非同期処理：SEを鳴らし切るまで待機
+        m_AudioSource.PlayOneShot(SE_Decide);
+        while (m_AudioSource.isPlaying) { yield return null; }   //非同期処理：SEを鳴らし切るまで待機
         SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
     }
 

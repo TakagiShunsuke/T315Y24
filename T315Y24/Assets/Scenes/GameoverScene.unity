@@ -175,7 +175,7 @@ MonoBehaviour:
     TransitionButton:
     - Decision
     Nextscene: TitleScene
-  SE_Decide: {fileID: 8300000, guid: 535561b892ccff94a8f4abf9bb4a406d, type: 3}
+  SE_Decide: {fileID: 8300000, guid: b0107f03e4c42bc46b797f687bf89e74, type: 3}
 --- !u!114 &18799821
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,13 +18,13 @@ public class CTrap : MonoBehaviour
     AudioSource m_audioSource;    // AudioSourceを追加
     [SerializeField] public AudioClip SE_SetTrap;   // 罠設置時のSE
 
- /*＞初期化関数
- 引数１：なし
- ｘ
- 戻値：なし
- ｘ
- 概要：インスタンス生成時に行う処理
- */
+    /*＞初期化関数
+    引数１：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：インスタンス生成時に行う処理
+    */
     void Start()
     {
         // テキストの初期化
