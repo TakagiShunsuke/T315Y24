@@ -4212,7 +4212,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       m_SpawnAmount: 1
     m_unEnemyVal: 3
-    m_dSpawnInterval: 3
+    m_dSpawnInterval: 5
     m_dTime: 20
     m_unKillValToNext: 10
   - m_ePhase: 0
@@ -4230,7 +4230,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 1
       m_SpawnAmount: 1
     m_unEnemyVal: 3
-    m_dSpawnInterval: 3
+    m_dSpawnInterval: 5
     m_dTime: 20
     m_unKillValToNext: 20
   - m_ePhase: 0
@@ -4248,7 +4248,7 @@ MonoBehaviour:
         m_EditorAssetChanged: 1
       m_SpawnAmount: 5
     m_unEnemyVal: 2
-    m_dSpawnInterval: 5
+    m_dSpawnInterval: 4
     m_dTime: 30
     m_unKillValToNext: 30
   - m_ePhase: 0
@@ -4260,8 +4260,8 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       m_SpawnAmount: 1
     m_unEnemyVal: 5
-    m_dSpawnInterval: 2
-    m_dTime: 40
+    m_dSpawnInterval: 4
+    m_dTime: 30
     m_unKillValToNext: 40
   - m_ePhase: 0
     m_Enemies:
@@ -4277,10 +4277,82 @@ MonoBehaviour:
         m_SubObjectType: 
         m_EditorAssetChanged: 0
       m_SpawnAmount: 1
-    m_unEnemyVal: 8
+    m_unEnemyVal: 5
+    m_dSpawnInterval: 4
+    m_dTime: 40
+    m_unKillValToNext: 50
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 7
     m_dSpawnInterval: 3
     m_dTime: 50
     m_unKillValToNext: 75
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 7
+    m_dSpawnInterval: 3
+    m_dTime: 60
+    m_unKillValToNext: 150
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 10
+    m_dSpawnInterval: 3
+    m_dTime: 70
+    m_unKillValToNext: 300
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 15
+    m_dSpawnInterval: 3
+    m_dTime: 90
+    m_unKillValToNext: 500
 --- !u!4 &809561527
 Transform:
   m_ObjectHideFlags: 0
