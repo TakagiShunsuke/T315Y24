@@ -84,9 +84,6 @@ PrefabInstance:
       addedObject: {fileID: 306484344129967827}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4db9e03ebeca8b544a21745803238913, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4971385805184352121}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4db9e03ebeca8b544a21745803238913, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6765509134506990743}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4db9e03ebeca8b544a21745803238913, type: 3}
       insertIndex: -1
@@ -156,18 +153,6 @@ CapsuleCollider:
   m_Height: 0.11802255
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4971385805184352121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8874832169813745787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca41a8ebb9dfc144bbc8de6bb66482ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6765509134506990743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624991c3e3d5e7e418e83d6abbc6582c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dAtkInterval: 3
   m_eFeatureType: 1
+  m_dAtkInterval: 3
   m_EffectCube: {fileID: 5494002748605305887, guid: fd71ecc1c943cc04483bcb596c553a9c, type: 3}
   m_nEffectNum: 10
   m_fPosRandRange: 0.01
@@ -200,10 +185,10 @@ MonoBehaviour:
   m_dRadius: 1
   m_dSectorAngle: 90
   m_dFrontAngle: 90
-  m_sTargetNames:
-  - Player
   m_dResol: 1
   m_RangeMaterial: {fileID: 2100000, guid: 45ed38e45fef5594597c7c727d74b09d, type: 2}
+  m_sTargetNames:
+  - Player
 --- !u!114 &3253347609108513022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 100
-  m_sTargetName: Player
+  m_Target: {fileID: 0}
 --- !u!195 &-1071829561510448362
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -252,4 +237,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e590b79533b03e045935e7e3da3f9745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 9130855982869980821, guid: 4f617f61ec882584bb1065dcc5568909, type: 3}
+  player: {fileID: 919132149155446097, guid: 333c186fa0dc2ce43ab86fa8152f7ce1, type: 3}

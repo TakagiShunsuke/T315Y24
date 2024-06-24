@@ -23,6 +23,7 @@ D
 13:決定時SE追加:nieda
 17:SE追加:nieda
 18:SEを鳴らすように修正:takagi
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -39,15 +40,18 @@ public class CChangeScene : MonoBehaviour
     //＞構造体定義
     [Serializable] public struct KeyChangeScene
     {
-        public KeyCode[] TransitionKey; //シーン遷移の着火キー
-        public string[] TransitionButton;   //シーン遷移の着火ボタン
-        public String Nextscene;    //シーンの切換先
+        [Tooltip("キー")] public KeyCode[] TransitionKey; //シーン遷移の着火キー
+        [Tooltip("ボタン")] public string[] TransitionButton;   //シーン遷移の着火ボタン
+        [Tooltip("遷移先シーン")] public String Nextscene;    //シーンの切換先
     }
 
     //＞変数宣言
-    [SerializeField] private KeyChangeScene[] m_KeyChangeScenes;    //シーン遷移一覧
-    [SerializeField] public AudioClip SE_Decide;  // 決定時のSE
-    AudioSource m_AudioSource;  // AudioSourceを追加
+    [Header("シーンの切り替え方")]
+    [SerializeField, Tooltip("対応シーン")] private KeyChangeScene[] m_KeyChangeScenes;    //シーン遷移一覧
+    [Header("音")]
+    [SerializeField] private AudioClip SE_Decide;  // 決定時のSE
+    private AudioSource m_AudioSource;  // AudioSourceを追加
+
 
     /*＞初期化関数
     引数１：なし
@@ -56,7 +60,7 @@ public class CChangeScene : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    void Start()
+    private void Start()
     {
         m_AudioSource = GetComponent<AudioSource>();
     }
@@ -68,7 +72,7 @@ public class CChangeScene : MonoBehaviour
     ｘ
     概要：一定時間ごとに行う更新処理
     */
-    void Update()
+    private void Update()
     {
         //＞保全
         if(m_KeyChangeScenes == null)   //ヌルチェック
@@ -78,24 +82,24 @@ public class CChangeScene : MonoBehaviour
         }
 
         //＞シーン遷移
-        for(int nIdx = 0; nIdx < m_KeyChangeScenes.Length; ++nIdx)   //遷移先候補分判定
+        for(int _nIdx = 0; _nIdx < m_KeyChangeScenes.Length; ++_nIdx)   //遷移先候補分判定
         {
-            for(int nIdx2 = 0; nIdx2 < m_KeyChangeScenes[nIdx].TransitionKey.Length; ++nIdx2)    //受付キー分判定する
+            for(int nIdx2 = 0; nIdx2 < m_KeyChangeScenes[_nIdx].TransitionKey.Length; ++nIdx2)    //受付キー分判定する
             {
-                if (Input.GetKeyDown(m_KeyChangeScenes[nIdx].TransitionKey[nIdx2])) //キー入力判定
+                if (Input.GetKeyDown(m_KeyChangeScenes[_nIdx].TransitionKey[nIdx2])) //キー入力判定
                 {
-                    StartCoroutine(Change(nIdx));
+                    StartCoroutine(Change(_nIdx));
                 //    m_audioSource.PlayOneShot(SE_Decide);
                 //    while(m_audioSource.isPlaying) {}   //非同期処理：SEを鳴らし切るまで待機
                 //    SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
                 }
             }
             //コントローラー用
-            for (int nIdx2 = 0; nIdx2 < m_KeyChangeScenes[nIdx].TransitionButton.Length; ++nIdx2)    //受付キー分判定する
+            for (int _nIdx2 = 0; _nIdx2 < m_KeyChangeScenes[_nIdx].TransitionButton.Length; ++_nIdx2)    //受付キー分判定する
             {
-                if (Input.GetButtonDown(m_KeyChangeScenes[nIdx].TransitionButton[nIdx2])) //キー入力判定
+                if (Input.GetButtonDown(m_KeyChangeScenes[_nIdx].TransitionButton[_nIdx2])) //キー入力判定
                 {
-                    StartCoroutine(Change(nIdx));
+                    StartCoroutine(Change(_nIdx));
                     //    m_audioSource.PlayOneShot(SE_Decide);
                     //    while(m_audioSource.isPlaying) {}   //非同期処理：SEを鳴らし切るまで待機
                     //    SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
@@ -105,11 +109,11 @@ public class CChangeScene : MonoBehaviour
     }
 
     //非同期でSE再生終了を待つ関数
-    IEnumerator Change(int nIdx)
+    private IEnumerator Change(int _nIdx)
     {
         m_AudioSource.PlayOneShot(SE_Decide);
         while (m_AudioSource.isPlaying) { yield return null; }   //非同期処理：SEを鳴らし切るまで待機
-        SceneManager.LoadScene(m_KeyChangeScenes[nIdx].Nextscene);  //次のステージへ
+        SceneManager.LoadScene(m_KeyChangeScenes[_nIdx].Nextscene);  //次のステージへ
     }
 
     /*＞ゲーム終了関数
@@ -119,7 +123,7 @@ public class CChangeScene : MonoBehaviour
     ｘ
     概要：ゲームを終了する処理
     */
-    public void GameEnd()
+    private void GameEnd()
     {
 #if UNITY_EDITOR    //Editor上からの実行時
         //再生モードを解除する

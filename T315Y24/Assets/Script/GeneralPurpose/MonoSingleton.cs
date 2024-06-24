@@ -15,6 +15,8 @@ _M06
 D
 05:プログラム作成:takagi
 06:続き：takagi
+21:リファクタリング:takagi
+24:リファクタリング:takagi
 =====*/
 
 //＞クラス定義
@@ -26,17 +28,19 @@ public abstract class CMonoSingleton<MonoType> : CVirtualizeMono where MonoType 
     static private MonoType m_Instance; //インスタンス格納用
 
     //＞プロパティ定義
-    public static MonoType Instance {
+    public static MonoType Instance
+    {
         get
         {
-            if (m_Instance == null)
+            if (m_Instance == null) //ヌルチェック
             {
-                GameObject gameObject = new GameObject();
-                m_Instance = gameObject.AddComponent<MonoType>();
+                GameObject _GameObject = new GameObject();   //インスタンス作成
+                m_Instance = _GameObject.AddComponent<MonoType>();   //自身のコンポーネント登録
             }
-            return m_Instance;
+            return m_Instance;  //インスタンス提供
         }
     }   //継承先オブジェクトのインスタンス
+
 
     /*＞初期化関数
     引数１：なし

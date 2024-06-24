@@ -20,10 +20,11 @@ __Y24
 _M06
 D
 06:プログラム作成:takagi
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
-using UnityEngine;  //Unity
+using UnityEngine;
 
 //＞クラス定義
 public class CVirtualizeMono : MonoBehaviour
