@@ -31,8 +31,9 @@ using UseRandom;
 public class CSpawnRandom : CGetObjects
 {
     //＞変数宣言
-    [SerializeField] private Vector3 m_SpawnPos;  //生成位置
-    [SerializeField] private Quaternion m_SpawnRotate;  //生成位置
+    [Header("生成情報")]
+    [SerializeField, Tooltip("生成位置")] private Vector3 m_SpawnPos;  //生成位置
+    [SerializeField, Tooltip("回転")] private Quaternion m_SpawnRotate;  //生成位置
 
 
     /*＞生成関数
