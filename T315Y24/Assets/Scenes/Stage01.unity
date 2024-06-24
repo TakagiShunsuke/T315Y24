@@ -4429,250 +4429,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5245752107100696865, guid: 6e22d25120c381545be4ce24dda10e4a, type: 3}
   m_PrefabInstance: {fileID: 290672783}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &809561525
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 809561527}
-  - component: {fileID: 809561526}
-  - component: {fileID: 809561528}
-  m_Layer: 0
-  m_Name: PhaseManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &809561526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809561525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e09f4a668bd92f41b7ee9d8e60e3a6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TMP_PhaseVal: {fileID: 1922226180}
-  m_TMP_PhaseName: {fileID: 1611540832}
-  m_sPhaseName:
-  - "\u6226\u95D8\u30D5\u30A7\u30FC\u30BA"
-  m_Phases:
-  - m_ePhase: 0
-    m_Enemies:
-    - m_SpawnAssetRef:
-        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 1
-    m_unEnemyVal: 2
-    m_dSpawnInterval: 5
-    m_dTime: 20
-    m_unKillValToNext: 2
-  - m_ePhase: 0
-    m_Enemies:
-    - m_SpawnAssetRef:
-        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 5
-    - m_SpawnAssetRef:
-        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 1
-    m_unEnemyVal: 3
-    m_dSpawnInterval: 3
-    m_dTime: 20
-    m_unKillValToNext: 10
-  - m_ePhase: 0
-    m_Enemies:
-    - m_SpawnAssetRef:
-        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 1
-    - m_SpawnAssetRef:
-        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 1
-      m_SpawnAmount: 1
-    m_unEnemyVal: 3
-    m_dSpawnInterval: 3
-    m_dTime: 20
-    m_unKillValToNext: 20
-  - m_ePhase: 0
-    m_Enemies:
-    - m_SpawnAssetRef:
-        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 1
-    - m_SpawnAssetRef:
-        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 1
-      m_SpawnAmount: 5
-    m_unEnemyVal: 2
-    m_dSpawnInterval: 5
-    m_dTime: 30
-    m_unKillValToNext: 30
-  - m_ePhase: 0
-    m_Enemies:
-    - m_SpawnAssetRef:
-        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 1
-    m_unEnemyVal: 5
-    m_dSpawnInterval: 2
-    m_dTime: 40
-    m_unKillValToNext: 40
-  - m_ePhase: 0
-    m_Enemies:
-    - m_SpawnAssetRef:
-        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 3
-    - m_SpawnAssetRef:
-        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      m_SpawnAmount: 1
-    m_unEnemyVal: 8
-    m_dSpawnInterval: 3
-    m_dTime: 50
-    m_unKillValToNext: 75
-  SE_Spawn: {fileID: 8300000, guid: 8ecf396e483c28b448c143e0e56a506a, type: 3}
---- !u!4 &809561527
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809561525}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.597832, y: 48.948235, z: -58.84744}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &809561528
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809561525}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &816200880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7677232266384569345, guid: c82460f9721fb1343baba2e720e9e36b, type: 3}
@@ -9723,6 +9479,322 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 59501899953590542, guid: c0c472028ad95fb44b105a50244e9822, type: 3}
   m_PrefabInstance: {fileID: 1478092715}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1755613236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755613239}
+  - component: {fileID: 1755613238}
+  - component: {fileID: 1755613237}
+  m_Layer: 0
+  m_Name: PhaseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1755613237
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755613236}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1755613238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755613236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e09f4a668bd92f41b7ee9d8e60e3a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TMP_PhaseVal: {fileID: 1922226180}
+  m_TMP_PhaseName: {fileID: 1611540832}
+  m_sPhaseName:
+  - "\u6226\u95D8\u30D5\u30A7\u30FC\u30BA"
+  m_Phases:
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 2
+    m_dSpawnInterval: 5
+    m_dTime: 20
+    m_unKillValToNext: 2
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 5
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 3
+    m_dSpawnInterval: 5
+    m_dTime: 20
+    m_unKillValToNext: 10
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
+      m_SpawnAmount: 1
+    m_unEnemyVal: 3
+    m_dSpawnInterval: 5
+    m_dTime: 20
+    m_unKillValToNext: 20
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
+      m_SpawnAmount: 5
+    m_unEnemyVal: 2
+    m_dSpawnInterval: 4
+    m_dTime: 30
+    m_unKillValToNext: 30
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 5
+    m_dSpawnInterval: 4
+    m_dTime: 30
+    m_unKillValToNext: 40
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 5
+    m_dSpawnInterval: 4
+    m_dTime: 40
+    m_unKillValToNext: 50
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 7
+    m_dSpawnInterval: 3
+    m_dTime: 50
+    m_unKillValToNext: 75
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 7
+    m_dSpawnInterval: 3
+    m_dTime: 60
+    m_unKillValToNext: 150
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 10
+    m_dSpawnInterval: 3
+    m_dTime: 70
+    m_unKillValToNext: 300
+  - m_ePhase: 0
+    m_Enemies:
+    - m_SpawnAssetRef:
+        m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 3
+    - m_SpawnAssetRef:
+        m_AssetGUID: 9c6f9d21c51bb8048b33a785a61cd005
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      m_SpawnAmount: 1
+    m_unEnemyVal: 15
+    m_dSpawnInterval: 3
+    m_dTime: 90
+    m_unKillValToNext: 500
+  SE_Spawn: {fileID: 8300000, guid: 8ecf396e483c28b448c143e0e56a506a, type: 3}
+--- !u!4 &1755613239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755613236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.597832, y: 48.948235, z: -58.84744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784557625
 GameObject:
   m_ObjectHideFlags: 0
@@ -11495,7 +11567,7 @@ SceneRoots:
   - {fileID: 1494265120}
   - {fileID: 854918639}
   - {fileID: 1233277261}
-  - {fileID: 809561527}
+  - {fileID: 1755613239}
   - {fileID: 1118267409}
   - {fileID: 1399275921}
   - {fileID: 1133295030}
