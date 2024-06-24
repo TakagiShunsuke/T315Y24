@@ -1,14 +1,12 @@
 /*=====
-<PlayerHPUI.cs> //スクリプト名
+<PhaseManager.cs> //スクリプト名
 └作成者：takagi
 
 ＞内容
-プレイヤーのHPをUI表示する
+フェーズ管理
 
 ＞注意事項
 シングルトン
-インプット処理や時間計測のためUpdate()を実装できるMonoBehaviorを継承。
-
 
 ＞更新履歴
 __Y24
@@ -19,6 +17,8 @@ D
 13:テキスト表示機構追加:takagi
 17:SE追加:nieda
 18:フェーズ形式変更、式修正:takagi
+21:リファクタリング:takagi
+24:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -29,7 +29,7 @@ using System.Text.RegularExpressions;
 using TMPro;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
-using UnityEngine;  //Unity
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
@@ -58,17 +58,17 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     }   //フェーズ定義用の構造体
 
     //＞定数定義
-    const uint INIT_WAVE = 0;   //ウェーブ数カウントの初期値
+    private const uint INIT_WAVE = 0;   //ウェーブ数カウントの初期値
 
     //＞変数宣言
     [SerializeField] private TextMeshProUGUI m_TMP_PhaseVal;    //フェーズ数表示場所
     [SerializeField] private TextMeshProUGUI m_TMP_PhaseName;   //フェーズ名表示場所
-    [SerializeField, SerializeNamingWithEnum(typeof(E_PHASE))] private string[] m_sPhaseName;    //E_PHASEごとのフェーズ名
+    [SerializeField, CSerializeNamingWithEnum(typeof(E_PHASE))] private string[] m_sPhaseName;    //E_PHASEごとのフェーズ名
     [SerializeField] private List<PhasePatturn> m_Phases;   //フェーズ一覧
     private uint m_unPhase = 0;
     private double m_dCntDwnPhase = 0.0d;
-    [SerializeField] public AudioClip SE_Spawn;  // ウェーブ開始時のSE
-    AudioSource m_As; // AudioSourceを追加
+    [SerializeField] private AudioClip SE_Spawn;  // ウェーブ開始時のSE
+    private AudioSource m_As; // AudioSourceを追加
 
     //＞プロパティ定義
     public bool IsFinPhases { get; private set; } = false;    //フェーズ全終了フラグ
@@ -173,7 +173,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     ｘ
     概要：フェーズ表示に更新が必要な時に行う処理
     */
-    void UpdatePhaseText()
+    private void UpdatePhaseText()
     {
         //＞テキスト修正
         if (m_TMP_PhaseVal != null)   //フェーズ数表示

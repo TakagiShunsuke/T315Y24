@@ -12,14 +12,18 @@ D
 06:プログラム作成:takagi
 07:続き:takagi
 09:変数名修正:takagi
+
+_M06
+D
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using UnityEngine;  //Unity
-using UseRandom;    //ランダム初期化
+using UnityEngine;
+using UseRandom;
 
 //＞クラス定義
 public class CSpawnRandomRect : CGetObjects
@@ -28,6 +32,7 @@ public class CSpawnRandomRect : CGetObjects
     [SerializeField] private Rect m_SpawnRect;  //生成範囲  //TODO:ここに値を入れなかったら自分の位置・サイズを基準にするように
     [SerializeField] private double m_dAltitude;    //高さ
     [SerializeField] private Quaternion m_SpawnRotate;  //生成位置
+
 
     /*＞生成関数
     引数１：なし

@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;  // ÉVÅ[Éìä÷òAÇÃusing
+using UnityEngine.SceneManagement;
 
-public class GameClear : MonoBehaviour
+public class CGameClear : MonoBehaviour
 {
     [SerializeField] GameObject TimerManagerObj;
     TimeManager timeMngCom;
 
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        timeMngCom = TimerManagerObj.GetComponent<TimeManager>();
-        
+        timeMngCom = TimerManagerObj.GetComponent<TimeManager>();    
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // êßå¿éûä‘Ç™ÇOïbÇ»ÇÁ
         //if (timeMngCom.currentTime <= 0)

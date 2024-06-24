@@ -10,6 +10,10 @@ __Y24
 _M05
 D
 04:プログラム作成:takagi
+
+_M06
+D
+21:リファクタリング:takagi
 =====*/
 
 //＞インターフェース定義
@@ -17,5 +21,4 @@ public interface IMove
 {
     //＞プロパティ定義
     public double Speed { get; set; }    //速度
-
 }

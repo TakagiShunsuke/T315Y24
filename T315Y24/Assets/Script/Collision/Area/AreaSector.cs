@@ -23,27 +23,34 @@ D
 11:シグナルの返り値をbool→当たったオブジェクトを返す様に、衝突対象の変数名変更:takagi
 16:判定領域可視化:takagi
 31:リファクタリング:takagi
+
+_M06
+D
+21:リファクタリング:takagi
+24:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
 using System;
-using System.Collections;   //list
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UIElements;  //Unity
+using UnityEngine.UIElements;
 
 //＞クラス定義
 public class CAreaSector : MonoBehaviour
 {
     //＞変数宣言
-    [SerializeField] private double m_dRadius = 2.0d;   //半径
-    [SerializeField] private double m_dSectorAngle = 90.0d; //扇形の角
-    [SerializeField] private double m_dFrontAngle = 90.0d;  //xz平面上で正面方向の角度
-    [SerializeField] private List<string> m_sTargetNames;  //検知対象のオブジェクト名
-    private List<GameObject> m_Targets = new List<GameObject>();    //検知対象
-    [SerializeField] private double m_dResol = 1.0d;   //領域表示の解像度
-    [SerializeField] private Material m_RangeMaterial;   //領域表示用のマテリアル
+    [Header("扇形設定")]
+    [SerializeField, Tooltip("半径[m]")] private double m_dRadius;   //半径
+    [SerializeField, Tooltip("円周角[°]")] private double m_dSectorAngle; //扇形の角
+    [SerializeField, Tooltip("正面方向[°]")] private double m_dFrontAngle;  //xz平面上で正面方向の角度
+    [Header("表示設定")]
+    [SerializeField, Range(0.0f, 1.0f), Tooltip("解像度")] private double m_dResol;   //領域表示の解像度
+    [SerializeField, Tooltip("マテリアル")] private Material m_RangeMaterial;   //領域表示用のマテリアル
+    [Header("検出設定")]
+    [SerializeField, Tooltip("検出対象")] private List<GameObject> m_Targets = new List<GameObject>();    //検知対象
 
     //＞プロパティ定義
     public List<GameObject> SignalCollision { get; private set; } = new List<GameObject>();  //当たり判定のシグナル
@@ -56,28 +63,8 @@ public class CAreaSector : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    void Start()
-    {
-        //＞初期化
-        if (m_sTargetNames != null)  //ヌルチェック
-        {
-            for (int nIdx = 0; nIdx < m_sTargetNames.Count; nIdx++) //対象の数だけオブジェクトを検出する
-            {
-                GameObject Temp = GameObject.Find(m_sTargetNames[nIdx]);    //オブジェクト取得試行
-                if (Temp)   //取得成功時
-                {
-                    m_Targets.Add(Temp);   //プレイヤーのインスタンス格納
-                }
-#if UNITY_EDITOR    //エディタ使用中
-                else    //取得に失敗した時
-                {
-                    //＞エラー出力
-                    UnityEngine.Debug.LogWarning("ターゲット：" + m_sTargetNames[nIdx] + "が見つかりません");  //警告ログ出力
-                }
-#endif
-            }
-        }
-        
+    private void Start()
+    {        
         //＞判定領域可視化
         if(m_dResol > 0)    //解像度が正常な時
         {

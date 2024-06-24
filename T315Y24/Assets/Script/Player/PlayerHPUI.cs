@@ -17,13 +17,17 @@ D
 15:プログラム作成:takagi
 16:続き:takagi
 31:リファクタリング:takagi
+
+_M06
+D
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
-using UnityEngine;  //Unity
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
@@ -35,14 +39,15 @@ public class CPlayerHPUI : MonoBehaviour
     private const string CANVAS_NAME = "PlCanvas";  //キャンバス名
     private const string IMAGE_NAME = "Pl_Heart";   //画像オブジェクト名
 
-    //＞変数宣言    
-    [SerializeField] protected AssetReferenceTexture2D m_AssetRef; //生成対象アセット
-    [SerializeField] private Vector2 m_FirstDrawPos = new Vector2(120.0f, 80.0f);   //UI一つ目の表示位置
-    [SerializeField] private double m_dInterval;    //生成距離間隔
-    [SerializeField] private double m_dImageScale = 1.6f;   //画像のスケーリング
+    //＞変数宣言
+    [Header("UI情報")]
+    [SerializeField, Tooltip("生成物")] protected AssetReferenceTexture2D m_AssetRef; //生成対象アセット
+    [SerializeField, Tooltip("HP描画位置")] private Vector2 m_FirstDrawPos = new Vector2(120.0f, 80.0f);   //UI一つ目の表示位置
+    [SerializeField, Tooltip("UI間距離")] private double m_dInterval;    //生成距離間隔
+    [SerializeField, Tooltip("画像拡縮")] private double m_dImageScale;   //画像のスケーリング
     private GameObject m_CanvasObj; //UI表示のためのキャンバス用オブジェクト
     private CPlayerScript m_Player = null;    //プレイヤーの情報
-    List<AsyncOperationHandle<Texture2D>> m_AssetLoadHandle= new List<AsyncOperationHandle<Texture2D>>();   //アセットをロード・管理する関数
+    private List<AsyncOperationHandle<Texture2D>> m_AssetLoadHandle= new List<AsyncOperationHandle<Texture2D>>();   //アセットをロード・管理する関数
 
 
     /*＞初期化関数
@@ -52,7 +57,7 @@ public class CPlayerHPUI : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    public void Start()
+    private void Start()
     {
         //＞初期化
         m_CanvasObj = new GameObject(); //キャンバスオブジェクト作成
@@ -120,7 +125,7 @@ public class CPlayerHPUI : MonoBehaviour
     ｘ
     概要：HPのUI画像を作成・配置
     */
-    private async void MakeHPUI(int HPIdx)
+    private async void MakeHPUI(int _HPIdx)
     {
         //＞変数宣言
         GameObject _ImageObj = new GameObject(); //画像表示用オブジェクト
@@ -139,8 +144,8 @@ public class CPlayerHPUI : MonoBehaviour
         var _RectTransform = _ImageObj.GetComponent<RectTransform>();   //取得
         if (_RectTransform != null)   //取得に成功した時
         {
-            _RectTransform.position = new Vector2(m_FirstDrawPos.x + (float)m_dInterval * (HPIdx % 5),
-                Screen.currentResolution.height - m_FirstDrawPos.y - (float)m_dInterval * (HPIdx / 5)); //ポリゴンの位置
+            _RectTransform.position = new Vector2(m_FirstDrawPos.x + (float)m_dInterval * (_HPIdx % 5),
+                Screen.currentResolution.height - m_FirstDrawPos.y - (float)m_dInterval * (_HPIdx / 5)); //ポリゴンの位置
             _RectTransform.localScale = new Vector2((float)m_dImageScale, (float)m_dImageScale);    //ポリゴンのスケーリング
         }
 #if UNITY_EDITOR    //エディタ使用中
@@ -165,11 +170,11 @@ public class CPlayerHPUI : MonoBehaviour
     private void OnDestroy()
     {
         //＞解放
-        for (int nIdx = 0; nIdx < m_AssetLoadHandle.Count; nIdx++)  //生成物すべて破棄する
+        for (int _nIdx = 0; _nIdx < m_AssetLoadHandle.Count; _nIdx++)  //生成物すべて破棄する
         {
-            if (m_AssetLoadHandle[nIdx].IsValid()) //ヌルでない
+            if (m_AssetLoadHandle[_nIdx].IsValid()) //ヌルでない
             {
-                Addressables.Release(m_AssetLoadHandle[nIdx]); //参照をやめる
+                Addressables.Release(m_AssetLoadHandle[_nIdx]); //参照をやめる
             }
         }
     }
