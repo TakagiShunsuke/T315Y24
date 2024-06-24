@@ -14,13 +14,14 @@ __Y24
 _M06
 D
 21:スクリプト作成：tei
+25:リファクタリング:takagi
 =====*/
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CameraRay : MonoBehaviour
+public class CCameraRay : MonoBehaviour
 {
     //＞変数宣言
     [SerializeField] private GameObject player;     // インスペクター上でプレイヤーを接続

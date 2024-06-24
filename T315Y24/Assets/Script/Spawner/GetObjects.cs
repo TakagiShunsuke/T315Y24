@@ -30,7 +30,7 @@ using UnityEngine.AddressableAssets;
 public abstract class CGetObjects : MonoBehaviour
 {
     //＞変数宣言
-    [SerializeField] protected List<AssetReferenceGameObject> m_SpawnAssetRef; //生成対象アセット管理
+    [SerializeField, Tooltip("生成物")] protected List<AssetReferenceGameObject> m_SpawnAssetRef; //生成対象アセット管理
 
 
     /*＞終了関数

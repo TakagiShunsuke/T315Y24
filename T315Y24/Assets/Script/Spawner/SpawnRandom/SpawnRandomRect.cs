@@ -29,9 +29,10 @@ using UseRandom;
 public class CSpawnRandomRect : CGetObjects
 {
     //＞変数宣言
-    [SerializeField] private Rect m_SpawnRect;  //生成範囲  //TODO:ここに値を入れなかったら自分の位置・サイズを基準にするように
-    [SerializeField] private double m_dAltitude;    //高さ
-    [SerializeField] private Quaternion m_SpawnRotate;  //生成位置
+    [Header("生成範囲")]
+    [SerializeField, Tooltip("生成エリア")] private Rect m_SpawnRect;  //生成範囲  //TODO:ここに値を入れなかったら自分の位置・サイズを基準にするように
+    [SerializeField, Tooltip("標高")] private double m_dAltitude;    //高さ
+    [SerializeField, Tooltip("回転")] private Quaternion m_SpawnRotate;  //生成時回転
 
 
     /*＞生成関数

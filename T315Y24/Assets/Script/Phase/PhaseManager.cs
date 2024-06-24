@@ -61,12 +61,14 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     private const uint INIT_WAVE = 0;   //ウェーブ数カウントの初期値
 
     //＞変数宣言
-    [SerializeField] private TextMeshProUGUI m_TMP_PhaseVal;    //フェーズ数表示場所
-    [SerializeField] private TextMeshProUGUI m_TMP_PhaseName;   //フェーズ名表示場所
-    [SerializeField, CSerializeNamingWithEnum(typeof(E_PHASE))] private string[] m_sPhaseName;    //E_PHASEごとのフェーズ名
-    [SerializeField] private List<PhasePatturn> m_Phases;   //フェーズ一覧
-    private uint m_unPhase = 0;
-    private double m_dCntDwnPhase = 0.0d;
+    [Header("フェーズ情報")]
+    [SerializeField, Tooltip("フェーズ数表示箇所")] private TextMeshProUGUI m_TMP_PhaseVal;    //フェーズ数表示場所
+    //[SerializeField] private TextMeshProUGUI m_TMP_PhaseName;   //フェーズ名表示場所
+    //[SerializeField, CSerializeNamingWithEnum(typeof(E_PHASE)), Tooltip("フェーズ名")] private string[] m_sPhaseName;    //E_PHASEごとのフェーズ名
+    [SerializeField, Tooltip("フェーズ詳細")] private List<PhasePatturn> m_Phases;   //フェーズ一覧
+    private uint m_unPhase = 0; //フェーズ番号管理
+    private double m_dCntDwnPhase = 0.0d;   //フェーズ時間カウント
+    [Header("音")]
     [SerializeField] private AudioClip SE_Spawn;  // ウェーブ開始時のSE
     private AudioSource m_As; // AudioSourceを追加
 
@@ -120,19 +122,19 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     override protected void CustomAwake()
     {
 #if UNITY_EDITOR    //エディタ使用中
-        if (m_TMP_PhaseName == null)   //取得に失敗した時
-        {
-            //＞エラー出力
-            UnityEngine.Debug.LogWarning("入力先テキストが設定されていません");    //警告ログ出力
-        }
-#endif
-#if UNITY_EDITOR    //エディタ使用中
         if (m_TMP_PhaseVal == null)   //取得に失敗した時
         {
             //＞エラー出力
             UnityEngine.Debug.LogWarning("入力先テキストが設定されていません");    //警告ログ出力
         }
 #endif
+//#if UNITY_EDITOR    //エディタ使用中
+//        if (m_TMP_PhaseName == null)   //取得に失敗した時
+//        {
+//            //＞エラー出力
+//            UnityEngine.Debug.LogWarning("入力先テキストが設定されていません");    //警告ログ出力
+//        }
+//#endif
 
         //＞外部初期化
         CEnemyList.Instance.SpawnInfo = m_Phases[(int)m_unPhase].m_Enemies; //敵のリスト初期化
