@@ -17,6 +17,7 @@ D
 05:プログラム作成:takagi
 07:ウェーブ排除・生成パターン追加:takagi
 13:テキスト表示機構追加:takagi
+17:SE追加:nieda
 18:フェーズ形式変更、式修正:takagi
 =====*/
 
@@ -66,6 +67,8 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     [SerializeField] private List<PhasePatturn> m_Phases;   //フェーズ一覧
     private uint m_unPhase = 0;
     private double m_dCntDwnPhase = 0.0d;
+    [SerializeField] public AudioClip SE_Spawn;  // ウェーブ開始時のSE
+    AudioSource m_As; // AudioSourceを追加
 
     //＞プロパティ定義
     public bool IsFinPhases { get; private set; } = false;    //フェーズ全終了フラグ
@@ -87,6 +90,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
                     Debug.Log("フェーズ" + m_unPhase);   //フェーズ数出力
 #endif
                     UpdatePhaseText();  //フェーズ表示更新
+                    m_As.PlayOneShot(SE_Spawn);   // SE再生
                 }
                 else
                 {
@@ -140,6 +144,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
         //＞初期化
         UpdatePhaseText();  //フェーズ表示初期化
         CntDwnWave = m_Phases[(int)m_unPhase].m_dTime;    //カウントダウン初期化
+        m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
     }
 
     /*＞更新関数

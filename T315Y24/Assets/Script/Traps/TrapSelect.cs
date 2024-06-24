@@ -12,9 +12,13 @@ public class CTrapSelect : MonoBehaviour
     public List<GameObject> TrapList;   //罠の格納List
     public List<Image> ImageList;   //罠の格納List
     public List<int> CostList;   //罠のコスト格納List
+    public List<TMP_Text> CostText;   //罠のコストテキスト格納List
     //
     public bool m_bSelect=true;
     private int m_nNum;
+    [SerializeField] public AudioClip SE_Select;  // 罠選択時のSE
+    [SerializeField] public AudioClip SE_Set;  // 罠設置時のSE
+    AudioSource m_As; // AudioSourceを追加
 
     public static int m_Cost;
     public float increaseInterval = 5.0f;  // コストを増やす間隔（秒）
@@ -27,11 +31,14 @@ public class CTrapSelect : MonoBehaviour
         m_nNum = 0;
         RectTransform rectTransform = ImageList[m_nNum].GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(200, 200);
+        m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
         m_bSelect = true;
         m_Cost = 10;
         // コルーチンを開始
         StartCoroutine(IncreaseCostOverTime());
         Cost_txt.SetText("使用可能コスト:" + m_Cost);     //初期化
+        CostText[0].SetText(""+CostList[0]);     //初期化
+        CostText[1].SetText("" + CostList[1]);     //初期化
     }
 
     // Update is called once per frame
@@ -43,6 +50,7 @@ public class CTrapSelect : MonoBehaviour
             //決定
             if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Decision"))&& CostCheck(m_nNum))
             {
+                m_As.PlayOneShot(SE_Set);   // SE再生
                 Generation(m_nNum);
                 m_bSelect = false;
                 Cost_txt.SetText("使用可能コスト:" + m_Cost); 
@@ -62,6 +70,7 @@ public class CTrapSelect : MonoBehaviour
         //選択中
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetButtonDown("Right"))
         {
+            m_As.PlayOneShot(SE_Select);   // SE再生
             RectTransform rectTransform = ImageList[m_nNum].GetComponent<RectTransform>();
             rectTransform.sizeDelta = new Vector2(100, 100);
             m_nNum += 1;
@@ -71,6 +80,7 @@ public class CTrapSelect : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetButtonDown("Left"))
         {
+            m_As.PlayOneShot(SE_Select);   // SE再生
             RectTransform rectTransform = ImageList[m_nNum].GetComponent<RectTransform>();
             rectTransform.sizeDelta = new Vector2(100, 100);
             m_nNum -= 1;

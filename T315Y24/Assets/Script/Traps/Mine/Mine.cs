@@ -23,6 +23,7 @@ _M06
 D
 08：親クラス追加それに伴いプログラム書き換え:yamamoto
 13：爆発時SE追加:nieda
+18：SE追加:nieda
 =====*/
 
 //＞名前空間宣言
@@ -38,6 +39,7 @@ public class Mine : CTrap
 {
     //＞変数宣言
     [SerializeField] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    [SerializeField] public AudioClip SE_ExpMine;  // 罠設置時のSE
     AudioSource audioSource;    // AudioSourceを追加
     [SerializeField] public AudioClip SE_explosion; // 爆発時のSE
 

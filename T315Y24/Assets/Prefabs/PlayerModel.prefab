@@ -143,15 +143,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dFrontAngle: 90
   m_fSpeed: 6
-  m_dHp: 10
+  m_dHp: 1
   m_dDamagedInvicibleTime: 2
   m_unDashInterval: 5
   m_dDushInvicibleTime: 2
   m_DushKey: 101
   m_DashDist: 2
-  SE_Move: {fileID: 8300000, guid: 0e7fcc348cbed4644a7f522ba27a6e08, type: 3}
-  SE_Dash: {fileID: 8300000, guid: ae7700fa3872dfb4392c85180ccbc0d6, type: 3}
-  SE_Damage: {fileID: 8300000, guid: 4b26cfa072e93c04eb67b3837415def8, type: 3}
+  SE_Dash: {fileID: 8300000, guid: 78a2b8ce645625245be7f3d37b18475d, type: 3}
+  SE_Damage: {fileID: 8300000, guid: 44deaa86883fa974ca89e2618453c328, type: 3}
 --- !u!54 &1278180035154986261
 Rigidbody:
   m_ObjectHideFlags: 0
