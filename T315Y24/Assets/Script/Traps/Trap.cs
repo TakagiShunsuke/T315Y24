@@ -39,6 +39,7 @@ public class CTrap : MonoBehaviour
         Settings();
         m_bSetting = true;
         m_audioSource = GetComponent<AudioSource>();
+        SetCount();
     }
 
 /*＞罠発動チェック関数
@@ -136,5 +137,9 @@ public class CTrap : MonoBehaviour
             T.SetSelect();
             Destroy(GetComponent<Rigidbody>());
         }
+    }
+    public virtual void SetCount()
+    {
+        Debug.Log("使用回数が足されていません");
     }
 }

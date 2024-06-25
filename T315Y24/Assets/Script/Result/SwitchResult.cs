@@ -31,6 +31,7 @@ public class CSwitchResult : MonoBehaviour
     public struct KeyChangeImage
     {
         [Tooltip("キー")] public KeyCode[] m_KeyChangeResult; //画像変更の着火キー
+        [Tooltip("ボタン")] public string[] m_KeyChangeButton;   //画像変更の着火ボタン
         [Tooltip("画像")] public Image m_NextImag;    //画像の切換先
     }
 
@@ -67,6 +68,25 @@ public class CSwitchResult : MonoBehaviour
                         if(_nIdx3 == _nIdx)  //対象が自身
                         {
                             m_KeyChangeImages[_nIdx3].m_NextImag.enabled = true; //可視化
+                            ResultSet.Instance.ToggleActive();
+                            continue;   //自分は処理しない
+                        }
+
+                        m_KeyChangeImages[_nIdx3].m_NextImag.enabled = false;    //不可視化
+                    }
+                }
+            }
+            //コントローラー対応
+            for (int _nIdx2 = 0; _nIdx2 < m_KeyChangeImages[_nIdx].m_KeyChangeButton.Length; ++_nIdx2)    //受付キー分判定する
+            {
+                if (Input.GetButtonDown(m_KeyChangeImages[_nIdx].m_KeyChangeButton[_nIdx2])) //キー入力判定
+                {
+                    for (int _nIdx3 = 0; _nIdx3 < m_KeyChangeImages.Length; ++_nIdx3)   //自分以外を処理するためにループしなおす
+                    {
+                        if (_nIdx3 == _nIdx)  //対象が自身
+                        {
+                            m_KeyChangeImages[_nIdx3].m_NextImag.enabled = true; //可視化
+                            ResultSet.Instance.ToggleActive();
                             continue;   //自分は処理しない
                         }
 

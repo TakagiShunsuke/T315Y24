@@ -30,16 +30,47 @@ D
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static System.Net.WebRequestMethods;
+
+public class GameMineData
+{
+    public int SetMine { get; set; }
+    public int UseMine { get; set; }
+    public int MineKill { get; set; }
+
+    // コンストラクタ
+    public GameMineData(int setMine, int useMine, int mineKill)
+    {
+        SetMine = setMine;
+        UseMine = useMine;
+        MineKill = mineKill;
+    }
+}
 
 //＞クラス定義
 public class Mine : CTrap
 {
     //＞変数宣言
     [SerializeField] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
-    AudioSource audioSource;    // AudioSourceを追加
+
+    private static int m_SetMine ;
+    private static int m_UseMine ;
+    private static int m_MineKill;
+
+    /*＞カウント初期化関数
+ 引数１：なし
+ ｘ
+ 戻値：なし
+ ｘ
+ 概要：シーンが変わるときに呼ばれる処理
+ */
+     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    {
+        m_SetMine = 0;
+    }
 
     /*＞地雷当たり判定関数
     引数１：当たり判定があったオブジェクトの情報
@@ -54,8 +85,10 @@ public class Mine : CTrap
         {
             m_audioSource.PlayOneShot(SE_ExpTrap);  //爆発SE再生
             Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
+            m_UseMine++;
+            GameObject explosion = Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
+            explosion.GetComponent<Explosion>().SetBombType(0);
         }
-
         SetCheck(collision);
     }
     private void OnCollisionExit(Collision collision)
@@ -65,5 +98,21 @@ public class Mine : CTrap
     void Update()
     {
         aaa();
+    }
+    public override void SetCount()
+    {
+        m_SetMine++;
+        Debug.Log(m_SetMine);
+    }
+    public static GameMineData GetGameMineData()
+    {
+        m_MineKill=Explosion.m_KillCount[0];
+        return new GameMineData(m_SetMine, m_UseMine,m_MineKill);
+    }
+    public static void ResetMineData()
+    {
+        m_SetMine = 0;
+        m_UseMine = 0;
+        m_MineKill = 0;
     }
 }

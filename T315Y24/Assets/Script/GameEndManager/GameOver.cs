@@ -39,7 +39,7 @@ public class CGameOver : MonoBehaviour
     {
         if(PlayerCom.HP <= 0)
         {
-            SceneManager.LoadScene("GameoverScene");    // GameOverScene‚Ö‘JˆÚ
+            SceneManager.LoadScene("ResultScene");    // GameOverScene‚Ö‘JˆÚ
         }
     }
 }
