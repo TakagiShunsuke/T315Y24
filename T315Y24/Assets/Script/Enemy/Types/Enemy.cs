@@ -64,6 +64,7 @@ public abstract class CEnemy : CVirtualizeMono
     */
     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
+        
         m_nDeadEnemyCount = 0;
     }
 
