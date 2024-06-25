@@ -22,23 +22,25 @@ D
 09:生成機構のクラス変更
 13:敵出現時SE追加:nieda
 18:フェーズ形式変更に対応:takagi
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using UnityEngine;  //Unity
+using UnityEngine;
 
 //＞クラス定義
 public class CGate : MonoBehaviour
 {
     //＞変数宣言
+    [Header("敵生成情報")]
+    [SerializeField, Tooltip("生成上限")] private uint m_unSpawnMax = 100;  //生成上限[s]
+    private double m_dSpawnCoolTime = 0.0d;   //生成クールタイム[s]
     //[SerializeField] private double m_dSpawnInterval = 3.0d;  //生成間隔[s]
     private static double m_dSpawnInterval;  //生成間隔[s]
-    [SerializeField] private uint m_unSpawnMax = 100;  //生成上限[s]
-    private double m_dSpawnCoolTime = 0.0d;   //生成クールタイム[s]
-    CSpawnEnemy m_SpawnRandom = null;    //生成機構
+    private CSpawnEnemy m_SpawnRandom = null;    //生成機構
 
     //＞プロパティ定義
     public static double SpawnInterval { private get; set; }    //フェーズ全終了フラグ
@@ -51,7 +53,7 @@ public class CGate : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    void Start()
+    private void Start()
     {
         //＞初期化
         m_SpawnRandom = GetComponent<CSpawnEnemy>();   //自身の特徴取得

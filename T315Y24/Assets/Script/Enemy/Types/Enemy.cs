@@ -17,6 +17,10 @@ D
 10:プロパティ宣言変更:takagi
 16:敵討伐数カウントを追加:yamamoto
 30:コメント追加:yamamoto
+
+_M06
+D
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -24,7 +28,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Loading;
 using UnityEngine;
-using UnityEngine.SceneManagement;  //Unity
+using UnityEngine.SceneManagement;
 
 //＞クラス定義
 public abstract class CEnemy : CVirtualizeMono
@@ -47,16 +51,17 @@ public abstract class CEnemy : CVirtualizeMono
         ValInstance++;  //生成数増加
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        CustomStart();
+        //＞初期化部分
+        CustomStart();  //子クラスに依存した初期化
     }
 
     /*＞カウント初期化関数
-  引数１：なし
-  ｘ
-  戻値：なし
-  ｘ
-  概要：シーンが変わるときに呼ばれる処理
-  */
+    引数１：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：シーンが変わるときに呼ばれる処理
+    */
     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
         
@@ -73,8 +78,8 @@ public abstract class CEnemy : CVirtualizeMono
     public void counter()
     {
         m_nDeadEnemyCount++;
-
     }
+
     /*＞終了関数
     引数：なし
     ｘ
@@ -82,9 +87,9 @@ public abstract class CEnemy : CVirtualizeMono
     ｘ
     概要：破棄時に行う処理
     */
-   override sealed protected void OnDestroy()
-   {
-       //＞カウント
-       ValInstance--;  //生成数減少
-   }
+    override sealed protected void OnDestroy()
+    {
+        //＞カウント
+        ValInstance--;  //生成数減少
+    }
 }

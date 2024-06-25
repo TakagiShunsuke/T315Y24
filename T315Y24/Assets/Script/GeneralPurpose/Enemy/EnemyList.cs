@@ -18,6 +18,7 @@ D
 09:コード改善:takagi
 13:確率修正:takagi
 18:生成比重の最小値設定:takagi
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -25,7 +26,7 @@ using System;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
-using UnityEngine;  //Unity
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
@@ -36,12 +37,12 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
     //＞構造体定義
     [Serializable] public struct SpawnEnemyInfo
     {
-        public AssetReferenceGameObject m_SpawnAssetRef;   //生成対象アセット
-        [Min(0)] public int m_SpawnAmount;    //生成比重
+        [Tooltip("生成物")] public AssetReferenceGameObject m_SpawnAssetRef;   //生成対象アセット
+        [Min(0), Tooltip("生成数")] public int m_SpawnAmount;    //生成比重
     }   //敵生成用情報
 
     //＞定数定義
-    const string OBJECT_NAME = "EnemyList"; //このオブジェクトが生成されたときの名前
+    private const string OBJECT_NAME = "EnemyList"; //このオブジェクトが生成されたときの名前
 
     //＞プロパティ定義
     public List<SpawnEnemyInfo> SpawnInfo { get; set; } = null; //生成対象管理
@@ -89,12 +90,12 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
 
 
     /*＞初期化関数
-     引数１：なし
-     ｘ
-     戻値：なし
-     ｘ
-     概要：インスタンス生成時に行う処理
-     */
+    引数１：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：インスタンス生成時に行う処理
+    */
     override protected void CustomAwake()
     {
         //＞リネーム
@@ -113,11 +114,11 @@ public class CEnemyList : CMonoSingleton<CEnemyList>
         //＞解放
         if(SpawnInfo != null)   //対象が存在する
         {
-            for (int nIdx = 0; nIdx < SpawnInfo.Count; nIdx++)  //生成物すべて破棄する
+            for (int _nIdx = 0; _nIdx < SpawnInfo.Count; _nIdx++)  //生成物すべて破棄する
             {
-                if (SpawnInfo[nIdx].m_SpawnAssetRef != null && SpawnInfo[nIdx].m_SpawnAssetRef.Asset != null)    //LoadAssetAsync()関数を使用した
+                if (SpawnInfo[_nIdx].m_SpawnAssetRef != null && SpawnInfo[_nIdx].m_SpawnAssetRef.Asset != null)    //LoadAssetAsync()関数を使用した
                 {
-                    SpawnInfo[nIdx].m_SpawnAssetRef.ReleaseAsset(); //参照をやめる
+                    SpawnInfo[_nIdx].m_SpawnAssetRef.ReleaseAsset(); //参照をやめる
                 }
             }
         }

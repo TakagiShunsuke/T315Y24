@@ -21,12 +21,12 @@ using UnityEngine;
 public class UI3dCamera : MonoBehaviour
 {
     /*＞更新関数
-  引数１：なし
-  ｘ
-  戻値：なし
-  ｘ
-  概要：更新処理
-  */
+    引数１：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：更新処理
+    */
     void Update()
     {
         transform.rotation = Camera.main.transform.rotation;    //カメラの角度を更新

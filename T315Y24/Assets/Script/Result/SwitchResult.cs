@@ -3,16 +3,16 @@
 └作成者：takagi
 
 ＞内容
-シーントランジション
+リザルトの２画像を切り替える
 
 ＞注意事項
-適当で作ってるから、もっと良い演出が欲しかったら要調整
+
 
 ＞更新履歴
 __Y24
 _M06
 D
-12:プログラム作成:tei
+12:プログラム作成:takagi
 =====*/
 
 //＞名前空間宣言
@@ -30,24 +30,15 @@ public class CSwitchResult : MonoBehaviour
     [Serializable]
     public struct KeyChangeImage
     {
-        public KeyCode[] m_KeyChangeResult; //画像変更の着火キー
-        public string[] m_KeyChangeButton;   //画像変更の着火ボタン
-        public Image m_NextImag;    //画像の切換先
+        [Tooltip("キー")] public KeyCode[] m_KeyChangeResult; //画像変更の着火キー
+        [Tooltip("ボタン")] public string[] m_KeyChangeButton;   //画像変更の着火ボタン
+        [Tooltip("画像")] public Image m_NextImag;    //画像の切換先
     }
 
     //＞変数宣言
-    [SerializeField] private KeyChangeImage[] m_KeyChangeImages;    //シーン遷移一覧
+    [Header("画像の切り替え方")]
+    [SerializeField, Tooltip("対応画像")] private KeyChangeImage[] m_KeyChangeImages;    //シーン遷移一覧
 
-    /*＞初期化関数
-    引数１：なし
-    ｘ
-    戻値：なし
-    ｘ
-    概要：インスタンス生成時に行う処理
-    */
-    private void Start()
-    {
-    }
 
     /*＞更新関数
     引数：なし
@@ -66,40 +57,40 @@ public class CSwitchResult : MonoBehaviour
         }
 
         //＞画像遷移
-        for (int nIdx = 0; nIdx < m_KeyChangeImages.Length; ++nIdx)   //遷移先候補分判定
+        for (int _nIdx = 0; _nIdx < m_KeyChangeImages.Length; ++_nIdx)   //遷移先候補分判定
         {
-            for (int nIdx2 = 0; nIdx2 < m_KeyChangeImages[nIdx].m_KeyChangeResult.Length; ++nIdx2)    //受付キー分判定する
+            for (int _nIdx2 = 0; _nIdx2 < m_KeyChangeImages[_nIdx].m_KeyChangeResult.Length; ++_nIdx2)    //受付キー分判定する
             {
-                if (Input.GetKeyDown(m_KeyChangeImages[nIdx].m_KeyChangeResult[nIdx2])) //キー入力判定
+                if (Input.GetKeyDown(m_KeyChangeImages[_nIdx].m_KeyChangeResult[_nIdx2])) //キー入力判定
                 {
-                    for(int nIdx3 = 0; nIdx3 < m_KeyChangeImages.Length; ++nIdx3)   //自分以外を処理するためにループしなおす
+                    for(int _nIdx3 = 0; _nIdx3 < m_KeyChangeImages.Length; ++_nIdx3)   //自分以外を処理するためにループしなおす
                     {
-                        if(nIdx3 == nIdx)  //対象が自身
+                        if(_nIdx3 == _nIdx)  //対象が自身
                         {
-                            m_KeyChangeImages[nIdx3].m_NextImag.enabled = true; //可視化
+                            m_KeyChangeImages[_nIdx3].m_NextImag.enabled = true; //可視化
                             ResultSet.Instance.ToggleActive();
                             continue;   //自分は処理しない
                         }
 
-                        m_KeyChangeImages[nIdx3].m_NextImag.enabled = false;    //不可視化
+                        m_KeyChangeImages[_nIdx3].m_NextImag.enabled = false;    //不可視化
                     }
                 }
             }
             //コントローラー対応
-            for (int nIdx2 = 0; nIdx2 < m_KeyChangeImages[nIdx].m_KeyChangeButton.Length; ++nIdx2)    //受付キー分判定する
+            for (int _nIdx2 = 0; _nIdx2 < m_KeyChangeImages[_nIdx].m_KeyChangeButton.Length; ++_nIdx2)    //受付キー分判定する
             {
-                if (Input.GetButtonDown(m_KeyChangeImages[nIdx].m_KeyChangeButton[nIdx2])) //キー入力判定
+                if (Input.GetButtonDown(m_KeyChangeImages[_nIdx].m_KeyChangeButton[_nIdx2])) //キー入力判定
                 {
-                    for (int nIdx3 = 0; nIdx3 < m_KeyChangeImages.Length; ++nIdx3)   //自分以外を処理するためにループしなおす
+                    for (int _nIdx3 = 0; _nIdx3 < m_KeyChangeImages.Length; ++_nIdx3)   //自分以外を処理するためにループしなおす
                     {
-                        if (nIdx3 == nIdx)  //対象が自身
+                        if (_nIdx3 == _nIdx)  //対象が自身
                         {
-                            m_KeyChangeImages[nIdx3].m_NextImag.enabled = true; //可視化
+                            m_KeyChangeImages[_nIdx3].m_NextImag.enabled = true; //可視化
                             ResultSet.Instance.ToggleActive();
                             continue;   //自分は処理しない
                         }
 
-                        m_KeyChangeImages[nIdx3].m_NextImag.enabled = false;    //不可視化
+                        m_KeyChangeImages[_nIdx3].m_NextImag.enabled = false;    //不可視化
                     }
                 }
             }

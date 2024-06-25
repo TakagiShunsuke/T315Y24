@@ -21,6 +21,7 @@ D
 _M06
 D
 13:脱字修正:takagi
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -34,7 +35,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.TextCore.Text;
-using UnityEngine.UI;  //Unity
+using UnityEngine.UI;
 
 //＞クラス定義
 public class CPlayerDashInterval : MonoBehaviour
@@ -46,7 +47,8 @@ public class CPlayerDashInterval : MonoBehaviour
     //＞変数宣言
     private CPlayerScript m_Player = null;  //プレイヤーの情報
     private double m_dCurData;  //現在管理している情報
-    [SerializeField] private TextMeshProUGUI m_TextMeshProUGUI; //インターバル表示場所
+    [SerializeField, Tooltip("表示先テキスト")] private TextMeshProUGUI m_TextMeshProUGUI; //インターバル表示場所
+
 
     /*＞初期化関数
     引数１：なし
@@ -55,7 +57,7 @@ public class CPlayerDashInterval : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    public void Start()
+    private void Start()
     {
         //＞初期化
         m_Player = GetComponent<CPlayerScript>(); //プレイヤーとしての振る舞い方取得
