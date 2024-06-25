@@ -91,7 +91,6 @@ public class Mine : CTrap
             m_UseMine++;
             GameObject explosion = Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
             explosion.GetComponent<Explosion>().SetBombType(0);
-            Debug.Log("1");
         }
         SetCheck(collision);
     }

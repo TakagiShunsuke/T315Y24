@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ResultSet : MonoBehaviour
+public class ResultSet : CMonoSingleton<ResultSet>
 {
-    int SetMine;
-    int SetRemorteBomb;
     public List<TMP_Text> ResultText;
+
     // Start is called before the first frame update
-    void Start()
+    override protected void Start()
     {
         GameMineData MineResultData = Mine.GetGameMineData();
         GameRemoteBombData RBResultData = RemoteBomb.GetGameRemoteBombData();
@@ -22,17 +21,37 @@ public class ResultSet : MonoBehaviour
         ResultText[4].SetText("" + RBResultData.UseRemoteBomb);
         ResultText[5].SetText("" + RBResultData.RemoteBombKill);
 
-        ResultText[6].SetText("" + (MineResultData.SetMine+ RBResultData.SetRemoteBomb));
-        ResultText[7].SetText("" + (MineResultData.UseMine+ RBResultData.UseRemoteBomb));
+        ResultText[6].SetText("" + (MineResultData.SetMine + RBResultData.SetRemoteBomb));
+        ResultText[7].SetText("" + (MineResultData.UseMine + RBResultData.UseRemoteBomb));
         ResultText[8].SetText("" + (MineResultData.MineKill + RBResultData.RemoteBombKill));
 
+        ResultText[9].SetText("" + (MineResultData.MineKill + RBResultData.RemoteBombKill));
+
+        
         Mine.ResetMineData();
         RemoteBomb.ResetRemoteBombData();
     }
 
     // Update is called once per frame
-    void Update()
+    override protected void Update()
     {
-        
+
+    }
+    public void ToggleActive()
+    {
+        for (int i = 0; i < ResultText.Count; i++)
+        {
+            bool currentState = ResultText[i].gameObject.activeSelf;
+            ResultText[i].gameObject.SetActive(!currentState);
+        }
+
+    }
+    private void aaaaaa()
+    {
+        for (int i = 0; i < ResultText.Count; i++)
+        {
+            bool currentState = ResultText[i].gameObject.activeSelf;
+            ResultText[i].gameObject.SetActive(!currentState);
+        }
     }
 }
