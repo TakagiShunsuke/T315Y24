@@ -23,7 +23,7 @@ public class CTrapSelect : MonoBehaviour
     public static int m_Cost;
     public float increaseInterval = 5.0f;  // コストを増やす間隔（秒）
 
-    [SerializeField] private TMP_Text Cost_txt; //表示させるテキスト(TMP)
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +34,9 @@ public class CTrapSelect : MonoBehaviour
         m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
         m_bSelect = true;
         m_Cost = 10;
-        // コルーチンを開始
-        StartCoroutine(IncreaseCostOverTime());
-        Cost_txt.SetText("使用可能コスト:" + m_Cost);     //初期化
+        
         CostText[0].SetText(""+CostList[0]);     //初期化
-        CostText[1].SetText("" + CostList[1]);     //初期化
+        CostText[1].SetText(""+CostList[1]);     //初期化
     }
 
     // Update is called once per frame
@@ -53,7 +51,6 @@ public class CTrapSelect : MonoBehaviour
                 m_As.PlayOneShot(SE_Set);   // SE再生
                 Generation(m_nNum);
                 m_bSelect = false;
-                Cost_txt.SetText("使用可能コスト:" + m_Cost); 
             }
         }
     }
@@ -93,19 +90,7 @@ public class CTrapSelect : MonoBehaviour
     {
         m_bSelect = true;
     }
-    private IEnumerator IncreaseCostOverTime()
-    {
-        while (true)
-        {
-            // 指定した時間だけ待機
-            yield return new WaitForSeconds(increaseInterval);
-
-            // コストを増やす
-            m_Cost++;
-            Debug.Log("Cost increased to: " + m_Cost);
-            Cost_txt.SetText("使用可能コスト:" + m_Cost);
-        }
-    }
+   
     private bool CostCheck(int i)
     {
         m_Cost-= CostList[i];

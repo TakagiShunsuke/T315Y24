@@ -30,7 +30,8 @@ public class Explosion : MonoBehaviour
     private float m_ObjectRadius;      //オブジェクトの半径
     private Vector3 m_InitialObjectPos; // オブジェクトの初期位置
     [SerializeField] private double m_LowerSpeed = 0.1d;   //オブジェクトが下に消えていく速度
-
+    int m_Setnum;
+    public static int[] m_KillCount = new int[2];
     /*＞初期化関数
   引数１：なし
   ｘ
@@ -40,6 +41,7 @@ public class Explosion : MonoBehaviour
   */
     void Start()
     {
+        Debug.Log("2");
         m_ObjectRadius = transform.localScale.x / 2.0f;   // オブジェクトの半径を取得
         m_InitialObjectPos = transform.position;          // 初期位置を設定
 
@@ -51,7 +53,10 @@ public class Explosion : MonoBehaviour
             {
                 //IFeatureMineがついるか確認
                 if (Collider.gameObject.TryGetComponent<IFeatureMine>(out var Destroy))
+                {
                     Destroy.TakeDestroy();  //敵削除
+                    m_KillCount[m_Setnum]++;
+                }
             }
         }
     }
@@ -73,5 +78,9 @@ public class Explosion : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void SetBombType(int n)
+    {
+        m_Setnum = n;
     }
 }
