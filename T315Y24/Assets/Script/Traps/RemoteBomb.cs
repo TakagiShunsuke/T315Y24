@@ -7,7 +7,6 @@ public class RemoteBomb : CTrap
 {
     [SerializeField] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
     [SerializeField] private KeyCode m_ExplodingKey = KeyCode.B; //起爆のキー
-    [SerializeField] public AudioClip SE_ExpBomb;  // 罠設置時のSE
 
     // Update is called once per frame
     void Update()
@@ -17,6 +16,7 @@ public class RemoteBomb : CTrap
            
             if ((Input.GetKeyDown(m_ExplodingKey)|| Input.GetButtonDown("Explosion")) & m_bUse)
             {
+                m_audioSource.PlayOneShot(SE_ExpTrap);  //爆発SE再生
                 SetCoolTime();
                 Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
             }

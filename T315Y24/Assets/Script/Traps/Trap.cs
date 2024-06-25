@@ -15,8 +15,9 @@ public class CTrap : MonoBehaviour
     public float m_fPosY;
     public bool m_bSetting = true;
     private GameObject player;
-    AudioSource m_audioSource;    // AudioSource‚ğ’Ç‰Á
-    [SerializeField] public AudioClip SE_SetTrap;   // ã©İ’u‚ÌSE
+    protected AudioSource m_audioSource;    // AudioSource‚ğ’Ç‰Á
+    [SerializeField] protected AudioClip SE_SetTrap;   // ã©İ’u‚ÌSE
+    [SerializeField] protected AudioClip SE_ExpTrap;   // ã©”š”­‚ÌSE
 
     /*„‰Šú‰»ŠÖ”
     ˆø”‚PF‚È‚µ
