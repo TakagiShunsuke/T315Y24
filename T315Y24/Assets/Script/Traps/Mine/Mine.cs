@@ -55,9 +55,6 @@ public class Mine : CTrap
 {
     //＞変数宣言
     [SerializeField] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
-    [SerializeField] public AudioClip SE_ExpMine;  // 罠設置時のSE
-    AudioSource audioSource;    // AudioSourceを追加
-    [SerializeField] public AudioClip SE_explosion; // 爆発時のSE
 
     private static int m_SetMine ;
     private static int m_UseMine ;
@@ -86,8 +83,8 @@ public class Mine : CTrap
     {
         if (Check(collision))  // 起爆できるか
         {
-            audioSource = GetComponent<AudioSource>();  //AudioSourceコンポーネントを追加
-            audioSource.PlayOneShot(SE_explosion);  //爆発SE再生
+            m_audioSource.PlayOneShot(SE_ExpTrap);  //爆発SE再生
+            Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
             m_UseMine++;
             GameObject explosion = Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
             explosion.GetComponent<Explosion>().SetBombType(0);

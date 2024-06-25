@@ -311,9 +311,8 @@ MonoBehaviour:
   m_fPosY: -0.3
   m_bSetting: 1
   SE_SetTrap: {fileID: 8300000, guid: c13fbcceac39313428898cf0fe9d53f9, type: 3}
+  SE_ExpTrap: {fileID: 8300000, guid: 214a20a77fdebf1418758df4c1ac449f, type: 3}
   m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
-  SE_ExpMine: {fileID: 8300000, guid: 214a20a77fdebf1418758df4c1ac449f, type: 3}
-  SE_explosion: {fileID: 8300000, guid: 5bf8eea4c1898424eb06ab5a585bf60c, type: 3}
 --- !u!54 &6667340849690089108
 Rigidbody:
   m_ObjectHideFlags: 0
