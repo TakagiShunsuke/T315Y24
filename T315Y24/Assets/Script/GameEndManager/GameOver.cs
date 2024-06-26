@@ -12,8 +12,12 @@
 __Y24
 _M05
 D
-16:プレイヤーのクラスリネームに対応:takagi
-31:リファクタリング:takagi
+16: プレイヤーのクラスリネームに対応:takagi
+31: リファクタリング:takagi
+
+_M06
+D
+25: シーン遷移遷移先変更: yamamoto
 =====*/
 
 using System.Collections;
@@ -39,7 +43,7 @@ public class CGameOver : MonoBehaviour
     {
         if(PlayerCom.HP <= 0)
         {
-            SceneManager.LoadScene("ResultScene");    // GameOverSceneへ遷移
+            SceneManager.LoadScene("ResultScene");    // ResultSceneへ遷移
         }
     }
 }
