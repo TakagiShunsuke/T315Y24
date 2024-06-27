@@ -49,8 +49,8 @@ public class CChangeScene : MonoBehaviour
     [Header("シーンの切り替え方")]
     [SerializeField, Tooltip("対応シーン")] private KeyChangeScene[] m_KeyChangeScenes;    //シーン遷移一覧
     [Header("音")]
-    [SerializeField] private AudioClip SE_Decide;  // 決定時のSE
-    private AudioSource m_AudioSource;  // AudioSourceを追加
+    [Tooltip("AudioSourceを追加")] private AudioSource m_audioSource;     // AudioSourceを追加
+    [SerializeField, Tooltip("決定時のSE")] private AudioClip SE_Decide;  // 決定時のSE
 
 
     /*＞初期化関数

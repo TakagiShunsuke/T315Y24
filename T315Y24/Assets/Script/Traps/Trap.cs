@@ -13,6 +13,7 @@ D
 13：爆発時SE追加：nieda
 18：SE追加：nieda
 26：コメント追加：yamamoto
+27：SE関係リファクタリング：nieda
 =====*/
 
 //＞名前空間宣言
@@ -39,7 +40,7 @@ public class CTrap : MonoBehaviour
     [SerializeField,Tooltip("フォントサイズ")] private int m_nFontSize = 24;      // クールダウンのフォントサイズ変更用
                                                                          
     [Header("音")]
-    protected AudioSource m_audioSource;    // AudioSourceを追加
+    [Tooltip("AudioSourceを追加")] protected AudioSource m_audioSource;    // AudioSourceを追加
     [SerializeField,Tooltip("罠設置時のSE")] protected AudioClip SE_SetTrap;   // 罠設置時のSE
     [SerializeField,Tooltip("罠爆発時のSE")] protected AudioClip SE_ExpTrap;   // 罠爆発時のSE
 

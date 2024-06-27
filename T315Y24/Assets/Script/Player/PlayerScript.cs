@@ -21,6 +21,7 @@ D
 13:ダッシュ時、被ダメ時のSE追加:nieda
 17:SE追加:nieda
 21:リファクタリング:takagi
+27:SE関係リファクタリング
 =====*/
 
 //＞名前空間宣言
@@ -49,9 +50,9 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     [SerializeField, Tooltip("被攻撃時[s]")] private double m_dDamagedInvicibleTime;  //無敵時間[s] :自分が攻撃を受けたときに発動
     [SerializeField, Tooltip("ダッシュ時[s]")] private double m_dDushInvicibleTime;  //無敵時間[s] :ダッシュ時に発動
     [Header("音")]
-    [SerializeField] private AudioClip SE_Dash;  // ダッシュ時のSE
-    [SerializeField] private AudioClip SE_Damage;    // 被ダメ時のSE
-    private AudioSource m_AudioSource;  // AudioSourceを追加
+    [Tooltip("AudioSourceを追加")] private AudioSource m_audioSource;          // AudioSourceを追加
+    [SerializeField, Tooltip("ダッシュ時のSE")] private AudioClip SE_Dash;     // ダッシュ時のSE
+    [SerializeField, Tooltip("被ダメ時のSE")] private AudioClip SE_Damage;     // 被ダメ時のSE
 
     //＞プロパティ定義
     private double CntDwnInvicibleTime
@@ -194,9 +195,10 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         }
 
         //＞ダメージ計算
-        m_AudioSource.PlayOneShot(SE_Damage);   // 被ダメ時SE追加
         m_dHp -= _dDamageVal;    //HP減少
         CntDwnInvicibleTime = m_dDamagedInvicibleTime;  //無敵時間のカウントをリセットする
+        
+        m_AudioSource.PlayOneShot(SE_Damage);   // 被ダメ時SE追加
     }
 
     /*＞ダッシュ関数
@@ -241,6 +243,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         if (_vGo != transform.position)  //移動先に対して変移があるとき
         {
             m_Rb.transform.position = _vGo;  //即座に移動を行う
+
             m_AudioSource.PlayOneShot(SE_Dash); // ダッシュ時SE再生
 
             //＞カウントダウン

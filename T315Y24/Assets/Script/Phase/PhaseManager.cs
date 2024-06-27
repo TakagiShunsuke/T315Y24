@@ -19,6 +19,7 @@ D
 18:フェーズ形式変更、式修正:takagi
 21:リファクタリング:takagi
 24:リファクタリング:takagi
+27:SE関係リファクタリング:nieda
 =====*/
 
 //＞名前空間宣言
@@ -69,8 +70,8 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
     private uint m_unPhase = 0; //フェーズ番号管理
     private double m_dCntDwnPhase = 0.0d;   //フェーズ時間カウント
     [Header("音")]
-    [SerializeField] private AudioClip SE_Spawn;  // ウェーブ開始時のSE
-    private AudioSource m_As; // AudioSourceを追加
+    [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;            // AudioSourceを追加
+    [SerializeField, Tooltip("ウェーブ開始時のSE")] private AudioClip SE_Spawn;  // ウェーブ開始時のSE
 
     //＞プロパティ定義
     public bool IsFinPhases { get; private set; } = false;    //フェーズ全終了フラグ
@@ -92,7 +93,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
                     Debug.Log("フェーズ" + m_unPhase);   //フェーズ数出力
 #endif
                     UpdatePhaseText();  //フェーズ表示更新
-                    m_As.PlayOneShot(SE_Spawn);   // SE再生
+                    m_AudioSource.PlayOneShot(SE_Spawn);   // SE再生
                 }
                 else
                 {
@@ -146,7 +147,7 @@ public class CPhaseManager : CMonoSingleton<CPhaseManager>
         //＞初期化
         UpdatePhaseText();  //フェーズ表示初期化
         CntDwnWave = m_Phases[(int)m_unPhase].m_dTime;    //カウントダウン初期化
-        m_As = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
+        m_AudioSource = GetComponent<AudioSource>(); // AudioSourceコンポーネントを追加
     }
 
     /*＞更新関数
