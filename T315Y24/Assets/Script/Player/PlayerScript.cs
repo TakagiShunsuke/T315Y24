@@ -50,7 +50,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     [SerializeField, Tooltip("被攻撃時[s]")] private double m_dDamagedInvicibleTime;  //無敵時間[s] :自分が攻撃を受けたときに発動
     [SerializeField, Tooltip("ダッシュ時[s]")] private double m_dDushInvicibleTime;  //無敵時間[s] :ダッシュ時に発動
     [Header("音")]
-    [Tooltip("AudioSourceを追加")] private AudioSource m_audioSource;          // AudioSourceを追加
+    [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;          // AudioSourceを追加
     [SerializeField, Tooltip("ダッシュ時のSE")] private AudioClip SE_Dash;     // ダッシュ時のSE
     [SerializeField, Tooltip("被ダメ時のSE")] private AudioClip SE_Damage;     // 被ダメ時のSE
 

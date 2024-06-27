@@ -11,7 +11,7 @@ public class CPauseManager : MonoBehaviour
     [SerializeField] private bool m_bPause;
 
     [Header("音")]
-    [Tooltip("AudioSourceを追加")] private AudioSource m_audioSource;                  // AudioSourceを追加
+    [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;                  // AudioSourceを追加
     [SerializeField, Tooltip("ポーズメニュー表示時のSE")] private AudioClip SE_Pause;  // ポーズメニュー表示時のSE
 
 
