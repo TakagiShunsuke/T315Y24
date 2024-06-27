@@ -9,8 +9,10 @@ public class CPauseManager : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     [SerializeField] private bool m_bPause;
-    private AudioSource m_AudioSource;
-    [SerializeField] private AudioClip SE_Pause;
+
+    [Header("音")]
+    [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;                  // AudioSourceを追加
+    [SerializeField, Tooltip("ポーズメニュー表示時のSE")] private AudioClip SE_Pause;  // ポーズメニュー表示時のSE
 
 
     // Start is called before the first frame update

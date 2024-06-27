@@ -12,6 +12,7 @@ D
 12: プログラム作成: yamamoto
 18: SE追加: nieda
 26: コメント追加: yamamoto
+27: SE関係リファクタリング: nieda
 =====*/
 
 //＞名前空間宣言
@@ -50,9 +51,9 @@ public class CTrapSelect : MonoBehaviour
     public static int m_Cost;
 
     [Header("音")]
-    [SerializeField,Tooltip("罠選択時のSE")] public AudioClip SE_Select;  // 罠選択時のSE
-    [SerializeField,Tooltip("罠設置時のSE")] public AudioClip SE_Set;  // 罠設置時のSE
-    AudioSource m_As; // AudioSourceを追加
+    [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;      // AudioSourceを追加
+    [SerializeField,Tooltip("罠選択時のSE")] private AudioClip SE_Select;  // 罠選択時のSE
+    [SerializeField,Tooltip("罠設置時のSE")] private AudioClip SE_Set;     // 罠設置時のSE
 
 
     /*＞初期化関数
@@ -69,7 +70,7 @@ public class CTrapSelect : MonoBehaviour
         //RectTransformを取得
         RectTransform rectTransform = m_TrapInfo[m_nNum].m_Image.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(200, 200);    // 選択中のUIの大きさを変更
-        m_As = GetComponent<AudioSource>();                 // AudioSourceコンポーネントを追加
+        m_AudioSource = GetComponent<AudioSource>();        // AudioSourceコンポーネントを追加
         m_bSelect = true;                                   // 選択可能
         m_Cost = m_FirstCost;                               // 初期コスト
         m_TrapInfo[0].m_CostText.SetText($"{m_TrapInfo[0].m_Cost}");  //Textをセット
@@ -90,7 +91,7 @@ public class CTrapSelect : MonoBehaviour
             Select();   //選択
             if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Decision"))&& CostCheck(m_nNum))
             {//決定したなら
-                m_As.PlayOneShot(SE_Set);   // SE再生
+                m_AudioSource.PlayOneShot(SE_Set);   // SE再生
                 Generation(m_nNum);         //オブジェクト作成
                 m_bSelect = false;          //選択不可
             }
@@ -124,7 +125,7 @@ public class CTrapSelect : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetButtonDown("Right"))
         {
-            m_As.PlayOneShot(SE_Select);    // SE再生
+            m_AudioSource.PlayOneShot(SE_Select);    // SE再生
             ChangeSize(100);                // サイズを変更
             m_nNum += 1;                    // 次の番号
             // 罠の種類よりも大きくなったら最大に戻す
@@ -133,7 +134,7 @@ public class CTrapSelect : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetButtonDown("Left"))
         {
-            m_As.PlayOneShot(SE_Select);    // SE再生
+            m_AudioSource.PlayOneShot(SE_Select);    // SE再生
             ChangeSize(100);                // サイズを変更
             m_nNum -= 1;                    // 次の番号
             if (m_nNum < 0) m_nNum = 0;     // 負の数にならないように
