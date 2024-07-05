@@ -232,7 +232,7 @@ MonoBehaviour:
   - TransitionKey: 20000000
     TransitionButton:
     - Decision
-    Nextscene: SelectScene
+    Nextscene: Stage01
   SE_Decide: {fileID: 8300000, guid: b0107f03e4c42bc46b797f687bf89e74, type: 3}
 --- !u!82 &171975109
 AudioSource:
