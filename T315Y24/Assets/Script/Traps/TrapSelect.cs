@@ -4,9 +4,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static CCodingRule;
+using static InputDeviceManager;
 
 public class CTrapSelect : MonoBehaviour
 {
+
     private GameObject player;
     //整理予定
     public List<GameObject> TrapList;   //罠の格納List
@@ -39,6 +41,13 @@ public class CTrapSelect : MonoBehaviour
         Cost_txt.SetText("使用可能コスト:" + m_Cost);     //初期化
         CostText[0].SetText(""+CostList[0]);     //初期化
         CostText[1].SetText("" + CostList[1]);     //初期化
+        InputDeviceManager.Instance.OnChangeDeviceType.AddListener(OnChangeDeviceTypeHandler);
+
+    }
+    private void OnChangeDeviceTypeHandler()
+    {
+        // 入力デバイスの種別が変更されたときの処理
+        Debug.Log("入力デバイスの種別が変更されました。\n現在の入力デバイスの種別：" + InputDeviceManager.Instance.CurrentDeviceType);
     }
 
     // Update is called once per frame
@@ -48,12 +57,78 @@ public class CTrapSelect : MonoBehaviour
         {
             Select();
             //決定
-            if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Decision"))&& CostCheck(m_nNum))
+            //if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Decision")) && CostCheck(m_nNum))
+            //{
+            //    m_As.PlayOneShot(SE_Set);   // SE再生
+            //    Generation(m_nNum);
+            //    m_bSelect = false;
+            //    Cost_txt.SetText("使用可能コスト:" + m_Cost);
+            //}
+
+            
+            if (InputDeviceManager.Instance != null)
             {
-                m_As.PlayOneShot(SE_Set);   // SE再生
-                Generation(m_nNum);
-                m_bSelect = false;
-                Cost_txt.SetText("使用可能コスト:" + m_Cost); 
+                // 現在の入力デバイスタイプを取得
+                InputDeviceManager.InputDeviceType currentDeviceType = InputDeviceManager.Instance.CurrentDeviceType;
+                //決定
+                // 現在のデバイスタイプに応じた処理を行う
+                Debug.Log(currentDeviceType);
+                switch (currentDeviceType)
+                {
+                    case InputDeviceManager.InputDeviceType.Keyboard:
+                        Debug.Log("Keyboardが使用されています");
+                        if (Input.GetKeyDown(KeyCode.E) && CostCheck(m_nNum)) //ダッシュ入力
+                        {
+                            m_As.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);
+                            m_bSelect = false;
+                            Cost_txt.SetText("使用可能コスト:" + m_Cost);
+                        }
+                        break;
+                    case InputDeviceManager.InputDeviceType.Xbox:
+                        Debug.Log("XBOXが使用されています");
+                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
+                        {
+                            m_As.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);
+                            m_bSelect = false;
+                            Cost_txt.SetText("使用可能コスト:" + m_Cost);
+                        }
+                        break;
+                    case InputDeviceManager.InputDeviceType.DualShock4:
+                        Debug.Log("DualShock4(PS4)が使用されています");
+                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
+                        {
+                            m_As.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);
+                            m_bSelect = false;
+                            Cost_txt.SetText("使用可能コスト:" + m_Cost);
+                        }
+                        break;
+                    case InputDeviceManager.InputDeviceType.DualSense:
+                        Debug.Log("DualSense(PS5)が使用されています");
+                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
+                        {
+                            m_As.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);
+                            m_bSelect = false;
+                            Cost_txt.SetText("使用可能コスト:" + m_Cost);
+                        }
+                        break;
+                    case InputDeviceManager.InputDeviceType.Switch:
+                        Debug.Log("SwitchのProコントローラーが使用されています");
+                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
+                        {
+                            m_As.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);
+                            m_bSelect = false;
+                            Cost_txt.SetText("使用可能コスト:" + m_Cost);
+                        }
+                        break;
+                    default:
+                        Debug.Log("未知の入力デバイスが使用されています");
+                        break;
+                }
             }
         }
     }

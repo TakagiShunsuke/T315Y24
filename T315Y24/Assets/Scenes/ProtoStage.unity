@@ -550,11 +550,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TMP_PhaseVal: {fileID: 1174764863}
   m_TMP_PhaseName: {fileID: 862516831}
-  m_PhaseName:
-  - "\u6226\u95D8\u30D5\u30A7\u30FC\u30BA"
-  - "\u8A2D\u7F6E\u30D5\u30A7\u30FC\u30BA"
+  m_sPhaseName: []
   m_Phases:
-  - m_Phase: 0
+  - m_ePhase: 0
     m_Enemies:
     - m_SpawnAssetRef:
         m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
@@ -562,11 +560,17 @@ MonoBehaviour:
         m_SubObjectType: 
         m_EditorAssetChanged: 0
       m_SpawnAmount: 1
+    m_unEnemyVal: 0
+    m_dSpawnInterval: 0
     m_dTime: 10
-  - m_Phase: 1
+    m_unKillValToNext: 0
+  - m_ePhase: 0
     m_Enemies: []
+    m_unEnemyVal: 0
+    m_dSpawnInterval: 0
     m_dTime: 10
-  - m_Phase: 0
+    m_unKillValToNext: 0
+  - m_ePhase: 0
     m_Enemies:
     - m_SpawnAssetRef:
         m_AssetGUID: 6d8d54b184bf9a14c8390620b1bbef62
@@ -580,10 +584,17 @@ MonoBehaviour:
         m_SubObjectType: 
         m_EditorAssetChanged: 1
       m_SpawnAmount: 1
+    m_unEnemyVal: 0
+    m_dSpawnInterval: 0
     m_dTime: 10
-  - m_Phase: 1
+    m_unKillValToNext: 0
+  - m_ePhase: 0
     m_Enemies: []
+    m_unEnemyVal: 0
+    m_dSpawnInterval: 0
     m_dTime: 10
+    m_unKillValToNext: 0
+  SE_Spawn: {fileID: 0}
 --- !u!4 &129205868
 Transform:
   m_ObjectHideFlags: 0
@@ -1437,6 +1448,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5047553967118152084, guid: f1ef87926a5e8f14dad312843f5a1698, type: 3}
   m_PrefabInstance: {fileID: 198312397}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &684975296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684975298}
+  - component: {fileID: 684975297}
+  m_Layer: 0
+  m_Name: InputDeviceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &684975297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684975296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582c269f9e6240f4b912a4d214148ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &684975298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684975296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0311337, y: -14.475929, z: 5.9418125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &693539379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8262981891034645979, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
@@ -2338,6 +2393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1881070442}
   m_bPause: 0
+  SE_Pause: {fileID: 0}
 --- !u!4 &1137235489
 Transform:
   m_ObjectHideFlags: 0
@@ -4657,3 +4713,4 @@ SceneRoots:
   - {fileID: 342975132}
   - {fileID: 1832086425}
   - {fileID: 609993437}
+  - {fileID: 684975298}

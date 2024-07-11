@@ -19,6 +19,9 @@ _M06
 D
 13:ダッシュ時、被ダメ時のSE追加:
 17:SE追加:nieda
+_MP7
+D
+04:コントローラ処理追加:iwamuro
 =====*/
 
 //＞名前空間宣言
@@ -27,6 +30,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static InputDeviceManager;
 
 
 //＞クラス定義
@@ -42,7 +46,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     [SerializeField] private double m_dDushInvicibleTime = 2.0d;  //無敵時間[s] :ダッシュ時に発動
     private double m_dCntDwnInvicibleTime = 0.0d;  //無敵時間カウント用
     private double m_dCntDwnDshInterval = 0.0d;  //ダッシュカウントダウン用
-    [SerializeField] private KeyCode m_DushKey = KeyCode.E; //ダッシュのキー
+    [SerializeField] private KeyCode m_DushKey = KeyCode.Space; //ダッシュのキー
     [SerializeField] private double m_DashDist = 2.0d;  //ダッシュ時に移動する距離
     // //TODO:SE関係後ほどまとめます
     AudioSource m_AudioSource;  // AudioSourceを追加
@@ -86,6 +90,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         //＞初期化
         m_Rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
         m_AudioSource = GetComponent<AudioSource>();    //AudioSourceコンポーネントを追加
+    
     }
 
     /*＞移動処理関数
@@ -100,8 +105,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         Vector3 moveDirection = Vector3.zero; // 移動方向の初期化
                                               //     Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));    //プレイヤーの向きを変えるベクトル
                                               //  Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal") + Input.GetAxis("JoystickHorizontal"), 0, Input.GetAxis("Vertical") + Input.GetAxis("JoystickVertical"));    //プレイヤーの向きを変えるベクトル
-
-        // キーボードの入力を取得
+                                              // キーボードの入力を取得
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
@@ -144,7 +148,9 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         if (m_dCntDwnDshInterval > 0.0d)
         {
             m_dCntDwnDshInterval -= Time.deltaTime;   //時間をカウント
-        }        
+        }
+
+       
     }
 
     /*＞物理更新関数
@@ -166,11 +172,57 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             //mr.material.color = new Color(mr.material.color.r, mr.material.color.g, mr.material.color.b, (float)(Math.Sin(RadSp) * 255.0d));
         }
 
-        //＞ダッシュ操作
-        if (Input.GetKeyDown(m_DushKey)||Input.GetButtonDown("Dash"))   //ダッシュ入力
+        if (InputDeviceManager.Instance != null)
         {
-            Dash(); //ダッシュする
+            // 現在の入力デバイスタイプを取得
+            InputDeviceManager.InputDeviceType currentDeviceType = InputDeviceManager.Instance.CurrentDeviceType;
+
+            //＞ダッシュ操作
+            // 現在のデバイスタイプに応じた処理を行う
+            switch (currentDeviceType)
+            {
+                case InputDeviceManager.InputDeviceType.Keyboard:
+                    Debug.Log("Keyboardが使用されています");
+                    if (Input.GetKeyDown(/*m_DushKey*/KeyCode.Space)) //ダッシュ入力
+                    {
+                        
+                        Dash(); //ダッシュする
+                    }
+                    break;
+                case InputDeviceManager.InputDeviceType.Xbox:
+                    Debug.Log("XBOXが使用されています");
+                    if (Input.GetButtonDown("Dash"))
+                    {
+                        Dash(); //ダッシュする
+                    }
+                    break;
+                case InputDeviceManager.InputDeviceType.DualShock4:
+                    Debug.Log("DualShock4(PS4)が使用されています");
+                    if (Input.GetButtonDown("Dash"))
+                    {
+                        Dash(); //ダッシュする
+                    }
+                    break;
+                case InputDeviceManager.InputDeviceType.DualSense:
+                    Debug.Log("DualSense(PS5)が使用されています");
+                    if (Input.GetButtonDown("Dash"))
+                    {
+                        Dash(); //ダッシュする
+                    }
+                    break;
+                case InputDeviceManager.InputDeviceType.Switch:
+                    Debug.Log("SwitchのProコントローラーが使用されています");
+                    if (Input.GetButtonDown("Dash"))
+                    {
+                        Dash(); //ダッシュする
+                    }
+                    break;
+                default:
+                    Debug.Log("未知の入力デバイスが使用されています");
+                    break;
+            }
         }
+
     }
 
     /*＞被ダメージ関数
