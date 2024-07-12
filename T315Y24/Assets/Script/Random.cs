@@ -1,23 +1,27 @@
 /*=====
-<SpawnRandom.cs> //スクリプト名
+<Random.cs> //スクリプト名
 └作成者：takagi
 
 ＞内容
-ランダム生成
+ランダマイズ
 
 ＞更新履歴
 __Y24
 _M05
 D
 06:プログラム作成:takagi
+
+_M06
+D
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using UnityEngine;  //Unity
-using System;   //システム(時間取得)
+using UnityEngine;
+using System;
 
 //＞名前空間定義
 namespace UseRandom

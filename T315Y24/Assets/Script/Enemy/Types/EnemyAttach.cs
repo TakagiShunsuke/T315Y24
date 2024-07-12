@@ -1,5 +1,5 @@
 /*=====
-<EnemyNormal.cs> //スクリプト名
+<EnemyAttach.cs> //スクリプト名
 └作成者：takagi
 
 ＞内容
@@ -27,6 +27,8 @@ D
 _M06
 D
 09:特徴改造に対応・リネーム:takagi
+21:リファクタリング:takagi
+24:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
@@ -34,25 +36,24 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Burst.CompilerServices;
-using UnityEngine;  //Unity
+using UnityEngine;
 using UnityEngine.AI;
 
 //＞クラス定義
-public sealed class CEnemyNormal : CEnemy, IFeatureMine
+public sealed class CEnemyAttach : CEnemy, IFeatureMine
 {
     //＞変数宣言
-    [SerializeField] private double m_dAtkInterval = 3.0d;  //攻撃間隔[s]
-    private double m_dAtkCoolTime = 0.0d;   //攻撃クールタイム[s]
-    [SerializeField] private CFeatures.E_ENEMY_TYPE m_eFeatureType;   //特徴の種類
+    [Header("ステータス")]
+    [SerializeField, Tooltip("特徴")] private CFeatures.E_ENEMY_TYPE m_eFeatureType;   //特徴の種類
     private CFeatures.FeatureInfo m_FeatureInfo;    //特徴により決定する情報
-    //private IFeature m_Feature = null;  //ステータス特徴
+    [SerializeField, Tooltip("攻撃間隔")] private double m_dAtkInterval;  //攻撃間隔[s]
+    private double m_dAtkCoolTime = 0.0d;   //攻撃クールタイム[s]
+    [Header("エフェクト")]
+    [SerializeField] private GameObject m_EffectCube;       //エフェクトキューブプレハブ
+    [SerializeField] private int m_nEffectNum;              //エフェクトキューブ生成数
+    [SerializeField] private float m_fPosRandRange;  //エフェクトキューブを生成するポジションをランダムに生成するための範囲
     private CAreaSector m_CAreaSector = null;   //扇形の攻撃範囲
-
-    [SerializeField] GameObject m_EffectCube;       //エフェクトキューブプレハブ
-    [SerializeField] int m_nEffectNum;              //エフェクトキューブ生成数
-    [SerializeField]float m_fPosRandRange = 0.01f;  //エフェクトキューブを生成するポジションをランダムに生成するための範囲
-
-    Rigidbody m_Rigidbody;
+    private Rigidbody m_Rigidbody;
    
 
     /*＞初期化関数
@@ -163,13 +164,14 @@ public sealed class CEnemyNormal : CEnemy, IFeatureMine
             }
         }
     }
+
     /*＞敵消去関数
-   引数：なし
-   ｘ
-   戻値：なし
-   ｘ
-   概要：敵を消去する処理
-   */
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：敵を消去する処理
+    */
     public void TakeDestroy()
     {
         float x, y, z = 0.0f;

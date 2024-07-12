@@ -84,9 +84,6 @@ PrefabInstance:
       addedObject: {fileID: 7865680124267637787}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7061c5cf18d9a849a6b5eb8a00e26fe, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -1506707502007730859}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7061c5cf18d9a849a6b5eb8a00e26fe, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8259883656616092596}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7061c5cf18d9a849a6b5eb8a00e26fe, type: 3}
       insertIndex: -1
@@ -153,18 +150,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-1506707502007730859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665848654385763664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca41a8ebb9dfc144bbc8de6bb66482ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8259883656616092596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624991c3e3d5e7e418e83d6abbc6582c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dAtkInterval: 3
   m_eFeatureType: 0
+  m_dAtkInterval: 3
   m_EffectCube: {fileID: 5494002748605305887, guid: fd71ecc1c943cc04483bcb596c553a9c, type: 3}
   m_nEffectNum: 10
   m_fPosRandRange: 0.01
@@ -197,10 +182,10 @@ MonoBehaviour:
   m_dRadius: 1
   m_dSectorAngle: 90
   m_dFrontAngle: 90
-  m_sTargetNames:
-  - Player
   m_dResol: 1
   m_RangeMaterial: {fileID: 2100000, guid: 45ed38e45fef5594597c7c727d74b09d, type: 2}
+  m_sTargetNames:
+  - Player
 --- !u!195 &-778448511928941740
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -209,7 +194,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5665848654385763664}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: 1479372276
   m_Radius: 0.017
   m_Speed: 2.5
   m_Acceleration: 10
@@ -235,4 +220,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e590b79533b03e045935e7e3da3f9745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 9130855982869980821, guid: 4f617f61ec882584bb1065dcc5568909, type: 3}
+  player: {fileID: 9130855982869980821, guid: 9d75a059b5cabc549be467c2714e91d9, type: 3}

@@ -1,6 +1,6 @@
 /*=====
 <NavigationPlayer.cs> //スクリプト名
-└作成者：takagi
+└作成者：suzumura
 
 ＞内容
 敵がオブジェクトに引っかからずに最短距離でプレイヤーを追いかける
@@ -14,6 +14,10 @@ _M05
 D
 22:プログラム作成:suzumura
 30:コメント追加:yamamoto
+
+_M06
+D
+24:リファクタリング:takagi
 =====*/
 //＞名前空間宣言
 using System.Collections;
@@ -22,33 +26,33 @@ using UnityEngine;
 using UnityEngine.AI;
 
 //＞クラス定義
-public class NavigationPlayer : MonoBehaviour
+public class CNavigationPlayer : MonoBehaviour
 {
     //＞変数宣言
     [SerializeField] private GameObject player;
     NavMeshAgent agent;
 
     /*＞初期化関数
-   引数１：なし
-   ｘ
-   戻値：なし
-   ｘ
-   概要：インスタンス生成時に行う処理
-   */
-    void Start()
+    引数１：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：インスタンス生成時に行う処理
+    */
+    private void Start()
     {
         player = GameObject.Find("Player");//検索
         agent = GetComponent<NavMeshAgent>();
     }
 
     /*＞更新関数
-   引数：なし
-   ｘ
-   戻値：なし
-   ｘ
-   概要：一定時間ごとに行う更新処理
-   */
-    void Update()
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：一定時間ごとに行う更新処理
+    */
+    private void Update()
     {
         agent.destination = player.transform.position;
     }

@@ -5,26 +5,31 @@
 ＞内容
 リザルト用ライト回転
 
+//＞注意事項
+仮置きである
+
 ＞更新履歴
 __Y24
 _M06
 D
 18:プログラム作成:takagi
+21:リファクタリング:takagi
 =====*/
 
 //＞名前空間宣言
 using System;
-using System.Collections;   //list
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;  //Unity
+using UnityEngine.UIElements;
 
 //＞クラス定義
 public class CResultLight : MonoBehaviour
 {
     //＞変数宣言
-    [SerializeField] private Vector3 m_vInitShiftRotate;
-    [SerializeField] private Vector3 m_vRotate;
+    [SerializeField, Tooltip("初期回転")] private Vector3 m_vInitShiftRotate;
+    [SerializeField, Tooltip("回転量")] private Vector3 m_vRotate;
+
 
     /*＞初期化関数
     引数１：なし
@@ -34,7 +39,7 @@ public class CResultLight : MonoBehaviour
     概要：インスタンス生成時に行う処理
     */
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         transform.Rotate(m_vInitShiftRotate);
     }

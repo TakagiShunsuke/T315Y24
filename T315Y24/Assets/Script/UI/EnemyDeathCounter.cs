@@ -11,6 +11,10 @@ _M05
 D
 09:スクリプト作成:iwamuro
 14:プログラム作成:yamamoto
+
+_M06    
+D
+26: コメント追加: yamamoto
 =====*/
 
 //＞名前空間宣言
@@ -24,8 +28,10 @@ using TMPro;
 public class EnemyDeathCounter : MonoBehaviour
 {
     //＞変数宣言
-    [SerializeField] private TMP_Text DeathCount_txt; //表示させるテキスト(TMP)
+    [Header("テキスト")]
+    [SerializeField,Tooltip("表示用のText")] private TMP_Text DeathCount_txt; //表示させるテキスト(TMP)
    
+
     /*＞初期化関数
     引数１：なし
     ｘ

@@ -5,21 +5,24 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 
-public class PauseManager : MonoBehaviour
+public class CPauseManager : MonoBehaviour
 {
-    [SerializeField] GameObject panel;
-    [SerializeField] bool m_bPause;
-    AudioSource m_AudioSource;
-    [SerializeField] public AudioClip SE_Pause;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private bool m_bPause;
+
+    [Header("音")]
+    [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;                  // AudioSourceを追加
+    [SerializeField, Tooltip("ポーズメニュー表示時のSE")] private AudioClip SE_Pause;  // ポーズメニュー表示時のSE
+
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         m_AudioSource = GetComponent<AudioSource>();    // AudioSourceコンポーネントを追加
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(Input.GetKeyUp(KeyCode.P))
         {
