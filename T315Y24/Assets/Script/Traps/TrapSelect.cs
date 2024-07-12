@@ -20,15 +20,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static CCodingRule;
+using static InputDeviceManager;
 
 //＞クラス定義
 public class CTrapSelect : MonoBehaviour
 {
-    //変数宣言
+    //＞変数宣言
     private GameObject player;
 
     //＞構造体定義
@@ -75,6 +77,13 @@ public class CTrapSelect : MonoBehaviour
         m_Cost = m_FirstCost;                               // 初期コスト
         m_TrapInfo[0].m_CostText.SetText($"{m_TrapInfo[0].m_Cost}");  //Textをセット
         m_TrapInfo[1].m_CostText.SetText($"{m_TrapInfo[1].m_Cost}");  //Textをセット
+        InputDeviceManager.Instance.OnChangeDeviceType.AddListener(OnChangeDeviceTypeHandler);
+    }
+
+    private void OnChangeDeviceTypeHandler()
+    {
+        // 入力デバイスの種別が変更されたときの処理
+        Debug.Log("入力デバイスの種別が変更されました。\n現在の入力デバイスの種別：" + InputDeviceManager.Instance.CurrentDeviceType);
     }
 
     /*＞更新関数
@@ -89,11 +98,65 @@ public class CTrapSelect : MonoBehaviour
         if (m_bSelect)
         {//選択可能なら
             Select();   //選択
-            if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Decision"))&& CostCheck(m_nNum))
-            {//決定したなら
-                m_AudioSource.PlayOneShot(SE_Set);   // SE再生
-                Generation(m_nNum);         //オブジェクト作成
-                m_bSelect = false;          //選択不可
+            
+            if (InputDeviceManager.Instance != null)
+            {
+                // 現在の入力デバイスタイプを取得
+                InputDeviceManager.InputDeviceType currentDeviceType = InputDeviceManager.Instance.CurrentDeviceType;
+                //決定
+                // 現在のデバイスタイプに応じた処理を行う
+                Debug.Log(currentDeviceType);
+                switch (currentDeviceType)
+                {
+                    case InputDeviceManager.InputDeviceType.Keyboard:
+                        Debug.Log("Keyboardが使用されています");
+                        if (Input.GetKeyDown(KeyCode.E) && CostCheck(m_nNum)) //ダッシュ入力
+                        {//決定したなら
+                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);         //オブジェクト作成
+                            m_bSelect = false;          //選択不可
+                        }
+                        break;
+                    case InputDeviceManager.InputDeviceType.Xbox:
+                        Debug.Log("XBOXが使用されています");
+                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
+                        {//決定したなら
+                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);         //オブジェクト作成
+                            m_bSelect = false;          //選択不可
+                        }
+                        break;
+                    case InputDeviceManager.InputDeviceType.DualShock4:
+                        Debug.Log("DualShock4(PS4)が使用されています");
+                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
+                        {//決定したなら
+                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);         //オブジェクト作成
+                            m_bSelect = false;          //選択不可
+                        }
+                        break;
+                    case InputDeviceManager.InputDeviceType.DualSense:
+                        Debug.Log("DualSense(PS5)が使用されています");
+                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
+                        {//決定したなら
+                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);         //オブジェクト作成
+                            m_bSelect = false;          //選択不可
+                        }
+                        break;
+                    case InputDeviceManager.InputDeviceType.Switch:
+                        Debug.Log("SwitchのProコントローラーが使用されています");
+                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
+                        {//決定したなら
+                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
+                            Generation(m_nNum);         //オブジェクト作成
+                            m_bSelect = false;          //選択不可
+                        }
+                        break;
+                    default:
+                        Debug.Log("未知の入力デバイスが使用されています");
+                        break;
+                }
             }
         }
     }
