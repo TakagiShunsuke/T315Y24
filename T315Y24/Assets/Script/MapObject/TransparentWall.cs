@@ -1,5 +1,5 @@
 /*=====
-<Transparent.cs>
+<TransparentWall.cs>
 └作成者：tei
 
 ＞内容
@@ -9,15 +9,15 @@
 
 ＞更新履歴
 __Y24
-_M06
+_M07
 D
-21:スクリプト作成：tei
+12:スクリプト作成：tei
 =====*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Transparent : MonoBehaviour
+public class TransparentWall : MonoBehaviour
 {
     //＞変数宣言
     private Color color = Color.white;      //colorはwhiteをベースに使用します。
@@ -69,7 +69,7 @@ public class Transparent : MonoBehaviour
         mpb.SetColor(Shader.PropertyToID("_Color"), color);
         for (int i = 0; i < meshRenderers.Length; i++)
         {
-            meshRenderers[i].GetComponent<Renderer>().material.shader = Shader.Find("Shader Graphs/ArnoldStandardSurface");
+            meshRenderers[i].GetComponent<Renderer>().material.shader = Shader.Find("Universal Render Pipeline/Lit");
             meshRenderers[i].SetPropertyBlock(mpb);
         }
     }

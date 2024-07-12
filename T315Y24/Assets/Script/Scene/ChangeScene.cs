@@ -52,6 +52,12 @@ public class CChangeScene : MonoBehaviour
     [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;     // AudioSourceを追加
     [SerializeField, Tooltip("決定時のSE")] private AudioClip SE_Decide;  // 決定時のSE
 
+    [SerializeField] private Material SceneFadeMaterial;  // マテリアル
+    [SerializeField] private float fadeTime = 1.0f;       // フェード時間
+    //[SerializeField] private string _propertyName = "_Progress";
+    public InkTransition inkTransition;
+    //＞パブリックイベント
+    //public UnityEvent OnFadeDone;
 
     /*＞初期化関数
     引数１：なし
@@ -111,6 +117,15 @@ public class CChangeScene : MonoBehaviour
     //非同期でSE再生終了を待つ関数
     private IEnumerator Change(int _nIdx)
     {
+        float currentTime = 0.0f;   // 現時刻
+
+        while (currentTime < fadeTime)
+        {
+            currentTime += Time.deltaTime;
+            //SceneFadeMaterial.SetFloat(_propertyName, Mathf.Clamp01(currentTime / fadeTime));
+            inkTransition.StartTransition();
+            yield return null;
+        }
         m_AudioSource.PlayOneShot(SE_Decide);
         while (m_AudioSource.isPlaying) { yield return null; }   //非同期処理：SEを鳴らし切るまで待機
         SceneManager.LoadScene(m_KeyChangeScenes[_nIdx].Nextscene);  //次のステージへ
