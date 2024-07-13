@@ -30,8 +30,9 @@ public class CGameOver : MonoBehaviour
     //＞変数宣言
     [SerializeField]GameObject Player;          // プレイヤーオブジェクト
     CPlayerScript PlayerCom;                     //プレイヤーのスクリプト取得用
-
-
+    public InkTransition inkTransition;
+    
+    [SerializeField] private float fadeTime = 2.0f;       // フェード時間
     // Start is called before the first frame update
     private void Start()
     {
@@ -41,8 +42,18 @@ public class CGameOver : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(PlayerCom.HP <= 0)
+        
+        if (PlayerCom.HP <= 0)
         {
+            float currentTime = 0.0f;   // 現時刻
+
+            while (currentTime < fadeTime)
+            {
+                currentTime += Time.deltaTime;
+                //SceneFadeMaterial.SetFloat(_propertyName, Mathf.Clamp01(currentTime / fadeTime));
+                inkTransition.StartTransition();
+                
+            }
             SceneManager.LoadScene("ResultScene");    // ResultSceneへ遷移
         }
     }

@@ -20,7 +20,7 @@ public class InkTransition : MonoBehaviour
             transitionMaterial.SetFloat("_TransitionProgress", Mathf.Clamp01(transitionProgress / transitionDuration));
             transitionMaterial.SetFloat("_alpha", 1.0f);
 
-            if (transitionProgress >= transitionDuration * 0.5f)
+            if (transitionProgress >= transitionDuration)
             {
                 transitionProgress = 0.0f;
                 isTransitioning = false;

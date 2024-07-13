@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneTransitionMaterial: {fileID: 2100000, guid: 2163a1e0f3ae75a47873b52aaa06cb89, type: 2}
-  transitionTime: 1
+  transitionTime: 2
   propertyName: _Progress
   OnTransitionDone:
     m_PersistentCalls:

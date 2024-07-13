@@ -120,3 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shaderName: Unlit/UnlitTransparent
+  _shaderNameChange: Universal Render Pipeline/Lit

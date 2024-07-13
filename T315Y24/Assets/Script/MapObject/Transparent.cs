@@ -25,6 +25,8 @@ public class Transparent : MonoBehaviour
     //親 子オブジェクトを格納。
     private MeshRenderer[] meshRenderers;
     private MaterialPropertyBlock m_mpb;
+    [SerializeField] private string _shaderName = "Unlit/UnlitTransparent";
+    [SerializeField] private string _shaderNameChange = "Shader Graphs/ArnoldStandardSurface";
 
     public MaterialPropertyBlock mpb
     {
@@ -51,7 +53,7 @@ public class Transparent : MonoBehaviour
         mpb.SetColor(Shader.PropertyToID("_Color"), color);
         for (int i = 0; i < meshRenderers.Length; i++)
         {
-            meshRenderers[i].GetComponent<Renderer>().material.shader = Shader.Find("Unlit/UnlitTransparent");
+            meshRenderers[i].GetComponent<Renderer>().material.shader = Shader.Find(_shaderName);
             meshRenderers[i].SetPropertyBlock(mpb);
         }
     }
@@ -69,7 +71,7 @@ public class Transparent : MonoBehaviour
         mpb.SetColor(Shader.PropertyToID("_Color"), color);
         for (int i = 0; i < meshRenderers.Length; i++)
         {
-            meshRenderers[i].GetComponent<Renderer>().material.shader = Shader.Find("Shader Graphs/ArnoldStandardSurface");
+            meshRenderers[i].GetComponent<Renderer>().material.shader = Shader.Find(_shaderNameChange);
             meshRenderers[i].SetPropertyBlock(mpb);
         }
     }

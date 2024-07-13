@@ -53,7 +53,7 @@ public class CChangeScene : MonoBehaviour
     [SerializeField, Tooltip("決定時のSE")] private AudioClip SE_Decide;  // 決定時のSE
 
     [SerializeField] private Material SceneFadeMaterial;  // マテリアル
-    [SerializeField] private float fadeTime = 1.0f;       // フェード時間
+    [SerializeField] private float fadeTime = 2.0f;       // フェード時間
     //[SerializeField] private string _propertyName = "_Progress";
     public InkTransition inkTransition;
     //＞パブリックイベント

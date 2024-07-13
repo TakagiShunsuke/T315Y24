@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8810635737415694720}
   - component: {fileID: 5117494900064231542}
   - component: {fileID: 8906747475331104484}
-  - component: {fileID: -1129797448200880672}
+  - component: {fileID: -5549459462189416440}
   m_Layer: 0
   m_Name: MeshFenceHole
   m_TagString: Map
@@ -152,7 +152,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1984025, y: 2.1866567, z: 1.7348366}
   m_Center: {x: -0.01616995, y: 1.0385934, z: -10.112289}
---- !u!114 &-1129797448200880672
+--- !u!114 &-5549459462189416440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,3 +164,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shaderName: Unlit/UnlitTransparent
+  _shaderNameChange: Universal Render Pipeline/Lit
