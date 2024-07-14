@@ -7,7 +7,9 @@ public class CGameClear : MonoBehaviour
 {
     [SerializeField] GameObject TimerManagerObj;
     TimeManager timeMngCom;
+    public InkTransition inkTransition;
 
+    [SerializeField] private float fadeTime = 2.0f;       // フェード時間
 
     // Start is called before the first frame update
     private void Start()
@@ -22,6 +24,14 @@ public class CGameClear : MonoBehaviour
         //if (timeMngCom.currentTime <= 0)
         if (CPhaseManager.Instance.IsFinPhases)
         {
+            float currentTime = 0.0f;   // 現時刻
+
+            while (currentTime < fadeTime)
+            {
+                currentTime += Time.deltaTime;
+                //SceneFadeMaterial.SetFloat(_propertyName, Mathf.Clamp01(currentTime / fadeTime));
+                inkTransition.StartTransition();
+            }
             SceneManager.LoadScene("ResultScene");    // ResultSceneへ遷移
         }
     }

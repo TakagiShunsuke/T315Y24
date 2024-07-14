@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2161727240687423372}
   - component: {fileID: 8444010306734398936}
   - component: {fileID: 6720430960894905814}
-  - component: {fileID: 3271155568906643967}
+  - component: {fileID: 2029982484953164354}
   m_Layer: 0
   m_Name: MeshFencePillar
   m_TagString: Map
@@ -110,7 +110,7 @@ CapsuleCollider:
   m_Height: 4.95231
   m_Direction: 1
   m_Center: {x: -0.016169954, y: 2.261089, z: -6.4234295}
---- !u!114 &3271155568906643967
+--- !u!114 &2029982484953164354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,3 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shaderName: Unlit/UnlitTransparent
+  _shaderNameChange: Universal Render Pipeline/Lit

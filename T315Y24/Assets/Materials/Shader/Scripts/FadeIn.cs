@@ -22,7 +22,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //＞クラス定義
-public class NewBehaviourScript : MonoBehaviour
+public class FadeIn : MonoBehaviour
 {
     //＞変数宣言
     [SerializeField] private Material SceneTransitionMaterial;  // マテリアル
