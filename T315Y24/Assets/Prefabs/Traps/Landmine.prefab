@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dInterval: 5
+  m_SetEffect: {fileID: 11400000, guid: cffba51f02a87ab4686dc08dc2c3da46, type: 2}
   m_fPosY: -0.3
   m_bMove: 1
   m_bSetting: 1
@@ -315,7 +316,9 @@ MonoBehaviour:
   m_nFontSize: 24
   SE_SetTrap: {fileID: 8300000, guid: c13fbcceac39313428898cf0fe9d53f9, type: 3}
   SE_ExpTrap: {fileID: 8300000, guid: 214a20a77fdebf1418758df4c1ac449f, type: 3}
-  m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
+  material: {fileID: 0}
+  m_ExplosionCollPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
+  m_ExplosionEffect: {fileID: 11400000, guid: c5594bf45ebc4eb479dfd95eda289dc3, type: 2}
 --- !u!54 &6667340849690089108
 Rigidbody:
   m_ObjectHideFlags: 0

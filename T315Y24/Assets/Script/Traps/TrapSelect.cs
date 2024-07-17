@@ -16,6 +16,7 @@ D
 =====*/
 
 //„–¼‘O‹óŠÔéŒ¾
+using Effekseer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ using static InputDeviceManager;
 public class CTrapSelect : MonoBehaviour
 {
     //„•Ï”éŒ¾
-    private GameObject player;
+    private GameObject player; 
 
     //„\‘¢‘Ì’è‹`
     [Serializable]

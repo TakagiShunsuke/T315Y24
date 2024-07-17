@@ -17,6 +17,7 @@ D
 =====*/
 
 //＞名前空間宣言
+using Effekseer;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Jobs.LowLevel.Unsafe;
@@ -55,7 +56,9 @@ public class RemoteBomb : CTrap
 {
     //変数宣言
     [Header("プレハブ")]
-    [SerializeField,Tooltip("爆発時生成されるプレハブ")] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    //[SerializeField,Tooltip("爆発時生成されるプレハブ")] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    [SerializeField, Tooltip("爆発の判定用プレハブ")] private GameObject m_ExplosionCollPrefab; // 爆発時生成されるプレハブ
+    [SerializeField, Tooltip("爆発時再生するエフェクト")] private EffekseerEffectAsset m_ExplosionEffect;  // 爆発時再生するエフェクト
     private static int m_nSetRemoteBomb;     //置いた数格納用
     private static int m_nUseRemoteBomb;     //使った回数格納用
     private static int m_nRemoteBombKill; //倒した数格納用
@@ -72,14 +75,29 @@ public class RemoteBomb : CTrap
     {
         if (!m_bMove)//設置されていたら
         {
+            //＞保全
+            if (m_ExplosionEffect == null)   //エフェクトがない
+            {
+#if UNITY_EDITOR    //エディタ使用中
+                //＞エラー出力
+                UnityEngine.Debug.LogWarning("必要な要素が不足しています");  //警告ログ出力
+#endif
+                //＞中断
+                return; //処理しない
+            }
+
             if ((Input.GetKeyDown(KeyCode.B) || Input.GetButtonDown("Explosion")) & m_bUse)
             {//使える状態なら入る
                 m_audioSource.PlayOneShot(SE_ExpTrap);  //爆発SE再生
                 SetCoolTime();              //クールタイムを設定
                 m_nUseRemoteBomb++;          //使った回数を増やす
-                //爆発エフェクト作成
+
+                //＞爆発エフェクト再生
+                EffekseerSystem.PlayEffect(m_ExplosionEffect, transform.position);  //爆発位置に再生
+
+                //爆発判定作成
                 GameObject explosion = 
-                    Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
+                    Instantiate(m_ExplosionCollPrefab, transform.position, Quaternion.identity);
                 explosion.GetComponent<Explosion>().SetBombType(1); //格納先を設定
             }
          }

@@ -17,6 +17,7 @@ D
 =====*/
 
 //＞名前空間宣言
+using Effekseer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,7 @@ public class CTrap : MonoBehaviour
     //変数宣言
     [Header("ステータス")]
     [SerializeField,Tooltip("再使用できるまでの時間(秒)")] private double m_dInterval = 5.0d; // インターバル
+    [SerializeField, Tooltip("設置時再生するエフェクト")] private EffekseerEffectAsset m_SetEffect;  // 設置時再生するエフェクト
     private double m_dCoolTime = 0.0d;                  // インターバル計測用
     [Tooltip("設置する高さ")] public float m_fPosY;     // 設置する高さ
     [Tooltip("触らないで")] public bool m_bMove = true;                         // true:配置中 false:配置後
@@ -214,6 +216,20 @@ public class CTrap : MonoBehaviour
 
             Transparent transparent = GetComponent<Transparent>();
             transparent.NotClearMaterialInvoke();
+
+            //＞保全
+            if (m_SetEffect != null)   //エフェクトがない
+            {
+                //＞設置エフェクト再生
+                EffekseerSystem.PlayEffect(m_SetEffect, transform.position);  //設置位置に再生
+            }
+#if UNITY_EDITOR    //エディタ使用中
+            else
+            {
+                //＞エラー出力
+                UnityEngine.Debug.LogWarning("必要な要素が不足しています");  //警告ログ出力
+            }
+#endif
         }
     }
 
