@@ -285,6 +285,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e7b5b4e2ae6e994fb20b0b3956114d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 993603617205861844}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e7b5b4e2ae6e994fb20b0b3956114d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1811697733830776721}
   m_SourcePrefab: {fileID: 100100000, guid: 4e7b5b4e2ae6e994fb20b0b3956114d8, type: 3}
 --- !u!1 &8330148183756815129 stripped
 GameObject:
@@ -304,12 +307,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dInterval: 5
+  m_fPosY: -0.3
+  m_bMove: 1
+  m_bSetting: 1
   m_bUse: 1
   m_CoolDownText: {fileID: 3126371949747349514}
   m_nFontSize: 24
-  m_bMove: 1
-  m_fPosY: -0.3
-  m_bSetting: 1
   SE_SetTrap: {fileID: 8300000, guid: c13fbcceac39313428898cf0fe9d53f9, type: 3}
   SE_ExpTrap: {fileID: 8300000, guid: 214a20a77fdebf1418758df4c1ac449f, type: 3}
   m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
@@ -458,6 +461,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.011801069, y: 0.003235176, z: 0.011801072}
   m_Center: {x: 0, y: 0.0006692406, z: 0}
+--- !u!114 &1811697733830776721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330148183756815129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shaderName: Unlit/UnlitTransparent
+  _shaderNameChange: Shader Graphs/ArnoldStandardSurface
 --- !u!4 &8705863867168776611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4e7b5b4e2ae6e994fb20b0b3956114d8, type: 3}

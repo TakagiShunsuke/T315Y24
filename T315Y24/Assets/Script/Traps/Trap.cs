@@ -46,7 +46,7 @@ public class CTrap : MonoBehaviour
 
     private GameObject player;  //player格納用
 
-
+    public Material material; // 半透明にしたいマテリアル
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -67,6 +67,10 @@ public class CTrap : MonoBehaviour
         Settings();         // プレイヤーが向いている方向に罠を仮セット
         m_bSetting = true;  // 設置可能
         m_audioSource = GetComponent<AudioSource>();        // AudioSourceを取得
+
+        Transparent transparent = GetComponent<Transparent>();
+        transparent.ClearMaterialInvoke();
+       // color.a = 0.8f;
     }
 
     /*＞罠発動チェック関数
@@ -207,6 +211,9 @@ public class CTrap : MonoBehaviour
             TrapSelect.SetSelect();                 //配置する罠を選択可能に変更
             Destroy(GetComponent<Rigidbody>());     //Rigidbodyだけを破壊
             SetCount();
+
+            Transparent transparent = GetComponent<Transparent>();
+            transparent.NotClearMaterialInvoke();
         }
     }
 
