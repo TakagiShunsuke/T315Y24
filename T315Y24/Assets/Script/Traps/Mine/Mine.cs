@@ -28,6 +28,7 @@ D
 =====*/
 
 //＞名前空間宣言
+using Effekseer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,8 +67,10 @@ public class GameMineData
 public class Mine : CTrap
 {
     //＞変数宣言
-    [Header("プレハブ")] 
-    [SerializeField,Tooltip("爆発時生成されるプレハブ")] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    [Header("プレハブ")]
+    //[SerializeField,Tooltip("爆発時生成されるプレハブ")] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    [SerializeField,Tooltip("爆発の判定用プレハブ")] private GameObject m_ExplosionCollPrefab; // 爆発時生成されるプレハブ
+    [SerializeField, Tooltip("爆発時再生するエフェクト")] private  EffekseerEffectAsset m_ExplosionEffect;  // 爆発時再生するエフェクト
     private static int m_nSetMine;       //置いた数 
     private static int m_nUseMine;       //使った回数
     private static int m_nMineKill;      //倒した数 
@@ -82,12 +85,27 @@ public class Mine : CTrap
     */
     private void OnCollisionStay(Collision collision)     //地雷に何かが当たってきたとき
     {
+        //＞保全
+        if(m_ExplosionEffect == null)   //エフェクトがない
+        {
+#if UNITY_EDITOR    //エディタ使用中
+            //＞エラー出力
+            UnityEngine.Debug.LogWarning("必要な要素が不足しています");  //警告ログ出力
+#endif
+            //＞中断
+            return; //処理しない
+        }
+
         if (Check(collision))  // 起爆できるか
         {
             m_audioSource.PlayOneShot(SE_ExpTrap);  //爆発SE再生
             m_nUseMine++;    //使った回数を増やす
-            //爆発エフェクト作成
-            GameObject explosion = Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
+
+            //＞爆発エフェクト再生
+            EffekseerSystem.PlayEffect(m_ExplosionEffect, transform.position);  //爆発位置に再生
+
+            //爆発判定作成
+            GameObject explosion = Instantiate(m_ExplosionCollPrefab, transform.position, Quaternion.identity);
             explosion.GetComponent<Explosion>().SetBombType(0);//格納先を設定
         }
         SetCheck(collision);    //設置できるかどうか判定

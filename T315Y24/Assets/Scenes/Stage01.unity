@@ -5792,6 +5792,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7202056030175660570, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
+      propertyPath: m_SetEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: cffba51f02a87ab4686dc08dc2c3da46, type: 2}
+    - target: {fileID: 7202056030175660570, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
       propertyPath: CostList.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -13078,12 +13082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124e2e68486c06d45b4e53aa495fd919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  meshRenderers: []
 --- !u!1 &1922226178
 GameObject:
   m_ObjectHideFlags: 0
