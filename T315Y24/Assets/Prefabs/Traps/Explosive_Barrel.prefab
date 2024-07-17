@@ -277,6 +277,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3311effa3d433274184a27d3a6263943, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7107522410631649939}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3311effa3d433274184a27d3a6263943, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 391997901569499622}
   m_SourcePrefab: {fileID: 100100000, guid: 3311effa3d433274184a27d3a6263943, type: 3}
 --- !u!4 &7338577745923009340 stripped
 Transform:
@@ -301,16 +304,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dInterval: 5
+  m_fPosY: 0
+  m_bMove: 1
+  m_bSetting: 1
   m_bUse: 1
   m_CoolDownText: {fileID: 0}
   m_nFontSize: 24
-  m_bMove: 1
-  m_fPosY: 0
-  m_bSetting: 1
   SE_SetTrap: {fileID: 8300000, guid: 2ec964f731422d946930ec5fcc1e833f, type: 3}
   SE_ExpTrap: {fileID: 8300000, guid: 19526e60b95f5554c9885a2395e968e5, type: 3}
   m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
-  m_ExplodingKey: 98
 --- !u!54 &-7838240689290802802
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -456,3 +458,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &391997901569499622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7970259977071997318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shaderName: Unlit/UnlitTransparent
+  _shaderNameChange: Shader Graphs/ArnoldStandardSurface
