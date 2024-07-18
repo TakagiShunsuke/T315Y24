@@ -47,6 +47,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 528888bb29631e5498adcd590d892202
+    m_Address: Assets/Texture/Trap/DrumUI.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9388c06a2ec67c44b2ed08fd15446b0
+    m_Address: Assets/Texture/Trap/MineUI.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f856a6527e5a8204390092f8f50eaa90, type: 2}
   m_SchemaSet:

@@ -21,21 +21,29 @@ using Effekseer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
-using static CCodingRule;
 
 //＞クラス定義
 public class CTrap : MonoBehaviour
 {
     //変数宣言
     [Header("ステータス")]
-    [SerializeField,Tooltip("再使用できるまでの時間(秒)")] private double m_dInterval = 5.0d; // インターバル
-    [SerializeField, Tooltip("設置時再生するエフェクト")] private EffekseerEffectAsset m_SetEffect;  // 設置時再生するエフェクト
+    [SerializeField, Tooltip("コスト")] private int m_nCost; // コスト
+    [SerializeField, Tooltip("再使用できるまでの時間(秒)")] private double m_dInterval = 5.0d; // インターバル
     private double m_dCoolTime = 0.0d;                  // インターバル計測用
     [Tooltip("設置する高さ")] public float m_fPosY;     // 設置する高さ
     [Tooltip("触らないで")] public bool m_bMove = true;                         // true:配置中 false:配置後
     [Tooltip("触らないで")] public bool m_bSetting = true;  //true:設置可能　false:設置不可
     [Tooltip("触らないで")] public bool m_bUse = true;  // 利用 true:可能 false:不可
+
+    [Header("エフェクト")]
+    [SerializeField, Tooltip("設置時再生するエフェクト")] private EffekseerEffectAsset m_SetEffect;  // 設置時再生するエフェクト
+
+    [Header("UIイメージ")]
+    [SerializeField, Tooltip("UI表示用画像")] protected AssetReferenceTexture2D m_UIAssetRef; //UI用画像アセット
+    private AsyncOperationHandle<Texture2D> m_AssetLoadHandle;   //アセットをロード・管理する関数
 
     [Header("テキスト")]
     [SerializeField,Tooltip("表示用text")] private Text m_CoolDownText;                         // クールダウン表示テキスト
@@ -47,8 +55,13 @@ public class CTrap : MonoBehaviour
     [SerializeField,Tooltip("罠爆発時のSE")] protected AudioClip SE_ExpTrap;   // 罠爆発時のSE
 
     private GameObject player;  //player格納用
-
     public Material material; // 半透明にしたいマテリアル
+
+    //＞プロパティ定義
+    public int Cost => m_nCost; //コスト
+    public Sprite ImageSprite {get; private set;} //UIアセットを画像に変換したもの
+
+
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -56,10 +69,10 @@ public class CTrap : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    void Start()
+    void Awake()
     {
         // テキストの初期化
-        m_CoolDownText = GetComponentInChildren<Text>();    // 子のText取得
+        m_CoolDownText = GetComponentInChildren<Transform>().GetComponentInChildren<Text>();    // 子のText取得
         m_CoolDownText.text = m_dCoolTime.ToString();       // textの初期化
         m_CoolDownText.fontSize = m_nFontSize;              // フォントサイズを変更
         m_CoolDownText.alignment = TextAnchor.MiddleCenter; // textの表示位置を真ん中に
@@ -72,7 +85,35 @@ public class CTrap : MonoBehaviour
 
         Transparent transparent = GetComponent<Transparent>();
         transparent.ClearMaterialInvoke();
-       // color.a = 0.8f;
+        // color.a = 0.8f;
+
+        //＞画像生成
+        MakeSprite();   //アセットから画像に変換
+    }
+
+    /*＞画像変換関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：Adressableに登録した画像をSprite形式に変換
+    */
+    private async void MakeSprite()
+    {
+        //＞保全
+        if (m_UIAssetRef == null)  //扱うアセットがない
+        {
+            //＞中断
+            return; //処理しない
+        }
+
+        //＞画像読み込み
+        var _AssetLoadHandle = Addressables.LoadAssetAsync<Texture2D>(m_UIAssetRef);  //テクスチャデータを読み込む関数取得
+        var _Texture = await _AssetLoadHandle.Task; //テクスチャ読み込みを非同期で実行
+        ImageSprite = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
+
+        //＞管理
+        m_AssetLoadHandle = _AssetLoadHandle;    //使用している関数を管理
     }
 
     /*＞罠発動チェック関数
@@ -159,7 +200,7 @@ public class CTrap : MonoBehaviour
             if (m_dCoolTime <= 0.0d)
             {//クールタイムが終わったら
                 m_bUse = true;      //使用可能
-                m_CoolDownText.gameObject.SetActive(false); //Text非表示
+                //m_CoolDownText.gameObject.SetActive(false); //Text非表示
             }
         }
     }
@@ -208,7 +249,7 @@ public class CTrap : MonoBehaviour
             m_bMove = false;                        //場所固定のためfalseに
             GameObject TrapManager;                 //"TrapManager"格納用　
             CTrapSelect TrapSelect;                 //CTrapSelect格納用
-            TrapManager = GameObject.Find("TrapManager");           //”TrapManager”をさがし取得
+            TrapManager = GameObject.Find("TrapSelect");           //”TrapManager”をさがし取得
             TrapSelect = TrapManager.GetComponent<CTrapSelect>();   //CTrapSelectを取得
             TrapSelect.SetSelect();                 //配置する罠を選択可能に変更
             Destroy(GetComponent<Rigidbody>());     //Rigidbodyだけを破壊
@@ -243,5 +284,21 @@ public class CTrap : MonoBehaviour
     public virtual void SetCount()
     {
         Debug.LogWarning("必要な要素が不足しています");  //警告ログ出力
+    }
+
+    /*＞破棄関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：インスタンス破棄時に行う処理
+    */
+    private void OnDestroy()
+    {
+        //＞解放
+        if (m_AssetLoadHandle.IsValid()) //ヌルでない
+        {
+            Addressables.Release(m_AssetLoadHandle); //参照をやめる
+        }
     }
 }

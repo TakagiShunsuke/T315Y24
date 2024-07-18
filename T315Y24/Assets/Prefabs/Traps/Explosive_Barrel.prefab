@@ -303,12 +303,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af06bfadbfe6fbb46a7b572b82ce7b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_nCost: 3
   m_dInterval: 5
-  m_SetEffect: {fileID: 11400000, guid: cffba51f02a87ab4686dc08dc2c3da46, type: 2}
   m_fPosY: 0
   m_bMove: 1
   m_bSetting: 1
   m_bUse: 1
+  m_SetEffect: {fileID: 11400000, guid: cffba51f02a87ab4686dc08dc2c3da46, type: 2}
+  m_UIAssetRef:
+    m_AssetGUID: 528888bb29631e5498adcd590d892202
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   m_CoolDownText: {fileID: 0}
   m_nFontSize: 24
   SE_SetTrap: {fileID: 8300000, guid: 2ec964f731422d946930ec5fcc1e833f, type: 3}
