@@ -247,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &14897808
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,6 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &116637265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,6 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &146894606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -1064,6 +1067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &199905203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,13 +1507,177 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6708111508520954, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 129118108853330051, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 148219120590919207, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 217279180291161346, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 242769051169386375, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 305264220742510259, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 306516605130364494, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 363603554653297074, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 441123371949766099, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 442350373094669141, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 483940729093539064, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 489142814884701022, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 508257447810613288, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 521119981100823224, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 672564640612281918, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 729354115881304777, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 741772646566113376, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 843195930213390194, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167522357733725516, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251526153278004559, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414398919086160545, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426483641305735968, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471358879731379371, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515113806145542436, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1520667330515006008, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1520667330515006008, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520667330515006008, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634010382234347917, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718001339133316892, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778353585913505687, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816327743002122717, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832197043472446907, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883937881453209957, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896972018095926320, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924140268948641620, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934409210363491498, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961660366768681270, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970790827812023678, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981488080890522726, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982143968523778247, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002164521765300619, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138991463756859821, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160161291272725394, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2183356242014987032, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
       propertyPath: m_DushKey
@@ -1555,10 +1723,510 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2210178468143850481, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244918212024580872, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2277399704280878795, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279181494508679261, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296065201453115668, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405638242284270546, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410653028258986330, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458234220993577325, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2493504849087391195, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498571514175905305, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526619104756427331, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558032556844577323, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596008101051934968, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618362932448651007, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645522323655909678, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654761268288631497, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727489459238524447, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763895433727986836, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853137594400979488, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890196653818418548, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2901498111252236377, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031519784446501346, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3140737068303350258, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166790105530867852, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210442444638182548, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293678885177923558, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334631444428370466, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366246937324516284, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385352051345845426, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401213206781589365, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468202364226923026, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513064293917617981, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584813087855146980, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596337720274738104, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630545398474039974, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688414407701815493, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3750591936197520533, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762758062252168500, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870244296341800240, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870536015151730574, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890973478542201732, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182851624851598945, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372134999910003872, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522620916919104764, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653177321617194427, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679459983935872991, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724643658635412892, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743106065564540986, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833699270682188201, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960878573441002369, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975946148952582678, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997229202943416899, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004734850418414619, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062574145114244631, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083531187308336305, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5199189033604986434, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235820850161391703, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260529428520712628, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277480838649255749, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343613751251022183, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385250401248390136, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404479999632384021, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463959113017156813, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5541377261486746636, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
       propertyPath: m_TextMeshProUGUI
       value: 
       objectReference: {fileID: 202639712}
+    - target: {fileID: 5743373727360834808, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751848611191895720, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812119002825479376, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838604158984175425, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929847641041721758, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944206662224445001, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063185890217259776, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6079779733979456091, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098879875461982948, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102223607205226285, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111714899247480217, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177045342620722769, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221428948329520042, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255948130659738767, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371563829150762739, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445039992418179681, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459201962239359249, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502962753187429830, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534787233649474252, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548578628768627810, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687000034527666351, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744408422020849182, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6841613502290387547, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912027547467673189, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931657281249428964, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983814794604979861, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045407006945845097, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123951498840036393, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169954436747091964, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203499803748538591, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208033736430756973, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233835905782538204, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243458761240821335, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376406034442449664, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412472814200139962, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608624403063356443, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616161113282586530, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639144015366825789, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791183670792112472, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796532659637471210, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814423305839772912, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851719357287752108, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051186571350698376, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080449559208143476, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098524114768002807, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128342977726868429, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150192480299037185, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261242259323063410, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320269355537319723, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381806154819793809, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510996396477635700, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577376793097798046, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601247930738816412, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657927703950568580, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769626444745738310, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855408952597089281, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935655007852255095, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940331667315368801, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034562925564508885, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054734664044515817, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061176177706441561, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176024390520902978, guid: c6fd72e7d378d4b4a9574d4fb0117507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2120,6 +2788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &411551483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b5ae24602794534a984c2bd1a162210, type: 3}
@@ -2165,6 +2834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &435277614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2376,6 +3046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &439182469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,6 +3685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &477309703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3184,6 +3856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!114 &509362137 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5892564834789293960, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
@@ -3654,6 +4327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &627242662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -3855,6 +4529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &652561082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -3981,6 +4656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &678063634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,6 +4886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &689593869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4338,6 +5015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &692804488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2186230486323779859, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
@@ -4507,6 +5185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &701350286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -5120,6 +5799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &761997258
 GameObject:
   m_ObjectHideFlags: 0
@@ -5286,6 +5966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &771414055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5647,6 +6328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &845575460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6392,6 +7074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &957646669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -6580,6 +7263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1018942970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -6599,6 +7283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1018993436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -6623,6 +7308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1028057906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6822,6 +7508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1047549936
 GameObject:
   m_ObjectHideFlags: 0
@@ -6916,6 +7603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
+  ObjectAlpha: 1
 --- !u!1 &1063220149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2810589635453088789, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -6935,6 +7623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
+  ObjectAlpha: 1
 --- !u!1 &1082897552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7816883890774045405, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -6954,6 +7643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
+  ObjectAlpha: 1
 --- !u!1 &1084649120 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4906c9fcc12e9a14badbbd90c4526c4f, type: 3}
@@ -6999,6 +7689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1084724483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -7018,6 +7709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1084757525 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -7348,6 +8040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1157649444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7612,6 +8305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1209302557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -7883,6 +8577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1233277259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8011,6 +8706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!224 &1242357383 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 578909711563615286, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
@@ -8061,6 +8757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1290724218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8189,6 +8886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1324812113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8322,6 +9020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1332142367 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8341,6 +9040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1343735294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8360,6 +9060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1345860051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -8379,6 +9080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1358689912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8507,6 +9209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1361216060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8526,6 +9229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1365330647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8778,6 +9482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1389214426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8906,6 +9611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1389732733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8925,6 +9631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1399275921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9029,6 +9736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1419689567
 GameObject:
   m_ObjectHideFlags: 0
@@ -9184,6 +9892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1435047423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
@@ -9394,6 +10103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1483080903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9485,6 +10195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1494265118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9709,6 +10420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1552865252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9902,6 +10614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1569243280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9998,6 +10711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1578603318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10202,6 +10916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1604956509 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
@@ -10221,6 +10936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1606479444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10349,6 +11065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1608393360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -10368,6 +11085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1611540830
 GameObject:
   m_ObjectHideFlags: 0
@@ -10523,6 +11241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1615238753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10731,6 +11450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1634884723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11023,6 +11743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1697723577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11151,6 +11872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1703399019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -11170,6 +11892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1705612591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11522,6 +12245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1714599319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -11541,6 +12265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1717561960 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -11560,6 +12285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1717767173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8304457716935388527, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -11579,6 +12305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
+  ObjectAlpha: 1
 --- !u!1 &1725175120
 GameObject:
   m_ObjectHideFlags: 0
@@ -11734,6 +12461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1731862489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11862,6 +12590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1733650225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -11881,6 +12610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1742595588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12645,6 +13375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1809868176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -12669,6 +13400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1844015074
 GameObject:
   m_ObjectHideFlags: 0
@@ -12805,6 +13537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1855527191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -12895,6 +13628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1876002759 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -12914,6 +13648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1883469378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13092,6 +13827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1896763203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -13111,6 +13847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1899231487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -13130,6 +13867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1910513857
 GameObject:
   m_ObjectHideFlags: 0
@@ -13333,6 +14071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1936080902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8262981891034645979, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
@@ -13440,6 +14179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1985321148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -13459,6 +14199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &2001497986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b5ae24602794534a984c2bd1a162210, type: 3}
@@ -13504,6 +14245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &2006376717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -13523,6 +14265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &2011829629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13599,6 +14342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &2028915942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -13618,6 +14362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &2031350733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13709,6 +14454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &2045791886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13973,6 +14719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &2065092511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f2db13307d0db84c9cfec14842c59ea, type: 3}
@@ -14018,6 +14765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &2086830868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -14037,6 +14785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &2087040373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14235,6 +14984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &2139876596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -14254,6 +15004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
