@@ -43,7 +43,7 @@ public class CTrapManager : CMonoSingleton<CTrapManager>
     private List<GameObject> AllTrap = new List<GameObject>(); //全ての罠管理
 
     //＞プロパティ定義
-    public List<GameObject> HaveTraps = new List<GameObject>(); //所持罠
+    public List<GameObject> HaveTraps { get; private set; } = new List<GameObject>(); //所持罠
 
 
     /*＞初期化関数
@@ -53,7 +53,7 @@ public class CTrapManager : CMonoSingleton<CTrapManager>
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    protected override void CustomAwake()
+    protected override void Start()
     {
         //＞リネーム
         gameObject.name = OBJECT_NAME;  //自身のオブジェクト名変更

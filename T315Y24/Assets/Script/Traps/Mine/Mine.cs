@@ -81,10 +81,11 @@ public class Mine : CTrap
     private static int m_nSetMine;       //置いた数 
     private static int m_nUseMine;       //使った回数
     private static int m_nMineKill;      //倒した数 
+    private static Sprite m_ImageSpriteMine; //UIアセット画像
 
     //＞プロパティ定義
     public override int Cost => m_nCostMine; //コスト
-    override public Sprite ImageSprite { get; protected set; } //UIアセットを画像に変換したもの
+    public override Sprite ImageSprite => m_ImageSpriteMine; //UIアセットを画像に変換したもの
 
 
     /*＞初期化関数
@@ -119,7 +120,7 @@ public class Mine : CTrap
         //＞画像読み込み
         var _AssetLoadHandle = Addressables.LoadAssetAsync<Texture2D>(m_UIAssetRefMine);  //テクスチャデータを読み込む関数取得
         var _Texture = await _AssetLoadHandle.Task; //テクスチャ読み込みを非同期で実行
-        ImageSprite = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
+        m_ImageSpriteMine = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
 
         //＞管理
         m_AssetLoadHandleMine = _AssetLoadHandle;    //使用している関数を管理

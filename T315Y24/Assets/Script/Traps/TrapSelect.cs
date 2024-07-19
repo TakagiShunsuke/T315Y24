@@ -95,44 +95,11 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
 
         TrapComps = new CTrap[HavableTrapNum];
 
-        //＞罠情報表示初期化
-        for(int _nIdx = 0; _nIdx < CTrapManager.Instance.HaveTraps.Count; _nIdx++) //情報表示できる範囲内
+        //＞罠表示情報秘匿
+        for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
         {
-            //＞変数宣言
-            var _Obj = CTrapManager.Instance.HaveTraps[_nIdx]; //該当罠取得
-            bool _bMakeObj = false;  //オブジェクトを生成したか
-
-            //＞保全
-            if (_Obj == null)  //ヌルチェック
-            {
-                //continue;   //ヌルアクセス防止
-                Instantiate(_Obj, Vector3.zero, Quaternion.identity);  //一時的にヌルじゃなくする
-                _bMakeObj = true;  //生成した
-            }
-
-            //＞変数宣言
-            var _Trap = _Obj.GetComponent<CTrap>(); //罠のコンポーネントを取り出す
-
-            //＞保全
-            if (_Trap == null)  //該当コンポーネントがない
-            {
-                if (_bMakeObj)  //生成していた時
-                {
-                    Destroy(_Obj);  //生成を元に戻す
-                }
-                continue;   //ヌルアクセス防止
-            }
-
-            //＞初期化
-            TrapComps[_nIdx] = _Trap;   //コンポーネント登録
-            m_TrapInfo[_nIdx].m_CostText.SetText($"{_Trap.Cost}");  //Textにコスト値をセット
-            m_TrapInfo[_nIdx].m_Image.sprite = _Trap.ImageSprite;   //Imageに画像を設定
-
-            //＞片付け
-            if (_bMakeObj)  //生成していた時
-            {
-                Destroy(_Obj);  //生成を元に戻す
-            }
+            //m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(false);  //初期Textを見せない
+            //m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(false);  //初期Imageを見せない
         }
     }
 
@@ -151,9 +118,75 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
     */
     protected override void Update()
     {
+        ////＞保全
+        //if(TrapComps != null && m_TrapInfo != null) //ヌルチェック
+        //{
+        //    //＞罠表示UI更新  ※画像生成処理(初期化)が非同期処理なためにCTrapから画像データを正しく受け取れないことがあるためここに記載
+        //    for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
+        //    {
+        //        if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
+        //        {
+        //            m_TrapInfo[_nIdx].m_Image.sprite = TrapComps[_nIdx].ImageSprite;   //Imageに画像を設定
+        //        }
+        //    }
+        //}
+
+        //＞罠情報表示初期化
+            for (int _nIdx = 0; _nIdx < CTrapManager.Instance.HaveTraps.Count; _nIdx++) //情報表示できる範囲内
+            {
+                //＞初回更新
+                if (TrapComps[_nIdx] != null) //ヌルチェック
+                {
+                    break;  //初回以外更新しない
+                }
+
+                //＞変数宣言
+                var _Obj = CTrapManager.Instance.HaveTraps[_nIdx]; //該当罠取得
+                bool _bMakeObj = false;  //オブジェクトを生成したか
+
+                //＞保全
+                if (_Obj == null)  //ヌルチェック
+                {
+                    //continue;   //ヌルアクセス防止
+                    Instantiate(_Obj, Vector3.zero, Quaternion.identity);  //一時的にヌルじゃなくする
+                    _bMakeObj = true;  //生成した
+                }
+
+                //＞変数宣言
+                var _Trap = _Obj.GetComponent<CTrap>(); //罠のコンポーネントを取り出す
+
+                //＞保全
+                if (_Trap == null)  //該当コンポーネントがない
+                {
+                    if (_bMakeObj)  //生成していた時
+                    {
+                        Destroy(_Obj);  //生成を元に戻す
+                    }
+                    continue;   //ヌルアクセス防止
+                }
+
+                //＞初期化
+                TrapComps[_nIdx] = _Trap;   //コンポーネント登録
+                m_TrapInfo[_nIdx].m_CostText.SetText($"{_Trap.Cost}");  //Textにコスト値をセット
+            m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(true);  //更新後Textを見せる
+            m_TrapInfo[_nIdx].m_Image.sprite = _Trap.ImageSprite;   //Imageに画像を設定
+            m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(true);  //更新後Imageを見せる
+
+            //＞片付け
+            if (_bMakeObj)  //生成していた時
+                {
+                    Destroy(_Obj);  //生成を元に戻す
+                }
+        }
+
         //＞罠表示UI更新  ※画像生成処理(初期化)が非同期処理なためにCTrapから画像データを正しく受け取れないことがあるためここに記載
         for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
         {
+            //＞保全
+            if (m_TrapInfo[_nIdx].m_Image.sprite != null || TrapComps[_nIdx] == null) //ヌルチェック
+            {
+                break;
+            }
             if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
             {
                 m_TrapInfo[_nIdx].m_Image.sprite = TrapComps[_nIdx].ImageSprite;   //Imageに画像を設定

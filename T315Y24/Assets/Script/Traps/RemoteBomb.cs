@@ -69,10 +69,11 @@ public class RemoteBomb : CTrap
     private static int m_nSetRemoteBomb;     //置いた数格納用
     private static int m_nUseRemoteBomb;     //使った回数格納用
     private static int m_nRemoteBombKill; //倒した数格納用
+    private static Sprite m_ImageSpriteRemoteBomb; //UIアセット画像
 
     //＞プロパティ定義
     public override int Cost => m_nCostRemoteBomb; //コスト
-    override public Sprite ImageSprite { get; protected set; } //UIアセットを画像に変換したもの
+    public override Sprite ImageSprite => m_ImageSpriteRemoteBomb; //UIアセットを画像に変換したもの
 
 
     /*＞初期化関数
@@ -107,7 +108,7 @@ public class RemoteBomb : CTrap
         //＞画像読み込み
         var _AssetLoadHandle = Addressables.LoadAssetAsync<Texture2D>(m_UIAssetRefRemoteBomb);  //テクスチャデータを読み込む関数取得
         var _Texture = await _AssetLoadHandle.Task; //テクスチャ読み込みを非同期で実行
-        ImageSprite = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
+        m_ImageSpriteRemoteBomb = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
 
         //＞管理
         m_AssetLoadHandleRemoteBomb = _AssetLoadHandle;    //使用している関数を管理
