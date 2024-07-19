@@ -25,6 +25,7 @@ D
 _M07
 D
 04:コントローラ処理追加:iwamuro
+19:Idle、Run、Dodgeアニメーション追加:nieda
 =====*/
 
 //＞名前空間宣言
@@ -48,15 +49,20 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     [SerializeField, Tooltip("リキャスト時間")] private double m_unDashInterval;   //ダッシュリキャスト時間
     private double m_dCntDwnInvicibleTime = 0.0d;  //無敵時間カウント用
     private double m_dCntDwnDshInterval = 0.0d;  //ダッシュカウントダウン用
-    [SerializeField] private KeyCode m_DushKey = KeyCode.E; //ダッシュのキー
+    [SerializeField] private KeyCode m_DushKey = KeyCode.F; //ダッシュのキー
     [SerializeField] private double m_DashDist;  //ダッシュ時に移動する距離
     [Header("無敵")]
     [SerializeField, Tooltip("被攻撃時[s]")] private double m_dDamagedInvicibleTime;  //無敵時間[s] :自分が攻撃を受けたときに発動
     [SerializeField, Tooltip("ダッシュ時[s]")] private double m_dDushInvicibleTime;  //無敵時間[s] :ダッシュ時に発動
     [Header("音")]
-    [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;          // AudioSourceを追加
-    [SerializeField, Tooltip("ダッシュ時のSE")] private AudioClip SE_Dash;     // ダッシュ時のSE
-    [SerializeField, Tooltip("被ダメ時のSE")] private AudioClip SE_Damage;     // 被ダメ時のSE
+    [SerializeField, Tooltip("ダッシュ時SE")] private AudioClip SE_Dash;     // ダッシュ時のSE
+    [SerializeField, Tooltip("被ダメ時SE")] private AudioClip SE_Damage;     // 被ダメ時のSE
+    private AudioSource m_AudioSource;          // AudioSourceを追加
+    [Header("アニメーション")]
+    [SerializeField, Tooltip("回避モーション再生時間")] private double m_dDshMotionPlayTime = 0.5f; // 回避モーション再生時間
+    private double m_dCntDwnDshMotionPlayTime = 0.0d;  //回避モーション再生時間カウントダウン用
+    private Animator m_Animator;   // Animatorを追加
+
 
     //＞プロパティ定義
     private double CntDwnInvicibleTime
@@ -96,7 +102,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         //＞初期化
         m_Rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
         m_AudioSource = GetComponent<AudioSource>();    //AudioSourceコンポーネントを追加
-    
+        m_Animator = GetComponent<Animator>();
     }
 
     /*＞移動処理関数
@@ -128,6 +134,16 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             transform.rotation = Quaternion.LookRotation(target_dir);
             //前方へ移動
             transform.Translate(Vector3.forward * Time.deltaTime * m_fSpeed);
+            if (m_dCntDwnDshMotionPlayTime <= 0.0d) // Dodgeアニメーションが再生中でなければ
+            {
+                // Runアニメーションを再生
+                m_Animator.SetBool("isRun", true);
+            }
+        }
+        else
+        {
+            // Runアニメーションを停止しIdleアニメーションを再生
+            m_Animator.SetBool("isRun", false); 
         }
 
         // 斜め移動
@@ -155,8 +171,16 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         {
             m_dCntDwnDshInterval -= Time.deltaTime;   //時間をカウント
         }
+        if(m_dCntDwnDshMotionPlayTime > 0.0d)
+        {
+            m_dCntDwnDshMotionPlayTime -= Time.deltaTime;   // 時間をカウント
+            m_Animator.SetBool("isRun", false);    // Dodgeアニメーションを再生
+        }
+        if (m_dCntDwnDshMotionPlayTime <= 0.0d)
+        {
+            m_Animator.SetBool("isDodge", false);    // Dodgeアニメーションを再生
+        }
 
-       
     }
 
     /*＞物理更新関数
@@ -189,7 +213,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             {
                 case InputDeviceManager.InputDeviceType.Keyboard:
                     Debug.Log("Keyboardが使用されています");
-                    if (Input.GetKeyDown(/*m_DushKey*/KeyCode.Space)) //ダッシュ入力
+                    if (Input.GetKeyDown(m_DushKey)) //ダッシュ入力
                     {
                         
                         Dash(); //ダッシュする
@@ -229,6 +253,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             }
         }
 
+        
     }
 
     /*＞被ダメージ関数
@@ -297,9 +322,13 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             m_Rb.transform.position = _vGo;  //即座に移動を行う
 
             m_AudioSource.PlayOneShot(SE_Dash); // ダッシュ時SE再生
+            
+            m_Animator.SetBool("isDodge", true);    // Dodgeアニメーションを再生
+            m_Animator.SetBool("isRun", false);    // Runアニメーションを停止
 
             //＞カウントダウン
             m_dCntDwnDshInterval = m_unDashInterval;   //時間をカウント
+            m_dCntDwnDshMotionPlayTime = m_dDshMotionPlayTime;   //時間をカウント
             CntDwnInvicibleTime = m_dDushInvicibleTime;  //無敵時間のカウントをリセットする
         }
     }
