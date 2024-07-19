@@ -21,25 +21,28 @@ using Effekseer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
-using static CCodingRule;
 
 //＞クラス定義
 public class CTrap : MonoBehaviour
 {
     //変数宣言
     [Header("ステータス")]
-    [SerializeField,Tooltip("再使用できるまでの時間(秒)")] private double m_dInterval = 5.0d; // インターバル
-    [SerializeField, Tooltip("設置時再生するエフェクト")] private EffekseerEffectAsset m_SetEffect;  // 設置時再生するエフェクト
+    [SerializeField, Tooltip("再使用できるまでの時間(秒)")] private double m_dInterval = 5.0d; // インターバル
     private double m_dCoolTime = 0.0d;                  // インターバル計測用
     [Tooltip("設置する高さ")] public float m_fPosY;     // 設置する高さ
     [Tooltip("触らないで")] public bool m_bMove = true;                         // true:配置中 false:配置後
     [Tooltip("触らないで")] public bool m_bSetting = true;  //true:設置可能　false:設置不可
     [Tooltip("触らないで")] public bool m_bUse = true;  // 利用 true:可能 false:不可
 
+    [Header("エフェクト")]
+    [SerializeField, Tooltip("設置時再生するエフェクト")] private EffekseerEffectAsset m_SetEffect;  // 設置時再生するエフェクト
+
     [Header("テキスト")]
-    [SerializeField,Tooltip("表示用text")] private Text m_CoolDownText;                         // クールダウン表示テキスト
-    [SerializeField,Tooltip("フォントサイズ")] private int m_nFontSize = 24;      // クールダウンのフォントサイズ変更用
+    [SerializeField,Tooltip("表示用text")] private Text m_CoolDownText;       // クールダウン表示テキスト
+    [SerializeField,Tooltip("フォントサイズ")] private int m_nFontSize = 24;  // クールダウンのフォントサイズ変更用
                                                                          
     [Header("音")]
     [Tooltip("AudioSourceを追加")] protected AudioSource m_audioSource;    // AudioSourceを追加
@@ -47,8 +50,13 @@ public class CTrap : MonoBehaviour
     [SerializeField,Tooltip("罠爆発時のSE")] protected AudioClip SE_ExpTrap;   // 罠爆発時のSE
 
     private GameObject player;  //player格納用
-
     public Material material; // 半透明にしたいマテリアル
+
+    //＞プロパティ定義
+    virtual public int Cost { get; protected set; }//コスト
+    virtual public Sprite ImageSprite { get; protected set; } //UIアセットを画像に変換したもの
+
+
     /*＞初期化関数
     引数１：なし
     ｘ
@@ -59,7 +67,7 @@ public class CTrap : MonoBehaviour
     void Start()
     {
         // テキストの初期化
-        m_CoolDownText = GetComponentInChildren<Text>();    // 子のText取得
+        m_CoolDownText = GetComponentInChildren<Transform>().GetComponentInChildren<Text>();    // 子のText取得
         m_CoolDownText.text = m_dCoolTime.ToString();       // textの初期化
         m_CoolDownText.fontSize = m_nFontSize;              // フォントサイズを変更
         m_CoolDownText.alignment = TextAnchor.MiddleCenter; // textの表示位置を真ん中に
@@ -72,7 +80,7 @@ public class CTrap : MonoBehaviour
 
         Transparent transparent = GetComponent<Transparent>();
         transparent.ClearMaterialInvoke();
-       // color.a = 0.8f;
+        // color.a = 0.8f;
     }
 
     /*＞罠発動チェック関数
@@ -208,7 +216,7 @@ public class CTrap : MonoBehaviour
             m_bMove = false;                        //場所固定のためfalseに
             GameObject TrapManager;                 //"TrapManager"格納用　
             CTrapSelect TrapSelect;                 //CTrapSelect格納用
-            TrapManager = GameObject.Find("TrapManager");           //”TrapManager”をさがし取得
+            TrapManager = GameObject.Find("TrapSelect");           //”TrapManager”をさがし取得
             TrapSelect = TrapManager.GetComponent<CTrapSelect>();   //CTrapSelectを取得
             TrapSelect.SetSelect();                 //配置する罠を選択可能に変更
             Destroy(GetComponent<Rigidbody>());     //Rigidbodyだけを破壊
