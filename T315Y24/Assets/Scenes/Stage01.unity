@@ -2583,7 +2583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: f5b6133394706e5438c2eb4ca00baa54, type: 2}
+  m_Material: {fileID: 2100000, guid: 2163a1e0f3ae75a47873b52aaa06cb89, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -7631,8 +7631,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 165118930}
-  inkTransition: {fileID: 1233277262}
+  SceneFadeMaterial: {fileID: 2100000, guid: 2163a1e0f3ae75a47873b52aaa06cb89, type: 2}
   fadeTime: 2
+  _propertyName: _Progress
+  OnTransitionDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1184162765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7646,8 +7650,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerManagerObj: {fileID: 1118267407}
-  inkTransition: {fileID: 1233277262}
+  SceneFadeMaterial: {fileID: 2100000, guid: 2163a1e0f3ae75a47873b52aaa06cb89, type: 2}
   fadeTime: 2
+  _propertyName: _Progress
+  OnTransitionDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1184162766
 Transform:
   m_ObjectHideFlags: 0
@@ -8093,7 +8101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2f2fd75b12b148a2a9c750d2124e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionMaterial: {fileID: 2100000, guid: f5b6133394706e5438c2eb4ca00baa54, type: 2}
+  transitionMaterial: {fileID: 2100000, guid: 2163a1e0f3ae75a47873b52aaa06cb89, type: 2}
   transitionDuration: 2
 --- !u!1 &1238279520
 GameObject:

@@ -54,8 +54,8 @@ public class CChangeScene : MonoBehaviour
 
     [SerializeField] private Material SceneFadeMaterial;  // マテリアル
     [SerializeField] private float fadeTime = 2.0f;       // フェード時間
-    //[SerializeField] private string _propertyName = "_Progress";
-    public InkTransition inkTransition;
+    [SerializeField] private string _propertyName = "_Progress";
+    //public InkTransition inkTransition;
     //＞パブリックイベント
     //public UnityEvent OnFadeDone;
 
@@ -122,8 +122,8 @@ public class CChangeScene : MonoBehaviour
         while (currentTime < fadeTime)
         {
             currentTime += Time.deltaTime;
-            //SceneFadeMaterial.SetFloat(_propertyName, Mathf.Clamp01(currentTime / fadeTime));
-            inkTransition.StartTransition();
+            SceneFadeMaterial.SetFloat(_propertyName, Mathf.Clamp01(1 - currentTime / fadeTime));
+            //inkTransition.StartTransition();
             yield return null;
         }
         m_AudioSource.PlayOneShot(SE_Decide);
