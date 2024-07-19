@@ -185,7 +185,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
             //＞保全
             if (m_TrapInfo[_nIdx].m_Image.sprite != null || TrapComps[_nIdx] == null) //ヌルチェック
             {
-                break;
+                continue;
             }
             if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
             {

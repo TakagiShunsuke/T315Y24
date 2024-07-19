@@ -53,7 +53,7 @@ public class CTrapManager : CMonoSingleton<CTrapManager>
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    protected override void Start()
+    protected override void CustomAwake()
     {
         //＞リネーム
         gameObject.name = OBJECT_NAME;  //自身のオブジェクト名変更
@@ -65,8 +65,11 @@ public class CTrapManager : CMonoSingleton<CTrapManager>
             _Obj.SetActive(false);
             AllTrap.Add(_Obj);
         }
+    }
 
 
+    protected override void Start()
+    {
         //＞罠編成代替処理
         int _nIdx = 0;
         while (HaveTraps.Count < CTrapSelect.Instance.HavableTrapNum && _nIdx < AllTrap.Count)  //所持数まで
