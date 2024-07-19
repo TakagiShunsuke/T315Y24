@@ -27,6 +27,7 @@ public class Transparent : MonoBehaviour
     private MaterialPropertyBlock m_mpb;
     [SerializeField] private string _shaderName = "Unlit/UnlitTransparent";
     [SerializeField] private string _shaderNameChange = "Shader Graphs/ArnoldStandardSurface";
+    [SerializeField] private float ObjectAlpha = 1.0f;
 
     public MaterialPropertyBlock mpb
     {
@@ -48,8 +49,12 @@ public class Transparent : MonoBehaviour
     */
     public void ClearMaterialInvoke()
     {
-        color.a = 0.3f;
-
+        color.a = ObjectAlpha;
+        ObjectAlpha -= Time.deltaTime;
+        if (color.a <= 0.3f)
+        {
+            color.a = 0.3f;
+        }
         mpb.SetColor(Shader.PropertyToID("_Color"), color);
         for (int i = 0; i < meshRenderers.Length; i++)
         {
@@ -67,7 +72,8 @@ public class Transparent : MonoBehaviour
     */
     public void NotClearMaterialInvoke()
     {
-        color.a = 1f;
+        ObjectAlpha = 1.0f;
+        color.a = ObjectAlpha;
         mpb.SetColor(Shader.PropertyToID("_Color"), color);
         for (int i = 0; i < meshRenderers.Length; i++)
         {
