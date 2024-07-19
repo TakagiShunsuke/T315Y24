@@ -90,6 +90,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 333c186fa0dc2ce43ab86fa8152f7ce1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8076509568520480415}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 333c186fa0dc2ce43ab86fa8152f7ce1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3313254314034927855}
   m_SourcePrefab: {fileID: 100100000, guid: 333c186fa0dc2ce43ab86fa8152f7ce1, type: 3}
 --- !u!1 &9130855982869980821 stripped
 GameObject:
@@ -144,11 +147,11 @@ MonoBehaviour:
   m_dFrontAngle: 90
   m_fSpeed: 6
   m_dHp: 1
-  m_dDamagedInvicibleTime: 2
   m_unDashInterval: 5
-  m_dDushInvicibleTime: 2
   m_DushKey: 101
   m_DashDist: 2
+  m_dDamagedInvicibleTime: 2
+  m_dDushInvicibleTime: 2
   SE_Dash: {fileID: 8300000, guid: 78a2b8ce645625245be7f3d37b18475d, type: 3}
   SE_Damage: {fileID: 8300000, guid: 44deaa86883fa974ca89e2618453c328, type: 3}
 --- !u!54 &1278180035154986261
@@ -298,3 +301,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &3313254314034927855
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9130855982869980821}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5dde8b2af3da2de449d27a22e0951133, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
