@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8312253495950905289}
   - component: {fileID: 9018213559892639569}
   - component: {fileID: 3628668160209030750}
-  - component: {fileID: 3688169573520569760}
+  - component: {fileID: 2293225921709000005}
   m_Layer: 0
   m_Name: MeshFence2
   m_TagString: Map
@@ -108,7 +108,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1984025, y: 4.807597, z: 5.2721148}
   m_Center: {x: -0.016169958, y: 2.1887321, z: -2.639974}
---- !u!114 &3688169573520569760
+--- !u!114 &2293225921709000005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,3 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shaderName: Unlit/UnlitTransparent
+  _shaderNameChange: Universal Render Pipeline/Lit

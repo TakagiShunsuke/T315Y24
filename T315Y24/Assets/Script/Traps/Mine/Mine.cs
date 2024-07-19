@@ -28,9 +28,12 @@ D
 =====*/
 
 //＞名前空間宣言
+using Effekseer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -66,12 +69,62 @@ public class GameMineData
 public class Mine : CTrap
 {
     //＞変数宣言
-    [Header("プレハブ")] 
-    [SerializeField,Tooltip("爆発時生成されるプレハブ")] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    [Header("プレハブ")]
+    //[SerializeField,Tooltip("爆発時生成されるプレハブ")] private GameObject m_ExplosionEffectPrefab; // 爆発時生成されるプレハブ
+    [SerializeField,Tooltip("爆発の判定用プレハブ")] private GameObject m_ExplosionCollPrefab; // 爆発時生成されるプレハブ
+    [SerializeField, Tooltip("爆発時再生するエフェクト")] private  EffekseerEffectAsset m_ExplosionEffect;  // 爆発時再生するエフェクト
+    [Header("ステータス")]
+    [SerializeField, Tooltip("コスト")] private /*static*/ int m_nCostMine; // コスト //staticだとインスペクタに表示されない
+    [Header("UIイメージ")]
+    [SerializeField, Tooltip("UI表示用画像")] private /*static*/ AssetReferenceTexture2D m_UIAssetRefMine; //UI用画像アセット
+    private static AsyncOperationHandle<Texture2D> m_AssetLoadHandleMine;   //アセットをロード・管理する関数
     private static int m_nSetMine;       //置いた数 
     private static int m_nUseMine;       //使った回数
     private static int m_nMineKill;      //倒した数 
+    private static Sprite m_ImageSpriteMine; //UIアセット画像
 
+    //＞プロパティ定義
+    public override int Cost => m_nCostMine; //コスト
+    public override Sprite ImageSprite => m_ImageSpriteMine; //UIアセットを画像に変換したもの
+
+
+    /*＞初期化関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：インスタンス生成直後に行う処理
+    */
+    private void Awake()
+    {
+        //＞初期化
+        MakeSprite();   //最初に画像を作る
+    }
+
+    /*＞画像変換関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：Adressableに登録した画像をSprite形式に変換
+    */
+    private async void MakeSprite()
+    {
+        //＞保全
+        if (m_UIAssetRefMine == null)  //扱うアセットがない
+        {
+            //＞中断
+            return; //処理しない
+        }
+
+        //＞画像読み込み
+        var _AssetLoadHandle = Addressables.LoadAssetAsync<Texture2D>(m_UIAssetRefMine);  //テクスチャデータを読み込む関数取得
+        var _Texture = await _AssetLoadHandle.Task; //テクスチャ読み込みを非同期で実行
+        m_ImageSpriteMine = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
+
+        //＞管理
+        m_AssetLoadHandleMine = _AssetLoadHandle;    //使用している関数を管理
+    }
 
     /*＞地雷当たり判定関数
     引数１：Collision _Collision : 当たっているものの情報
@@ -82,12 +135,27 @@ public class Mine : CTrap
     */
     private void OnCollisionStay(Collision collision)     //地雷に何かが当たってきたとき
     {
+        //＞保全
+        if(m_ExplosionEffect == null)   //エフェクトがない
+        {
+#if UNITY_EDITOR    //エディタ使用中
+            //＞エラー出力
+            UnityEngine.Debug.LogWarning("必要な要素が不足しています");  //警告ログ出力
+#endif
+            //＞中断
+            return; //処理しない
+        }
+
         if (Check(collision))  // 起爆できるか
         {
             m_audioSource.PlayOneShot(SE_ExpTrap);  //爆発SE再生
             m_nUseMine++;    //使った回数を増やす
-            //爆発エフェクト作成
-            GameObject explosion = Instantiate(m_ExplosionEffectPrefab, transform.position, Quaternion.identity);
+
+            //＞爆発エフェクト再生
+            EffekseerSystem.PlayEffect(m_ExplosionEffect, transform.position);  //爆発位置に再生
+
+            //爆発判定作成
+            GameObject explosion = Instantiate(m_ExplosionCollPrefab, transform.position, Quaternion.identity);
             explosion.GetComponent<Explosion>().SetBombType(0);//格納先を設定
         }
         SetCheck(collision);    //設置できるかどうか判定
@@ -156,5 +224,21 @@ public class Mine : CTrap
         m_nSetMine = 0;     //置いた数 初期化
         m_nUseMine = 0;     //使った回初期化
         m_nMineKill = 0;    //倒した数 初期化
+    }
+
+    /*＞破棄関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：インスタンス破棄時に行う処理
+    */
+    private void OnDestroy()
+    {
+        //＞解放
+        if (m_AssetLoadHandleMine.IsValid()) //ヌルでない
+        {
+            Addressables.Release(m_AssetLoadHandleMine); //参照をやめる
+        }
     }
 }

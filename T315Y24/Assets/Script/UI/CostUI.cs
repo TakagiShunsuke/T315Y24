@@ -43,7 +43,7 @@ public class CostUI : MonoBehaviour
     void Start()
     {
         UIobj.fillAmount = 0.0f;                        //初期化
-        Cost_txt.SetText($"{CTrapSelect.m_Cost}");      //初期化
+        Cost_txt.SetText($"{CTrapSelect.m_nCost}");      //初期化
     }
 
     /*＞更新関数
@@ -60,8 +60,8 @@ public class CostUI : MonoBehaviour
         if (UIobj.fillAmount>=1.0f)     //円ゲージが一周したら
         {
             UIobj.fillAmount = 0.0f;    //初期化
-            CTrapSelect.m_Cost++;       //コスト増加
+            CTrapSelect.m_nCost++;       //コスト増加
         }
-        Cost_txt.SetText($"{CTrapSelect.m_Cost}");  //コスト表示
+        Cost_txt.SetText($"{CTrapSelect.m_nCost}");  //コスト表示
     }
 }

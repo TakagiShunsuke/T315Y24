@@ -16,46 +16,62 @@ D
 =====*/
 
 //＞名前空間宣言
+using Effekseer;
+using EffekseerTool.Data.Value;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static CCodingRule;
+using static CFeatures;
 using static InputDeviceManager;
 
 //＞クラス定義
-public class CTrapSelect : MonoBehaviour
+public class CTrapSelect : CMonoSingleton<CTrapSelect>
 {
     //＞変数宣言
     private GameObject player;
 
     //＞構造体定義
+    //[Serializable]
+    //public struct TrapInfo
+    //{
+    //    [Tooltip("生成するオブジェクト")]public GameObject m_Trap;
+    //    [Tooltip("表示するUI")]public Image m_Image;                  
+    //    [Tooltip("コスト")]public int m_Cost;                         // コスト
+    //    [Tooltip("表示用のText")]public TMP_Text m_CostText;          
+    //}
     [Serializable]
-    public struct TrapInfo
+    private struct OutputTrapInfo
     {
-        [Tooltip("生成するオブジェクト")]public GameObject m_Trap;    // オブジェクト
-        [Tooltip("表示するUI")]public Image m_Image;                  // UI
-        [Tooltip("コスト")]public int m_Cost;                         // コスト
-        [Tooltip("表示用のText")]public TMP_Text m_CostText;          // コストテキスト
-    }
+        [Tooltip("UI表示")] public Image m_Image;    // UI
+        [Tooltip("コスト表示テキスト")] public TMP_Text m_CostText;  // コストテキスト
+    }   //罠の情報表示場所
+     
     [Header("罠の情報")]
-    [SerializeField,Tooltip("罠の情報")] private TrapInfo[] m_TrapInfo;    //罠の情報
+    [SerializeField, Tooltip("罠表示")] private OutputTrapInfo[] m_TrapInfo;   //罠表示用情報
 
     [Header("ステータス")]
     [SerializeField, Tooltip("最初から持っているコスト")] private int m_FirstCost;
     [Tooltip("コストを増やす間隔(秒)")]public float m_fIncreaseInterval = 5.0f;  // コストを増やす間隔（秒）
+    [SerializeField, Tooltip("選択確定キー")] KeyCode m_DecideKey;    //決定キー
     [Tooltip("触らないで")] public bool m_bSelect=true;     // true:選択可能　false:選択不可
     private int m_nNum;             // 今選んでいる罠の番号を格納
-    public static int m_Cost;
+    public static int m_nCost;
 
     [Header("音")]
     [Tooltip("AudioSourceを追加")] private AudioSource m_AudioSource;      // AudioSourceを追加
     [SerializeField,Tooltip("罠選択時のSE")] private AudioClip SE_Select;  // 罠選択時のSE
     [SerializeField,Tooltip("罠設置時のSE")] private AudioClip SE_Set;     // 罠設置時のSE
+
+    //＞プロパティ定義
+    public int HavableTrapNum => m_TrapInfo.Length;    //持てる罠数 = 表示情報の用意数
+    private CTrap[] TrapComps { get; set; }  //罠のコンポーネント部分
 
 
     /*＞初期化関数
@@ -65,7 +81,7 @@ public class CTrapSelect : MonoBehaviour
     ｘ
     概要：インスタンス生成時に行う処理
     */
-    void Start()
+    protected override void Start()
     {
         player = GameObject.Find("Player"); // 検索
         m_nNum = 0;                         // 初期化
@@ -74,10 +90,17 @@ public class CTrapSelect : MonoBehaviour
         rectTransform.sizeDelta = new Vector2(200, 200);    // 選択中のUIの大きさを変更
         m_AudioSource = GetComponent<AudioSource>();        // AudioSourceコンポーネントを追加
         m_bSelect = true;                                   // 選択可能
-        m_Cost = m_FirstCost;                               // 初期コスト
-        m_TrapInfo[0].m_CostText.SetText($"{m_TrapInfo[0].m_Cost}");  //Textをセット
-        m_TrapInfo[1].m_CostText.SetText($"{m_TrapInfo[1].m_Cost}");  //Textをセット
-        InputDeviceManager.Instance.OnChangeDeviceType.AddListener(OnChangeDeviceTypeHandler);
+        m_nCost = m_FirstCost;                               // 初期コスト
+        InputDeviceManager.Instance.OnChangeDeviceType.AddListener(OnChangeDeviceTypeHandler);  //デバイス初期化
+
+        TrapComps = new CTrap[HavableTrapNum];
+
+        //＞罠表示情報秘匿
+        for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
+        {
+            //m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(false);  //初期Textを見せない
+            //m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(false);  //初期Imageを見せない
+        }
     }
 
     private void OnChangeDeviceTypeHandler()
@@ -93,69 +116,127 @@ public class CTrapSelect : MonoBehaviour
     ｘ
     概要：一定時間ごとに行う更新処理
     */
-    void Update()
+    protected override void Update()
     {
+        ////＞保全
+        //if(TrapComps != null && m_TrapInfo != null) //ヌルチェック
+        //{
+        //    //＞罠表示UI更新  ※画像生成処理(初期化)が非同期処理なためにCTrapから画像データを正しく受け取れないことがあるためここに記載
+        //    for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
+        //    {
+        //        if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
+        //        {
+        //            m_TrapInfo[_nIdx].m_Image.sprite = TrapComps[_nIdx].ImageSprite;   //Imageに画像を設定
+        //        }
+        //    }
+        //}
+
+        //＞罠情報表示初期化
+            for (int _nIdx = 0; _nIdx < CTrapManager.Instance.HaveTraps.Count; _nIdx++) //情報表示できる範囲内
+            {
+                //＞初回更新
+                if (TrapComps[_nIdx] != null) //ヌルチェック
+                {
+                    break;  //初回以外更新しない
+                }
+
+                //＞変数宣言
+                var _Obj = CTrapManager.Instance.HaveTraps[_nIdx]; //該当罠取得
+                bool _bMakeObj = false;  //オブジェクトを生成したか
+
+                //＞保全
+                if (_Obj == null)  //ヌルチェック
+                {
+                    //continue;   //ヌルアクセス防止
+                    Instantiate(_Obj, Vector3.zero, Quaternion.identity);  //一時的にヌルじゃなくする
+                    _bMakeObj = true;  //生成した
+                }
+
+                //＞変数宣言
+                var _Trap = _Obj.GetComponent<CTrap>(); //罠のコンポーネントを取り出す
+
+                //＞保全
+                if (_Trap == null)  //該当コンポーネントがない
+                {
+                    if (_bMakeObj)  //生成していた時
+                    {
+                        Destroy(_Obj);  //生成を元に戻す
+                    }
+                    continue;   //ヌルアクセス防止
+                }
+
+                //＞初期化
+                TrapComps[_nIdx] = _Trap;   //コンポーネント登録
+                m_TrapInfo[_nIdx].m_CostText.SetText($"{_Trap.Cost}");  //Textにコスト値をセット
+            m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(true);  //更新後Textを見せる
+            m_TrapInfo[_nIdx].m_Image.sprite = _Trap.ImageSprite;   //Imageに画像を設定
+            m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(true);  //更新後Imageを見せる
+
+            //＞片付け
+            if (_bMakeObj)  //生成していた時
+                {
+                    Destroy(_Obj);  //生成を元に戻す
+                }
+        }
+
+        //＞罠表示UI更新  ※画像生成処理(初期化)が非同期処理なためにCTrapから画像データを正しく受け取れないことがあるためここに記載
+        for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
+        {
+            //＞保全
+            if (m_TrapInfo[_nIdx].m_Image.sprite != null || TrapComps[_nIdx] == null) //ヌルチェック
+            {
+                break;
+            }
+            if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
+            {
+                m_TrapInfo[_nIdx].m_Image.sprite = TrapComps[_nIdx].ImageSprite;   //Imageに画像を設定
+            }
+        }
+
         if (m_bSelect)
         {//選択可能なら
             Select();   //選択
             
             if (InputDeviceManager.Instance != null)
             {
+                //＞変数宣言
+                bool _bDownDesideKey = false;   //決定キーを離したか
+
                 // 現在の入力デバイスタイプを取得
                 InputDeviceManager.InputDeviceType currentDeviceType = InputDeviceManager.Instance.CurrentDeviceType;
+
                 //決定
                 // 現在のデバイスタイプに応じた処理を行う
-                Debug.Log(currentDeviceType);
                 switch (currentDeviceType)
                 {
                     case InputDeviceManager.InputDeviceType.Keyboard:
-                        Debug.Log("Keyboardが使用されています");
-                        if (Input.GetKeyDown(KeyCode.E) && CostCheck(m_nNum)) //ダッシュ入力
-                        {//決定したなら
-                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
-                            Generation(m_nNum);         //オブジェクト作成
-                            m_bSelect = false;          //選択不可
-                        }
+                        _bDownDesideKey = Input.GetKeyDown(m_DecideKey) && CostCheck(m_nNum); //決定キー入力判定
                         break;
                     case InputDeviceManager.InputDeviceType.Xbox:
-                        Debug.Log("XBOXが使用されています");
-                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
-                        {//決定したなら
-                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
-                            Generation(m_nNum);         //オブジェクト作成
-                            m_bSelect = false;          //選択不可
-                        }
+                        _bDownDesideKey = Input.GetButtonDown("Decision") && CostCheck(m_nNum); //決定キー入力判定
                         break;
                     case InputDeviceManager.InputDeviceType.DualShock4:
-                        Debug.Log("DualShock4(PS4)が使用されています");
-                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
-                        {//決定したなら
-                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
-                            Generation(m_nNum);         //オブジェクト作成
-                            m_bSelect = false;          //選択不可
-                        }
+                        _bDownDesideKey = Input.GetButtonDown("Decision") && CostCheck(m_nNum); //決定キー入力判定
                         break;
                     case InputDeviceManager.InputDeviceType.DualSense:
-                        Debug.Log("DualSense(PS5)が使用されています");
-                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
-                        {//決定したなら
-                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
-                            Generation(m_nNum);         //オブジェクト作成
-                            m_bSelect = false;          //選択不可
-                        }
+                        _bDownDesideKey = Input.GetButtonDown("Decision") && CostCheck(m_nNum); //決定キー入力判定
                         break;
                     case InputDeviceManager.InputDeviceType.Switch:
-                        Debug.Log("SwitchのProコントローラーが使用されています");
-                        if (Input.GetButtonDown("Decision") && CostCheck(m_nNum))
-                        {//決定したなら
-                            m_AudioSource.PlayOneShot(SE_Set);   // SE再生
-                            Generation(m_nNum);         //オブジェクト作成
-                            m_bSelect = false;          //選択不可
-                        }
+                        _bDownDesideKey = Input.GetButtonDown("Decision") && CostCheck(m_nNum); //決定キー入力判定
                         break;
+#if UNITY_EDITOR    //エディタ使用中
                     default:
                         Debug.Log("未知の入力デバイスが使用されています");
                         break;
+#endif
+                }
+
+                if (_bDownDesideKey) //決定入力時
+                {//決定したなら
+                    m_AudioSource.PlayOneShot(SE_Set);   // SE再生
+                    Generation(m_nNum);                  //オブジェクト作成
+                    m_bSelect = false;                   //選択不可
+                    m_bSelect = true;
                 }
             }
         }
@@ -172,8 +253,9 @@ public class CTrapSelect : MonoBehaviour
     {
         //生成用
         Vector3 vPos = player.transform.forward * 2;    //プレイヤーの正面方向のベクトルを取得
-        //オブジェクトの生成
-        GameObject TrapObject= Instantiate(m_TrapInfo[_nNum].m_Trap, player.transform.position + vPos, Quaternion.identity);
+                                                        //オブジェクトの生成
+        GameObject TrapObject = Instantiate(CTrapManager.Instance.HaveTraps[_nNum], player.transform.position + vPos, Quaternion.identity);
+        TrapObject.SetActive(true); //コピー元はオブジェクトがアクティブでないのでアクティブにする
         TrapObject.GetComponent<CTrap>().m_bSetting = false;    //設置不可
     }
 
@@ -238,15 +320,29 @@ public class CTrapSelect : MonoBehaviour
     ｘ
     概要：選択可能に変更
     */
-    private bool CostCheck(int i)
+    private bool CostCheck(int _nNum)
     {
-        m_Cost-= m_TrapInfo[i].m_Cost;  // 今あるコストから選択した罠のコストを引く
-        if(m_Cost>=0) { return true; }  // 0以上なら問題なし選択可能
+
+        //＞変数宣言
+        var _nCost = m_nCost - TrapComps[_nNum].Cost; //コスト消費後の値
+
+        //＞条件分岐
+        if(_nCost >= 0) //選択可能
+        {
+            m_nCost = _nCost;   //値を反映
+            return true; // 0以上なら問題なし
+        }
         else
-        {// 0より小さいとき
-            m_Cost += m_TrapInfo[i].m_Cost; // 引いたコストを戻す
+        {//選択不可
             return false;                   // 選択不可
         }
+        //m_Cost -= m_TrapInfo[i].m_Cost;  // 今あるコストから選択した罠のコストを引く
+        //if(m_Cost>=0) { return true; }  // 0以上なら問題なし選択可能
+        //else
+        //{// 0より小さいとき
+        //    m_Cost += m_TrapInfo[i].m_Cost; // 引いたコストを戻す
+        //    return false;                   // 選択不可
+        //}
         
     }
 }

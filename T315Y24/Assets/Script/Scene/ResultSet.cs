@@ -23,7 +23,8 @@ using UnityEngine;
 public class ResultSet : CMonoSingleton<ResultSet>
 {
     [Header("テキスト")]
-    [Tooltip("表示用のテキスト")]public List<TMP_Text> ResultText;
+    [Tooltip("表示用のテキスト")] public List<TMP_Text> ResultText;
+    private int m_nPage = 0;   //ページ数
 
 
     /*＞初期化関数
@@ -38,7 +39,7 @@ public class ResultSet : CMonoSingleton<ResultSet>
         //ToDo 一括管理できるようにまとめる
         GameMineData MineResultData = Mine.GetGameMineData();                   //地雷のデータを取得
         GameRemoteBombData RBResultData = RemoteBomb.GetGameRemoteBombData();   //爆弾のデータを取得
-        
+
         //対応するテキストにセットする
         ResultText[0].SetText($"{MineResultData.SetMine}");         //地雷を置いた数
         ResultText[1].SetText($"{MineResultData.UseMine}");         //地雷を使った数
@@ -78,8 +79,18 @@ public class ResultSet : CMonoSingleton<ResultSet>
   ｘ
   概要：TextActiveを反転し表示非表示を切り替える
   */
-    public void ToggleActive()
+    public void ToggleActive(int nPage)
     {
+        //＞ページが切り替わっている
+        if (m_nPage == nPage)
+        {
+            return; //処理しない
+        }
+
+        //＞ページ切換
+        m_nPage = nPage;    //ページを更新する
+
+        //＞フォント表示切替
         for (int i = 0; i < ResultText.Count; i++) //ResultTextの数繰り返し
         {
             bool currentState = ResultText[i].gameObject.activeSelf;    //現在のactiveを取得

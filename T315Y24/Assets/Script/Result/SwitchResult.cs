@@ -63,12 +63,12 @@ public class CSwitchResult : MonoBehaviour
             {
                 if (Input.GetKeyDown(m_KeyChangeImages[_nIdx].m_KeyChangeResult[_nIdx2])) //キー入力判定
                 {
-                    for(int _nIdx3 = 0; _nIdx3 < m_KeyChangeImages.Length; ++_nIdx3)   //自分以外を処理するためにループしなおす
+                    for (int _nIdx3 = 0; _nIdx3 < m_KeyChangeImages.Length; ++_nIdx3)   //自分以外を処理するためにループしなおす
                     {
-                        if(_nIdx3 == _nIdx)  //対象が自身
+                        if (_nIdx3 == _nIdx)  //対象が自身
                         {
                             m_KeyChangeImages[_nIdx3].m_NextImag.enabled = true; //可視化
-                            ResultSet.Instance.ToggleActive();
+                            ResultSet.Instance.ToggleActive(_nIdx3);
                             continue;   //自分は処理しない
                         }
 
@@ -86,7 +86,7 @@ public class CSwitchResult : MonoBehaviour
                         if (_nIdx3 == _nIdx)  //対象が自身
                         {
                             m_KeyChangeImages[_nIdx3].m_NextImag.enabled = true; //可視化
-                            ResultSet.Instance.ToggleActive();
+                            ResultSet.Instance.ToggleActive(_nIdx3);
                             continue;   //自分は処理しない
                         }
 

@@ -23,6 +23,7 @@ D
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class CGameOver : MonoBehaviour
@@ -30,8 +31,12 @@ public class CGameOver : MonoBehaviour
     //＞変数宣言
     [SerializeField]GameObject Player;          // プレイヤーオブジェクト
     CPlayerScript PlayerCom;                     //プレイヤーのスクリプト取得用
+    //public InkTransition inkTransition;
+    [SerializeField] private Material SceneFadeMaterial;  // マテリアル
+    [SerializeField] private float fadeTime = 2.0f;       // フェード時間
+    [SerializeField] private string _propertyName = "_Progress";
 
-
+    public UnityEvent OnTransitionDone;
     // Start is called before the first frame update
     private void Start()
     {
@@ -41,9 +46,33 @@ public class CGameOver : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(PlayerCom.HP <= 0)
+        
+        if (PlayerCom.HP <= 0)
         {
-            SceneManager.LoadScene("ResultScene");    // ResultSceneへ遷移
+            //float currentTime = 0.0f;   // 現時刻
+
+            //while (currentTime < fadeTime)
+            //{
+            //    currentTime += Time.deltaTime;
+            //    SceneFadeMaterial.SetFloat(_propertyName, Mathf.Clamp01(1 - currentTime / fadeTime));
+            //    //inkTransition.StartTransition();
+
+            //}
+            StartCoroutine(TransitionCoroutine());
+            //SceneManager.LoadScene("ResultScene");    // ResultSceneへ遷移
         }
+    }
+
+    private IEnumerator TransitionCoroutine()
+    {
+        float currentTime = 0.0f;   // 現時刻
+        while (currentTime < fadeTime) // フェード時間より小さかったら行う
+        {
+            currentTime += Time.deltaTime;
+            SceneFadeMaterial.SetFloat(_propertyName, Mathf.Clamp01(1 - currentTime / fadeTime));    // propertyNameで定義した数値を時間の割合に合わせてスライドする
+            yield return null;
+        }
+        OnTransitionDone.Invoke();  // イベントの呼び出し
+        SceneManager.LoadScene("ResultScene");    // ResultSceneへ遷移
     }
 }
