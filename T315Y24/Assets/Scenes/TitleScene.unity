@@ -234,9 +234,9 @@ MonoBehaviour:
     - Decision
     Nextscene: Stage01
   SE_Decide: {fileID: 8300000, guid: b0107f03e4c42bc46b797f687bf89e74, type: 3}
-  SceneFadeMaterial: {fileID: 2100000, guid: f5b6133394706e5438c2eb4ca00baa54, type: 2}
-  fadeTime: 1
-  inkTransition: {fileID: 1148930651}
+  SceneFadeMaterial: {fileID: 2100000, guid: 2163a1e0f3ae75a47873b52aaa06cb89, type: 2}
+  fadeTime: 2
+  _propertyName: _Progress
 --- !u!82 &171975109
 AudioSource:
   m_ObjectHideFlags: 0
@@ -932,7 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2f2fd75b12b148a2a9c750d2124e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionMaterial: {fileID: 2100000, guid: f5b6133394706e5438c2eb4ca00baa54, type: 2}
+  transitionMaterial: {fileID: 2100000, guid: 2163a1e0f3ae75a47873b52aaa06cb89, type: 2}
   transitionDuration: 2
 --- !u!1 &1262620352
 GameObject:
@@ -1278,7 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: f5b6133394706e5438c2eb4ca00baa54, type: 2}
+  m_Material: {fileID: 2100000, guid: 2163a1e0f3ae75a47873b52aaa06cb89, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
