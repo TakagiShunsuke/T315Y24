@@ -36,7 +36,6 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
 {
     //＞変数宣言
     private GameObject player;
-    public GameObject g;
 
     //＞構造体定義
     //[Serializable]
@@ -135,8 +134,6 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
                 Destroy(_Obj);  //生成を元に戻す
             }
         }
-        GameObject TrapObject = Instantiate(g, player.transform.position + player.transform.forward * 2, Quaternion.identity);
-
     }
 
     private void OnChangeDeviceTypeHandler()
@@ -157,7 +154,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
         //＞罠表示UI更新  ※画像生成処理(初期化)が非同期処理なためにCTrapから画像データを正しく受け取れないことがあるためここに記載
         for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
         {
-            if (TrapComps[_nIdx].ImageSprite && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
+            if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
             {
                 m_TrapInfo[_nIdx].m_Image.sprite = TrapComps[_nIdx].ImageSprite;   //Imageに画像を設定
             }
@@ -206,6 +203,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
                     m_AudioSource.PlayOneShot(SE_Set);   // SE再生
                     Generation(m_nNum);                  //オブジェクト作成
                     m_bSelect = false;                   //選択不可
+                    m_bSelect = true;
                 }
             }
         }
@@ -222,7 +220,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
     {
         //生成用
         Vector3 vPos = player.transform.forward * 2;    //プレイヤーの正面方向のベクトルを取得
-        //オブジェクトの生成
+                                                        //オブジェクトの生成
         GameObject TrapObject = Instantiate(CTrapManager.Instance.HaveTraps[_nNum], player.transform.position + vPos, Quaternion.identity);
         TrapObject.SetActive(true); //コピー元はオブジェクトがアクティブでないのでアクティブにする
         TrapObject.GetComponent<CTrap>().m_bSetting = false;    //設置不可

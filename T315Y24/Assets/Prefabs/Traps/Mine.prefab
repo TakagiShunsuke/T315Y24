@@ -125,17 +125,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d098a86d1d074704785b3932b6e7bc3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_nCost: 0
   m_dInterval: 5
+  m_fPosY: -0.3
+  m_bMove: 1
+  m_bSetting: 1
   m_bUse: 1
+  m_SetEffect: {fileID: 11400000, guid: 8c570615699cc024e9f8a2da696f0e2b, type: 2}
+  m_UIAssetRef:
+    m_AssetGUID: 3dfd2a70e4a6954469c6828feb579fb2
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   m_CoolDownText: {fileID: 0}
   m_nFontSize: 24
-  m_bMove: 1
-  m_fPosY: -0.3
-  m_bSetting: 1
   SE_SetTrap: {fileID: 8300000, guid: c13fbcceac39313428898cf0fe9d53f9, type: 3}
-  m_ExplosionEffectPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
-  SE_ExpMine: {fileID: 8300000, guid: 214a20a77fdebf1418758df4c1ac449f, type: 3}
-  SE_explosion: {fileID: 8300000, guid: 5bf8eea4c1898424eb06ab5a585bf60c, type: 3}
+  SE_ExpTrap: {fileID: 0}
+  material: {fileID: 0}
+  m_ExplosionCollPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
+  m_ExplosionEffect: {fileID: 11400000, guid: a63f6f0bf1c2a264a849e20921907189, type: 2}
 --- !u!82 &-9145870453972372373
 AudioSource:
   m_ObjectHideFlags: 0
@@ -146,7 +154,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5bf8eea4c1898424eb06ab5a585bf60c, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 5bf8eea4c1898424eb06ab5a585bf60c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
