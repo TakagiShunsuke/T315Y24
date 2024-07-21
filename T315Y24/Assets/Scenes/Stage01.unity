@@ -3868,6 +3868,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &510776905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7032934268901959668, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+  m_PrefabInstance: {fileID: 987591091}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527351937 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -7161,6 +7172,83 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1489669743}
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+--- !u!1001 &987591091
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1630810262631090528, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_bMove
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630810262631090528, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_SetEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c5594bf45ebc4eb479dfd95eda289dc3, type: 2}
+    - target: {fileID: 1630810262631090528, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_dInterval
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630810262631090528, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_CoolDownText
+      value: 
+      objectReference: {fileID: 510776905}
+    - target: {fileID: 1630810262631090528, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_UIAssetRefCutter.m_AssetGUID
+      value: 3dfd2a70e4a6954469c6828feb579fb2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.283427
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -34.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370113584648904227, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080082384501434911, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
+      propertyPath: m_Name
+      value: RotaryCutter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b32a299c86c78c42a026ae8dab087be, type: 3}
 --- !u!1001 &989579231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15030,3 +15118,4 @@ SceneRoots:
   - {fileID: 1238279522}
   - {fileID: 2011829629}
   - {fileID: 721084407}
+  - {fileID: 987591091}

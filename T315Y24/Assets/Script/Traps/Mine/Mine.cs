@@ -146,7 +146,7 @@ public class Mine : CTrap
             return; //処理しない
         }
 
-        if (Check(collision))  // 起爆できるか
+        if (Check(collision,false))  // 起爆できるか
         {
             m_audioSource.PlayOneShot(SE_ExpTrap);  //爆発SE再生
             m_nUseMine++;    //使った回数を増やす
@@ -158,7 +158,8 @@ public class Mine : CTrap
             GameObject explosion = Instantiate(m_ExplosionCollPrefab, transform.position, Quaternion.identity);
             explosion.GetComponent<Explosion>().SetBombType(0);//格納先を設定
         }
-        SetCheck(collision);    //設置できるかどうか判定
+        if(m_bMove)
+            SetCheck(collision);    //設置できるかどうか判定
     }
 
     /*＞当たり判定関数

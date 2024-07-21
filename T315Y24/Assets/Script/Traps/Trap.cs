@@ -78,8 +78,8 @@ public class CTrap : MonoBehaviour
         m_bSetting = true;  // 設置可能
         m_audioSource = GetComponent<AudioSource>();        // AudioSourceを取得
 
-        Transparent transparent = GetComponent<Transparent>();
-        transparent.ClearMaterialInvoke();
+       //Transparent transparent = GetComponent<Transparent>();
+       //transparent.ClearMaterialInvoke();
         // color.a = 0.8f;
     }
 
@@ -90,12 +90,12 @@ public class CTrap : MonoBehaviour
     ｘ
     概要：罠発動可能かどうかのチェック
     */
-    public bool Check(Collision collision)
+    public bool Check(Collision _collision,bool _Use)
     {
-        if (collision.gameObject.CompareTag("Enemy") && m_bUse && !m_bMove)
+        if (_collision.gameObject.CompareTag("Enemy") && m_bUse && !m_bMove)
         {// Enemyタグがついている＆地雷使用可能なら
             SetCoolTime();      //クールタイムをセット
-            m_bUse = false;     // 使用不可
+            m_bUse = _Use;     // 使用不可
             return true;
         }
         return false;
@@ -214,16 +214,19 @@ public class CTrap : MonoBehaviour
         {//置ける条件だったら入る
             m_audioSource.PlayOneShot(SE_SetTrap);  //配置SE再生
             m_bMove = false;                        //場所固定のためfalseに
+
+            //配置する罠を選択可能に
             GameObject TrapManager;                 //"TrapManager"格納用　
             CTrapSelect TrapSelect;                 //CTrapSelect格納用
             TrapManager = GameObject.Find("TrapSelect");           //”TrapManager”をさがし取得
             TrapSelect = TrapManager.GetComponent<CTrapSelect>();   //CTrapSelectを取得
-            TrapSelect.SetSelect();                 //配置する罠を選択可能に変更
+            TrapSelect.SetSelect();               //配置する罠を選択可能  に変更
+
             Destroy(GetComponent<Rigidbody>());     //Rigidbodyだけを破壊
             SetCount();
 
-            Transparent transparent = GetComponent<Transparent>();
-            transparent.NotClearMaterialInvoke();
+            //Transparent transparent = GetComponent<Transparent>();
+            //transparent.NotClearMaterialInvoke();
 
             //＞保全
             if (m_SetEffect != null)   //エフェクトがない
