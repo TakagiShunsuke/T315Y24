@@ -212,7 +212,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             switch (currentDeviceType)
             {
                 case InputDeviceManager.InputDeviceType.Keyboard:
-                    Debug.Log("Keyboardが使用されています");
+                    //Debug.Log("Keyboardが使用されています");
                     if (Input.GetKeyDown(m_DushKey)) //ダッシュ入力
                     {
                         
@@ -220,7 +220,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
                     }
                     break;
                 case InputDeviceManager.InputDeviceType.Xbox:
-                    Debug.Log("XBOXが使用されています");
+                    //Debug.Log("XBOXが使用されています");
                     if (Input.GetButtonDown("Dash"))
                     {
                         Dash(); //ダッシュする
@@ -234,21 +234,21 @@ public class CPlayerScript : MonoBehaviour, IDamageable
                     }
                     break;
                 case InputDeviceManager.InputDeviceType.DualSense:
-                    Debug.Log("DualSense(PS5)が使用されています");
+                    //Debug.Log("DualSense(PS5)が使用されています");
                     if (Input.GetButtonDown("Dash"))
                     {
                         Dash(); //ダッシュする
                     }
                     break;
                 case InputDeviceManager.InputDeviceType.Switch:
-                    Debug.Log("SwitchのProコントローラーが使用されています");
+                    //Debug.Log("SwitchのProコントローラーが使用されています");
                     if (Input.GetButtonDown("Dash"))
                     {
                         Dash(); //ダッシュする
                     }
                     break;
                 default:
-                    Debug.Log("未知の入力デバイスが使用されています");
+                    //Debug.Log("未知の入力デバイスが使用されています");
                     break;
             }
         }
