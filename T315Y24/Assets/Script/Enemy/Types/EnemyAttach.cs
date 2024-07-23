@@ -29,6 +29,10 @@ D
 09:特徴改造に対応・リネーム:takagi
 21:リファクタリング:takagi
 24:リファクタリング:takagi
+
+_M07
+D
+21:アニメーション追加:nieda
 =====*/
 
 //＞名前空間宣言
@@ -54,7 +58,10 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine
     [SerializeField] private float m_fPosRandRange;  //エフェクトキューブを生成するポジションをランダムに生成するための範囲
     private CAreaSector m_CAreaSector = null;   //扇形の攻撃範囲
     private Rigidbody m_Rigidbody;
-   
+    [Header("アニメーション")]
+    private Animator m_Animator;
+    private double m_dAnimFinCnt = 0.0d;    // アニメーション終了判定用
+    private double m_dAnimFinTime = 0.3d;   // アニメーション終了時間
 
     /*＞初期化関数
     引数１：なし
@@ -95,7 +102,7 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine
 #endif
 
         m_Rigidbody = GetComponent<Rigidbody>();
-       
+        m_Animator = GetComponent<Animator>();  // Animatorコンポーネントを追加
     }
 
     /*＞物理更新関数
@@ -111,6 +118,16 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine
         if(m_dAtkCoolTime > 0.0d)   //クールダウン中
         {
             m_dAtkCoolTime -= Time.fixedDeltaTime;  //クールダウン減少
+        }
+
+        if(m_dAnimFinCnt > 0.0d)    // 終了カウントダウン中
+        {
+            m_dAnimFinTime -= Time.fixedDeltaTime;
+        }
+        else    // 終了カウントダウン終了
+        {
+            // Attackアニメーションを終了
+            m_Animator.SetBool("isAttack", false);
         }
 
         //＞攻撃
@@ -148,6 +165,7 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine
         {
             //＞クールダウン
             m_dAtkCoolTime = m_dAtkInterval;    //攻撃間隔初期化
+            m_dAnimFinCnt = m_dAnimFinTime;     //アニメーション終了カウントダウン開始
 
             //＞ダメージ
             for (int nIdx = 0; nIdx < Hits.Count; nIdx++)   //攻撃範囲全てにダメージ
@@ -162,7 +180,11 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine
                     Damageable.Damage(m_FeatureInfo.Atk);   //対象にダメージを与える
                 }
             }
+            
+            // Attackアニメーションを再生
+            m_Animator.SetBool("isAttack", true);
         }
+        
     }
 
     /*＞敵消去関数
