@@ -78,9 +78,10 @@ public class CTrap : MonoBehaviour
         m_bSetting = true;  // 設置可能
         m_audioSource = GetComponent<AudioSource>();        // AudioSourceを取得
 
-       //Transparent transparent = GetComponent<Transparent>();
-       //transparent.ClearMaterialInvoke();
-        // color.a = 0.8f;
+       Transparent transparent = GetComponent<Transparent>();
+        transparent.color.a = 0.8f;
+        transparent.ClearMaterialInvoke();
+        
     }
 
     /*＞罠発動チェック関数
@@ -210,7 +211,7 @@ public class CTrap : MonoBehaviour
     */
     public void SetTrap()
     {
-        if ((Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Decision")) && m_bSetting && m_bMove)
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Decision")||Input.GetKeyDown(KeyCode.Return)) && m_bSetting && m_bMove)
         {//置ける条件だったら入る
             m_audioSource.PlayOneShot(SE_SetTrap);  //配置SE再生
             m_bMove = false;                        //場所固定のためfalseに
@@ -225,8 +226,8 @@ public class CTrap : MonoBehaviour
             Destroy(GetComponent<Rigidbody>());     //Rigidbodyだけを破壊
             SetCount();
 
-            //Transparent transparent = GetComponent<Transparent>();
-            //transparent.NotClearMaterialInvoke();
+            Transparent transparent = GetComponent<Transparent>();
+            transparent.NotClearMaterialInvoke();
 
             //＞保全
             if (m_SetEffect != null)   //エフェクトがない

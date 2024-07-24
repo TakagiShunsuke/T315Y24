@@ -20,7 +20,7 @@ using UnityEngine;
 public class Transparent : MonoBehaviour
 {
     //＞変数宣言
-    private Color color = Color.white;      //colorはwhiteをベースに使用します。
+    public Color color = Color.white;      //colorはwhiteをベースに使用します。
 
     //親 子オブジェクトを格納。
     private MeshRenderer[] meshRenderers;
