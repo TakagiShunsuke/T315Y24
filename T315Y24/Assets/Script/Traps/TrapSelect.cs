@@ -16,8 +16,6 @@ D
 =====*/
 
 //„–¼‘O‹óŠÔéŒ¾
-using Effekseer;
-using EffekseerTool.Data.Value;
 using System;
 using System.Collections;
 using System.Collections.Generic;
