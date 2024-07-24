@@ -96,8 +96,8 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
         //＞罠表示情報秘匿
         for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
         {
-            //m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(false);  //初期Textを見せない
-            //m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(false);  //初期Imageを見せない
+            m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(false);  //初期Textを見せない
+            m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(false);  //初期Imageを見せない
         }
     }
 
@@ -168,7 +168,8 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
                 m_TrapInfo[_nIdx].m_CostText.SetText($"{_Trap.Cost}");  //Textにコスト値をセット
             m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(true);  //更新後Textを見せる
             m_TrapInfo[_nIdx].m_Image.sprite = _Trap.ImageSprite;   //Imageに画像を設定
-            m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(true);  //更新後Imageを見せる
+            if(m_TrapInfo[_nIdx].m_Image.sprite)
+                m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(true);  //更新後Imageを見せる
 
             //＞片付け
             if (_bMakeObj)  //生成していた時
@@ -181,14 +182,14 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
         for (int _nIdx = 0; _nIdx < m_TrapInfo.Length; _nIdx++) //情報表示できる範囲内
         {
             //＞保全
-            if (m_TrapInfo[_nIdx].m_Image.sprite != null || TrapComps[_nIdx] == null) //ヌルチェック
-            {
-                continue;
-            }
-            if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
-            {
+            //if (m_TrapInfo[_nIdx].m_Image.sprite != null || TrapComps[_nIdx] == null) //ヌルチェック
+            //{
+             //   continue;
+            //}
+            //if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
+            //{
                 m_TrapInfo[_nIdx].m_Image.sprite = TrapComps[_nIdx].ImageSprite;   //Imageに画像を設定
-            }
+            //}
         }
 
         if (m_bSelect)

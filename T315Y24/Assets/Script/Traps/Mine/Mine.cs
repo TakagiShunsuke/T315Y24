@@ -75,17 +75,20 @@ public class Mine : CTrap
     [SerializeField, Tooltip("爆発時再生するエフェクト")] private  EffekseerEffectAsset m_ExplosionEffect;  // 爆発時再生するエフェクト
     [Header("ステータス")]
     [SerializeField, Tooltip("コスト")] private /*static*/ int m_nCostMine; // コスト //staticだとインスペクタに表示されない
-    [Header("UIイメージ")]
-    [SerializeField, Tooltip("UI表示用画像")] private /*static*/ AssetReferenceTexture2D m_UIAssetRefMine; //UI用画像アセット
+    //[Header("UIイメージ")]
+    //[SerializeField, Tooltip("UI表示用画像")] private /*static*/ AssetReferenceTexture2D m_UIAssetRefMine; //UI用画像アセット
     private static AsyncOperationHandle<Texture2D> m_AssetLoadHandleMine;   //アセットをロード・管理する関数
     private static int m_nSetMine;       //置いた数 
     private static int m_nUseMine;       //使った回数
     private static int m_nMineKill;      //倒した数 
-    private static Sprite m_ImageSpriteMine; //UIアセット画像
+    //private static Sprite m_ImageSpriteMine; //UIアセット画像
+    [Header("UIイメージ")]
+    [SerializeField, Tooltip("UI表示用画像")] private Texture2D m_ImageSpriteMine; //UIアセット画像
 
     //＞プロパティ定義
     public override int Cost => m_nCostMine; //コスト
-    public override Sprite ImageSprite => m_ImageSpriteMine; //UIアセットを画像に変換したもの
+    //public override Sprite ImageSprite => m_ImageSpriteMine; //UIアセットを画像に変換したもの
+    public override Sprite ImageSprite => Sprite.Create(m_ImageSpriteMine, new Rect(0, 0, m_ImageSpriteMine.width, m_ImageSpriteMine.height), Vector2.zero); //UIアセットを画像に変換したもの
 
 
     /*＞初期化関数
@@ -98,7 +101,7 @@ public class Mine : CTrap
     private void Awake()
     {
         //＞初期化
-        MakeSprite();   //最初に画像を作る
+        //MakeSprite();   //最初に画像を作る
     }
 
     /*＞画像変換関数
@@ -108,23 +111,23 @@ public class Mine : CTrap
     ｘ
     概要：Adressableに登録した画像をSprite形式に変換
     */
-    private async void MakeSprite()
-    {
-        //＞保全
-        if (m_UIAssetRefMine == null)  //扱うアセットがない
-        {
-            //＞中断
-            return; //処理しない
-        }
+    //private async void MakeSprite()
+    //{
+    //    //＞保全
+    //    if (m_UIAssetRefMine == null)  //扱うアセットがない
+    //    {
+    //        //＞中断
+    //        return; //処理しない
+    //    }
 
-        //＞画像読み込み
-        var _AssetLoadHandle = Addressables.LoadAssetAsync<Texture2D>(m_UIAssetRefMine);  //テクスチャデータを読み込む関数取得
-        var _Texture = await _AssetLoadHandle.Task; //テクスチャ読み込みを非同期で実行
-        m_ImageSpriteMine = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
+    //    //＞画像読み込み
+    //    var _AssetLoadHandle = Addressables.LoadAssetAsync<Texture2D>(m_UIAssetRefMine);  //テクスチャデータを読み込む関数取得
+    //    var _Texture = await _AssetLoadHandle.Task; //テクスチャ読み込みを非同期で実行
+    //    m_ImageSpriteMine = Sprite.Create(_Texture, new Rect(0, 0, _Texture.width, _Texture.height), Vector2.zero);   //テクスチャから画像データ作成
 
-        //＞管理
-        m_AssetLoadHandleMine = _AssetLoadHandle;    //使用している関数を管理
-    }
+    //    //＞管理
+    //    m_AssetLoadHandleMine = _AssetLoadHandle;    //使用している関数を管理
+    //}
 
     /*＞地雷当たり判定関数
     引数１：Collision _Collision : 当たっているものの情報
