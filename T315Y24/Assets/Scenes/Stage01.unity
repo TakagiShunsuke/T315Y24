@@ -245,8 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &14897808
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,8 +689,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &116637265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -815,8 +819,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &146894606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -1062,8 +1068,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &199905203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,8 +2194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &411551483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b5ae24602794534a984c2bd1a162210, type: 3}
@@ -2231,8 +2241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &435277614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2442,8 +2454,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &439182469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,8 +3094,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &477309703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3250,8 +3266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!114 &509362137 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5892564834789293960, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
@@ -3720,8 +3738,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &627242662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -3921,8 +3941,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &652561082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -4047,8 +4069,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &678063634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4276,8 +4300,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &689593869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4404,8 +4430,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &692804488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2186230486323779859, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
@@ -4573,8 +4601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &701350286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -4698,6 +4728,10 @@ PrefabInstance:
       propertyPath: Cost_txt
       value: 
       objectReference: {fileID: 1725175122}
+    - target: {fileID: 7202056030175660570, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
+      propertyPath: m_bSelect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7202056030175660570, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
       propertyPath: m_DecideKey
       value: 101
@@ -5186,8 +5220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &761997258
 GameObject:
   m_ObjectHideFlags: 0
@@ -5352,8 +5388,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &771414055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5713,8 +5751,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &845575460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6458,8 +6498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &957646669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -6646,8 +6688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1018942970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -6665,8 +6709,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1018993436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -6689,8 +6735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1028057906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6888,8 +6936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1047549936
 GameObject:
   m_ObjectHideFlags: 0
@@ -6982,8 +7032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
+  ObjectAlpha: 1
 --- !u!1 &1063220149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2810589635453088789, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -7001,8 +7053,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
+  ObjectAlpha: 1
 --- !u!1 &1082897552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7816883890774045405, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -7020,8 +7074,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
+  ObjectAlpha: 1
 --- !u!1 &1084649120 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4906c9fcc12e9a14badbbd90c4526c4f, type: 3}
@@ -7065,8 +7121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1084724483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -7084,8 +7142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1084757525 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -7414,8 +7474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1157649444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7678,8 +7740,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1209302557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -7949,8 +8013,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1233277259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8077,8 +8143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!224 &1242357383 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 578909711563615286, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
@@ -8127,8 +8195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1290724218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8255,8 +8325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1324812113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8388,8 +8460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1332142367 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8407,8 +8481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1343735294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8426,8 +8502,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1345860051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -8445,8 +8523,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1358689912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8573,8 +8653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1361216060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8592,8 +8674,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1365330647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8844,8 +8928,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1389214426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8972,8 +9058,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1389732733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -8991,8 +9079,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1399275921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9095,8 +9185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1419689567
 GameObject:
   m_ObjectHideFlags: 0
@@ -9250,8 +9342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1435047423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
@@ -9460,8 +9554,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1483080903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9551,8 +9647,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1494265118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9775,8 +9873,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1552865252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9968,8 +10068,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1569243280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10064,8 +10166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1578603318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10268,8 +10372,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1604956509 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
@@ -10287,8 +10393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1606479444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10415,8 +10523,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1608393360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -10434,8 +10544,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1611540830
 GameObject:
   m_ObjectHideFlags: 0
@@ -10589,8 +10701,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1615238753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10797,8 +10911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1634884723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11089,8 +11205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1001 &1697723577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11217,8 +11335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1703399019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -11236,8 +11356,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1705612591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11588,8 +11710,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1714599319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -11607,8 +11731,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1717561960 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -11626,8 +11752,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1717767173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8304457716935388527, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -11645,8 +11773,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
+  ObjectAlpha: 1
 --- !u!1 &1725175120
 GameObject:
   m_ObjectHideFlags: 0
@@ -11800,8 +11930,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1731862489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11928,8 +12060,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1733650225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -11947,8 +12081,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1742595588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12711,8 +12847,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!4 &1809868176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -12735,8 +12873,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1844015074
 GameObject:
   m_ObjectHideFlags: 0
@@ -12871,8 +13011,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1855527191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -12961,8 +13103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &1876002759 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -12980,8 +13124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &1883469378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13158,8 +13304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1896763203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -13177,8 +13325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1899231487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -13196,8 +13346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &1910513857
 GameObject:
   m_ObjectHideFlags: 0
@@ -13399,8 +13551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1936080902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8262981891034645979, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
@@ -13506,8 +13660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &1985321148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -13525,8 +13681,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &2001497986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b5ae24602794534a984c2bd1a162210, type: 3}
@@ -13570,8 +13728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &2006376717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -13589,8 +13749,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &2011829629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13665,8 +13827,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &2028915942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -13684,8 +13848,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &2031350733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13775,8 +13941,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &2045791886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14039,8 +14207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1 &2065092511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f2db13307d0db84c9cfec14842c59ea, type: 3}
@@ -14084,8 +14254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
+  ObjectAlpha: 1
 --- !u!1 &2086830868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -14103,8 +14275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1001 &2087040373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14301,8 +14475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!4 &2139876596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -14320,8 +14496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Universal Render Pipeline/Lit
+  ObjectAlpha: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

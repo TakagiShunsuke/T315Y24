@@ -13,6 +13,10 @@ D
 18: SE追加: nieda
 26: コメント追加: yamamoto
 27: SE関係リファクタリング: nieda
+
+_M07
+D
+15:コントローラー追加：iwamuro
 =====*/
 
 //＞名前空間宣言
@@ -58,6 +62,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
     [SerializeField, Tooltip("最初から持っているコスト")] private int m_FirstCost;
     [Tooltip("コストを増やす間隔(秒)")]public float m_fIncreaseInterval = 5.0f;  // コストを増やす間隔（秒）
     [SerializeField, Tooltip("選択確定キー")] KeyCode m_DecideKey;    //決定キー
+    [SerializeField, Tooltip("選択確定キー")] KeyCode m_DecideKey1;    //決定キー
     [Tooltip("触らないで")] public bool m_bSelect=true;     // true:選択可能　false:選択不可
     private int m_nNum;             // 今選んでいる罠の番号を格納
     public static int m_nCost;
@@ -130,52 +135,52 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
         //}
 
         //＞罠情報表示初期化
-            for (int _nIdx = 0; _nIdx < CTrapManager.Instance.HaveTraps.Count; _nIdx++) //情報表示できる範囲内
+        for (int _nIdx = 0; _nIdx < CTrapManager.Instance.HaveTraps.Count; _nIdx++) //情報表示できる範囲内
+        {
+            //＞初回更新
+            if (TrapComps[_nIdx] != null) //ヌルチェック
             {
-                //＞初回更新
-                if (TrapComps[_nIdx] != null) //ヌルチェック
+                break;  //初回以外更新しない
+            }
+
+            //＞変数宣言
+            var _Obj = CTrapManager.Instance.HaveTraps[_nIdx]; //該当罠取得
+            bool _bMakeObj = false;  //オブジェクトを生成したか
+
+            //＞保全
+            if (_Obj == null)  //ヌルチェック
+            {
+                //continue;   //ヌルアクセス防止
+                Instantiate(_Obj, Vector3.zero, Quaternion.identity);  //一時的にヌルじゃなくする
+                _bMakeObj = true;  //生成した
+            }
+
+            //＞変数宣言
+            var _Trap = _Obj.GetComponent<CTrap>(); //罠のコンポーネントを取り出す
+
+            //＞保全
+            if (_Trap == null)  //該当コンポーネントがない
+            {
+                if (_bMakeObj)  //生成していた時
                 {
-                    break;  //初回以外更新しない
+                    Destroy(_Obj);  //生成を元に戻す
                 }
+                continue;   //ヌルアクセス防止
+            }
 
-                //＞変数宣言
-                var _Obj = CTrapManager.Instance.HaveTraps[_nIdx]; //該当罠取得
-                bool _bMakeObj = false;  //オブジェクトを生成したか
-
-                //＞保全
-                if (_Obj == null)  //ヌルチェック
-                {
-                    //continue;   //ヌルアクセス防止
-                    Instantiate(_Obj, Vector3.zero, Quaternion.identity);  //一時的にヌルじゃなくする
-                    _bMakeObj = true;  //生成した
-                }
-
-                //＞変数宣言
-                var _Trap = _Obj.GetComponent<CTrap>(); //罠のコンポーネントを取り出す
-
-                //＞保全
-                if (_Trap == null)  //該当コンポーネントがない
-                {
-                    if (_bMakeObj)  //生成していた時
-                    {
-                        Destroy(_Obj);  //生成を元に戻す
-                    }
-                    continue;   //ヌルアクセス防止
-                }
-
-                //＞初期化
-                TrapComps[_nIdx] = _Trap;   //コンポーネント登録
-                m_TrapInfo[_nIdx].m_CostText.SetText($"{_Trap.Cost}");  //Textにコスト値をセット
+            //＞初期化
+            TrapComps[_nIdx] = _Trap;   //コンポーネント登録
+            m_TrapInfo[_nIdx].m_CostText.SetText($"{_Trap.Cost}");  //Textにコスト値をセット
             m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(true);  //更新後Textを見せる
             m_TrapInfo[_nIdx].m_Image.sprite = _Trap.ImageSprite;   //Imageに画像を設定
-            if(m_TrapInfo[_nIdx].m_Image.sprite)
+            if (m_TrapInfo[_nIdx].m_Image.sprite)
                 m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(true);  //更新後Imageを見せる
 
             //＞片付け
             if (_bMakeObj)  //生成していた時
-                {
-                    Destroy(_Obj);  //生成を元に戻す
-                }
+            {
+                Destroy(_Obj);  //生成を元に戻す
+            }
         }
 
         //＞罠表示UI更新  ※画像生成処理(初期化)が非同期処理なためにCTrapから画像データを正しく受け取れないことがあるためここに記載
@@ -184,18 +189,18 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
             //＞保全
             //if (m_TrapInfo[_nIdx].m_Image.sprite != null || TrapComps[_nIdx] == null) //ヌルチェック
             //{
-             //   continue;
+            //   continue;
             //}
             //if (TrapComps[_nIdx].ImageSprite != null && m_TrapInfo[_nIdx].m_Image.sprite == null)   //まだ画像設定されておらず、設定されるべき
             //{
-                m_TrapInfo[_nIdx].m_Image.sprite = TrapComps[_nIdx].ImageSprite;   //Imageに画像を設定
+            m_TrapInfo[_nIdx].m_Image.sprite = TrapComps[_nIdx].ImageSprite;   //Imageに画像を設定
             //}
         }
 
         if (m_bSelect)
         {//選択可能なら
             Select();   //選択
-            
+
             if (InputDeviceManager.Instance != null)
             {
                 //＞変数宣言
@@ -209,7 +214,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
                 switch (currentDeviceType)
                 {
                     case InputDeviceManager.InputDeviceType.Keyboard:
-                        _bDownDesideKey = Input.GetKeyDown(m_DecideKey) && CostCheck(m_nNum); //決定キー入力判定
+                        _bDownDesideKey = (Input.GetKeyDown(m_DecideKey) || Input.GetKeyDown(KeyCode.Return)) && CostCheck(m_nNum); //決定キー入力判定
                         break;
                     case InputDeviceManager.InputDeviceType.Xbox:
                         _bDownDesideKey = Input.GetButtonDown("Decision") && CostCheck(m_nNum); //決定キー入力判定
@@ -235,10 +240,10 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
                     m_AudioSource.PlayOneShot(SE_Set);   // SE再生
                     Generation(m_nNum);                  //オブジェクト作成
                     m_bSelect = false;                   //選択不可
-                    m_bSelect = true;
                 }
             }
         }
+      
     }
 
     /*＞オブジェクト生成関数
@@ -310,6 +315,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
     public void SetSelect()
     {
         m_bSelect = true;   //選択可能
+       
     }
 
     /*＞選択可能関数
