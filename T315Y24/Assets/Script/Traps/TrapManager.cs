@@ -77,6 +77,14 @@ public class CTrapManager : CMonoSingleton<CTrapManager>
             HaveTraps.Add(AllTrap[_nIdx]);
             _nIdx++;
         }
+        ////„ŠÇ—‘ÎÛ“o˜^
+        //for (int _nCnt = 0; _nCnt < AllTrap.Count; _nCnt++)
+        //{
+        //    if (AllTrap[_nCnt] != null)
+        //    {
+        //        AllTrap[_nCnt].SetActive(false);
+        //    }
+        //}
     }
 
     /*„XVŠÖ”

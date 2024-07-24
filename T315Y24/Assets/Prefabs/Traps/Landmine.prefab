@@ -320,11 +320,7 @@ MonoBehaviour:
   m_ExplosionCollPrefab: {fileID: 3744496726241248683, guid: ab864483bf8d1d04eaf4cf20551ed402, type: 3}
   m_ExplosionEffect: {fileID: 11400000, guid: c5594bf45ebc4eb479dfd95eda289dc3, type: 2}
   m_nCostMine: 2
-  m_UIAssetRefMine:
-    m_AssetGUID: f9388c06a2ec67c44b2ed08fd15446b0
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  m_ImageSpriteMine: {fileID: 2800000, guid: f9388c06a2ec67c44b2ed08fd15446b0, type: 3}
 --- !u!54 &6667340849690089108
 Rigidbody:
   m_ObjectHideFlags: 0
