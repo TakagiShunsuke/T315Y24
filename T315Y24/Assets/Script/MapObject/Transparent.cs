@@ -28,6 +28,9 @@ public class Transparent : MonoBehaviour
     [SerializeField] private string _shaderName = "Unlit/UnlitTransparent";
     [SerializeField] private string _shaderNameChange = "Shader Graphs/ArnoldStandardSurface";
     [SerializeField] private float ObjectAlpha = 1.0f;
+    //[SerializeField] private string propertyName = "_Progress"; // ShaderGraph内定義した変数名
+    //[SerializeField] private Material SceneTransitionMaterial;  // マテリアル
+    [SerializeField] private Texture newTexture;
 
     public MaterialPropertyBlock mpb
     {
@@ -54,6 +57,14 @@ public class Transparent : MonoBehaviour
         if (color.a <= 0.3f)
         {
             color.a = 0.3f;
+        }
+        // オブジェクトのRendererコンポーネントを取得
+        Renderer renderer = GetComponent<Renderer>();
+
+        // マテリアルのmainTextureを新しいテクスチャに変更
+        if (renderer != null && renderer.material != null)
+        {
+            renderer.material.mainTexture = newTexture;
         }
         mpb.SetColor(Shader.PropertyToID("_Color"), color);
         for (int i = 0; i < meshRenderers.Length; i++)
