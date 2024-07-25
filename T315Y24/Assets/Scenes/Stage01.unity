@@ -249,6 +249,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1 &14897808
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_07
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -462,30 +467,12 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1893943013}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!4 &50198870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 1615238753}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &80232002 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 2045791886}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &94965483 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1552865252}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &98077051 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 2031350733}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &104422596
 PrefabInstance:
@@ -503,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_02
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -558,10 +549,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1733650234}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &112767942
 PrefabInstance:
@@ -693,6 +681,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1001 &116637265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,6 +812,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!4 &146894606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -882,6 +872,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 761997259}
     m_Modifications:
+    - target: {fileID: 2029982484953164354, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 2186230486323779859, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.90909094
@@ -937,10 +931,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6188413958871004026, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1388169124}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
 --- !u!1001 &173121807
 PrefabInstance:
@@ -1072,6 +1063,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!1 &199905203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1424,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160521544}
     m_Modifications:
+    - target: {fileID: -5549459462189416440, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
       propertyPath: m_Name
       value: Gate02
@@ -1498,10 +1494,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7979483810632986655, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 213985465}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1725915904}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
 --- !u!1001 &227415665
 PrefabInstance:
@@ -1681,11 +1674,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &234121824 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
-  m_PrefabInstance: {fileID: 221776544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &256211804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -1699,6 +1687,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160521544}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_04
@@ -1758,10 +1750,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2039929811}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!4 &293883723 stripped
 Transform:
@@ -1859,6 +1848,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 901142185}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_02
@@ -1918,10 +1911,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2006376726}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!1001 &322741372
 PrefabInstance:
@@ -1939,6 +1929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_05
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -1994,10 +1988,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1389732742}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!4 &338779566 stripped
 Transform:
@@ -2012,6 +2003,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160521544}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_01
@@ -2071,16 +2066,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 992093539}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
---- !u!1 &349834590 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1884297019}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &355776584 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -2090,11 +2077,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 1195556426}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &374014440 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1705626573}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &374051535
 PrefabInstance:
@@ -2112,6 +2094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -2167,37 +2153,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1851618352}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
---- !u!1 &396187828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 1445241388}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &409269990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 1884297019}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &409269999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349834590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &411551483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b5ae24602794534a984c2bd1a162210, type: 3}
@@ -2245,6 +2207,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!1001 &435277614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2458,6 +2421,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1 &439182469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,6 +2574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_10
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -2665,10 +2633,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1611985333}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &453300034
 PrefabInstance:
@@ -2686,6 +2651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -2737,10 +2706,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1703399028}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &457194719
 PrefabInstance:
@@ -2750,6 +2716,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 716394637}
     m_Modifications:
+    - target: {fileID: 2029982484953164354, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 2186230486323779859, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.90909094
@@ -2805,10 +2775,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6188413958871004026, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1239134157}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
 --- !u!1 &461542841
 GameObject:
@@ -3098,6 +3065,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!1001 &477309703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3270,6 +3238,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!114 &509362137 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5892564834789293960, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
@@ -3281,11 +3250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &527351937 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 443034243}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &529837462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
@@ -3742,11 +3706,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &627242662 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 1709825388}
-  m_PrefabAsset: {fileID: 0}
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1 &645080881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,11 +3905,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &652561082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 982863596}
-  m_PrefabAsset: {fileID: 0}
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1001 &656428857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3966,6 +3922,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_05
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -4021,10 +3981,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1717561969}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1 &671777458 stripped
 GameObject:
@@ -4073,6 +4030,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1 &678063634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,6 +4181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_02
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -4278,32 +4240,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2028915951}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
---- !u!1 &689130108 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 756153813}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &689130117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689130108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &689593869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4434,6 +4372,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!4 &692804488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2186230486323779859, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
@@ -4605,11 +4544,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &701350286 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 883339406}
-  m_PrefabAsset: {fileID: 0}
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!1 &716394636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,6 +4816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -4936,10 +4875,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1343735303}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1 &739374379
 GameObject:
@@ -5017,11 +4953,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739374379}
   m_CullTransparentMesh: 1
---- !u!1 &755749952 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 826377082}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &756153813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5030,6 +4961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160521544}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_02
@@ -5089,10 +5024,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 689130117}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!1001 &760575043
 PrefabInstance:
@@ -5224,6 +5156,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1 &761997258
 GameObject:
   m_ObjectHideFlags: 0
@@ -5392,6 +5325,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1001 &771414055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5576,6 +5510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_04
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -5631,10 +5569,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2139876605}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &826377082
 PrefabInstance:
@@ -5644,6 +5579,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 901142185}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_01
@@ -5703,10 +5642,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1899231496}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!1 &844737003 stripped
 GameObject:
@@ -5755,6 +5691,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!1001 &845575460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5763,6 +5700,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 716394637}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_01
@@ -5822,10 +5763,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1608393369}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!1001 &854025410
 PrefabInstance:
@@ -6007,6 +5945,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 901142185}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_03
@@ -6066,10 +6008,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1876002768}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!1001 &883339406
 PrefabInstance:
@@ -6087,6 +6026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -6138,10 +6081,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1714599328}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1 &892812034
 GameObject:
@@ -6367,11 +6307,6 @@ Transform:
   - {fileID: 1345860051}
   m_Father: {fileID: 1910513858}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1 &935229015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 287011083}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &939473342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6502,16 +6437,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &957646669 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 453300034}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &959622983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 1483080903}
-  m_PrefabAsset: {fileID: 0}
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1001 &982863596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6528,6 +6454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_06
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -6583,10 +6513,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1489669743}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &989579231
 PrefabInstance:
@@ -6671,74 +6598,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 671777463}
   m_SourcePrefab: {fileID: 100100000, guid: 6f2db13307d0db84c9cfec14842c59ea, type: 3}
---- !u!1 &992093530 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 349055885}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &992093539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992093530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!4 &1018942970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
   m_PrefabInstance: {fileID: 2045791886}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1018942979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80232002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
---- !u!1 &1018993436 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1553293000}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1022911219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 1552865252}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1022911228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94965483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1028057906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6747,6 +6616,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 716394637}
     m_Modifications:
+    - target: {fileID: -5549459462189416440, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
       propertyPath: m_Name
       value: Gate01
@@ -6805,10 +6678,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7979483810632986655, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1936080902}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2063698325}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
 --- !u!1001 &1029412655
 PrefabInstance:
@@ -6940,6 +6810,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1 &1047549936
 GameObject:
   m_ObjectHideFlags: 0
@@ -7036,6 +6907,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
   ObjectAlpha: 1
+  newTexture: {fileID: 0}
 --- !u!1 &1063220149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2810589635453088789, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -7057,6 +6929,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
   ObjectAlpha: 1
+  newTexture: {fileID: 0}
 --- !u!1 &1082897552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7816883890774045405, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -7078,6 +6951,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
   ObjectAlpha: 1
+  newTexture: {fileID: 0}
 --- !u!1 &1084649120 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4906c9fcc12e9a14badbbd90c4526c4f, type: 3}
@@ -7125,32 +6999,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &1084724483 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1195556426}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1084724492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084724483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
---- !u!1 &1084757525 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 801468447}
-  m_PrefabAsset: {fileID: 0}
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1001 &1109203253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7365,6 +7214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -7416,21 +7269,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1410774483}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
---- !u!1 &1137594084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 845575460}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1144777067 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 36318001}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1149169925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4906c9fcc12e9a14badbbd90c4526c4f, type: 3}
@@ -7478,6 +7318,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1001 &1157649444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7494,6 +7335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_09
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -7549,10 +7394,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1575680133}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!4 &1182456257 stripped
 Transform:
@@ -7662,6 +7504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_02
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -7713,10 +7559,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1084724492}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!4 &1195812176 stripped
 Transform:
@@ -7727,27 +7570,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 2031350733}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1204058059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98077051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
---- !u!1 &1209302557 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 729557206}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1210250496
 GameObject:
@@ -8017,6 +7839,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1 &1233277259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8126,27 +7949,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1239134148 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6188413958871004026, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
-  m_PrefabInstance: {fileID: 457194719}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1239134157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239134148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!224 &1242357383 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 578909711563615286, guid: c0dc6311d9b30ec4dae4c6f9f5551be1, type: 3}
@@ -8199,6 +8001,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1001 &1290724218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8329,11 +8132,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &1324812113 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 322741372}
-  m_PrefabAsset: {fileID: 0}
+  newTexture: {fileID: 2800000, guid: faf3fc1eff1d96846aa3ca0717b9b012, type: 3}
 --- !u!1001 &1326951945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8464,69 +8263,17 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &1332142367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1634884723}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1332142376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332142367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!4 &1343735294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 729557206}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1343735303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209302557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!4 &1345860051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
   m_PrefabInstance: {fileID: 1709825388}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1345860060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627242662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1358689912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8657,27 +8404,12 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!4 &1361216060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 1705626573}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1361216069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374014440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1365330647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8761,11 +8493,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1560313373}
   m_SourcePrefab: {fileID: 100100000, guid: 6f2db13307d0db84c9cfec14842c59ea, type: 3}
---- !u!1 &1367462639 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 683987206}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1369168284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
@@ -8911,27 +8638,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1880838942123625886, guid: 41c274e912f09034b8aee877df531185, type: 3}
   m_PrefabInstance: {fileID: 1386029248}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1388169115 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6188413958871004026, guid: cd83c8163b09c374fb3ea0c253e57fbe, type: 3}
-  m_PrefabInstance: {fileID: 167368336}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1388169124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388169115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1389214426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9062,27 +8768,12 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!4 &1389732733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 322741372}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1389732742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324812113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1399275921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9168,27 +8859,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84621e2509d930409c6c9ebb97b277a, type: 3}
---- !u!1 &1410774474 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1133547763}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1410774483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410774474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &1419689567
 GameObject:
   m_ObjectHideFlags: 0
@@ -9325,32 +8995,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419689567}
   m_CullTransparentMesh: 1
---- !u!1 &1424520443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
-  m_PrefabInstance: {fileID: 2057562261}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1424520456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424520443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
---- !u!1 &1435047423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
-  m_PrefabInstance: {fileID: 1028057906}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1445241388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9359,6 +9003,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 761997259}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_01
@@ -9418,10 +9066,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2027088762}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!4 &1466089663 stripped
 Transform:
@@ -9558,6 +9203,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!1001 &1483080903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9566,6 +9212,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 761997259}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_02
@@ -9625,32 +9275,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1985321157}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!4 &1489669734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 982863596}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1489669743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652561082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &1494265118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9789,6 +9420,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 901142185}
     m_Modifications:
+    - target: {fileID: -5549459462189416440, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
       propertyPath: m_Name
       value: Gate03
@@ -9851,32 +9486,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7979483810632986655, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 293883723}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1604956522}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
---- !u!1 &1539559386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 2087040373}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1539559395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539559386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1552865252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9893,6 +9504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_02
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -9944,10 +9559,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1022911228}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &1553293000
 PrefabInstance:
@@ -9965,6 +9577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_08
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -10020,10 +9636,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1896763212}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1 &1560313368 stripped
 GameObject:
@@ -10072,6 +9685,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1001 &1569243280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10080,6 +9694,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160521544}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_03
@@ -10139,37 +9757,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1934241036}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!4 &1569889417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7979483810632986655, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
   m_PrefabInstance: {fileID: 1535925599}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1575680124 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1157649444}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1575680133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575680124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1578603318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10186,6 +9780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_10
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -10241,10 +9839,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2137714864}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &1587108248
 PrefabInstance:
@@ -10376,27 +9971,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &1604956509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
-  m_PrefabInstance: {fileID: 1535925599}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1604956522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604956509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1001 &1606479444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10527,27 +10102,12 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!4 &1608393360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
   m_PrefabInstance: {fileID: 845575460}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1608393369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137594084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &1611540830
 GameObject:
   m_ObjectHideFlags: 0
@@ -10689,22 +10249,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 443034243}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1611985333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527351937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1615238753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10725,6 +10269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_06
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -10780,10 +10328,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1820120716}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &1617204200
 PrefabInstance:
@@ -10915,6 +10460,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1001 &1634884723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10931,6 +10477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_07
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -10986,10 +10536,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1332142376}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &1648956458
 PrefabInstance:
@@ -11074,11 +10621,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2065092516}
   m_SourcePrefab: {fileID: 100100000, guid: 6f2db13307d0db84c9cfec14842c59ea, type: 3}
---- !u!1 &1650545612 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 104422596}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1697288042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11209,6 +10751,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!1001 &1697723577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11339,27 +10882,12 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!4 &1703399019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 453300034}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1703399028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957646669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1705612591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11376,6 +10904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_09
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -11431,10 +10963,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2086830877}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &1705626573
 PrefabInstance:
@@ -11452,6 +10981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_04
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -11507,10 +11040,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1361216069}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1001 &1709825388
 PrefabInstance:
@@ -11520,6 +11050,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 901142185}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_04
@@ -11579,10 +11113,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1345860060}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!1001 &1714013583
 PrefabInstance:
@@ -11714,48 +11245,12 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!4 &1714599319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 883339406}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1714599328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701350286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
---- !u!1 &1717561960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 656428857}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1717561969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717561960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &1717767173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8304457716935388527, guid: dc21cacedb4d19c4086210f25655f74f, type: 3}
@@ -11777,6 +11272,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/SG_Toon With Light
   ObjectAlpha: 1
+  newTexture: {fileID: 0}
 --- !u!1 &1725175120
 GameObject:
   m_ObjectHideFlags: 0
@@ -11918,22 +11414,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7979483810632986655, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
   m_PrefabInstance: {fileID: 221776544}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1725915904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234121824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1731862489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12064,27 +11544,12 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!4 &1733650225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 104422596}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1733650234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650545612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &1742595588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12101,6 +11566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_08
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.909091
@@ -12156,10 +11625,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1943660212}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1 &1755613236
 GameObject:
@@ -12851,32 +12317,12 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!4 &1809868176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 374051535}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1820120707 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1615238753}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1820120716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820120707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &1844015074
 GameObject:
   m_ObjectHideFlags: 0
@@ -12994,32 +12440,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &1851618343 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 374051535}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1851618352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851618343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
---- !u!1 &1855527191 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1742595588}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1866265712
 GameObject:
   m_ObjectHideFlags: 0
@@ -13107,27 +12527,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &1876002759 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 870943475}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1876002768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876002759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1001 &1883469378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13227,6 +12627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -13282,74 +12686,23 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 409269999}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!4 &1893943004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 36318001}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1893943013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144777067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!4 &1896763203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 1553293000}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1896763212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018993436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!4 &1899231487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
   m_PrefabInstance: {fileID: 826377082}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1899231496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755749952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &1910513857
 GameObject:
   m_ObjectHideFlags: 0
@@ -13534,27 +12887,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922226178}
   m_CullTransparentMesh: 1
---- !u!1 &1934241027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 1569243280}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1934241036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934241027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!4 &1936080902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8262981891034645979, guid: a49c5a67a4bb1644286be287719873ef, type: 3}
@@ -13648,43 +12980,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 1742595588}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1943660212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855527191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!4 &1985321148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
   m_PrefabInstance: {fileID: 1483080903}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1985321157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959622983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &2001497986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b5ae24602794534a984c2bd1a162210, type: 3}
@@ -13732,27 +13032,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &2006376717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-  m_PrefabInstance: {fileID: 320164352}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2006376726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006376717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 04a6da7263fb0224095ae78cc917d023, type: 3}
 --- !u!1001 &2011829629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13815,43 +13095,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
   m_PrefabInstance: {fileID: 1445241388}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2027088762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396187828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!4 &2028915942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 683987206}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2028915951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367462639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &2031350733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13868,6 +13116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -13919,32 +13171,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1204058059}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!4 &2039929802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7615220583014043773, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
   m_PrefabInstance: {fileID: 287011083}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2039929811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935229015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1001 &2045791886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13953,6 +13186,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 716394637}
     m_Modifications:
+    - target: {fileID: 2293225921709000005, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
       propertyPath: m_Name
       value: MeshFence2_02
@@ -14012,10 +13249,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6354078602999656514, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1018942979}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dca833f14577fc46870b3ffe4a313ea, type: 3}
 --- !u!1 &2048390542
 GameObject:
@@ -14130,6 +13364,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 761997259}
     m_Modifications:
+    - target: {fileID: -5549459462189416440, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
       propertyPath: m_Name
       value: Gate01
@@ -14185,32 +13423,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2197620380785463690, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1424520456}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
 --- !u!4 &2063698312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7979483810632986655, guid: a3c449c80e5138946bc1c34f9dd7b0cc, type: 3}
   m_PrefabInstance: {fileID: 1028057906}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2063698325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435047423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1 &2065092511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f2db13307d0db84c9cfec14842c59ea, type: 3}
@@ -14258,27 +13477,7 @@ MonoBehaviour:
   _shaderName: Unlit/UnlitTransparent
   _shaderNameChange: Shader Graphs/ArnoldStandardSurface
   ObjectAlpha: 1
---- !u!1 &2086830868 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1705612591}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2086830877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086830868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
+  newTexture: {fileID: 2800000, guid: 5ccfaed8b8d05e043ab8243fc2284855, type: 3}
 --- !u!1001 &2087040373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14295,6 +13494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeshFence1_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8258844422996153069, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
+      propertyPath: newTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ca94e88c35119b24591251b735dd682e, type: 3}
     - target: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90909094
@@ -14350,10 +13553,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1539559395}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
 --- !u!1 &2129462043
 GameObject:
@@ -14458,48 +13658,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &2137714855 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8120131444486827212, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
-  m_PrefabInstance: {fileID: 1578603318}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2137714864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137714855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!4 &2139876596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8791019334969504036, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
   m_PrefabInstance: {fileID: 801468447}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2139876605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084757525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697a95c7df5d3d48af0742589555f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  _shaderName: Unlit/UnlitTransparent
-  _shaderNameChange: Universal Render Pipeline/Lit
-  ObjectAlpha: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
