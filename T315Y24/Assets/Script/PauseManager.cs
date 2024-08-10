@@ -27,19 +27,18 @@ public class CPauseManager : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.P))
         {
             m_AudioSource.PlayOneShot(SE_Pause);    //SEçƒê∂
-            if(!m_bPause) m_bPause = true;
-            else m_bPause = false;
-        }
-
-        if (m_bPause == true)
-        {
-            panel.SetActive(true);
-            Time.timeScale = 0;
-        }
-        else
-        {
-            panel.SetActive(false);
-            Time.timeScale = 1;
+            if (!m_bPause)
+            {
+                m_bPause = true;
+                panel.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                m_bPause = false;
+                panel.SetActive(false);
+                Time.timeScale = 1;
+            }
         }
     }
 }
