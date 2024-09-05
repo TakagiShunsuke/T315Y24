@@ -18,6 +18,7 @@ D
 _M09
 D
 05:入力で進める/戻す機能追加:takagi
+06:背景対応:takagi
 =====*/
 
 //＞名前空間宣言
@@ -63,6 +64,7 @@ public class CTutorial : CMonoSingleton<CTutorial>
     [SerializeField, Tooltip("入力：次へ")] private KeyAndButton m_FrontKey; //次のTipsを見る
     [SerializeField, Tooltip("入力：戻る")] private KeyAndButton m_BackKey;  //前のTipsを見る
     [SerializeField, Tooltip("入力：終了")] private KeyAndButton m_FinishKey;   //終了を選択
+    [SerializeField, Tooltip("背景")] private GameObject m_BG; //チュートリアル背景
     [SerializeField, Tooltip("ヒント画像")] private List<Sprite> m_Tips = new List<Sprite>(); //チュートリアル画像
     private int m_nTipsIdx = 0;  //チュートリアル画像の何番目を表示しているか
     [SerializeField, Tooltip("画像表示場所")] private Image m_Image; //チュートリアル画像表示場所
@@ -105,6 +107,10 @@ public class CTutorial : CMonoSingleton<CTutorial>
                 m_Image.SetNativeSize();    //画像サイズに合わせる
             }
             m_Image.gameObject.SetActive(false);    //まだ使わない
+        }
+        if(m_BG)
+        {
+            m_BG.gameObject.SetActive(false);   //まだ使わない
         }
     }
 
@@ -168,6 +174,7 @@ public class CTutorial : CMonoSingleton<CTutorial>
         {
             Destroy(m_TMP); //テキスト表示は終了
             m_Image.gameObject.SetActive(true); //画像を表示
+            m_BG.gameObject.SetActive(true);    //背景を表示
             m_eState = E_STATE.E_STATE_PLAYING; //チュートリアル開始
         }
         else if (Input.GetKeyUp(m_NoKey.m_Key) || Input.GetButtonUp(m_NoKey.m_ButtonName))  //いいえの入力
