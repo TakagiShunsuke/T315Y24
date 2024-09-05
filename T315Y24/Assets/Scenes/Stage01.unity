@@ -13734,6 +13734,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: m_BackKey.m_Key
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: m_FrontKey.m_Key
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: m_Tips.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: 'm_Tips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 6bb011dbd038d0842bfeec7352f2ef28, type: 3}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: 'm_Tips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 931ec2a6de5f75f42867177ae35404ef, type: 3}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: 'm_Tips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 93345bf0f2e8c784a90fb87cd0c255b0, type: 3}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: 'm_Tips.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: a46cf377dce6b4d44aa9db345e7515c2, type: 3}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: 'm_Tips.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 72ce835f8358ba3479792cdea6b2b3a5, type: 3}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: 'm_Tips.Array.data[5]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 12af379bfc9cb8c40b0f1e8502903d10, type: 3}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: m_BackKey.m_ButtonName
+      value: Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
+      propertyPath: m_FrontKey.m_ButtonName
+      value: Right
+      objectReference: {fileID: 0}
     - target: {fileID: 5516135372929252367, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: m_Name
       value: Tutorial

@@ -15,6 +15,9 @@ __Y24
 _M08
 D
 10:プログラム作成:takagi
+_M09
+D
+05:入力で進める/戻す機能追加:takagi
 =====*/
 
 //＞名前空間宣言
@@ -57,6 +60,8 @@ public class CTutorial : CMonoSingleton<CTutorial>
     [SerializeField, Tooltip("入力：はい")] private KeyAndButton m_YesKey;   //はいを選択
     [SerializeField, Tooltip("入力：いいえ")] private KeyAndButton m_NoKey;   //いいえを選択
     [Header("チュートリアル用")]
+    [SerializeField, Tooltip("入力：次へ")] private KeyAndButton m_FrontKey; //次のTipsを見る
+    [SerializeField, Tooltip("入力：戻る")] private KeyAndButton m_BackKey;  //前のTipsを見る
     [SerializeField, Tooltip("入力：終了")] private KeyAndButton m_FinishKey;   //終了を選択
     [SerializeField, Tooltip("ヒント画像")] private List<Sprite> m_Tips = new List<Sprite>(); //チュートリアル画像
     private int m_nTipsIdx = 0;  //チュートリアル画像の何番目を表示しているか
@@ -67,6 +72,7 @@ public class CTutorial : CMonoSingleton<CTutorial>
     private float m_fTimer = 0.0f;   //tips切換用タイマー
     private bool m_bVisiableFrontImage = true;  //手前の画像で表示しているか
     private E_STATE m_eState = E_STATE.E_STATE_NONE;   // 自身の状態
+    private bool m_bFading = false; //フェーズ切り替え中か
 
 
     /*＞初期化関数
@@ -189,21 +195,13 @@ public class CTutorial : CMonoSingleton<CTutorial>
         float _OldTime = m_fTimer;  //タイマーのカウント退避
         m_fTimer += Time.unscaledDeltaTime; //タイマー進行
 
-        //＞表示切替
-        if (m_fTimer > m_fDrawTime) //表示時間を超過している
+        //＞画像切換
+        if (m_bFading)   //初回
         {
             //＞変数宣言
-            bool _bIsFirst = false;  //初回超過か否か
             float _fNewAlpha = 0.0f;    //透明度変更用
             Image _Old = null; //切換前の画像
             Image _New = null; //切換後の画像
-
-            //＞初回判定
-            if (_OldTime < m_fDrawTime)  //前回は超過が見られない
-            {
-                _bIsFirst = true;    //初回更新である
-                m_nTipsIdx = m_nTipsIdx + 1 < m_Tips.Count ? m_nTipsIdx + 1 : 0;    //画像番号をリスト内で循環
-            }
 
             //＞新旧判定
             if (m_bVisiableFrontImage) //上の画像が表示されている
@@ -217,13 +215,6 @@ public class CTutorial : CMonoSingleton<CTutorial>
                 _New = m_Image; //上が新しい
             }
 
-            //＞画像切換
-            if (_bIsFirst)   //初回
-            {
-                _New.gameObject.SetActive(true);    //遷移先画像可視化
-                _New.sprite = m_Tips[m_nTipsIdx];    //次の画像を下に表示
-                _New.SetNativeSize();    //画像サイズに合わせる
-            }
             _fNewAlpha = Mathf.Max(0.0f, _Old.color.a - Time.unscaledDeltaTime / m_fSwitchSpeed);  //透明度をfpsと速度に比例して減少
             if (Mathf.Approximately(_fNewAlpha, 0.0f))   //透明度がほぼ0
             {
@@ -232,20 +223,78 @@ public class CTutorial : CMonoSingleton<CTutorial>
                 _Old.gameObject.SetActive(false);    //見えなくしておく
                 m_fTimer = 0.0f;    //タイマーリセット
                 m_bVisiableFrontImage ^= true;  //表示されている画像が逆転した
+                m_bFading = false;  // フェーズ切り替えが完了した
             }
             _Old.color = new Color(m_Image.color.r, m_Image.color.g, m_Image.color.b, _fNewAlpha);   //透明度更新(減少)
             _New.color = new Color(m_Image.color.r, m_Image.color.g, m_Image.color.b, 1.0f - _fNewAlpha);   //透明度更新(増加)
         }
+        else
+        {
+            //＞時間による表示切替
+            if (m_fTimer > m_fDrawTime) //表示時間を超過している
+            {
+                //＞初回判定
+                if (_OldTime < m_fDrawTime)  //前回は超過が見られない
+                {
+                    m_nTipsIdx = m_nTipsIdx + 1 < m_Tips.Count ? m_nTipsIdx + 1 : 0;    //画像番号をリスト内で循環
+                    ChangeTips();
+                }
+            }
+
+            //＞入力による表示切替
+            if (Input.GetKeyUp(m_FrontKey.m_Key) || Input.GetButtonUp(m_FrontKey.m_ButtonName)) //進める入力
+            {
+                m_nTipsIdx = m_nTipsIdx + 1 < m_Tips.Count ? m_nTipsIdx + 1 : 0;    //画像番号を進める
+                ChangeTips();
+            }
+            if (Input.GetKeyUp(m_BackKey.m_Key) || Input.GetButtonUp(m_BackKey.m_ButtonName)) //戻る入力
+            {
+                m_nTipsIdx = m_nTipsIdx - 1 < 0 ? m_Tips.Count - 1 : m_nTipsIdx - 1;    //画像番号を戻す
+                ChangeTips();
+            }
+        }
     }
 
-    /*＞終了関数
+
+    /*＞チュートリアル表示切替関数
     引数：なし
     ｘ
     戻値：なし
     ｘ
-    概要：自身の除去処理
+    概要：チュートリアルの表示切替部分
     */
-    private void Finish()
+    private void ChangeTips()
+    {
+        //＞変数宣言
+        Image _New = null; //切換後の画像
+
+        //＞新旧判定
+        if (m_bVisiableFrontImage) //上の画像が表示されている
+        {
+            _New = m_ImageClone; //下が新しい
+        }
+        else
+        { //下の画像が表示されている
+            _New = m_Image; //上が新しい
+        }
+
+        //＞画像切換
+        _New.gameObject.SetActive(true);    //遷移先画像可視化
+        _New.sprite = m_Tips[m_nTipsIdx];    //次の画像を下に表示
+        _New.SetNativeSize();    //画像サイズに合わせる
+        
+        //＞フェーズ切り替え開始
+        m_bFading = true;   //フェードするときに参照される値
+    }
+
+/*＞終了関数
+引数：なし
+ｘ
+戻値：なし
+ｘ
+概要：自身の除去処理
+*/
+private void Finish()
     {
         //＞時間停止解除
         Time.timeScale = 1.0f; //時間が進行しない
