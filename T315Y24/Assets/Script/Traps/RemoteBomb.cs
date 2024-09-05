@@ -137,7 +137,7 @@ public class RemoteBomb : CTrap
                 return; //処理しない
             }
 
-            if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Explosion") || Input.GetKeyDown(KeyCode.RightShift) || (Input.GetKeyDown(KeyCode.LeftShift)) & m_bUse)
+            if ((Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Explosion") || Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift)) && m_bUse)
             {//使える状態なら入る
                 m_audioSource.PlayOneShot(SE_ExpTrap);  //爆発SE再生
                 SetCoolTime();              //クールタイムを設定
