@@ -22,6 +22,7 @@ D
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -58,12 +59,20 @@ public class CGameOver : MonoBehaviour
             //    //inkTransition.StartTransition();
 
             //}
+            TriggerGameOver();
             StartCoroutine(TransitionCoroutine());
             //SceneManager.LoadScene("ResultScene");    // ResultSceneへ遷移
         }
     }
-
-    private IEnumerator TransitionCoroutine()
+    public void TriggerGameOver()
+    {
+        IFeatureGameOver[] gameOverObjects = FindObjectsOfType<MonoBehaviour>().OfType<IFeatureGameOver>().ToArray();
+        foreach (IFeatureGameOver obj in gameOverObjects)
+        {
+            obj.OnGameOver();
+        }
+    }
+        private IEnumerator TransitionCoroutine()
     {
         float currentTime = 0.0f;   // 現時刻
         while (currentTime < fadeTime) // フェード時間より小さかったら行う

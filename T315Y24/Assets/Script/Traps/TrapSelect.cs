@@ -34,10 +34,11 @@ using static CFeatures;
 using static InputDeviceManager;
 
 //＞クラス定義
-public class CTrapSelect : CMonoSingleton<CTrapSelect>
+public class CTrapSelect : CMonoSingleton<CTrapSelect>, IFeatureGameOver
 {
     //＞変数宣言
     private GameObject player;
+    private bool isGameOver = false;                        //ゲームオーバー時操作不能にする用
 
     //＞構造体定義
     //[Serializable]
@@ -121,6 +122,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
     */
     protected override void Update()
     {
+        if (isGameOver) return;     //ゲームオーバーの時、下の処理をおこなわない。
         ////＞保全
         //if(TrapComps != null && m_TrapInfo != null) //ヌルチェック
         //{
@@ -197,7 +199,7 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
             //}
         }
 
-        if (m_bSelect)
+        if (m_bSelect && !(Time.timeScale==0.0f))
         {//選択可能なら
             Select();   //選択
 
@@ -349,5 +351,17 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>
         //    return false;                   // 選択不可
         //}
         
+    }
+
+    /*＞操作不能関数
+   引数：なし
+   ｘ
+   戻値：なし
+   ｘ
+   概要：ゲームオーバー時GemeOverスクリプトから呼び出される
+   */
+    public void OnGameOver()
+    {
+        isGameOver = true;
     }
 }
