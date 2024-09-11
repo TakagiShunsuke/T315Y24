@@ -206,7 +206,7 @@ public class CTutorial : CMonoSingleton<CTutorial>
         if (m_bFading)   //初回
         {
             //＞変数宣言
-            float _fNewAlpha = 0.0f;    //透明度変更用
+            float _fNewAlpha = 1.0f;    //透明度変更用
             Image _Old = null; //切換前の画像
             Image _New = null; //切換後の画像
 
@@ -286,8 +286,10 @@ public class CTutorial : CMonoSingleton<CTutorial>
         }
 
         //＞画像切換
-        _New.gameObject.SetActive(true);    //遷移先画像可視化
+        _New.color = new Color(m_Image.color.r, m_Image.color.g, m_Image.color.b,0.0f);
         _New.sprite = m_Tips[m_nTipsIdx];    //次の画像を下に表示
+        _New.gameObject.SetActive(true);    //遷移先画像可視化
+        
         _New.SetNativeSize();    //画像サイズに合わせる
         
         //＞フェーズ切り替え開始
