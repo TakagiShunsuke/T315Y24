@@ -37,7 +37,7 @@ using UnityEngine.EventSystems;
 using static InputDeviceManager;
 
 //＞クラス定義
-public class CPlayerScript : MonoBehaviour, IDamageable
+public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
 {
     //＞変数宣言
     private Rigidbody m_Rb;      // Rigidbodyを追加
@@ -45,6 +45,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     [SerializeField, Tooltip("正面角度[°]")] private double m_dFrontAngle;  //xz平面上で正面方向の角度
     [SerializeField, Tooltip("速度[m/s]")] private float m_fSpeed; //プレイヤーの移動速度を設定
     [SerializeField, Tooltip("HP")] private double m_dHp;   // HP
+    private bool isGameOver = false;                        //ゲームオーバー時操作不能にする用
     [Header("ダッシュ")]
     [SerializeField, Tooltip("リキャスト時間")] private double m_unDashInterval;   //ダッシュリキャスト時間
     private double m_dCntDwnInvicibleTime = 0.0d;  //無敵時間カウント用
@@ -114,6 +115,10 @@ public class CPlayerScript : MonoBehaviour, IDamageable
     */
     private void Update()   //キーが押されたときに更新を行う
     {
+        if (isGameOver) return;     //ゲームオーバーの時、下の処理をおこなわない。
+                                    //仁枝君へ
+                                    //あれだったらいふでかこんでもいいお
+
         Vector3 moveDirection = Vector3.zero; // 移動方向の初期化
                                               //     Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));    //プレイヤーの向きを変えるベクトル
                                               //  Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal") + Input.GetAxis("JoystickHorizontal"), 0, Input.GetAxis("Vertical") + Input.GetAxis("JoystickVertical"));    //プレイヤーの向きを変えるベクトル
@@ -143,7 +148,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         else
         {
             // Runアニメーションを停止しIdleアニメーションを再生
-            m_Animator.SetBool("isRun", false); 
+            m_Animator.SetBool("isRun", false);
         }
 
         // 斜め移動
@@ -171,7 +176,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         {
             m_dCntDwnDshInterval -= Time.deltaTime;   //時間をカウント
         }
-        if(m_dCntDwnDshMotionPlayTime > 0.0d)
+        if (m_dCntDwnDshMotionPlayTime > 0.0d)
         {
             m_dCntDwnDshMotionPlayTime -= Time.deltaTime;   // 時間をカウント
             m_Animator.SetBool("isRun", false);    // Dodgeアニメーションを再生
@@ -215,7 +220,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
                     //Debug.Log("Keyboardが使用されています");
                     if (Input.GetKeyDown(m_DushKey)) //ダッシュ入力
                     {
-                        
+
                         Dash(); //ダッシュする
                     }
                     break;
@@ -253,7 +258,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             }
         }
 
-        
+
     }
 
     /*＞被ダメージ関数
@@ -274,7 +279,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
         //＞ダメージ計算
         m_dHp -= _dDamageVal;    //HP減少
         CntDwnInvicibleTime = m_dDamagedInvicibleTime;  //無敵時間のカウントをリセットする
-        
+
         m_AudioSource.PlayOneShot(SE_Damage);   // 被ダメ時SE追加
     }
 
@@ -322,7 +327,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             m_Rb.transform.position = _vGo;  //即座に移動を行う
 
             m_AudioSource.PlayOneShot(SE_Dash); // ダッシュ時SE再生
-            
+
             m_Animator.SetBool("isDodge", true);    // Dodgeアニメーションを再生
             m_Animator.SetBool("isRun", false);    // Runアニメーションを停止
 
@@ -331,5 +336,17 @@ public class CPlayerScript : MonoBehaviour, IDamageable
             m_dCntDwnDshMotionPlayTime = m_dDshMotionPlayTime;   //時間をカウント
             CntDwnInvicibleTime = m_dDushInvicibleTime;  //無敵時間のカウントをリセットする
         }
+    }
+
+    /*＞操作不能関数
+    引数：なし
+    ｘ
+    戻値：なし
+    ｘ
+    概要：ゲームオーバー時GemeOverスクリプトから呼び出される
+    */
+    public void OnGameOver()
+    {
+        isGameOver = true;
     }
 }
