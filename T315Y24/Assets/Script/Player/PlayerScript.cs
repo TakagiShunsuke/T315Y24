@@ -64,6 +64,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
     private double m_dCntDwnDshMotionPlayTime = 0.0d;  //回避モーション再生時間カウントダウン用
     private Animator m_Animator;   // Animatorを追加
 
+    public GameObject DashUI;
 
     //＞プロパティ定義
     private double CntDwnInvicibleTime
@@ -104,6 +105,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
         m_Rb = GetComponent<Rigidbody>(); //Rigidbodyコンポーネントを追加
         m_AudioSource = GetComponent<AudioSource>();    //AudioSourceコンポーネントを追加
         m_Animator = GetComponent<Animator>();
+        DashUI.SetActive(true);
     }
 
     /*＞移動処理関数
@@ -115,6 +117,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
     */
     private void Update()   //キーが押されたときに更新を行う
     {
+        DashUI.SetActive(true);
         if (isGameOver) return;     //ゲームオーバーの時、下の処理をおこなわない。
                                     //仁枝君へ
                                     //あれだったらいふでかこんでもいいお
@@ -169,11 +172,13 @@ public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
         //＞検査
         if (CntDwnInvicibleTime > 0.0d)   //無敵状態の時
         {
+            DashUI.SetActive(false);
             //＞カウントダウン
             m_dCntDwnInvicibleTime -= Time.deltaTime;   //時間をカウント
         }
         if (m_dCntDwnDshInterval > 0.0d)
         {
+            DashUI.SetActive(false);
             m_dCntDwnDshInterval -= Time.deltaTime;   //時間をカウント
         }
         if (m_dCntDwnDshMotionPlayTime > 0.0d)
@@ -298,7 +303,7 @@ public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
             //＞ダッシュ不可能
             return;     //処理中断
         }
-
+        //DashUI.SetActive(false);
         //＞変数宣言・初期化
         Vector3 _vFront = new((float)Math.Cos(Mathf.Deg2Rad * (-transform.eulerAngles.y + m_dFrontAngle)), 0.0f,
             (float)Math.Sin(Mathf.Deg2Rad * (-transform.eulerAngles.y + m_dFrontAngle)));  //正面方向のベクトル  ※y軸回転の方向は座標系と逆方向

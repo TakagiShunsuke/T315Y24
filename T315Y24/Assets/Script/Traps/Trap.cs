@@ -52,6 +52,8 @@ public class CTrap : MonoBehaviour
     private GameObject player;  //player格納用
     public Material material; // 半透明にしたいマテリアル
 
+    public GameObject ButtonUI;
+
     //＞プロパティ定義
     virtual public int Cost { get; protected set; }//コスト
     virtual public Sprite ImageSprite { get; protected set; } //UIアセットを画像に変換したもの
@@ -81,6 +83,8 @@ public class CTrap : MonoBehaviour
        Transparent transparent = GetComponent<Transparent>();
         transparent.color.a = 0.8f;
         transparent.ClearMaterialInvoke();
+
+        ButtonUI.SetActive(false);
         
     }
 
@@ -93,6 +97,7 @@ public class CTrap : MonoBehaviour
     */
     public bool Check(Collision _collision,bool _Use)
     {
+        //ButtonUI.SetActive(false);
         if (_collision.gameObject.CompareTag("Enemy") && m_bUse && !m_bMove)
         {// Enemyタグがついている＆地雷使用可能なら
             SetCoolTime();      //クールタイムをセット
@@ -111,9 +116,11 @@ public class CTrap : MonoBehaviour
     */
     public virtual void SetCheck(Collision collision)
     {
+        //ButtonUI.SetActive(m_bSetting);
         if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
         {//当たったのが建物か罠だったら
             m_bSetting =false;      //設置不可
+            ButtonUI.SetActive(m_bSetting);
         }
         
     }
@@ -126,9 +133,11 @@ public class CTrap : MonoBehaviour
     */
     public virtual void OutCheck(Collision collision)
     {
+        //ButtonUI.SetActive(m_bSetting);
         if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Trap"))
         {//当たらなくなったのが建物か罠だったら
             m_bSetting = true;  //設置可能
+            ButtonUI.SetActive(m_bSetting);
         }
     }
 
@@ -185,7 +194,7 @@ public class CTrap : MonoBehaviour
         Vector3 pos = transform.position;   //現在の位置を取得
         pos.y = m_fPosY;                    //ｙのみ変更
         transform.position = pos;           //変更後を代入
-
+        ButtonUI.SetActive(m_bMove);
     }
 
     /*＞クールタイムセット関数
@@ -200,6 +209,7 @@ public class CTrap : MonoBehaviour
         m_dCoolTime = m_dInterval;                  // クールタイムセット
         m_CoolDownText.gameObject.SetActive(true);  //Textを表示
         m_bUse=false;                               //使用不可
+        ButtonUI.SetActive(m_bUse);
     }
 
     /*＞罠設置関数
@@ -213,9 +223,11 @@ public class CTrap : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Decision")||Input.GetKeyDown(KeyCode.Return)) && m_bSetting && m_bMove)
         {//置ける条件だったら入る
+            
             m_audioSource.PlayOneShot(SE_SetTrap);  //配置SE再生
             m_bMove = false;                        //場所固定のためfalseに
-
+            ButtonUI.SetActive(m_bMove);
+            ButtonUI.SetActive(!m_bUse);
             //配置する罠を選択可能に
             GameObject TrapManager;                 //"TrapManager"格納用　
             CTrapSelect TrapSelect;                 //CTrapSelect格納用
