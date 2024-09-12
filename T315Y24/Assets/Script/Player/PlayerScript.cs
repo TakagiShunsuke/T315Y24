@@ -281,6 +281,11 @@ public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
         CntDwnInvicibleTime = m_dDamagedInvicibleTime;  //無敵時間のカウントをリセットする
 
         m_AudioSource.PlayOneShot(SE_Damage);   // 被ダメ時SE追加
+
+        if (m_dHp <= 0)
+        {
+            m_Animator.SetBool("isDeath", true);    // Deathアニメーションを再生
+        }
     }
 
     /*＞ダッシュ関数
