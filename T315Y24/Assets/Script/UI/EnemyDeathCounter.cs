@@ -41,7 +41,7 @@ public class EnemyDeathCounter : MonoBehaviour
     */
     void Start()
     {
-        DeathCount_txt.SetText("討伐数:0体 ");     //初期化
+        DeathCount_txt.SetText("KILL COUNT : 0 ");     //初期化
     }
 
     /*＞カウント表示関数
@@ -53,6 +53,6 @@ public class EnemyDeathCounter : MonoBehaviour
    */
     public void DisplayEnemyDeathCounter()
     {
-        DeathCount_txt.SetText("討伐数:"+ CEnemy.m_nDeadEnemyCount.ToString() + "体");    // 討伐数表示
+        DeathCount_txt.SetText("KILL COUNT : "+ CEnemy.m_nDeadEnemyCount.ToString());    // 討伐数表示
     }
 }
