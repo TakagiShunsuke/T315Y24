@@ -13388,7 +13388,7 @@ PrefabInstance:
     - target: {fileID: 6662989427634497333, guid: aa2eb24c56e21dd469dc8500f29ab545, type: 3}
       propertyPath: m_ExplosionEffect
       value: 
-      objectReference: {fileID: 11400000, guid: 2c21f83c3a7b15543b6ded8e7ec190e0, type: 2}
+      objectReference: {fileID: 11400000, guid: 5c983c513c0180b49a07c49b5e989da3, type: 2}
     - target: {fileID: 7100013267972849116, guid: aa2eb24c56e21dd469dc8500f29ab545, type: 3}
       propertyPath: ButtonUI
       value: 
@@ -13400,7 +13400,7 @@ PrefabInstance:
     - target: {fileID: 7100013267972849116, guid: aa2eb24c56e21dd469dc8500f29ab545, type: 3}
       propertyPath: m_ExplosionEffect
       value: 
-      objectReference: {fileID: 11400000, guid: 3ce8004e8c767284b96859b259d7202f, type: 2}
+      objectReference: {fileID: 11400000, guid: 4ce51c55b11e1454cbfdb07f19819bef, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
