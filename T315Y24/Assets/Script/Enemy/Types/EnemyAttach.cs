@@ -44,7 +44,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 //＞クラス定義
-public sealed class CEnemyAttach : CEnemy, IFeatureMine
+public sealed class CEnemyAttach : CEnemy, IFeatureMine, IFeatureGameOver
 {
     //＞変数宣言
     [Header("ステータス")]
@@ -62,6 +62,9 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine
     private Animator m_Animator;
     private double m_dAnimFinCnt = 0.0d;    // アニメーション終了判定用
     private double m_dAnimFinTime = 0.3d;   // アニメーション終了時間
+
+    private bool isGameOver = false;                        //ゲームオーバー時操作不能にする用
+
 
     /*＞初期化関数
     引数１：なし
@@ -114,8 +117,15 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine
     */
     override protected void FixedUpdate()
     {
-        //＞カウントダウン
-        if(m_dAtkCoolTime > 0.0d)   //クールダウン中
+        if (isGameOver)
+        {
+            m_Animator.SetBool("isAttack", false);
+            //待機モーションをここに
+
+            return;
+        }
+            //＞カウントダウン
+            if (m_dAtkCoolTime > 0.0d)   //クールダウン中
         {
             m_dAtkCoolTime -= Time.fixedDeltaTime;  //クールダウン減少
         }
@@ -216,5 +226,9 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine
         EnemyDeathCounter = Text.GetComponent<EnemyDeathCounter>();
 
         EnemyDeathCounter.DisplayEnemyDeathCounter();
+    }
+    public void OnGameOver()
+    {
+        isGameOver = true;
     }
 }

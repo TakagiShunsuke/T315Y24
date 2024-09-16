@@ -20,17 +20,19 @@ D
 24:リファクタリング:takagi
 =====*/
 //＞名前空間宣言
+using sfw.net;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 //＞クラス定義
-public class CNavigationPlayer : MonoBehaviour
+public class CNavigationPlayer : MonoBehaviour, IFeatureGameOver
 {
     //＞変数宣言
     [SerializeField] private GameObject player;
     NavMeshAgent agent;
+    private bool isGameOver = false;                        //ゲームオーバー時操作不能にする用
 
     /*＞初期化関数
     引数１：なし
@@ -54,6 +56,15 @@ public class CNavigationPlayer : MonoBehaviour
     */
     private void Update()
     {
+        if (isGameOver)
+        {
+            Destroy(agent);
+            return;
+        }
         agent.destination = player.transform.position;
+    }
+    public void OnGameOver()
+    {
+        isGameOver = true;
     }
 }

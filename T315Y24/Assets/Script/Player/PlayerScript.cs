@@ -118,11 +118,16 @@ public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
     private void Update()   //キーが押されたときに更新を行う
     {
         DashUI.SetActive(true);
-        if (isGameOver) return;     //ゲームオーバーの時、下の処理をおこなわない。
-                                    //仁枝君へ
-                                    //あれだったらいふでかこんでもいいお
+        if (isGameOver)
+        {
+            m_fSpeed = 0.0f;
+            m_Animator.SetBool("isRun", false);
+            m_Animator.SetBool("isDeath", true);    // Deathアニメーションを再生
 
-        Vector3 moveDirection = Vector3.zero; // 移動方向の初期化
+            return;     //ゲームオーバーの時、下の処理をおこなわない。
+        }
+
+            Vector3 moveDirection = Vector3.zero; // 移動方向の初期化
                                               //     Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));    //プレイヤーの向きを変えるベクトル
                                               //  Vector3 target_dir = new Vector3(Input.GetAxis("Horizontal") + Input.GetAxis("JoystickHorizontal"), 0, Input.GetAxis("Vertical") + Input.GetAxis("JoystickVertical"));    //プレイヤーの向きを変えるベクトル
                                               // キーボードの入力を取得
@@ -287,10 +292,10 @@ public class CPlayerScript : MonoBehaviour, IDamageable, IFeatureGameOver
 
         m_AudioSource.PlayOneShot(SE_Damage);   // 被ダメ時SE追加
 
-        if (m_dHp <= 0)
-        {
-            m_Animator.SetBool("isDeath", true);    // Deathアニメーションを再生
-        }
+        //if (m_dHp <= 0)
+        //{
+        //    m_Animator.SetBool("isDeath", true);    // Deathアニメーションを再生
+        //}
     }
 
     /*＞ダッシュ関数
