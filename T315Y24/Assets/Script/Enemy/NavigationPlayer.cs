@@ -20,7 +20,6 @@ D
 24:リファクタリング:takagi
 =====*/
 //＞名前空間宣言
-using sfw.net;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
