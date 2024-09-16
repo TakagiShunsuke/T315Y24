@@ -119,8 +119,8 @@ public sealed class CEnemyAttach : CEnemy, IFeatureMine, IFeatureGameOver
     {
         if (isGameOver)
         {
-            m_Animator.SetBool("isAttack", false);
-            //待機モーションをここに
+            m_Animator.SetBool("isAttack", false);  // Attackアニメーションを終了 
+            m_Animator.SetBool("isMove", false);    // Moveアニメーションを終了
 
             return;
         }
