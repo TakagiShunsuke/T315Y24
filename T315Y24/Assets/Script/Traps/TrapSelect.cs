@@ -276,20 +276,26 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>, IFeatureGameOver
     {
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetButtonDown("Right"))
         {
-            m_AudioSource.PlayOneShot(SE_Select);    // SE再生
-            ChangeSize(100);                // サイズを変更
-            m_nNum += 1;                    // 次の番号
-            // 罠の種類よりも大きくなったら最大に戻す
-            if (m_nNum > m_TrapInfo.Length - 1) m_nNum = m_TrapInfo.Length - 1; 
-            ChangeSize(200);                // サイズを変更
+            if (m_nNum < m_TrapInfo.Length - 1)
+            {
+                m_AudioSource.PlayOneShot(SE_Select);    // SE再生
+                ChangeSize(100);                // サイズを変更
+                m_nNum += 1;                    // 次の番号
+                                                // 罠の種類よりも大きくなったら最大に戻す
+                //if (m_nNum > m_TrapInfo.Length - 1) m_nNum = m_TrapInfo.Length - 1;
+                ChangeSize(200);                // サイズを変更
+            }
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetButtonDown("Left"))
         {
-            m_AudioSource.PlayOneShot(SE_Select);    // SE再生
-            ChangeSize(100);                // サイズを変更
-            m_nNum -= 1;                    // 次の番号
-            if (m_nNum < 0) m_nNum = 0;     // 負の数にならないように
-            ChangeSize(200);                // サイズを変更
+            if (m_nNum > 0)
+            {
+                m_AudioSource.PlayOneShot(SE_Select);    // SE再生
+                ChangeSize(100);                // サイズを変更
+                m_nNum -= 1;                    // 次の番号
+                //if (m_nNum < 0) m_nNum = 0;     // 負の数にならないように
+                ChangeSize(200);                // サイズを変更
+            }
         }
     }
 
