@@ -73,6 +73,9 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>, IFeatureGameOver
     [SerializeField,Tooltip("罠選択時のSE")] private AudioClip SE_Select;  // 罠選択時のSE
     [SerializeField,Tooltip("罠設置時のSE")] private AudioClip SE_Set;     // 罠設置時のSE
 
+    public GameObject drumUIChange;
+    public GameObject mineUIChange;
+
     //＞プロパティ定義
     public int HavableTrapNum => m_TrapInfo.Length;    //持てる罠数 = 表示情報の用意数
     private CTrap[] TrapComps { get; set; }  //罠のコンポーネント部分
@@ -105,6 +108,9 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>, IFeatureGameOver
             m_TrapInfo[_nIdx].m_CostText.gameObject.SetActive(false);  //初期Textを見せない
             m_TrapInfo[_nIdx].m_Image.gameObject.SetActive(false);  //初期Imageを見せない
         }
+
+        drumUIChange.SetActive(true);
+        mineUIChange.SetActive(false);
     }
 
     private void OnChangeDeviceTypeHandler()
@@ -282,6 +288,8 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>, IFeatureGameOver
             // 罠の種類よりも大きくなったら最大に戻す
             if (m_nNum > m_TrapInfo.Length - 1) m_nNum = m_TrapInfo.Length - 1; 
             ChangeSize(200);                // サイズを変更
+            drumUIChange.SetActive(false);
+            mineUIChange.SetActive(true);
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetButtonDown("Left"))
         {
@@ -290,6 +298,8 @@ public class CTrapSelect : CMonoSingleton<CTrapSelect>, IFeatureGameOver
             m_nNum -= 1;                    // 次の番号
             if (m_nNum < 0) m_nNum = 0;     // 負の数にならないように
             ChangeSize(200);                // サイズを変更
+            mineUIChange.SetActive(false);
+            drumUIChange.SetActive(true);
         }
     }
 
