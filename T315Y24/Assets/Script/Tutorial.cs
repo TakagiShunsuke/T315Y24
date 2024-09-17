@@ -64,6 +64,7 @@ public class CTutorial : CMonoSingleton<CTutorial>
     [SerializeField, Tooltip("入力：次へ")] private KeyAndButton m_FrontKey; //次のTipsを見る
     [SerializeField, Tooltip("入力：戻る")] private KeyAndButton m_BackKey;  //前のTipsを見る
     [SerializeField, Tooltip("入力：終了")] private KeyAndButton m_FinishKey;   //終了を選択
+    [SerializeField, Tooltip("UI")] private GameObject m_UI; //チュートリアル用UI
     [SerializeField, Tooltip("背景")] private GameObject m_BG; //チュートリアル背景
     [SerializeField, Tooltip("ヒント画像")] private List<Sprite> m_Tips = new List<Sprite>(); //チュートリアル画像
     private int m_nTipsIdx = 0;  //チュートリアル画像の何番目を表示しているか
@@ -111,6 +112,10 @@ public class CTutorial : CMonoSingleton<CTutorial>
         if(m_BG)
         {
             m_BG.gameObject.SetActive(false);   //まだ使わない
+        }
+        if(m_UI)
+        {
+            m_UI.gameObject.SetActive(false);   //まだ使わない
         }
     }
 
@@ -173,6 +178,7 @@ public class CTutorial : CMonoSingleton<CTutorial>
         if (Input.GetKeyUp(m_YesKey.m_Key) || Input.GetButtonUp(m_YesKey.m_ButtonName)) //はいの入力
         {
             Destroy(m_TMP); //テキスト表示は終了
+            m_UI.gameObject.SetActive(true);    //UIを表示
             m_Image.gameObject.SetActive(true); //画像を表示
             m_BG.gameObject.SetActive(true);    //背景を表示
             m_eState = E_STATE.E_STATE_PLAYING; //チュートリアル開始
