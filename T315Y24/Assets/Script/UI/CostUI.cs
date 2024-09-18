@@ -21,7 +21,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //＞クラス定義
-public class CostUI : MonoBehaviour
+public class CostUI : MonoBehaviour, IFeatureGameOver
 {
     //＞変数宣言
     [Header("動かすUI")]
@@ -30,15 +30,16 @@ public class CostUI : MonoBehaviour
     [SerializeField, Tooltip("コストが1増える秒数")] private float countTime = 5.0f; //コストが1増える秒数
     [Header("コスト表示")]
     [SerializeField, Tooltip("数字をだすText")] private TMP_Text Cost_txt; //表示させるテキスト(TMP)
+    private bool isGameOver = false;                        //ゲームオーバー時操作不能にする用
 
 
-     /*＞初期化関数
-    引数１：なし
-    ｘ
-    戻値：なし
-    ｘ
-    概要：インスタンス生成時に行う処理
-     */
+    /*＞初期化関数
+   引数１：なし
+   ｘ
+   戻値：なし
+   ｘ
+   概要：インスタンス生成時に行う処理
+    */
     void Start()
     {
         UIobj.fillAmount = 0.0f;                        //初期化
@@ -54,6 +55,7 @@ public class CostUI : MonoBehaviour
     */
     void Update()
     {
+        if (isGameOver) return;
         //円ゲージを動かす
         UIobj.fillAmount += 1.0f / countTime * Time.deltaTime;  //countTime(秒)の秒数で1になる
         if (UIobj.fillAmount>=1.0f)     //円ゲージが一周したら
@@ -62,5 +64,9 @@ public class CostUI : MonoBehaviour
             CTrapSelect.m_nCost++;       //コスト増加
         }
         Cost_txt.SetText($"{CTrapSelect.m_nCost}");  //コスト表示
+    }
+    public void OnGameOver()
+    {
+        isGameOver = true;
     }
 }

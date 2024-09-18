@@ -75,7 +75,7 @@ public class CGameOver : MonoBehaviour
         private IEnumerator TransitionCoroutine()
     {
         float currentTime = 0.0f;   // 現時刻
-        while (currentTime < 5.0f) // フェード時間より小さかったら行う
+        while (currentTime < 2.0f) // フェード時間より小さかったら行う
         {
             currentTime += Time.deltaTime;
             yield return null;
