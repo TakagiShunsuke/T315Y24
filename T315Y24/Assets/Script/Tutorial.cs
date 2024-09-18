@@ -140,8 +140,15 @@ public class CTutorial : CMonoSingleton<CTutorial>
         Time.timeScale = 0.0f; //時間が進行しない
 
         //＞チュートリアル確認
-        m_TMP.gameObject.SetActive(true);   //最初に使用する
-        m_eState = E_STATE.E_STATE_WAIT_INPUT; //入力を待つ
+        //m_TMP.gameObject.SetActive(true);   //最初に使用する
+        //m_eState = E_STATE.E_STATE_WAIT_INPUT; //入力を待つ
+
+        //＞チュートリアル開始
+        //Destroy(m_TMP); //テキスト表示は終了
+        m_UI.gameObject.SetActive(true);    //UIを表示
+        m_Image.gameObject.SetActive(true); //画像を表示
+        m_BG.gameObject.SetActive(true);    //背景を表示
+        m_eState = E_STATE.E_STATE_PLAYING; //チュートリアル開始
     }
 
     /*＞更新関数
