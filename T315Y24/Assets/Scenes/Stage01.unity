@@ -15084,51 +15084,51 @@ PrefabInstance:
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 07e0dc2417598cc4396281b80ae0cc02, type: 3}
+      objectReference: {fileID: 21300000, guid: fc21d12d98dd25e4ca392c4cfa06396b, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: 998866c1c8622f64498304effa9e1f08, type: 3}
+      objectReference: {fileID: 21300000, guid: 3c0e13377f100334395fe2c74df160b2, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[2]'
       value: 
-      objectReference: {fileID: 21300000, guid: 9b1fd8520968ee84aba1a4daba32731d, type: 3}
+      objectReference: {fileID: 21300000, guid: 10510c0d5833b6544b17b34c64a738b5, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[3]'
       value: 
-      objectReference: {fileID: 21300000, guid: 3fa2fa09abb8f5c4593e13faf3864af4, type: 3}
+      objectReference: {fileID: 21300000, guid: 61b1e833278c31a42bb5a754aba8b0af, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[4]'
       value: 
-      objectReference: {fileID: 21300000, guid: dcd889d9923b8ca4a8cb4656addb3a1b, type: 3}
+      objectReference: {fileID: 21300000, guid: 4cd02c0fce77aa842bdc5050164b0720, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[5]'
       value: 
-      objectReference: {fileID: 21300000, guid: d81e2ac135c43364ab8898e48c71e56f, type: 3}
+      objectReference: {fileID: 21300000, guid: 50b872491748d5341b4c9bad63aa4748, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[6]'
       value: 
-      objectReference: {fileID: 21300000, guid: 957c016d80acc08478a00370616439eb, type: 3}
+      objectReference: {fileID: 21300000, guid: 17cccf4c5a295c94bb49d3ab9c5ea1f5, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[7]'
       value: 
-      objectReference: {fileID: 21300000, guid: b2cb0e41a50f85149a92dafbc24db062, type: 3}
+      objectReference: {fileID: 21300000, guid: 228aa9c8a63b2b843b08fa91aff05020, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[8]'
       value: 
-      objectReference: {fileID: 21300000, guid: 9dda1f8172a393942ae0a6d7a948432e, type: 3}
+      objectReference: {fileID: 21300000, guid: 20067d3e19c81b84e8ee25b788f549ee, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[9]'
       value: 
-      objectReference: {fileID: 21300000, guid: 72eeba7d95c0b654f89fde4bb862c6ca, type: 3}
+      objectReference: {fileID: 21300000, guid: a01791dae7c9c574d8e5eb49920a30d3, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[10]'
       value: 
-      objectReference: {fileID: 21300000, guid: ecc416ae92a86db4a98a5d2a4cc2f08d, type: 3}
+      objectReference: {fileID: 21300000, guid: 608f47f250e9d1d48839cfbc993f4424, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: 'm_Tips.Array.data[11]'
       value: 
-      objectReference: {fileID: 21300000, guid: 318b45d285c8c574f8281aa58eb83950, type: 3}
+      objectReference: {fileID: 21300000, guid: b7a24e38133bfa3408e73653262c4bca, type: 3}
     - target: {fileID: 3474202648099487915, guid: 43f11664e6139b24b921d526bf873d3c, type: 3}
       propertyPath: m_BackKey.m_ButtonName
       value: Left
